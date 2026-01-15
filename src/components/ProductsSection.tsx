@@ -1,54 +1,53 @@
 import product2 from "@/assets/product-2.jpeg";
 import product3 from "@/assets/product-3.jpeg";
 import product4 from "@/assets/product-4.jpeg";
-import product5 from "@/assets/product-5.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle } from "lucide-react";
+import { ShoppingCart, MessageCircle, Truck, Gift } from "lucide-react";
 
 const products = [
   {
     image: product2,
-    nameZh: "魚鱗胶原蛋白粉",
-    nameEn: "Fish Scales Collagen Powder",
-    priceRM: "RM 168",
-    priceSGD: "SGD 55",
-    descZh: "每日一勺，轻松补充胶原蛋白",
-    descEn: "One scoop daily for easy collagen supplement",
+    nameZh: "SET A 礼盒装",
+    nameEn: "Gift Box Set A",
+    qty: "12罐 / 12 Bottles",
+    priceRM: "RM 199",
+    priceSGD: "SGD 90",
+    descZh: "入门首选，体验深海胶原蛋白的魅力",
+    descEn: "Perfect for first-time users",
+    badge: "热销",
+    badgeEn: "Best Seller",
   },
   {
     image: product3,
-    nameZh: "胶原蛋白胶囊",
-    nameEn: "Collagen Capsules",
-    priceRM: "RM 198",
-    priceSGD: "SGD 65",
-    descZh: "方便携带，随时随地补充",
-    descEn: "Convenient capsules for on-the-go nutrition",
+    nameZh: "SET B 超值装",
+    nameEn: "Value Set B",
+    qty: "24罐 / 24 Bottles",
+    priceRM: "RM 369",
+    priceSGD: "SGD 160",
+    descZh: "超值优惠，持续呵护您的健康",
+    descEn: "Great value for continued health",
+    badge: "超值",
+    badgeEn: "Best Value",
   },
   {
     image: product4,
-    nameZh: "胶原蛋白饮品",
-    nameEn: "Collagen Drink",
-    priceRM: "RM 228",
-    priceSGD: "SGD 75",
-    descZh: "美味果味，轻松享用",
-    descEn: "Delicious fruity flavor for easy consumption",
-  },
-  {
-    image: product5,
-    nameZh: "礼盒套装",
-    nameEn: "Premium Gift Set",
-    priceRM: "RM 388",
-    priceSGD: "SGD 128",
-    descZh: "精美包装，送礼首选",
-    descEn: "Elegant packaging, perfect for gifting",
+    nameZh: "SET C 家庭装",
+    nameEn: "Family Set C",
+    qty: "36罐 / 36 Bottles",
+    priceRM: "RM 499",
+    priceSGD: "SGD 225",
+    descZh: "全家享用，健康美丽一起分享",
+    descEn: "Perfect for the whole family",
+    badge: "家庭装",
+    badgeEn: "Family Pack",
   },
 ];
 
 const ProductsSection = () => {
   const handleWhatsApp = (productName: string) => {
     const message = encodeURIComponent(`您好！我想订购 ${productName}。\nHello! I would like to order ${productName}.`);
-    window.open(`https://wa.me/60123456789?text=${message}`, "_blank");
+    window.open(`https://wa.me/601158727742?text=${message}`, "_blank");
   };
 
   return (
@@ -60,15 +59,21 @@ const ProductsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            精选优质鱼鳞，采用先进工艺提取，确保最高品质
+            精选优质深海鱼鳞，采用先进工艺萃取，每盒12罐，礼盒精美包装
             <br />
             <span className="text-sm">
-              Premium fish scales processed with advanced technology for the highest quality
+              Premium deep sea fish scales, advanced extraction technology, 12 bottles per box, elegant gift packaging
             </span>
           </p>
+          
+          {/* Free Shipping Banner */}
+          <div className="mt-8 inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-3 rounded-full">
+            <Truck className="w-5 h-5" />
+            <span className="font-medium">🇲🇾 马来西亚 & 🇸🇬 新加坡 全区域包邮 FREE Shipping</span>
+          </div>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {products.map((product, index) => (
             <Card 
               key={index} 
@@ -80,6 +85,10 @@ const ProductsSection = () => {
                   alt={product.nameEn}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
+                {/* Badge */}
+                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                  {product.badge}
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Button 
                   size="sm"
@@ -90,30 +99,40 @@ const ProductsSection = () => {
                   立即订购
                 </Button>
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-foreground mb-1">
+              <CardContent className="p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Gift className="w-4 h-4 text-primary" />
+                  <span className="text-xs text-primary font-medium">{product.qty}</span>
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-1">
                   {product.nameZh}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-3">
                   {product.nameEn}
                 </p>
-                <p className="text-xs text-muted-foreground mb-3">
-                  {product.descZh} | {product.descEn}
+                <p className="text-sm text-muted-foreground mb-4">
+                  {product.descZh}
                 </p>
-                <div className="flex justify-between items-center">
-                  <div>
+                
+                {/* Price Grid */}
+                <div className="grid grid-cols-2 gap-3 mb-4">
+                  <div className="bg-secondary/50 rounded-lg p-3 text-center">
+                    <p className="text-xs text-muted-foreground mb-1">🇲🇾 马来西亚</p>
                     <p className="text-lg font-bold text-primary">{product.priceRM}</p>
-                    <p className="text-sm text-muted-foreground">{product.priceSGD}</p>
                   </div>
-                  <Button 
-                    variant="outline" 
-                    size="sm"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                    onClick={() => handleWhatsApp(product.nameZh)}
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                  </Button>
+                  <div className="bg-secondary/50 rounded-lg p-3 text-center">
+                    <p className="text-xs text-muted-foreground mb-1">🇸🇬 新加坡</p>
+                    <p className="text-lg font-bold text-primary">{product.priceSGD}</p>
+                  </div>
                 </div>
+                
+                <Button 
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  onClick={() => handleWhatsApp(product.nameZh)}
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  WhatsApp 订购
+                </Button>
               </CardContent>
             </Card>
           ))}

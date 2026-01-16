@@ -150,14 +150,13 @@ const ProductsSection = () => {
                   </div>
                 )}
                 
-                {/* Price Grid */}
                 <div className="grid grid-cols-2 gap-3 mb-4">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇲🇾 马来西亚</p>
+                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇲🇾 Malaysia</p>
                     <p className="text-xl font-bold text-primary">{product.priceRM}</p>
                   </div>
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇸🇬 新加坡</p>
+                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇸🇬 Singapore</p>
                     <p className="text-xl font-bold text-primary">{product.priceSGD}</p>
                   </div>
                 </div>

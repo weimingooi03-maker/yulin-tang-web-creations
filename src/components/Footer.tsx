@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import footerLogo from "@/assets/footer-logo.png";
 import { Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
 
 const Footer = () => {
@@ -110,7 +111,8 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-background/20 pt-8 text-center text-base text-background/50">
+        <div className="border-t border-background/20 pt-8 flex flex-col items-center text-base text-background/50">
+          <img src={footerLogo} alt="魚鱗堂 YULIN TANG Logo" className="h-28 w-auto mb-4" />
           <p>© 2026 魚鱗堂 YULIN TANG. All rights reserved.</p>
           <p className="mt-2">
             深海鱼鳞胶原蛋白冻 - 🇲🇾 马来西亚 & 🇸🇬 新加坡 专供

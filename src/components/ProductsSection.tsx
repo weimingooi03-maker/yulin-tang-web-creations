@@ -99,33 +99,18 @@ const ProductsSection = () => {
                 Order SET B or SET C to become a VIP Member automatically
               </p>
               
-              <div className="flex flex-wrap justify-center gap-6 mt-6">
+              <div className="flex flex-wrap justify-center items-center gap-8 mt-6">
                 <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">🎁</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">优惠优先获得</span>
-                    <span className="text-sm text-white/70">Priority Discounts</span>
-                  </div>
+                  <span className="text-lg">🎁</span>
+                  <span className="font-medium">优惠优先获得 <span className="text-white/70 text-sm">Priority Discounts</span></span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">🔔</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">活动抢先知道</span>
-                    <span className="text-sm text-white/70">Early Promotions</span>
-                  </div>
+                  <span className="text-lg">🔔</span>
+                  <span className="font-medium">活动抢先知道 <span className="text-white/70 text-sm">Early Promotions</span></span>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">👑</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">专属会员礼遇</span>
-                    <span className="text-sm text-white/70">Exclusive Benefits</span>
-                  </div>
+                  <span className="text-lg">👑</span>
+                  <span className="font-medium">专属会员礼遇 <span className="text-white/70 text-sm">Exclusive Benefits</span></span>
                 </div>
               </div>
             </div>

@@ -5,32 +5,32 @@ const precautions = [
   {
     titleZh: "海鲜过敏者",
     titleEn: "Seafood Allergy",
-    descZh: "对海鲜或鱼类过敏者请勿食用",
-    descEn: "Not suitable for those allergic to seafood or fish",
+    descZh: "不宜食用",
+    descEn: "Not recommended",
   },
   {
     titleZh: "痛风 / 高尿酸",
     titleEn: "Gout / High Uric Acid",
-    descZh: "痛风或高尿酸患者请避免食用",
-    descEn: "Not recommended for gout or high uric acid patients",
+    descZh: "不宜食用",
+    descEn: "Not recommended",
   },
   {
     titleZh: "肾脏疾病",
     titleEn: "Kidney Disease",
-    descZh: "肾脏功能不佳者请先咨询医生",
-    descEn: "Consult your doctor if you have kidney issues",
+    descZh: "不宜食用",
+    descEn: "Not recommended",
   },
   {
     titleZh: "孕妇 / 哺乳期",
     titleEn: "Pregnancy / Nursing",
-    descZh: "怀孕或哺乳期间请先咨询医生",
-    descEn: "Please consult your doctor during pregnancy or nursing",
+    descZh: "不宜食用",
+    descEn: "Not recommended",
   },
   {
     titleZh: "儿童",
     titleEn: "Children",
-    descZh: "本产品为成人保健品，儿童无需食用",
-    descEn: "Adult supplement, not necessary for children",
+    descZh: "无需食用",
+    descEn: "Not necessary",
   },
 ];
 
@@ -49,7 +49,7 @@ const PrecautionsSection = () => {
           </h2>
           <p className="text-xl text-primary font-semibold mb-2">Important Precautions</p>
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-            以下人群在食用前请先咨询专业医生 / Please consult a doctor before consumption if you have the following conditions
+            以下人群不宜食用 / Not recommended for the following groups
           </p>
         </div>
 

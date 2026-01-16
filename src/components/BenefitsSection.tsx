@@ -1,9 +1,11 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Star, Users, Award } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import heroProduct from "@/assets/hero-product.jpeg";
 import product1 from "@/assets/product-1.jpeg";
 import eatingMethod from "@/assets/eating-method.png";
 import lowSugar from "@/assets/low-sugar.png";
+import review1 from "@/assets/review-1.jpeg";
+import review2 from "@/assets/review-2.jpeg";
 
 const benefits = [
   {
@@ -50,71 +52,47 @@ const benefits = [
   },
 ];
 
-const reviews = [
-  {
-    name: "李女士",
-    location: "🇲🇾 吉隆坡",
-    rating: 5,
-    content: "吃了两个月，关节疼痛明显减轻了，皮肤也变得更有弹性！",
-    contentEn: "After 2 months, my joint pain significantly reduced and my skin became more elastic!",
-  },
-  {
-    name: "陈先生",
-    location: "🇸🇬 新加坡",
-    rating: 5,
-    content: "味道很好，冷藏后变成果冻更美味，每天期待吃！",
-    contentEn: "Tastes great! Even better when chilled as jelly, I look forward to it every day!",
-  },
-  {
-    name: "张阿姨",
-    location: "🇲🇾 槟城",
-    rating: 5,
-    content: "给父母买的，他们说膝盖比以前灵活多了，很满意！",
-    contentEn: "Bought for my parents, they said their knees are more flexible now. Very satisfied!",
-  },
-];
-
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="py-20 bg-secondary/30">
+    <section id="benefits" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-            产品功效 Benefits
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 tracking-wide">
+            产品功效
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6" />
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl font-serif text-primary mb-4">Benefits</p>
+          <div className="w-32 h-1 bg-primary mx-auto mb-8" />
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
             魚鱗堂深海鱼鳞胶原蛋白冻，采用100%天然深海鱼鳞萃取，富含优质胶原蛋白，
             专为关节健康与美容养颜设计
-            <br />
-            <span className="text-base md:text-lg">
-              YULIN TANG Deep Sea Collagen Jelly, extracted from 100% natural deep sea fish scales, 
-              rich in premium collagen, designed for joint health and beauty
-            </span>
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mt-3 leading-relaxed">
+            YULIN TANG Deep Sea Collagen Jelly, extracted from 100% natural deep sea fish scales, 
+            rich in premium collagen, designed for joint health and beauty
           </p>
         </div>
         
         {/* Benefits Cards - Product Benefits FIRST */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {benefits.map((benefit, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
+              className="group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
             >
-              <CardContent className="p-6 text-center">
-                <div className="w-18 h-18 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <benefit.icon className="w-9 h-9 text-primary group-hover:text-primary-foreground transition-colors" />
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
+                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
                   {benefit.titleZh}
                 </h3>
-                <p className="text-base text-primary font-medium mb-3">
+                <p className="text-lg text-primary font-semibold mb-4">
                   {benefit.titleEn}
                 </p>
-                <p className="text-base text-muted-foreground">
+                <p className="text-base text-foreground/80 leading-relaxed">
                   {benefit.descZh}
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
                   {benefit.descEn}
                 </p>
               </CardContent>
@@ -123,82 +101,123 @@ const BenefitsSection = () => {
         </div>
         
         {/* Why Choose Us */}
-        <div className="bg-card rounded-2xl p-8 mb-12 border border-border/50">
-          <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-8">
-            为什么选择魚鱗堂？ Why Choose Us?
+        <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            为什么选择魚鱗堂？
           </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">Why Choose Us?</p>
           
           {/* Images Grid */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            <div className="rounded-xl overflow-hidden shadow-lg">
+          <div className="grid md:grid-cols-3 gap-8 mb-10">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={heroProduct} 
                 alt="魚鱗堂产品"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={product1} 
                 alt="产品展示"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={lowSugar} 
                 alt="低糖健康"
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover"
               />
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="p-4">
-              <p className="text-4xl font-bold text-primary mb-2">100%</p>
-              <p className="text-lg text-foreground font-bold">纯天然鱼鳞萃取</p>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="p-6 bg-secondary/50 rounded-2xl">
+              <p className="text-5xl font-bold text-primary mb-3">100%</p>
+              <p className="text-xl text-foreground font-bold mb-1">纯天然鱼鳞萃取</p>
               <p className="text-base text-muted-foreground">Pure Natural Fish Scale Extract</p>
             </div>
-            <div className="p-4">
-              <p className="text-4xl font-bold text-primary mb-2">不是粉</p>
-              <p className="text-lg text-foreground font-bold">不是粉，不是胶囊</p>
+            <div className="p-6 bg-secondary/50 rounded-2xl">
+              <p className="text-4xl font-bold text-primary mb-3">不是粉</p>
+              <p className="text-xl text-foreground font-bold mb-1">不是粉，不是胶囊</p>
               <p className="text-base text-muted-foreground">Not Powder, Not Capsules</p>
             </div>
-            <div className="p-4">
-              <div className="flex items-center justify-center gap-3 mb-2">
-                <Award className="w-10 h-10 text-primary" />
-              </div>
-              <p className="text-lg text-foreground font-bold">马来西亚MESTI & GMP认证</p>
+            <div className="p-6 bg-secondary/50 rounded-2xl">
+              <p className="text-4xl font-bold text-primary mb-3">认证</p>
+              <p className="text-xl text-foreground font-bold mb-1">马来西亚MESTI & GMP认证</p>
               <p className="text-base text-muted-foreground">Malaysia MESTI & GMP Certified</p>
             </div>
           </div>
         </div>
 
-        {/* How to Enjoy Section */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-8">
-            食用方法 How to Enjoy
+        {/* Certifications Section */}
+        <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
+            品质认证
           </h3>
+          <p className="text-lg text-primary font-semibold text-center mb-8">Quality Assured</p>
+          <p className="text-lg text-foreground/80 text-center mb-10 max-w-2xl mx-auto">
+            Certified by Ministry of Health Malaysia (MOH)
+          </p>
+          
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {/* GMP Logo */}
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-xl border-4 border-orange-300">
+                <div className="text-center text-white">
+                  <p className="text-[10px] md:text-xs font-medium">KEMENTERIAN</p>
+                  <p className="text-2xl md:text-3xl font-bold">GMP</p>
+                  <p className="text-[8px] md:text-[10px]">Food Safety</p>
+                  <p className="text-[10px] md:text-xs font-medium">MALAYSIA</p>
+                </div>
+              </div>
+              <p className="mt-4 text-base font-bold text-foreground">GMP Certified</p>
+              <p className="text-sm text-muted-foreground">Good Manufacturing Practice</p>
+            </div>
+            
+            {/* MeSTI Logo */}
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-xl border-4 border-blue-400">
+                <div className="text-center text-white">
+                  <p className="text-[8px] md:text-[10px] font-medium">MAKANAN SELAMAT</p>
+                  <p className="text-2xl md:text-3xl font-bold">MeSTI</p>
+                  <p className="text-[8px] md:text-[10px]">TANGGUNGJAWAB INDUSTRI</p>
+                  <p className="text-[9px] md:text-[11px] mt-1">KEMENTERIAN KESIHATAN</p>
+                </div>
+              </div>
+              <p className="mt-4 text-base font-bold text-foreground">MeSTI Certified</p>
+              <p className="text-sm text-muted-foreground">Food Safety Assurance</p>
+            </div>
+          </div>
+        </div>
+
+        {/* How to Enjoy Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            食用方法
+          </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">How to Enjoy</p>
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={eatingMethod} 
                 alt="食用方法 - 直接饮用或冷藏成果冻"
                 className="w-full h-auto"
               />
             </div>
-            <div className="grid md:grid-cols-2 gap-6 mt-6 text-center">
-              <div className="p-6 bg-card rounded-xl border border-border/50">
-                <h4 className="text-2xl font-bold text-foreground mb-2">水状直接饮用</h4>
-                <p className="text-lg text-primary font-medium mb-2">Drink Directly</p>
-                <p className="text-base text-muted-foreground">
+            <div className="grid md:grid-cols-2 gap-8 mt-8 text-center">
+              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">水状直接饮用</h4>
+                <p className="text-lg text-primary font-semibold mb-3">Drink Directly</p>
+                <p className="text-base text-foreground/80 leading-relaxed">
                   开封即饮，口感顺滑，淡淡清香，方便快捷
                 </p>
               </div>
-              <div className="p-6 bg-card rounded-xl border border-border/50">
-                <h4 className="text-2xl font-bold text-foreground mb-2">冷藏成果冻</h4>
-                <p className="text-lg text-primary font-medium mb-2">Refrigerate as Jelly</p>
-                <p className="text-base text-muted-foreground">
+              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">冷藏成果冻</h4>
+                <p className="text-lg text-primary font-semibold mb-3">Refrigerate as Jelly</p>
+                <p className="text-base text-foreground/80 leading-relaxed">
                   放入冰箱冷藏几小时，可享用果冻口感，清凉爽口
                 </p>
               </div>
@@ -206,36 +225,30 @@ const BenefitsSection = () => {
           </div>
         </div>
 
-        {/* Customer Reviews */}
-        <div className="mt-16">
-          <div className="flex items-center justify-center gap-3 mb-8">
-            <Users className="w-8 h-8 text-primary" />
-            <h3 className="text-3xl font-serif font-bold text-foreground">
-              顾客好评 Customer Reviews
+        {/* Customer Reviews with Real Images */}
+        <div className="mt-20">
+          <div className="flex flex-col items-center justify-center gap-3 mb-12">
+            <Users className="w-10 h-10 text-primary" />
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+              顾客好评
             </h3>
+            <p className="text-xl text-primary font-semibold">Customer Reviews</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {reviews.map((review, index) => (
-              <Card key={index} className="border-border/50 bg-card">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <p className="text-base text-foreground mb-3 italic">
-                    "{review.content}"
-                  </p>
-                  <p className="text-sm text-muted-foreground mb-2">
-                    "{review.contentEn}"
-                  </p>
-                  <div className="flex items-center gap-2 pt-3 border-t border-border">
-                    <span className="text-base font-bold text-foreground">{review.name}</span>
-                    <span className="text-base text-muted-foreground">{review.location}</span>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={review1} 
+                alt="顾客好评 - 关节疼痛缓解"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={review2} 
+                alt="顾客好评 - 太极多年"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Star, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import product1 from "@/assets/product-1.jpeg";
+import heroProduct from "@/assets/hero-product.jpeg";
 import product2 from "@/assets/product-2.jpeg";
 
 const benefits = [
@@ -125,7 +125,7 @@ const BenefitsSection = () => {
             <Card className="overflow-hidden border-border/50 bg-card">
               <div className="aspect-video overflow-hidden">
                 <img 
-                  src={product1} 
+                  src={heroProduct} 
                   alt="直接饮用"
                   className="w-full h-full object-cover"
                 />

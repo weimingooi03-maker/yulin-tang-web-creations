@@ -254,10 +254,15 @@ const BenefitsSection = () => {
         
         {/* Why Choose Us */}
         <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-2">
             为什么选择魚鱗堂？
           </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">Why Choose Us?</p>
+          <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
+          <p className="text-center mb-10">
+            <span className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full text-lg border border-primary/30">
+              每瓶含 7500mg 胶原蛋白
+            </span>
+          </p>
           
           {/* Images Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-10">

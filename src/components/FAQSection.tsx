@@ -20,12 +20,6 @@ const faqs = [
     answerEn: "We recommend 1-2 cans daily. Best taken on an empty stomach in the morning or before bed for optimal absorption. Can be consumed directly or refrigerated into jelly.",
   },
   {
-    questionZh: "孕妇/哺乳期可以食用吗？",
-    questionEn: "Can pregnant or breastfeeding women consume this?",
-    answerZh: "我们的产品使用100%纯天然成分，无防腐剂。但孕妇和哺乳期妈妈建议在食用前咨询医生，确保符合个人健康状况。",
-    answerEn: "Our product uses 100% natural ingredients with no preservatives. However, pregnant and breastfeeding mothers should consult their doctor before consumption.",
-  },
-  {
     questionZh: "多久能看到效果？",
     questionEn: "How long before I see results?",
     answerZh: "效果因人而异。大多数顾客在持续食用2-4周后开始感受到皮肤更有弹性、关节更灵活。建议持续食用3个月以上获得最佳效果。",

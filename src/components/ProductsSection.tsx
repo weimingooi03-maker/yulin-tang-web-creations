@@ -84,11 +84,10 @@ const ProductsSection = () => {
         
         {/* VIP简洁提示 */}
         <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-900/10 border border-amber-700/30 text-amber-800 px-5 py-3 rounded-full">
-            <span className="text-lg">👑</span>
-            <span className="font-medium">购买 SET B 或 SET C 即成为 VIP 会员</span>
-            <span className="text-muted-foreground mx-1">|</span>
-            <span className="text-sm text-muted-foreground">Order SET B/C = VIP Member</span>
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-400 text-amber-900 px-6 py-3 rounded-full shadow-md">
+            <span className="text-xl">👑</span>
+            <span className="font-bold">SET B / SET C 享 VIP 会员资格</span>
+            <span className="text-amber-600 text-sm">| VIP Membership Included</span>
           </div>
         </div>
 
@@ -142,12 +141,12 @@ const ProductsSection = () => {
                 
                 {/* VIP Benefits - only show for VIP products */}
                 {product.isVip && (
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                    <p className="text-sm text-amber-800 font-medium flex items-center gap-2">
-                      <span>👑</span>
-                      <span>送VIP：优惠抢先 + 专属礼遇</span>
+                  <div className="bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-300 rounded-lg p-3 mb-4">
+                    <p className="text-sm text-amber-900 font-bold flex items-center gap-2">
+                      <span className="text-base">👑</span>
+                      <span>VIP 会员专属</span>
                     </p>
-                    <p className="text-xs text-amber-600 ml-6">VIP: Early discounts + Exclusive perks</p>
+                    <p className="text-xs text-amber-700 ml-6">VIP Member Benefits Included</p>
                   </div>
                 )}
                 

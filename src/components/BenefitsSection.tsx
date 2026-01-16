@@ -1,15 +1,15 @@
 import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import heroProduct from "@/assets/hero-product.jpeg";
-import product1 from "@/assets/product-1.jpeg";
 import eatingMethod from "@/assets/eating-method.png";
-import lowSugar from "@/assets/low-sugar.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
 import tasteProfile from "@/assets/taste-profile.jpeg";
+import whyChoose1 from "@/assets/why-choose-1.jpeg";
+import whyChoose2 from "@/assets/why-choose-2.jpeg";
+import whyChoose3 from "@/assets/why-choose-3.png";
 
 
 const benefits = [
@@ -209,23 +209,23 @@ const BenefitsSection = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src={heroProduct} 
-                alt="YULIN TANG Product"
-                className="w-full h-72 object-cover"
+                src={whyChoose1} 
+                alt="食材可以帮助什么 - Ingredients Benefits"
+                className="w-full h-auto object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src={product1} 
-                alt="Product Display"
-                className="w-full h-72 object-cover"
+                src={whyChoose2} 
+                alt="3种必需的氨基酸 - Essential Amino Acids"
+                className="w-full h-auto object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src={lowSugar} 
-                alt="Low Sugar - Healthy Choice"
-                className="w-full h-72 object-cover"
+                src={whyChoose3} 
+                alt="低糖健康 - Low Sugar Healthy"
+                className="w-full h-auto object-cover"
               />
             </div>
           </div>

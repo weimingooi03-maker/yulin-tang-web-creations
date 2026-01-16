@@ -1,4 +1,4 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
@@ -258,7 +258,7 @@ const BenefitsSection = () => {
             为什么选择魚鱗堂？
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <div className="grid grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto">
             <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
               <Sparkles className="w-6 h-6 mx-auto mb-2" />
               <div className="text-2xl font-bold">7500mg</div>
@@ -274,6 +274,11 @@ const BenefitsSection = () => {
               <ShieldCheck className="w-6 h-6 mx-auto mb-2" />
               <div className="text-lg font-bold">无防腐剂</div>
               <div className="text-xs opacity-80">Preservative Free</div>
+            </div>
+            <div className="bg-gradient-to-br from-amber-600 to-amber-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
+              <Calendar className="w-6 h-6 mx-auto mb-2" />
+              <div className="text-lg font-bold">保质期1年+</div>
+              <div className="text-xs opacity-80">1+ Year Shelf Life</div>
             </div>
           </div>
           

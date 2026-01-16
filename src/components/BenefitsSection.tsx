@@ -14,6 +14,7 @@ import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";
 import whenToTakeCn from "@/assets/when-to-take-cn.png";
 import whenToTakeEn from "@/assets/when-to-take-en.png";
+import factoryEquipment from "@/assets/factory-equipment.png";
 
 
 const benefits = [
@@ -283,7 +284,7 @@ const BenefitsSection = () => {
             </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid md:grid-cols-3 gap-8 text-center mb-10">
             <div className="p-6 bg-secondary/50 rounded-2xl">
               <p className="text-5xl font-bold text-primary mb-3">100%</p>
               <p className="text-xl text-foreground font-bold mb-1">100%純天然成分</p>
@@ -298,6 +299,53 @@ const BenefitsSection = () => {
               <p className="text-4xl font-bold text-primary mb-3">低糖</p>
               <p className="text-xl text-foreground font-bold mb-1">独家低糖配方</p>
               <p className="text-base text-muted-foreground">Exclusive Low Sugar Formula</p>
+            </div>
+          </div>
+
+          {/* Vacuum Sterilization Technology */}
+          <div className="bg-secondary/30 rounded-2xl p-8 border border-primary/20">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="rounded-2xl overflow-hidden shadow-xl">
+                <img 
+                  src={factoryEquipment} 
+                  alt="魚鱗堂生产设备 - Vacuum Sterilization Equipment"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🔬</span>
+                  <h4 className="text-2xl font-serif font-bold text-foreground">真空杀菌技术</h4>
+                </div>
+                <p className="text-lg text-primary font-semibold mb-4">Vacuum Sterilization Technology</p>
+                <p className="text-base text-foreground/90 leading-relaxed mb-4">
+                  采用与国际食品厂一致的<span className="font-bold text-primary">高温高压杀菌技术</span>（类似罐装燕窝饮品的处理方式）
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">1️⃣</span>
+                    <div>
+                      <p className="font-bold text-foreground">高温高压杀菌</p>
+                      <p className="text-sm text-muted-foreground">彻底消灭所有细菌和微生物</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl">2️⃣</span>
+                    <div>
+                      <p className="font-bold text-foreground">真空密封包装</p>
+                      <p className="text-sm text-muted-foreground">无菌环境隔绝外部细菌</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-6 p-4 bg-primary/10 rounded-xl">
+                  <p className="text-base font-bold text-foreground text-center">
+                    ✨ 无需防腐剂，安全保存
+                  </p>
+                  <p className="text-sm text-muted-foreground text-center mt-1">
+                    No preservatives needed, safe storage guaranteed
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

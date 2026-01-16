@@ -62,12 +62,8 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         
-        {/* What is Fish Scale Jelly - Chinese & English side by side */}
+        {/* What is Fish Scale Jelly Image */}
         <div className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
-            什么是鱼鳞冻？
-          </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">What is Fish Scale Jelly?</p>
           <div className="max-w-3xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 

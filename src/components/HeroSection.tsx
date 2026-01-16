@@ -83,7 +83,7 @@ const HeroSection = () => {
                   <Shield className="w-7 h-7 text-primary" />
                   <Award className="w-7 h-7 text-primary" />
                 </div>
-                <p className="text-base text-muted-foreground font-medium">独家配方</p>
+                <p className="text-base text-muted-foreground font-medium">无防腐剂</p>
               </div>
             </div>
           </div>

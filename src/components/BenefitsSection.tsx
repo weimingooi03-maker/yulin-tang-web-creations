@@ -1,7 +1,10 @@
 import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Star, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import heroProduct from "@/assets/hero-product.jpeg";
+import product1 from "@/assets/product-1.jpeg";
 import product2 from "@/assets/product-2.jpeg";
+import eatingMethod from "@/assets/eating-method.png";
+import lowSugar from "@/assets/low-sugar.png";
 
 const benefits = [
   {
@@ -94,9 +97,35 @@ const BenefitsSection = () => {
         
         {/* Why Choose Us */}
         <div className="bg-card rounded-2xl p-8 mb-12 border border-border/50">
-          <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-6">
+          <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-8">
             为什么选择魚鱗堂？ Why Choose Us?
           </h3>
+          
+          {/* Images Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={heroProduct} 
+                alt="魚鱗堂产品"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={product1} 
+                alt="产品展示"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src={lowSugar} 
+                alt="低糖健康"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-6 text-center">
             <div className="p-4">
               <p className="text-4xl font-bold text-primary mb-2">100%</p>
@@ -121,46 +150,30 @@ const BenefitsSection = () => {
           <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-8">
             食用方法 How to Enjoy
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-border/50 bg-card">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={heroProduct} 
-                  alt="直接饮用"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6 text-center">
-                <h4 className="text-2xl font-bold text-foreground mb-2">直接饮用</h4>
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src={eatingMethod} 
+                alt="食用方法 - 直接饮用或冷藏成果冻"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 mt-6 text-center">
+              <div className="p-6 bg-card rounded-xl border border-border/50">
+                <h4 className="text-2xl font-bold text-foreground mb-2">水状直接饮用</h4>
                 <p className="text-lg text-primary font-medium mb-2">Drink Directly</p>
                 <p className="text-base text-muted-foreground">
                   开封即饮，口感顺滑，淡淡清香，方便快捷
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Ready to drink, smooth texture, light fragrance, quick and convenient
-                </p>
-              </CardContent>
-            </Card>
-            
-            <Card className="overflow-hidden border-border/50 bg-card">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={product2} 
-                  alt="冷藏成果冻"
-                  className="w-full h-full object-cover"
-                />
               </div>
-              <CardContent className="p-6 text-center">
+              <div className="p-6 bg-card rounded-xl border border-border/50">
                 <h4 className="text-2xl font-bold text-foreground mb-2">冷藏成果冻</h4>
                 <p className="text-lg text-primary font-medium mb-2">Refrigerate as Jelly</p>
                 <p className="text-base text-muted-foreground">
-                  放入冰箱冷藏后变成Q弹果冻，口感更佳，清凉爽口
+                  放入冰箱冷藏几小时，可享用果冻口感，清凉爽口
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Refrigerate to transform into bouncy jelly, enhanced taste, cool and refreshing
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
         

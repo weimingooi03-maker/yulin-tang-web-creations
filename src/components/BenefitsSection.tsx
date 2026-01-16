@@ -1,8 +1,7 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Star, Users } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Star, Users, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import heroProduct from "@/assets/hero-product.jpeg";
 import product1 from "@/assets/product-1.jpeg";
-import product2 from "@/assets/product-2.jpeg";
 import eatingMethod from "@/assets/eating-method.png";
 import lowSugar from "@/assets/low-sugar.png";
 
@@ -95,6 +94,34 @@ const BenefitsSection = () => {
           </p>
         </div>
         
+        {/* Benefits Cards - Product Benefits FIRST */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {benefits.map((benefit, index) => (
+            <Card 
+              key={index} 
+              className="group hover:shadow-xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
+            >
+              <CardContent className="p-6 text-center">
+                <div className="w-18 h-18 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <benefit.icon className="w-9 h-9 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-1">
+                  {benefit.titleZh}
+                </h3>
+                <p className="text-base text-primary font-medium mb-3">
+                  {benefit.titleEn}
+                </p>
+                <p className="text-base text-muted-foreground">
+                  {benefit.descZh}
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  {benefit.descEn}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        
         {/* Why Choose Us */}
         <div className="bg-card rounded-2xl p-8 mb-12 border border-border/50">
           <h3 className="text-3xl font-serif font-bold text-foreground text-center mb-8">
@@ -138,7 +165,9 @@ const BenefitsSection = () => {
               <p className="text-base text-muted-foreground">Not Powder, Not Capsules</p>
             </div>
             <div className="p-4">
-              <p className="text-4xl font-bold text-primary mb-2">MESTI</p>
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <Award className="w-10 h-10 text-primary" />
+              </div>
               <p className="text-lg text-foreground font-bold">马来西亚MESTI & GMP认证</p>
               <p className="text-base text-muted-foreground">Malaysia MESTI & GMP Certified</p>
             </div>
@@ -175,33 +204,6 @@ const BenefitsSection = () => {
               </div>
             </div>
           </div>
-        </div>
-        
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {benefits.map((benefit, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
-            >
-              <CardContent className="p-6 text-center">
-                <div className="w-18 h-18 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <benefit.icon className="w-9 h-9 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
-                  {benefit.titleZh}
-                </h3>
-                <p className="text-base text-primary font-medium mb-3">
-                  {benefit.titleEn}
-                </p>
-                <p className="text-base text-muted-foreground">
-                  {benefit.descZh}
-                </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  {benefit.descEn}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
         </div>
 
         {/* Customer Reviews */}

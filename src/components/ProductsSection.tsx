@@ -1,6 +1,6 @@
 import product4 from "@/assets/product-4.jpeg";
 import productSetB from "@/assets/product-setb.png";
-import productSetC from "@/assets/product-setc.jpeg";
+import productSetC from "@/assets/product-setc-new.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, MessageCircle, Truck, Package } from "lucide-react";

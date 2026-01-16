@@ -6,10 +6,10 @@ import eatingMethod from "@/assets/eating-method.png";
 import lowSugar from "@/assets/low-sugar.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
-import gmpLogo from "@/assets/gmp-logo.jpeg";
+import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
 import tasteDescription from "@/assets/taste-description.jpeg";
-import jointPain from "@/assets/joint-pain.jpeg";
+import whatIsFishJelly from "@/assets/what-is-fish-jelly.png";
 
 const benefits = [
   {
@@ -60,6 +60,71 @@ const BenefitsSection = () => {
   return (
     <section id="benefits" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
+        
+        {/* What is Fish Scale Jelly + Taste Description */}
+        <div className="mb-20">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            什么是鱼鳞冻？
+          </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">What is Fish Scale Jelly?</p>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={whatIsFishJelly} 
+                alt="What is Fish Scale Jelly? - Natural beauty jelly made by slowly simmering fish scale collagen"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={tasteDescription} 
+                alt="Product Taste - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* How to Enjoy Section - Below Product Taste */}
+        <div className="mb-20">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            食用方法
+          </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">How to Enjoy</p>
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={eatingMethod} 
+                alt="How to Enjoy - Drink directly or refrigerate as jelly"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 mt-8 text-center">
+              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">水状直接饮用</h4>
+                <p className="text-lg text-primary font-semibold mb-3">Drink Directly (Liquid)</p>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  开封即饮，口感顺滑，淡淡清香，方便快捷
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Ready to drink, smooth texture with a light aroma, quick and convenient
+                </p>
+              </div>
+              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">冷藏成果冻</h4>
+                <p className="text-lg text-primary font-semibold mb-3">Refrigerate as Jelly</p>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  放入冰箱冷藏几小时，可享用果冻口感，清凉爽口
+                </p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Refrigerate for a few hours for a refreshing jelly treat, cool and delicious
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Product Benefits */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 tracking-wide">
             产品功效
@@ -76,7 +141,7 @@ const BenefitsSection = () => {
           </p>
         </div>
         
-        {/* Benefits Cards - Product Benefits FIRST */}
+        {/* Benefits Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {benefits.map((benefit, index) => (
             <Card 
@@ -116,21 +181,21 @@ const BenefitsSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={heroProduct} 
-                alt="魚鱗堂产品"
+                alt="YULIN TANG Product"
                 className="w-full h-72 object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={product1} 
-                alt="产品展示"
+                alt="Product Display"
                 className="w-full h-72 object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={lowSugar} 
-                alt="低糖健康"
+                alt="Low Sugar - Healthy Choice"
                 className="w-full h-72 object-cover"
               />
             </div>
@@ -150,105 +215,48 @@ const BenefitsSection = () => {
             <div className="p-6 bg-secondary/50 rounded-2xl">
               <p className="text-4xl font-bold text-primary mb-3">认证</p>
               <p className="text-xl text-foreground font-bold mb-1">马来西亚MESTI & GMP认证</p>
-              <p className="text-base text-muted-foreground">Malaysia MESTI & GMP Certified</p>
+              <p className="text-base text-muted-foreground">Malaysia MeSTI & GMP Certified</p>
             </div>
           </div>
         </div>
 
-        {/* Taste Description Image */}
-        <div className="mb-16">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
-            产品口味
-          </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">Product Taste</p>
-          <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={tasteDescription} 
-                alt="产品口味 - 50%红枣味 40%桂圆味 10%斑斓味 0%鱼腥味"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Joint Pain Awareness Image */}
-        <div className="mb-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={jointPain} 
-                alt="关节润滑不足 - 体内胶原蛋白流失太快"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Certifications Section */}
+        {/* Certifications Section - Clean Logos Only */}
         <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
           <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
             品质认证
           </h3>
-          <p className="text-lg text-primary font-semibold text-center mb-8">Quality Assured</p>
-          <p className="text-lg text-foreground/80 text-center mb-10 max-w-2xl mx-auto">
-            Certified by Ministry of Health Malaysia (MOH)
+          <p className="text-lg text-primary font-semibold text-center mb-4">Quality Certifications</p>
+          <p className="text-base text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+            Certified by Ministry of Health Malaysia (Kementerian Kesihatan Malaysia)
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {/* GMP Logo */}
             <div className="flex flex-col items-center">
-              <div className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center">
+              <div className="w-40 h-40 md:w-52 md:h-52 flex items-center justify-center">
                 <img 
                   src={gmpLogo} 
-                  alt="GMP Food Safety Malaysia Certification"
+                  alt="GMP Food Safety Malaysia - Kementerian Kesihatan"
                   className="w-full h-full object-contain"
                 />
               </div>
+              <p className="text-sm text-muted-foreground mt-3 text-center">
+                Good Manufacturing Practice
+              </p>
             </div>
             
             {/* MeSTI Logo */}
             <div className="flex flex-col items-center">
-              <div className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center">
+              <div className="w-48 h-32 md:w-64 md:h-40 flex items-center justify-center">
                 <img 
                   src={mestiLogo} 
-                  alt="MeSTI Food Safety Certification"
+                  alt="MeSTI - Makanan Selamat Tanggungjawab Industri"
                   className="w-full h-full object-contain"
                 />
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* How to Enjoy Section */}
-        <div className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
-            食用方法
-          </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">How to Enjoy</p>
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={eatingMethod} 
-                alt="食用方法 - 直接饮用或冷藏成果冻"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 mt-8 text-center">
-              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">水状直接饮用</h4>
-                <p className="text-lg text-primary font-semibold mb-3">Drink Directly</p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  开封即饮，口感顺滑，淡淡清香，方便快捷
-                </p>
-              </div>
-              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">冷藏成果冻</h4>
-                <p className="text-lg text-primary font-semibold mb-3">Refrigerate as Jelly</p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  放入冰箱冷藏几小时，可享用果冻口感，清凉爽口
-                </p>
-              </div>
+              <p className="text-sm text-muted-foreground mt-3 text-center">
+                Food Safety Industry Responsibility
+              </p>
             </div>
           </div>
         </div>
@@ -266,14 +274,14 @@ const BenefitsSection = () => {
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={review1} 
-                alt="顾客好评 - 关节疼痛缓解"
+                alt="Customer Review - Joint Pain Relief Testimonial"
                 className="w-full h-auto"
               />
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={review2} 
-                alt="顾客好评 - 太极多年"
+                alt="Customer Review - Years of Practice Testimonial"
                 className="w-full h-auto"
               />
             </div>

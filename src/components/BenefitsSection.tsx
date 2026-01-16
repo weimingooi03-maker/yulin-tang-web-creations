@@ -14,7 +14,7 @@ import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";
 import whenToTakeCn from "@/assets/when-to-take-cn.png";
 import whenToTakeEn from "@/assets/when-to-take-en.png";
-import factoryEquipment from "@/assets/factory-equipment.png";
+import sterilizationMachine from "@/assets/sterilization-machine.jpeg";
 
 
 const benefits = [
@@ -259,56 +259,13 @@ const BenefitsSection = () => {
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-10">Why Choose Us?</p>
           
-          {/* Images Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={whyChoose1} 
-                alt="食材可以帮助什么 - Ingredients Benefits"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={whyChoose2} 
-                alt="3种必需的氨基酸 - Essential Amino Acids"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={whyChoose3} 
-                alt="低糖健康 - Low Sugar Healthy"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 text-center mb-10">
-            <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-5xl font-bold text-primary mb-3">100%</p>
-              <p className="text-xl text-foreground font-bold mb-1">100%純天然成分</p>
-              <p className="text-base text-muted-foreground">100% Pure Natural Ingredients</p>
-            </div>
-            <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">精选</p>
-              <p className="text-xl text-foreground font-bold mb-1">精选补品</p>
-              <p className="text-base text-muted-foreground">Premium Selected Supplement</p>
-            </div>
-            <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">低糖</p>
-              <p className="text-xl text-foreground font-bold mb-1">独家低糖配方</p>
-              <p className="text-base text-muted-foreground">Exclusive Low Sugar Formula</p>
-            </div>
-          </div>
-
-          {/* Vacuum Sterilization Technology */}
-          <div className="bg-secondary/30 rounded-2xl p-8 border border-primary/20">
+          {/* Vacuum Sterilization Technology - Moved Up */}
+          <div className="bg-secondary/30 rounded-2xl p-8 border border-primary/20 mb-10">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img 
-                  src={factoryEquipment} 
-                  alt="魚鱗堂生产设备 - Vacuum Sterilization Equipment"
+                  src={sterilizationMachine} 
+                  alt="魚鱗堂真空杀菌设备 - Vacuum Sterilization Equipment"
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -346,6 +303,31 @@ const BenefitsSection = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+          
+          {/* Images Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src={whyChoose1} 
+                alt="食材可以帮助什么 - Ingredients Benefits"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src={whyChoose2} 
+                alt="3种必需的氨基酸 - Essential Amino Acids"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img 
+                src={whyChoose3} 
+                alt="低糖健康 - Low Sugar Healthy"
+                className="w-full h-auto object-cover"
+              />
             </div>
           </div>
         </div>

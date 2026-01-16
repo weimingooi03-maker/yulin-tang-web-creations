@@ -35,10 +35,10 @@ const HeroSection = () => {
             </div>
             
             <h2 className="text-2xl md:text-3xl text-foreground font-medium opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
-              送给家人最好的滋补心意
+              送给家人和自己最好的滋补心意
             </h2>
             <p className="text-xl text-primary font-semibold opacity-0 animate-[fade-in_0.6s_ease-out_0.5s_forwards]">
-              The Perfect Gift of Wellness
+              The Perfect Gift for Your Loved Ones & Yourself
             </p>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.6s_forwards]">

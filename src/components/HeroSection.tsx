@@ -21,11 +21,11 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text content */}
           <div className="text-center lg:text-left space-y-6">
-            <div className="flex justify-center lg:justify-start mb-4 opacity-0 animate-[fade-in_0.6s_ease-out_0.1s_forwards]">
+            <div className="flex justify-center lg:justify-start mb-4 opacity-0 animate-fade-in-delay-1">
               <img src={logo} alt="魚鱗堂 Logo" className="h-36 md:h-44 w-auto" />
             </div>
             
-            <div className="space-y-2 opacity-0 animate-[fade-in_0.6s_ease-out_0.2s_forwards]">
+            <div className="space-y-2 opacity-0 animate-fade-in-delay-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-brand text-foreground leading-tight">
                 魚鱗堂
               </h1>
@@ -34,14 +34,14 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <h2 className="text-2xl md:text-3xl text-foreground font-medium opacity-0 animate-[fade-in_0.6s_ease-out_0.4s_forwards]">
+            <h2 className="text-2xl md:text-3xl text-foreground font-medium opacity-0 animate-fade-in-delay-4">
               送给家人和自己最好的滋补心意
             </h2>
-            <p className="text-xl text-primary font-semibold opacity-0 animate-[fade-in_0.6s_ease-out_0.5s_forwards]">
+            <p className="text-xl text-primary font-semibold opacity-0 animate-fade-in-delay-5">
               The Perfect Gift for Your Loved Ones & Yourself
             </p>
             
-            <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed opacity-0 animate-[fade-in_0.6s_ease-out_0.6s_forwards]">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed opacity-0 animate-fade-in-delay-6">
               100%深海鱼鳞胶原蛋白，呵护父母关节健康，守护全家美丽年轻。
               <br />
               <span className="text-base md:text-lg">
@@ -49,7 +49,7 @@ const HeroSection = () => {
               </span>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-[fade-in_0.6s_ease-out_0.7s_forwards]">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start opacity-0 animate-fade-in-delay-7">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 text-xl"
@@ -67,7 +67,7 @@ const HeroSection = () => {
               </Button>
             </div>
             
-            <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 opacity-0 animate-[fade-in_0.6s_ease-out_0.8s_forwards]">
+            <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 opacity-0 animate-fade-in-delay-8">
               <div className="text-center">
                 <p className="text-3xl font-bold text-primary">100%</p>
                 <p className="text-base text-muted-foreground font-medium">天然成分 Natural</p>
@@ -88,7 +88,7 @@ const HeroSection = () => {
           </div>
           
           {/* Product image */}
-          <div className="relative opacity-0 animate-[fade-in_0.8s_ease-out_0.3s_forwards]">
+          <div className="relative opacity-0 animate-fade-in-delay-3">
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl" />
             <img 
               src={heroProduct} 

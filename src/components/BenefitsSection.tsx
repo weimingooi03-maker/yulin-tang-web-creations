@@ -237,14 +237,14 @@ const BenefitsSection = () => {
               <p className="text-base text-muted-foreground">Pure Natural Fish Scale Extract</p>
             </div>
             <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">不是粉</p>
-              <p className="text-xl text-foreground font-bold mb-1">不是粉，不是胶囊</p>
-              <p className="text-base text-muted-foreground">Not Powder, Not Capsules</p>
+              <p className="text-4xl font-bold text-primary mb-3">补品</p>
+              <p className="text-xl text-foreground font-bold mb-1">不是药，是补品</p>
+              <p className="text-base text-muted-foreground">Not Medicine, It's a Supplement</p>
             </div>
             <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">认证</p>
-              <p className="text-xl text-foreground font-bold mb-1">马来西亚MESTI & GMP认证</p>
-              <p className="text-base text-muted-foreground">Malaysia MeSTI & GMP Certified</p>
+              <p className="text-4xl font-bold text-primary mb-3">独家</p>
+              <p className="text-xl text-foreground font-bold mb-1">独家配方</p>
+              <p className="text-base text-muted-foreground">Exclusive Formula</p>
             </div>
           </div>
         </div>

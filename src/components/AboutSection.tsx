@@ -39,7 +39,7 @@ const AboutSection = () => {
 
               <div className="pt-4 border-t border-border/50">
                 <p className="text-foreground font-medium">
-                  今天，我们决定升级——用<span className="text-primary font-semibold">食品级工厂</span>来熬煮、真空杀菌。
+                  从住家式到<span className="text-primary font-semibold">食品级工厂</span>，我们用真空杀菌技术来确保品质。
                   配方与用料不变，只是为了让每一瓶都<span className="text-primary font-semibold">更安心食用</span>。
                   如今，魚鱗堂已拥有来自<span className="text-primary font-semibold">马来西亚和新加坡</span>的无数回头客与好评。
                 </p>
@@ -85,7 +85,7 @@ const AboutSection = () => {
 
               <div className="pt-4 border-t border-border/50">
                 <p className="text-foreground font-medium">
-                  Today, we've upgraded to <span className="text-primary font-semibold">food-grade factory production</span> with vacuum sterilization. 
+                  From homemade to <span className="text-primary font-semibold">food-grade factory production</span>, we use vacuum sterilization technology to ensure quality. 
                   Our formula and ingredients remain unchanged — we simply want every bottle to be <span className="text-primary font-semibold">safer to consume</span>. 
                   Now, YULIN TANG proudly serves countless loyal customers across <span className="text-primary font-semibold">Malaysia and Singapore</span>.
                 </p>

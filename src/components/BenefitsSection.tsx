@@ -75,6 +75,51 @@ const BenefitsSection = () => {
           </div>
         </div>
 
+        {/* Product Benefits */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 tracking-wide">
+            产品功效
+          </h2>
+          <p className="text-xl md:text-2xl font-serif text-primary mb-4">Benefits</p>
+          <div className="w-32 h-1 bg-primary mx-auto mb-8" />
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
+            魚鱗堂深海鱼鳞胶原蛋白冻，采用100%天然深海鱼鳞萃取，富含优质胶原蛋白，
+            专为关节健康与美容养颜设计
+          </p>
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mt-3 leading-relaxed">
+            YULIN TANG Deep Sea Collagen Jelly, extracted from 100% natural deep sea fish scales, 
+            rich in premium collagen, designed for joint health and beauty
+          </p>
+        </div>
+        
+        {/* Benefits Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+          {benefits.map((benefit, index) => (
+            <Card 
+              key={index} 
+              className="group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
+            >
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+                  <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
+                </div>
+                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+                  {benefit.titleZh}
+                </h3>
+                <p className="text-lg text-primary font-semibold mb-4">
+                  {benefit.titleEn}
+                </p>
+                <p className="text-base text-foreground/80 leading-relaxed">
+                  {benefit.descZh}
+                </p>
+                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                  {benefit.descEn}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
         {/* Taste Profile Section */}
         <div className="mb-20">
           <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
@@ -151,51 +196,6 @@ const BenefitsSection = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Product Benefits */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 tracking-wide">
-            产品功效
-          </h2>
-          <p className="text-xl md:text-2xl font-serif text-primary mb-4">Benefits</p>
-          <div className="w-32 h-1 bg-primary mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
-            魚鱗堂深海鱼鳞胶原蛋白冻，采用100%天然深海鱼鳞萃取，富含优质胶原蛋白，
-            专为关节健康与美容养颜设计
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mt-3 leading-relaxed">
-            YULIN TANG Deep Sea Collagen Jelly, extracted from 100% natural deep sea fish scales, 
-            rich in premium collagen, designed for joint health and beauty
-          </p>
-        </div>
-        
-        {/* Benefits Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {benefits.map((benefit, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
-                  {benefit.titleZh}
-                </h3>
-                <p className="text-lg text-primary font-semibold mb-4">
-                  {benefit.titleEn}
-                </p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  {benefit.descZh}
-                </p>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  {benefit.descEn}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
         </div>
         
         {/* Why Choose Us */}

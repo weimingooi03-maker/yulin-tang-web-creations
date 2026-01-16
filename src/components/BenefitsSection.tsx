@@ -10,7 +10,7 @@ import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
 import whatIsFishJellyCn from "@/assets/what-is-fish-jelly-cn.jpeg";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
-import tasteProfile from "@/assets/taste-profile.jpeg";
+
 
 const benefits = [
   {
@@ -93,14 +93,7 @@ const BenefitsSection = () => {
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-10">Taste Profile</p>
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={tasteProfile} 
-                alt="Taste Profile - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
                 <p className="text-2xl font-bold text-primary mb-1">50%</p>
                 <p className="text-lg font-bold text-foreground">红枣味</p>

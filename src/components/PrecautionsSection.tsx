@@ -36,11 +36,11 @@ const precautions = [
 
 const PrecautionsSection = () => {
   return (
-    <section className="py-16 bg-amber-50/50">
+    <section className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-bold mb-4">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-bold mb-4">
             <AlertTriangle className="w-4 h-4" />
             温馨提示
           </div>
@@ -69,7 +69,7 @@ const PrecautionsSection = () => {
           {precautions.map((item, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl p-4 text-center border border-amber-200/50 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card rounded-xl p-4 text-center border border-border/50 shadow-sm hover:shadow-md transition-shadow"
             >
               <h4 className="text-base font-bold text-foreground mb-1">
                 {item.titleZh}

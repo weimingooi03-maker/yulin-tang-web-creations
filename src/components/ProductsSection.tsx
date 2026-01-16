@@ -84,10 +84,12 @@ const ProductsSection = () => {
         
         {/* VIP简洁提示 */}
         <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-400 text-amber-900 px-6 py-3 rounded-full shadow-md">
-            <span className="text-xl">👑</span>
-            <span className="font-bold">凡购买 SET B / SET C 即成为 VIP，享未来专属福利</span>
-            <span className="text-amber-600 text-sm">| Order SET B/C = VIP + Future Perks</span>
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-400 text-amber-900 px-5 sm:px-6 py-3 rounded-2xl sm:rounded-full shadow-md">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">👑</span>
+              <span className="font-bold text-sm sm:text-base">凡购买 SET B / SET C 即成为 VIP</span>
+            </div>
+            <span className="text-amber-700 text-xs sm:text-sm">享未来专属福利 | VIP + Future Perks</span>
           </div>
         </div>
 

@@ -21,13 +21,13 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="魚鱗堂 Logo" className="h-10 w-auto" />
+            <img src={logo} alt="魚鱗堂 Logo" className="h-14 w-auto" />
             <div className="hidden sm:block">
-              <span className="text-xl font-serif font-bold text-foreground block leading-tight">魚鱗堂</span>
-              <span className="text-xs text-primary tracking-wider">YULIN TANG</span>
+              <span className="text-2xl font-serif font-bold text-foreground block leading-tight">魚鱗堂</span>
+              <span className="text-sm text-primary tracking-wider font-medium">YULIN TANG</span>
             </div>
           </a>
           
@@ -37,14 +37,14 @@ const Header = () => {
               <button
                 key={item.href}
                 onClick={() => scrollTo(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                className="text-muted-foreground hover:text-foreground transition-colors text-base font-medium"
               >
                 {item.labelZh} <span className="text-primary">{item.labelEn}</span>
               </button>
             ))}
             <Button 
-              size="sm"
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base"
               onClick={() => scrollTo("#contact")}
             >
               立即订购
@@ -57,9 +57,9 @@ const Header = () => {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-foreground" />
+              <X className="w-7 h-7 text-foreground" />
             ) : (
-              <Menu className="w-6 h-6 text-foreground" />
+              <Menu className="w-7 h-7 text-foreground" />
             )}
           </button>
         </div>
@@ -72,13 +72,14 @@ const Header = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollTo(item.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors text-left py-2"
+                  className="text-muted-foreground hover:text-foreground transition-colors text-left py-2 text-lg font-medium"
                 >
                   {item.labelZh} <span className="text-primary">{item.labelEn}</span>
                 </button>
               ))}
               <Button 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 w-full"
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 w-full font-bold text-lg"
                 onClick={() => scrollTo("#contact")}
               >
                 立即订购 Order Now

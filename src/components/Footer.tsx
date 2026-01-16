@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.png";
-import { Facebook, Instagram, MessageCircle } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="魚鱗堂 Logo" className="h-12 w-auto brightness-0 invert" />
+              <img src={logo} alt="魚鱗堂 Logo" className="h-16 w-auto brightness-0 invert" />
               <div>
-                <h3 className="text-xl font-serif font-bold">魚鱗堂</h3>
-                <p className="text-primary text-xs tracking-widest">YULIN TANG</p>
+                <h3 className="text-2xl font-serif font-bold">魚鱗堂</h3>
+                <p className="text-primary text-sm tracking-widest font-medium">YULIN TANG</p>
               </div>
             </div>
-            <p className="text-background/70 text-sm">
+            <p className="text-background/70 text-base">
               深海鱼鳞胶原蛋白冻
               <br />
               Deep Sea Fish Scales Collagen Jelly
@@ -22,8 +22,8 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">快速链接 Quick Links</h4>
-            <ul className="space-y-2 text-sm text-background/70">
+            <h4 className="font-bold text-lg mb-4">快速链接 Quick Links</h4>
+            <ul className="space-y-3 text-base text-background/70">
               <li>
                 <a href="#benefits" className="hover:text-background transition-colors">
                   产品功效 Benefits
@@ -48,21 +48,24 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">服务区域 Service Area</h4>
-            <ul className="space-y-2 text-sm text-background/70">
+            <h4 className="font-bold text-lg mb-4">服务区域 Service Area</h4>
+            <ul className="space-y-3 text-base text-background/70">
               <li>🇲🇾 马来西亚 Malaysia</li>
               <li>🇸🇬 新加坡 Singapore</li>
             </ul>
-            <p className="text-primary text-sm mt-4 font-medium">
-              全区域包邮 FREE Shipping
+            <p className="text-primary text-base mt-4 font-bold">
+              全西马 & 新加坡免运费
+            </p>
+            <p className="text-background/60 text-sm">
+              东马运费另计
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">联系我们 Contact</h4>
-            <ul className="space-y-3 text-sm text-background/70">
-              <li className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-green-400" />
+            <h4 className="font-bold text-lg mb-4">联系我们 Contact</h4>
+            <ul className="space-y-4 text-base text-background/70">
+              <li className="flex items-center gap-3">
+                <MessageCircle className="w-5 h-5 text-green-400" />
                 <a 
                   href="https://wa.me/601158727742" 
                   target="_blank" 
@@ -72,8 +75,17 @@ const Footer = () => {
                   011-5872 7742
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Facebook className="w-4 h-4 text-blue-400" />
+              <li className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary" />
+                <a 
+                  href="mailto:yulintangofficial@gmail.com"
+                  className="hover:text-background transition-colors"
+                >
+                  yulintangofficial@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Facebook className="w-5 h-5 text-blue-400" />
                 <a 
                   href="https://facebook.com/Yulintangofficial" 
                   target="_blank" 
@@ -83,8 +95,8 @@ const Footer = () => {
                   Yulintangofficial
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Instagram className="w-4 h-4 text-pink-400" />
+              <li className="flex items-center gap-3">
+                <Instagram className="w-5 h-5 text-pink-400" />
                 <a 
                   href="https://instagram.com/yulintang_official" 
                   target="_blank" 
@@ -98,8 +110,8 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-background/20 pt-8 text-center text-sm text-background/50">
-          <p>© 2024 魚鱗堂 YULIN TANG. All rights reserved.</p>
+        <div className="border-t border-background/20 pt-8 text-center text-base text-background/50">
+          <p>© 2026 魚鱗堂 YULIN TANG. All rights reserved.</p>
           <p className="mt-2">
             深海鱼鳞胶原蛋白冻 - 🇲🇾 马来西亚 & 🇸🇬 新加坡 专供
           </p>

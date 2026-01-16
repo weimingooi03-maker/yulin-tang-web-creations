@@ -5,6 +5,7 @@ import PrecautionsSection from "@/components/PrecautionsSection";
 import ProductsSection from "@/components/ProductsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
@@ -18,6 +19,7 @@ const Index = () => {
         <PrecautionsSection />
         <ProductsSection />
         <AboutSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />

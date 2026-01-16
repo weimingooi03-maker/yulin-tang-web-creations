@@ -1,5 +1,6 @@
 import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
@@ -60,6 +61,69 @@ const benefits = [
   },
 ];
 
+// Animated Benefit Cards Component
+const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") extends { Heart: infer T } ? { icon: T; titleZh: string; titleEn: string; descZh: string; descEn: string }[] : never }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {benefits.map((benefit, index) => (
+        <Card 
+          key={index} 
+          className={`group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2 ${
+            isVisible 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 translate-y-8"
+          }`}
+          style={{ 
+            transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
+            transitionProperty: "all",
+            transitionDuration: "500ms",
+            transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)"
+          }}
+        >
+          <CardContent className="p-8 text-center">
+            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+              <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+              {benefit.titleZh}
+            </h3>
+            <p className="text-lg text-primary font-semibold mb-4">
+              {benefit.titleEn}
+            </p>
+            <p className="text-base text-foreground/80 leading-relaxed">
+              {benefit.descZh}
+            </p>
+            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+              {benefit.descEn}
+            </p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+};
+
 const BenefitsSection = () => {
   return (
     <section id="benefits" className="py-24 bg-secondary/30">
@@ -96,32 +160,7 @@ const BenefitsSection = () => {
         </div>
         
         {/* Benefits Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-          {benefits.map((benefit, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2"
-            >
-              <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                  <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
-                  {benefit.titleZh}
-                </h3>
-                <p className="text-lg text-primary font-semibold mb-4">
-                  {benefit.titleEn}
-                </p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  {benefit.descZh}
-                </p>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-                  {benefit.descEn}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <BenefitCards benefits={benefits} />
 
         {/* Taste Profile Section */}
         <div className="mb-20">

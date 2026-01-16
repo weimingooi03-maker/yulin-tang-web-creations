@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
+import review3 from "@/assets/review-3.jpeg";
 import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
@@ -299,7 +300,7 @@ const BenefitsSection = () => {
             </h3>
             <p className="text-xl text-primary font-semibold">Customer Reviews</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={review1} 
@@ -311,6 +312,13 @@ const BenefitsSection = () => {
               <img 
                 src={review2} 
                 alt="Customer Review - Years of Practice Testimonial"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={review3} 
+                alt="Customer Review - Before and After Skin Improvement"
                 className="w-full h-auto"
               />
             </div>

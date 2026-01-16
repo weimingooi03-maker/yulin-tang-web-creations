@@ -26,6 +26,12 @@ const precautions = [
     descZh: "不宜食用",
     descEn: "Not recommended",
   },
+  {
+    titleZh: "12岁以下孩童",
+    titleEn: "Children Under 12",
+    descZh: "不宜食用",
+    descEn: "Not recommended",
+  },
 ];
 
 const PrecautionsSection = () => {
@@ -59,7 +65,7 @@ const PrecautionsSection = () => {
         </div>
 
         {/* Precaution Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {precautions.map((item, index) => (
             <div 
               key={index}

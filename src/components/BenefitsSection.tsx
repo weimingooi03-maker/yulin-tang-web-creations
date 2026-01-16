@@ -8,8 +8,9 @@ import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
-import tasteDescription from "@/assets/taste-description.jpeg";
-import whatIsFishJelly from "@/assets/what-is-fish-jelly.png";
+import whatIsFishJellyCn from "@/assets/what-is-fish-jelly-cn.jpeg";
+import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
+import tasteProfile from "@/assets/taste-profile.jpeg";
 
 const benefits = [
   {
@@ -70,14 +71,14 @@ const BenefitsSection = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={tasteDescription} 
+                src={whatIsFishJellyCn} 
                 alt="什么是鱼鳞冻？- 深海鱼鳞慢火熬制的天然美容冻"
                 className="w-full h-auto"
               />
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={whatIsFishJelly} 
+                src={whatIsFishJellyEn} 
                 alt="What is Fish Scale Jelly? - Natural beauty jelly made by slowly simmering fish scale collagen"
                 className="w-full h-auto"
               />
@@ -85,7 +86,46 @@ const BenefitsSection = () => {
           </div>
         </div>
 
-        {/* How to Enjoy Section - Below Product Taste */}
+        {/* Taste Profile Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            产品口味
+          </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">Taste Profile</p>
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={tasteProfile} 
+                alt="Taste Profile - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
+                <p className="text-2xl font-bold text-primary mb-1">50%</p>
+                <p className="text-lg font-bold text-foreground">红枣味</p>
+                <p className="text-sm text-muted-foreground">Red Date</p>
+              </div>
+              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
+                <p className="text-2xl font-bold text-primary mb-1">40%</p>
+                <p className="text-lg font-bold text-foreground">桂圆味</p>
+                <p className="text-sm text-muted-foreground">Longan</p>
+              </div>
+              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
+                <p className="text-2xl font-bold text-primary mb-1">10%</p>
+                <p className="text-lg font-bold text-foreground">斑斓味</p>
+                <p className="text-sm text-muted-foreground">Pandan</p>
+              </div>
+              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
+                <p className="text-2xl font-bold text-primary mb-1">0%</p>
+                <p className="text-lg font-bold text-foreground">鱼腥味</p>
+                <p className="text-sm text-muted-foreground">No Fishy Taste</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* How to Enjoy Section */}
         <div className="mb-20">
           <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
             食用方法

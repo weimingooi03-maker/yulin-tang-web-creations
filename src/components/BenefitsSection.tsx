@@ -259,10 +259,13 @@ const BenefitsSection = () => {
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
           <div className="flex justify-center mb-10">
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold px-6 py-3 rounded-full text-xl shadow-lg animate-pulse">
-              <Sparkles className="w-6 h-6" />
-              <span>每瓶含 <span className="text-2xl">7500mg</span> 胶原蛋白</span>
-              <Sparkles className="w-6 h-6" />
+            <div className="inline-flex flex-col items-center gap-1 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold px-6 py-3 rounded-full shadow-lg animate-pulse">
+              <div className="flex items-center gap-3">
+                <Sparkles className="w-6 h-6" />
+                <span className="text-xl">每瓶含 <span className="text-2xl">7500mg</span> 胶原蛋白</span>
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <span className="text-sm opacity-90">7500mg Collagen Per Bottle</span>
             </div>
           </div>
           

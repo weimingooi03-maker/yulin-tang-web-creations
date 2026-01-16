@@ -1,4 +1,4 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck, Calendar } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck, Calendar, Leaf } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
@@ -258,7 +258,7 @@ const BenefitsSection = () => {
             为什么选择魚鱗堂？
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10 max-w-5xl mx-auto">
             <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-primary" />
@@ -266,6 +266,13 @@ const BenefitsSection = () => {
               <div className="text-2xl font-bold text-primary">7500mg</div>
               <div className="text-sm text-foreground font-medium">胶原蛋白</div>
               <div className="text-xs text-muted-foreground">Collagen</div>
+            </div>
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <Leaf className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-lg font-bold text-foreground">低糖配方</div>
+              <div className="text-xs text-muted-foreground">Low Sugar</div>
             </div>
             <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
@@ -281,7 +288,7 @@ const BenefitsSection = () => {
               <div className="text-lg font-bold text-foreground">无防腐剂</div>
               <div className="text-xs text-muted-foreground">Preservative Free</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300 col-span-2 md:col-span-1 justify-self-center md:justify-self-auto w-full max-w-[200px] md:max-w-none">
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <Calendar className="w-5 h-5 text-primary" />
               </div>

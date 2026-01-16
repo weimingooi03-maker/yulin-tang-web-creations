@@ -34,9 +34,12 @@ const PrecautionsSection = () => {
             <AlertTriangle className="w-4 h-4" />
             <span>请注意 Please Note</span>
           </div>
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
             ⚠️ 注意事项 <span className="text-destructive">Precautions</span>
           </h3>
+          <p className="text-base font-bold text-destructive">
+            以下人群不宜食用 | Not Recommended For
+          </p>
         </div>
 
         {/* Image - Prominent */}

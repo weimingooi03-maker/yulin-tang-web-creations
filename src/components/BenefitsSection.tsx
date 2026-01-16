@@ -271,8 +271,9 @@ const BenefitsSection = () => {
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
                 <Leaf className="w-5 h-5 text-primary" />
               </div>
-              <div className="text-lg font-bold text-foreground">低糖配方</div>
-              <div className="text-xs text-muted-foreground">Low Sugar</div>
+              <div className="text-lg font-bold text-foreground">天然低糖</div>
+              <div className="text-xs text-muted-foreground">糖分取自食材</div>
+              <div className="text-xs text-muted-foreground">Natural Sugar Only</div>
             </div>
             <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
               <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
@@ -298,7 +299,7 @@ const BenefitsSection = () => {
           </div>
           
           {/* Images Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mb-10">
+          <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-3xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <img 
                 src={whyChoose1} 
@@ -310,13 +311,6 @@ const BenefitsSection = () => {
               <img 
                 src={whyChoose2} 
                 alt="3种必需的氨基酸 - Essential Amino Acids"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
-                src={whyChoose3} 
-                alt="低糖健康 - Low Sugar Healthy"
                 className="w-full h-auto object-cover"
               />
             </div>

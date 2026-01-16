@@ -1,6 +1,6 @@
 import logo from "@/assets/logo.png";
 import footerLogo from "@/assets/footer-logo.png";
-import { Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Mail, ShoppingBag } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -99,6 +99,17 @@ const Footer = () => {
                   className="hover:text-background transition-colors"
                 >
                   yulintang_official
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <ShoppingBag className="w-5 h-5 text-orange-500" />
+                <a 
+                  href="https://my.shp.ee/Jyk78vr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-background transition-colors"
+                >
+                  Shopee 虾皮商城
                 </a>
               </li>
             </ul>

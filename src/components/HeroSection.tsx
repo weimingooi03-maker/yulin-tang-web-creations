@@ -42,10 +42,10 @@ const HeroSection = () => {
             </p>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              不是粉、不是胶囊！100%鱼鳞胶原蛋白冻，可直接饮用或冷藏变成果冻食用。
+              100%鱼鳞胶原蛋白冻，可直接饮用或冷藏变成果冻食用。
               <br />
               <span className="text-base md:text-lg">
-                Not powder, not capsules! 100% collagen jelly - drink directly or refrigerate for a jelly treat.
+                100% collagen jelly - drink directly or refrigerate for a jelly treat.
               </span>
             </p>
             
@@ -83,7 +83,7 @@ const HeroSection = () => {
                   <Shield className="w-7 h-7 text-primary" />
                   <Award className="w-7 h-7 text-primary" />
                 </div>
-                <p className="text-base text-muted-foreground font-medium">无防腐剂</p>
+                <p className="text-base text-muted-foreground font-medium">送礼滋补佳品</p>
               </div>
             </div>
           </div>

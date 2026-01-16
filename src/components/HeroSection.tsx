@@ -1,7 +1,7 @@
 import heroProduct from "@/assets/hero-product.jpeg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Award, Shield } from "lucide-react";
+import { ChevronDown, Gift } from "lucide-react";
 
 const HeroSection = () => {
   const scrollToProducts = () => {
@@ -80,8 +80,7 @@ const HeroSection = () => {
               <div className="w-px h-12 bg-border" />
               <div className="text-center flex flex-col items-center">
                 <div className="flex gap-2">
-                  <Shield className="w-7 h-7 text-primary" />
-                  <Award className="w-7 h-7 text-primary" />
+                  <Gift className="w-7 h-7 text-primary" />
                 </div>
                 <p className="text-base text-muted-foreground font-medium">送礼滋补佳品</p>
               </div>

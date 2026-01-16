@@ -253,9 +253,9 @@ const BenefitsSection = () => {
         {/* Certifications Section - Clean Logos Only */}
         <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
           <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
-            鱼鳞堂独家配方
+            品质认证
           </h3>
-          <p className="text-lg text-primary font-semibold text-center mb-4">Yulin Tang Exclusive Formula</p>
+          <p className="text-lg text-primary font-semibold text-center mb-4">Quality Certifications</p>
           <p className="text-base text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
             Certified by Ministry of Health Malaysia (Kementerian Kesihatan Malaysia)
           </p>

@@ -234,18 +234,18 @@ const BenefitsSection = () => {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="p-6 bg-secondary/50 rounded-2xl">
               <p className="text-5xl font-bold text-primary mb-3">100%</p>
-              <p className="text-xl text-foreground font-bold mb-1">纯天然鱼鳞萃取</p>
-              <p className="text-base text-muted-foreground">Pure Natural Fish Scale Extract</p>
+              <p className="text-xl text-foreground font-bold mb-1">100%純天然成分</p>
+              <p className="text-base text-muted-foreground">100% Pure Natural Ingredients</p>
             </div>
             <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">补品</p>
-              <p className="text-xl text-foreground font-bold mb-1">不是药，是补品</p>
-              <p className="text-base text-muted-foreground">Not Medicine, It's a Supplement</p>
+              <p className="text-4xl font-bold text-primary mb-3">精选</p>
+              <p className="text-xl text-foreground font-bold mb-1">精选补品</p>
+              <p className="text-base text-muted-foreground">Premium Selected Supplement</p>
             </div>
             <div className="p-6 bg-secondary/50 rounded-2xl">
-              <p className="text-4xl font-bold text-primary mb-3">独家</p>
-              <p className="text-xl text-foreground font-bold mb-1">独家配方</p>
-              <p className="text-base text-muted-foreground">Exclusive Formula</p>
+              <p className="text-4xl font-bold text-primary mb-3">低糖</p>
+              <p className="text-xl text-foreground font-bold mb-1">独家低糖配方</p>
+              <p className="text-base text-muted-foreground">Exclusive Low Sugar Formula</p>
             </div>
           </div>
         </div>

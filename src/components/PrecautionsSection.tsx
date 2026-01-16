@@ -1,4 +1,5 @@
 import { AlertTriangle } from "lucide-react";
+import precautionsImage from "@/assets/precautions.png";
 
 const precautions = [
   {
@@ -44,6 +45,17 @@ const PrecautionsSection = () => {
           <p className="text-base text-muted-foreground max-w-2xl mx-auto">
             以下人群不宜食用 / Not recommended for the following groups
           </p>
+        </div>
+
+        {/* Image */}
+        <div className="max-w-3xl mx-auto mb-10">
+          <div className="rounded-2xl overflow-hidden shadow-lg">
+            <img 
+              src={precautionsImage} 
+              alt="Precautions - Conditions requiring medical consultation"
+              className="w-full h-auto"
+            />
+          </div>
         </div>
 
         {/* Precaution Cards */}

@@ -1,5 +1,6 @@
 import product4 from "@/assets/product-4.jpeg";
-import product5 from "@/assets/product-5.jpeg";
+import productSetB from "@/assets/product-setb.png";
+import productSetC from "@/assets/product-setc.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, MessageCircle, Truck, Package } from "lucide-react";
@@ -19,7 +20,7 @@ const products = [
     badgeEn: "Trial Pack",
   },
   {
-    image: product5,
+    image: productSetB,
     nameZh: "SET B 配套",
     nameEn: "Set B Package",
     qty: "24罐",
@@ -32,7 +33,7 @@ const products = [
     badgeEn: "Best Seller",
   },
   {
-    image: product4,
+    image: productSetC,
     nameZh: "SET C 配套",
     nameEn: "Set C Package",
     qty: "36罐",

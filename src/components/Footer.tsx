@@ -8,13 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="魚鱗堂 Logo" className="h-16 w-auto brightness-0 invert" />
-              <div>
-                <h3 className="text-2xl font-serif font-bold">魚鱗堂</h3>
-                <p className="text-primary text-sm tracking-widest font-medium">YULIN TANG</p>
-              </div>
-            </div>
+            <img src={footerLogo} alt="魚鱗堂 YULIN TANG Logo" className="h-24 w-auto mb-4" />
             <p className="text-background/70 text-base">
               深海鱼鳞胶原蛋白冻
               <br />

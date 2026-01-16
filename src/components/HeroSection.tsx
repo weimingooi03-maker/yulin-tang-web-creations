@@ -83,7 +83,7 @@ const HeroSection = () => {
                   <Shield className="w-7 h-7 text-primary" />
                   <Award className="w-7 h-7 text-primary" />
                 </div>
-                <p className="text-base text-muted-foreground font-medium">MESTI & GMP 认证</p>
+                <p className="text-base text-muted-foreground font-medium">鱼鳞堂独家配方</p>
               </div>
             </div>
           </div>

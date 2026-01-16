@@ -1,4 +1,4 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
@@ -258,14 +258,22 @@ const BenefitsSection = () => {
             为什么选择魚鱗堂？
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <div className="flex justify-center mb-10">
-            <div className="inline-flex flex-col items-center gap-1 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold px-6 py-3 rounded-full shadow-lg animate-pulse">
-              <div className="flex items-center gap-3">
-                <Sparkles className="w-6 h-6" />
-                <span className="text-xl">每瓶含 <span className="text-2xl">7500mg</span> 胶原蛋白</span>
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <span className="text-sm opacity-90">7500mg Collagen Per Bottle</span>
+          <div className="grid grid-cols-3 gap-4 mb-10 max-w-2xl mx-auto">
+            <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
+              <Sparkles className="w-6 h-6 mx-auto mb-2" />
+              <div className="text-2xl font-bold">7500mg</div>
+              <div className="text-sm">胶原蛋白</div>
+              <div className="text-xs opacity-80">Collagen</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
+              <ShieldCheck className="w-6 h-6 mx-auto mb-2" />
+              <div className="text-lg font-bold">无重金属</div>
+              <div className="text-xs opacity-80">Heavy Metal Free</div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
+              <ShieldCheck className="w-6 h-6 mx-auto mb-2" />
+              <div className="text-lg font-bold">无防腐剂</div>
+              <div className="text-xs opacity-80">Preservative Free</div>
             </div>
           </div>
           

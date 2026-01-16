@@ -1,5 +1,4 @@
 import { AlertTriangle } from "lucide-react";
-import precautionsImage from "@/assets/precautions.png";
 
 const precautions = [
   {
@@ -26,12 +25,6 @@ const precautions = [
     descZh: "不宜食用",
     descEn: "Not recommended",
   },
-  {
-    titleZh: "儿童",
-    titleEn: "Children",
-    descZh: "无需食用",
-    descEn: "Not necessary",
-  },
 ];
 
 const PrecautionsSection = () => {
@@ -53,19 +46,8 @@ const PrecautionsSection = () => {
           </p>
         </div>
 
-        {/* Image */}
-        <div className="max-w-3xl mx-auto mb-10">
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <img 
-              src={precautionsImage} 
-              alt="Precautions - Conditions requiring medical consultation"
-              className="w-full h-auto"
-            />
-          </div>
-        </div>
-
         {/* Precaution Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {precautions.map((item, index) => (
             <div 
               key={index}

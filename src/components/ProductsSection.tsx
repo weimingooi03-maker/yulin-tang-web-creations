@@ -146,9 +146,9 @@ const ProductsSection = () => {
                   <div className="bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-300 rounded-lg p-3 mb-4">
                     <p className="text-sm text-amber-900 font-bold flex items-center gap-2">
                       <span className="text-base">👑</span>
-                      <span>VIP 会员专属</span>
+                      <span>下单即成为 VIP 会员</span>
                     </p>
-                    <p className="text-xs text-amber-700 ml-6">VIP Member Benefits Included</p>
+                    <p className="text-xs text-amber-700 ml-6">Order Now = Become VIP Member</p>
                   </div>
                 )}
                 

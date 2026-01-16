@@ -35,17 +35,17 @@ const HeroSection = () => {
             </div>
             
             <h2 className="text-2xl md:text-3xl text-foreground font-medium">
-              深海鱼鳞胶原蛋白冻
+              送给家人最好的滋补心意
             </h2>
             <p className="text-xl text-primary font-semibold">
-              Deep Sea Fish Scales Collagen Jelly
+              The Perfect Gift of Wellness
             </p>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              100%鱼鳞胶原蛋白冻，可直接饮用或冷藏变成果冻食用。
+              100%深海鱼鳞胶原蛋白，呵护父母关节健康，守护全家美丽年轻。
               <br />
               <span className="text-base md:text-lg">
-                100% collagen jelly - drink directly or refrigerate for a jelly treat.
+                100% Deep Sea Collagen — Care for your family's joints & beauty.
               </span>
             </p>
             

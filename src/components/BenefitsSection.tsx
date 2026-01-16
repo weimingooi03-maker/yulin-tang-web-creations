@@ -11,6 +11,8 @@ import tasteProfile from "@/assets/taste-profile.jpeg";
 import whyChoose1 from "@/assets/why-choose-1.jpeg";
 import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";
+import whenToTakeCn from "@/assets/when-to-take-cn.png";
+import whenToTakeEn from "@/assets/when-to-take-en.png";
 
 
 const benefits = [
@@ -194,6 +196,24 @@ const BenefitsSection = () => {
                 <p className="text-sm text-muted-foreground mt-2">
                   Refrigerate for a few hours for a refreshing jelly treat, cool and delicious
                 </p>
+              </div>
+            </div>
+            
+            {/* When to Take Images */}
+            <div className="grid md:grid-cols-2 gap-4 mt-8">
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={whenToTakeCn} 
+                  alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前"
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={whenToTakeEn} 
+                  alt="When to Take - Before Breakfast or Before Bed"
+                  className="w-full h-auto"
+                />
               </div>
             </div>
           </div>

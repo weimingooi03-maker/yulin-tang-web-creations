@@ -1,4 +1,4 @@
-import product3 from "@/assets/product-3.jpeg";
+import heroProduct from "@/assets/hero-product.jpeg";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Award, Shield } from "lucide-react";
@@ -92,7 +92,7 @@ const HeroSection = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-3xl" />
             <img 
-              src={product3} 
+              src={heroProduct} 
               alt="魚鱗堂深海胶原蛋白冻"
               className="w-full max-w-lg mx-auto rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
             />

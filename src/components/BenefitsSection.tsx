@@ -61,7 +61,7 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         
-        {/* What is Fish Scale Jelly + Taste Description */}
+        {/* What is Fish Scale Jelly - Chinese & English side by side */}
         <div className="mb-20">
           <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
             什么是鱼鳞冻？
@@ -70,15 +70,15 @@ const BenefitsSection = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={whatIsFishJelly} 
-                alt="What is Fish Scale Jelly? - Natural beauty jelly made by slowly simmering fish scale collagen"
+                src={tasteDescription} 
+                alt="什么是鱼鳞冻？- 深海鱼鳞慢火熬制的天然美容冻"
                 className="w-full h-auto"
               />
             </div>
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={tasteDescription} 
-                alt="Product Taste - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
+                src={whatIsFishJelly} 
+                alt="What is Fish Scale Jelly? - Natural beauty jelly made by slowly simmering fish scale collagen"
                 className="w-full h-auto"
               />
             </div>

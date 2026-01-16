@@ -18,6 +18,7 @@ const products = [
     descEn: "Perfect for first-time users",
     badge: "体验装",
     badgeEn: "Trial Pack",
+    isVip: false,
   },
   {
     image: productSetB,
@@ -31,6 +32,7 @@ const products = [
     descEn: "Great value for continued health",
     badge: "热销款",
     badgeEn: "Best Seller",
+    isVip: true,
   },
   {
     image: productSetC,
@@ -44,6 +46,7 @@ const products = [
     descEn: "Perfect for the whole family",
     badge: "家庭分享装",
     badgeEn: "Family Pack",
+    isVip: true,
   },
 ];
 
@@ -79,58 +82,13 @@ const ProductsSection = () => {
           </p>
         </div>
         
-        {/* VIP Membership Banner */}
-        <div className="mb-12 max-w-4xl mx-auto">
-          <div className="relative bg-gradient-to-r from-amber-900/90 via-amber-800/90 to-amber-900/90 rounded-2xl p-8 md:p-10 text-center overflow-hidden">
-            {/* Decorative elements */}
-            <div className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-full -translate-x-1/2 -translate-y-1/2" />
-            <div className="absolute bottom-0 right-0 w-40 h-40 bg-primary/20 rounded-full translate-x-1/2 translate-y-1/2" />
-            
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-primary/30 text-primary-foreground px-4 py-2 rounded-full text-sm font-bold mb-4">
-                <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-                VIP 专属福利
-              </div>
-              
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                下单 SET B 或 SET C 自动成为
-                <br />
-                <span className="text-primary">VIP 会员</span>
-              </h3>
-              <p className="text-lg text-white/90 mb-2">
-                Order SET B or SET C to become a VIP Member automatically
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-6 mt-6">
-                <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">🎁</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">优惠优先获得</span>
-                    <span className="text-sm text-white/70">Priority Discounts</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">🔔</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">活动抢先知道</span>
-                    <span className="text-sm text-white/70">Early Promotions</span>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-white/90">
-                  <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
-                    <span className="text-lg">👑</span>
-                  </div>
-                  <div className="text-left">
-                    <span className="font-medium block">专属会员礼遇</span>
-                    <span className="text-sm text-white/70">Exclusive Benefits</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        {/* VIP简洁提示 */}
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-amber-900/10 border border-amber-700/30 text-amber-800 px-5 py-3 rounded-full">
+            <span className="text-lg">👑</span>
+            <span className="font-medium">购买 SET B 或 SET C 即成为 VIP 会员</span>
+            <span className="text-muted-foreground mx-1">|</span>
+            <span className="text-sm text-muted-foreground">Order SET B/C = VIP Member</span>
           </div>
         </div>
 
@@ -138,7 +96,7 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className="group overflow-hidden border-border/50 bg-card hover:shadow-2xl transition-all duration-500"
+              className={`group overflow-hidden border-border/50 bg-card hover:shadow-2xl transition-all duration-500 ${product.isVip ? 'ring-2 ring-amber-500/50' : ''}`}
             >
               <div className="relative overflow-hidden aspect-square">
                 <img 
@@ -150,6 +108,12 @@ const ProductsSection = () => {
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-base font-bold">
                   {product.badge}
                 </div>
+                {/* VIP Badge */}
+                {product.isVip && (
+                  <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                    <span>👑</span> VIP
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Button 
                   size="lg"
@@ -175,6 +139,17 @@ const ProductsSection = () => {
                 <p className="text-base text-muted-foreground mb-4">
                   {product.descZh}
                 </p>
+                
+                {/* VIP Benefits - only show for VIP products */}
+                {product.isVip && (
+                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                    <p className="text-sm text-amber-800 font-medium flex items-center gap-2">
+                      <span>👑</span>
+                      <span>送VIP：优惠抢先 + 专属礼遇</span>
+                    </p>
+                    <p className="text-xs text-amber-600 ml-6">VIP: Early discounts + Exclusive perks</p>
+                  </div>
+                )}
                 
                 {/* Price Grid */}
                 <div className="grid grid-cols-2 gap-3 mb-4">

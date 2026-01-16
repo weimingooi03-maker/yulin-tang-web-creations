@@ -258,27 +258,35 @@ const BenefitsSection = () => {
             为什么选择魚鱗堂？
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-3xl mx-auto">
-            <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
-              <Sparkles className="w-6 h-6 mx-auto mb-2" />
-              <div className="text-2xl font-bold">7500mg</div>
-              <div className="text-sm">胶原蛋白</div>
-              <div className="text-xs opacity-80">Collagen</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-2xl font-bold text-primary">7500mg</div>
+              <div className="text-sm text-foreground font-medium">胶原蛋白</div>
+              <div className="text-xs text-muted-foreground">Collagen</div>
             </div>
-            <div className="bg-gradient-to-br from-green-600 to-green-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
-              <ShieldCheck className="w-6 h-6 mx-auto mb-2" />
-              <div className="text-lg font-bold">无重金属</div>
-              <div className="text-xs opacity-80">Heavy Metal Free</div>
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-lg font-bold text-foreground">无重金属</div>
+              <div className="text-xs text-muted-foreground">Heavy Metal Free</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
-              <ShieldCheck className="w-6 h-6 mx-auto mb-2" />
-              <div className="text-lg font-bold">无防腐剂</div>
-              <div className="text-xs opacity-80">Preservative Free</div>
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-lg font-bold text-foreground">无防腐剂</div>
+              <div className="text-xs text-muted-foreground">Preservative Free</div>
             </div>
-            <div className="bg-gradient-to-br from-amber-600 to-amber-700 text-white rounded-xl p-4 text-center shadow-lg hover:scale-105 transition-transform">
-              <Calendar className="w-6 h-6 mx-auto mb-2" />
-              <div className="text-lg font-bold">保质期1年+</div>
-              <div className="text-xs opacity-80">1+ Year Shelf Life</div>
+            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
+              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
+                <Calendar className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-lg font-bold text-foreground">保质期1年+</div>
+              <div className="text-xs text-muted-foreground">1+ Year Shelf Life</div>
             </div>
           </div>
           

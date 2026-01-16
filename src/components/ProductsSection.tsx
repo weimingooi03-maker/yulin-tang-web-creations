@@ -104,19 +104,28 @@ const ProductsSection = () => {
                   <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
                     <span className="text-lg">🎁</span>
                   </div>
-                  <span className="font-medium">优惠优先获得</span>
+                  <div className="text-left">
+                    <span className="font-medium block">优惠优先获得</span>
+                    <span className="text-sm text-white/70">Priority Discounts</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
                     <span className="text-lg">🔔</span>
                   </div>
-                  <span className="font-medium">活动抢先知道</span>
+                  <div className="text-left">
+                    <span className="font-medium block">活动抢先知道</span>
+                    <span className="text-sm text-white/70">Early Promotions</span>
+                  </div>
                 </div>
                 <div className="flex items-center gap-2 text-white/90">
                   <div className="w-8 h-8 bg-primary/40 rounded-full flex items-center justify-center">
                     <span className="text-lg">👑</span>
                   </div>
-                  <span className="font-medium">专属会员礼遇</span>
+                  <div className="text-left">
+                    <span className="font-medium block">专属会员礼遇</span>
+                    <span className="text-sm text-white/70">Exclusive Benefits</span>
+                  </div>
                 </div>
               </div>
             </div>

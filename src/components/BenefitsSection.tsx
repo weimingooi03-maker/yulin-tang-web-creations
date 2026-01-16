@@ -52,13 +52,6 @@ const benefits = [
     descZh: "促进头发和指甲生长，使其更加强韧有光泽",
     descEn: "Promotes healthy hair and nail growth, making them stronger and shinier",
   },
-  {
-    icon: Coffee,
-    titleZh: "便捷食用",
-    titleEn: "Easy Consumption",
-    descZh: "可直接饮用或放冰箱变成美味果冻，方便又好吃",
-    descEn: "Drink directly or refrigerate for delicious jelly, convenient and tasty",
-  },
 ];
 
 // Animated Benefit Cards Component

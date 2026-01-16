@@ -7,6 +7,9 @@ import lowSugar from "@/assets/low-sugar.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import gmpLogo from "@/assets/gmp-logo.jpeg";
+import mestiLogo from "@/assets/mesti-logo.png";
+import tasteDescription from "@/assets/taste-description.jpeg";
+import jointPain from "@/assets/joint-pain.jpeg";
 
 const benefits = [
   {
@@ -152,6 +155,36 @@ const BenefitsSection = () => {
           </div>
         </div>
 
+        {/* Taste Description Image */}
+        <div className="mb-16">
+          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+            产品口味
+          </h3>
+          <p className="text-xl text-primary font-semibold text-center mb-10">Product Taste</p>
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={tasteDescription} 
+                alt="产品口味 - 50%红枣味 40%桂圆味 10%斑斓味 0%鱼腥味"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Joint Pain Awareness Image */}
+        <div className="mb-16">
+          <div className="max-w-3xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img 
+                src={jointPain} 
+                alt="关节润滑不足 - 体内胶原蛋白流失太快"
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Certifications Section */}
         <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
           <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
@@ -162,32 +195,27 @@ const BenefitsSection = () => {
             Certified by Ministry of Health Malaysia (MOH)
           </p>
           
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
             {/* GMP Logo */}
             <div className="flex flex-col items-center">
-              <div className="w-40 h-40 md:w-48 md:h-48 flex items-center justify-center">
+              <div className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center">
                 <img 
                   src={gmpLogo} 
                   alt="GMP Food Safety Malaysia Certification"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="mt-4 text-lg font-bold text-foreground">GMP Certified</p>
-              <p className="text-base text-muted-foreground">Good Manufacturing Practice</p>
             </div>
             
-            {/* MeSTI Logo - styled to match the official blue oval design */}
+            {/* MeSTI Logo */}
             <div className="flex flex-col items-center">
-              <div className="w-48 h-28 md:w-56 md:h-32 bg-gradient-to-b from-blue-500 to-blue-700 rounded-[50%] flex flex-col items-center justify-center shadow-xl relative overflow-hidden">
-                <p className="text-[9px] md:text-[11px] text-white font-bold tracking-wide">MAKANAN SELAMAT TANGGUNGJAWAB INDUSTRI</p>
-                <div className="flex items-center mt-1">
-                  <span className="text-red-500 text-3xl md:text-4xl font-bold mr-1">✓</span>
-                  <span className="text-white text-3xl md:text-4xl font-bold tracking-wider">MeSTI</span>
-                </div>
-                <p className="text-[10px] md:text-xs text-white font-semibold mt-1 tracking-wide">KEMENTERIAN KESIHATAN MALAYSIA</p>
+              <div className="w-36 h-36 md:w-44 md:h-44 flex items-center justify-center">
+                <img 
+                  src={mestiLogo} 
+                  alt="MeSTI Food Safety Certification"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <p className="mt-4 text-lg font-bold text-foreground">MeSTI Certified</p>
-              <p className="text-base text-muted-foreground">Food Safety Assurance</p>
             </div>
           </div>
         </div>

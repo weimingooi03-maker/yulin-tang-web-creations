@@ -87,9 +87,9 @@ const ProductsSection = () => {
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-400 text-amber-900 px-5 sm:px-6 py-3 rounded-2xl sm:rounded-full shadow-md">
             <div className="flex items-center gap-2">
               <span className="text-xl">👑</span>
-              <span className="font-bold text-sm sm:text-base">凡购买 SET B / SET C 即成为 VIP</span>
+              <span className="font-bold text-sm sm:text-base">购买 SET B / SET C 即成为 VIP 会员</span>
             </div>
-            <span className="text-amber-700 text-xs sm:text-sm">享未来专属福利 | VIP + Future Perks</span>
+            <span className="text-amber-700 text-xs sm:text-sm">优先参与未来活动与专属优惠 | Priority Access to Events & Offers</span>
           </div>
         </div>
 

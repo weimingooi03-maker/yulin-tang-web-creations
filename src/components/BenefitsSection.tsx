@@ -258,11 +258,13 @@ const BenefitsSection = () => {
             为什么选择魚鱗堂？
           </h3>
           <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <p className="text-center mb-10">
-            <span className="inline-block bg-primary/10 text-primary font-bold px-4 py-2 rounded-full text-lg border border-primary/30">
-              每瓶含 7500mg 胶原蛋白
-            </span>
-          </p>
+          <div className="flex justify-center mb-10">
+            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground font-bold px-6 py-3 rounded-full text-xl shadow-lg animate-pulse">
+              <Sparkles className="w-6 h-6" />
+              <span>每瓶含 <span className="text-2xl">7500mg</span> 胶原蛋白</span>
+              <Sparkles className="w-6 h-6" />
+            </div>
+          </div>
           
           {/* Images Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-10">

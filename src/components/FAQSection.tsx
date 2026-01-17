@@ -16,8 +16,8 @@ const faqs = [
   {
     questionZh: "每天应该吃多少？什么时候吃最好？",
     questionEn: "How much should I consume daily? When is the best time to take it?",
-    answerZh: "建议每天1-2罐。最佳服用时间是早上空腹或睡前，这时吸收效果最好。可以直接饮用，也可以冷藏后变成果冻食用。",
-    answerEn: "We recommend 1-2 cans daily. Best taken on an empty stomach in the morning or before bed for optimal absorption. Can be consumed directly or refrigerated into jelly.",
+    answerZh: "建议每天1罐。最佳服用时间是早上空腹或睡前，这时吸收效果最好。可以直接饮用，也可以冷藏后变成果冻食用。",
+    answerEn: "We recommend 1 can daily. Best taken on an empty stomach in the morning or before bed for optimal absorption. Can be consumed directly or refrigerated into jelly.",
   },
   {
     questionZh: "多久能看到效果？",

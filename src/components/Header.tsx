@@ -24,7 +24,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="魚鱗堂 Logo" className="h-10 w-auto" />
+            <img src={logo} alt="魚鱗堂 Logo" className="h-12 w-auto" />
             <div className="hidden sm:block">
               <span className="text-3xl font-brand text-foreground block leading-tight">魚鱗堂</span>
               <span className="text-sm text-primary tracking-widest font-serif font-medium">YULIN TANG</span>

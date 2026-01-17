@@ -61,7 +61,7 @@ const ProductsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-4">
-            我们的产品 Our Products
+            我们的产品 <span className="text-primary">Our Products</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">

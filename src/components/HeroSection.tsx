@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Text content */}
           <div className="text-center lg:text-left space-y-6">
             <div className="flex justify-center lg:justify-start mb-4 opacity-0 animate-fade-in-delay-1">
-              <img src={logo} alt="魚鱗堂 Logo" className="h-36 md:h-44 w-auto" />
+              <img src={logo} alt="魚鱗堂 Logo" className="h-28 md:h-32 w-auto" />
             </div>
             
             <div className="space-y-2 opacity-0 animate-fade-in-delay-2">

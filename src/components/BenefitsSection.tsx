@@ -123,18 +123,6 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         
-        {/* What is Fish Scale Jelly Image */}
-        <div className="mb-20">
-          <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src={whatIsFishJellyEn} 
-                alt="What is Fish Scale Jelly? - Natural beauty jelly made by slowly simmering fish scale collagen"
-                className="w-full h-auto"
-              />
-            </div>
-          </div>
-        </div>
 
         {/* Product Benefits */}
         <div className="text-center mb-20">

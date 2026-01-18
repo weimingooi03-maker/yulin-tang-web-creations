@@ -1,4 +1,5 @@
 import heroProduct from "@/assets/hero-product.jpeg";
+import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
 import logo from "@/assets/logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Gift } from "lucide-react";
@@ -87,14 +88,24 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Product image */}
-          <div className="relative opacity-0 animate-fade-in-delay-3">
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
-            <img 
-              src={heroProduct} 
-              alt="魚鱗堂深海胶原蛋白冻"
-              className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
-            />
+          {/* Product images */}
+          <div className="relative opacity-0 animate-fade-in-delay-3 flex flex-col items-center gap-2">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
+              <img 
+                src={heroProduct} 
+                alt="什么是鱼鳞冻"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
+              <img 
+                src={whatIsFishJellyEn} 
+                alt="What is Fish Scale Jelly"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </div>
         </div>
       </div>

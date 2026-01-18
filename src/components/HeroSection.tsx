@@ -89,21 +89,20 @@ const HeroSection = () => {
           </div>
           
           {/* Product images */}
-          <div className="relative opacity-0 animate-fade-in-delay-3 flex flex-col items-center gap-6">
+          <div className="relative opacity-0 animate-fade-in-delay-3 flex flex-col items-center gap-4">
+            <div className="relative">
+              <img 
+                src={productBoxBottle} 
+                alt="魚鱗堂产品"
+                className="w-full max-w-[200px] mx-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+              />
+            </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
               <img 
                 src={heroProduct} 
                 alt="魚鱗堂深海胶原蛋白冻"
                 className="w-full max-w-sm mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-xl" />
-              <img 
-                src={productBoxBottle} 
-                alt="魚鱗堂礼盒装"
-                className="w-full max-w-xs mx-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>

@@ -1,4 +1,4 @@
-import heroProduct from "@/assets/hero-product.jpeg";
+import heroProduct from "@/assets/product-setc-new.jpeg";
 import logo from "@/assets/logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Gift } from "lucide-react";

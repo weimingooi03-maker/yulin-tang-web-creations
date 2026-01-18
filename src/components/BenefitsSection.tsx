@@ -233,7 +233,7 @@ const BenefitsSection = () => {
             </div>
             
             {/* When to Take Images */}
-            <div className="grid md:grid-cols-2 gap-4 mt-8">
+            <div className="grid md:grid-cols-2 gap-2 mt-8">
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img 
                   src={whenToTakeCn} 

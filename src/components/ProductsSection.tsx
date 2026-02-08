@@ -51,8 +51,8 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const handleWhatsApp = (productName: string) => {
-    const message = encodeURIComponent(`您好！我想订购 ${productName}。\nHello! I would like to order ${productName}.`);
+  const handleWhatsApp = (nameZh: string, nameEn: string) => {
+    const message = encodeURIComponent(`您好！我想订购 ${nameZh}。\nHello! I would like to order ${nameEn}.`);
     window.open(`https://wa.me/601158727742?text=${message}`, "_blank");
   };
 
@@ -119,7 +119,7 @@ const ProductsSection = () => {
                 <Button 
                   size="lg"
                   className="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-primary text-primary-foreground font-bold"
-                  onClick={() => handleWhatsApp(product.nameZh)}
+                  onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
                 >
                   <ShoppingCart className="w-5 h-5 mr-2" />
                   立即订购
@@ -165,7 +165,7 @@ const ProductsSection = () => {
                 
                 <Button 
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
-                  onClick={() => handleWhatsApp(product.nameZh)}
+                  onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   WhatsApp 订购

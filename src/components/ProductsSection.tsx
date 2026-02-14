@@ -190,7 +190,7 @@ const ProductsSection = () => {
                     alt="RM20 OFF Voucher 优惠卷" 
                     className="w-full rounded-md border border-primary/20 shadow-sm"
                   />
-                  <p className="text-xs text-muted-foreground mt-2">把握机会，立即订购 | Don't miss out!</p>
+                  <p className="text-xs text-muted-foreground mt-2">限时优惠卷！把握机会，立即订购 | Limited Voucher! Don't miss out!</p>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">

@@ -95,8 +95,11 @@ const ProductsSection = () => {
           </h2>
           <p className="text-lg text-primary font-semibold mb-4">Our Products</p>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            深海鱼鳞胶原蛋白 · Premium Deep Sea Fish Collagen
+          <p className="text-lg md:text-xl text-foreground font-medium max-w-2xl mx-auto">
+            深海鱼鳞胶原蛋白
+          </p>
+          <p className="text-base text-primary font-semibold max-w-2xl mx-auto">
+            Premium Deep-Sea Fish Scales Collagen
           </p>
           
           {/* Free Shipping Banner */}

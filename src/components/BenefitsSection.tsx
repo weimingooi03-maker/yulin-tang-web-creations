@@ -79,14 +79,14 @@ const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") ex
   }, []);
 
   return (
-    <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+    <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       {benefits.map((benefit, index) => (
         <Card 
           key={index} 
-          className={`group hover:shadow-2xl transition-all duration-300 border-border/50 bg-card hover:-translate-y-2 ${
+          className={`group hover:shadow-lg transition-all duration-300 border-border/50 bg-card hover:-translate-y-1 ${
             isVisible 
               ? "opacity-100 translate-y-0" 
-              : "opacity-0 translate-y-8"
+              : "opacity-0 translate-y-4"
           }`}
           style={{ 
             transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
@@ -95,21 +95,18 @@ const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") ex
             transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)"
           }}
         >
-          <CardContent className="p-8 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <benefit.icon className="w-10 h-10 text-primary group-hover:text-primary-foreground transition-colors" />
+          <CardContent className="p-6 text-center">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+              <benefit.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
-            <h3 className="text-2xl font-serif font-bold text-foreground mb-2">
+            <h3 className="text-lg font-serif font-bold text-foreground mb-1">
               {benefit.titleZh}
             </h3>
-            <p className="text-lg text-primary font-semibold mb-4">
+            <p className="text-sm text-primary font-semibold mb-2">
               {benefit.titleEn}
             </p>
-            <p className="text-base text-foreground/80 leading-relaxed">
+            <p className="text-sm text-foreground/80 leading-relaxed">
               {benefit.descZh}
-            </p>
-            <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
-              {benefit.descEn}
             </p>
           </CardContent>
         </Card>
@@ -120,36 +117,26 @@ const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") ex
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="py-24 bg-secondary/30">
+    <section id="benefits" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
-        
-
         {/* Product Benefits */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6 tracking-wide">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
             产品功效
           </h2>
-          <p className="text-xl md:text-2xl font-serif text-primary mb-4">Benefits</p>
-          <div className="w-32 h-1 bg-primary mx-auto mb-8" />
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed font-medium">
-            魚鱗堂深海鱼鳞胶原蛋白冻，采用100%天然深海鱼鳞萃取，富含优质胶原蛋白，
-            专为关节健康与美容养颜设计
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mt-3 leading-relaxed">
-            YULIN TANG Deep Sea Collagen Jelly, extracted from 100% natural deep sea fish scales, 
-            rich in premium collagen, designed for joint health and beauty
-          </p>
+          <p className="text-lg text-primary font-semibold mb-3">Benefits</p>
+          <div className="w-24 h-1 bg-primary mx-auto" />
         </div>
         
         {/* Benefits Cards */}
         <BenefitCards benefits={benefits} />
 
         {/* Taste Profile Section */}
-        <div className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
             产品口味
           </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">Taste Profile</p>
+          <p className="text-lg text-primary font-semibold text-center mb-6">Taste Profile</p>
           <div className="max-w-3xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
               <img 
@@ -185,11 +172,11 @@ const BenefitsSection = () => {
         </div>
 
         {/* How to Enjoy Section */}
-        <div className="mb-20">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-4">
+        <div className="mb-16">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
             食用方法
           </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-10">How to Enjoy</p>
+          <p className="text-lg text-primary font-semibold text-center mb-6">How to Enjoy</p>
           <div className="max-w-4xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
@@ -240,207 +227,180 @@ const BenefitsSection = () => {
             </div>
           </div>
         </div>
-        
         {/* Why Choose Us */}
-        <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
-          <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground text-center mb-2">
-            为什么选择魚鱗堂？
+        <div className="bg-card rounded-2xl p-8 mb-14 border border-border/50 shadow-lg">
+          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-1">
+            为什么选择我们
           </h3>
-          <p className="text-xl text-primary font-semibold text-center mb-3">Why Choose Us?</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10 max-w-5xl mx-auto">
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-primary" />
+          <p className="text-lg text-primary font-semibold text-center mb-6">Why Choose Us</p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8 max-w-5xl mx-auto">
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Sparkles className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-2xl font-bold text-primary">7500mg</div>
-              <div className="text-sm text-foreground font-medium">胶原蛋白</div>
-              <div className="text-xs text-muted-foreground">Collagen</div>
+              <div className="text-xl font-bold text-primary">7500mg</div>
+              <div className="text-xs text-foreground font-medium">胶原蛋白</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-primary" />
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Leaf className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-lg font-bold text-foreground">天然低糖</div>
-              <div className="text-xs text-muted-foreground">糖分取自食材</div>
-              <div className="text-xs text-muted-foreground">Natural Sugar Only</div>
+              <div className="text-sm font-bold text-foreground">天然低糖</div>
+              <div className="text-xs text-muted-foreground">Natural</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-primary" />
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <ShieldCheck className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-lg font-bold text-foreground">无重金属</div>
+              <div className="text-sm font-bold text-foreground">无重金属</div>
               <div className="text-xs text-muted-foreground">Heavy Metal Free</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300">
-              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                <ShieldCheck className="w-5 h-5 text-primary" />
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <ShieldCheck className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-lg font-bold text-foreground">无防腐剂</div>
+              <div className="text-sm font-bold text-foreground">无防腐剂</div>
               <div className="text-xs text-muted-foreground">Preservative Free</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-xl p-5 text-center shadow-md hover:shadow-lg hover:border-primary/50 transition-all duration-300 col-span-2 md:col-span-1 justify-self-center md:justify-self-auto w-full max-w-[200px] md:max-w-none">
-              <div className="w-10 h-10 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                <Calendar className="w-5 h-5 text-primary" />
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all col-span-2 md:col-span-1 justify-self-center md:justify-self-auto">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Calendar className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-lg font-bold text-foreground">保质期1年+</div>
-              <div className="text-xs text-muted-foreground">1+ Year Shelf Life</div>
+              <div className="text-sm font-bold text-foreground">1年+保质期</div>
+              <div className="text-xs text-muted-foreground">Shelf Life</div>
             </div>
           </div>
-          
           {/* Images Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-10 max-w-3xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+          <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
+            <div className="rounded-xl overflow-hidden shadow-md">
               <img 
                 src={whyChoose1} 
                 alt="食材可以帮助什么 - Ingredients Benefits"
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-xl overflow-hidden shadow-md">
               <img 
                 src={whyChoose2} 
                 alt="3种必需的氨基酸 - Essential Amino Acids"
+                loading="lazy"
                 className="w-full h-auto object-cover"
               />
             </div>
           </div>
 
           {/* Vacuum Sterilization Technology */}
-          <div className="bg-secondary/30 rounded-2xl p-8 border border-primary/20">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-secondary/30 rounded-xl p-6 border border-primary/20">
+            <div className="grid md:grid-cols-2 gap-6 items-center">
+              <div className="rounded-xl overflow-hidden shadow-md">
                 <img 
                   src={sterilizationMachine} 
                   alt="魚鱗堂真空杀菌设备 - Vacuum Sterilization Equipment"
+                  loading="lazy"
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div>
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl">🔬</span>
-                  <h4 className="text-2xl font-serif font-bold text-foreground">真空杀菌技术</h4>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-2xl">🔬</span>
+                  <h4 className="text-lg font-serif font-bold text-foreground">真空杀菌技术</h4>
                 </div>
-                <p className="text-lg text-primary font-semibold mb-4">Vacuum Sterilization Technology</p>
-                <p className="text-base text-foreground/90 leading-relaxed mb-4">
-                  采用与国际食品厂一致的<span className="font-bold text-primary">高温高压杀菌技术</span>（类似罐装燕窝饮品的处理方式）
+                <p className="text-base text-primary font-semibold mb-2">Vacuum Sterilization</p>
+                <p className="text-sm text-foreground/90 leading-relaxed mb-3">
+                  采用国际标准<span className="font-bold text-primary">高温高压杀菌</span>，无需防腐剂，安全保存
                 </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <span className="text-xl">1️⃣</span>
-                    <div>
-                      <p className="font-bold text-foreground">高温高压杀菌</p>
-                      <p className="text-sm text-muted-foreground">彻底消灭所有细菌和微生物</p>
-                    </div>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span>1️⃣</span>
+                    <p><span className="font-bold text-foreground">高温高压杀菌</span> - 消灭所有细菌</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <span className="text-xl">2️⃣</span>
-                    <div>
-                      <p className="font-bold text-foreground">真空密封包装</p>
-                      <p className="text-sm text-muted-foreground">无菌环境隔绝外部细菌</p>
-                    </div>
+                  <div className="flex items-start gap-2">
+                    <span>2️⃣</span>
+                    <p><span className="font-bold text-foreground">真空密封</span> - 隔绝外部细菌</p>
                   </div>
-                </div>
-                <div className="mt-6 p-4 bg-primary/10 rounded-xl">
-                  <p className="text-base font-bold text-foreground text-center">
-                    ✨ 无需防腐剂，安全保存
-                  </p>
-                  <p className="text-sm text-muted-foreground text-center mt-1">
-                    No preservatives needed, safe storage guaranteed
-                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Certifications Section - Clean Logos Only */}
-        <div className="bg-card rounded-3xl p-10 mb-16 border border-border/50 shadow-lg">
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-3">
+        {/* Certifications Section */}
+        <div className="bg-card rounded-2xl p-8 mb-14 border border-border/50 shadow-lg">
+          <h3 className="text-2xl font-serif font-bold text-foreground text-center mb-2">
             品质认证
           </h3>
-          <p className="text-lg text-primary font-semibold text-center mb-4">Quality Certifications</p>
-          <p className="text-base text-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-            Certified by Ministry of Health Malaysia (Kementerian Kesihatan Malaysia)
-          </p>
+          <p className="text-lg text-primary font-semibold text-center mb-8">Quality Certifications</p>
           
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
-            {/* GMP Logo */}
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
             <div className="flex flex-col items-center">
-              <div className="w-40 h-40 md:w-52 md:h-52 flex items-center justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
                 <img 
                   src={gmpLogo} 
-                  alt="GMP Food Safety Malaysia - Kementerian Kesihatan"
+                  alt="GMP Food Safety Malaysia"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-sm text-muted-foreground mt-3 text-center">
-                Good Manufacturing Practice
-              </p>
+              <p className="text-xs text-muted-foreground mt-2 text-center">GMP</p>
             </div>
-            
-            {/* MeSTI Logo */}
             <div className="flex flex-col items-center">
-              <div className="w-48 h-32 md:w-64 md:h-40 flex items-center justify-center">
+              <div className="w-40 h-24 md:w-48 md:h-32 flex items-center justify-center">
                 <img 
                   src={mestiLogo} 
-                  alt="MeSTI - Makanan Selamat Tanggungjawab Industri"
+                  alt="MeSTI Certification"
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-sm text-muted-foreground mt-3 text-center">
-                Food Safety Industry Responsibility
-              </p>
+              <p className="text-xs text-muted-foreground mt-2 text-center">MeSTI</p>
             </div>
           </div>
         </div>
 
-        {/* Customer Reviews with Real Images */}
-        <div className="mt-20">
-          <div className="flex flex-col items-center justify-center gap-3 mb-12">
-            <Users className="w-10 h-10 text-primary" />
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+        {/* Customer Reviews */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
               顾客好评
             </h3>
-            <p className="text-xl text-primary font-semibold">Customer Reviews</p>
+            <p className="text-lg text-primary font-semibold">Customer Reviews</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review1} 
-                alt="Customer Review - Joint Pain Relief Testimonial"
+                alt="Customer Review - Joint Pain Relief"
                 loading="lazy"
                 className="w-full h-auto"
               />
-              <div className="p-5">
-                <p className="text-base font-bold text-foreground mb-1">陈女士 · 吉隆坡</p>
-                <p className="text-sm text-muted-foreground">"喝了两个月，膝盖明显不那么痛了，现在每天都在坚持！"</p>
-                <p className="text-xs text-muted-foreground mt-1 italic">Joint pain noticeably improved after 2 months</p>
+              <div className="p-4">
+                <p className="text-sm font-bold text-foreground mb-1">陈女士 · 吉隆坡</p>
+                <p className="text-xs text-muted-foreground">"喝了两个月，膝盖明显不那么痛了！"</p>
               </div>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
+            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review2} 
-                alt="Customer Review - Skin Improvement Testimonial"
+                alt="Customer Review - Repeat Purchase"
                 loading="lazy"
                 className="w-full h-auto"
               />
-              <div className="p-5">
-                <p className="text-base font-bold text-foreground mb-1">林阿姨 · 新加坡</p>
-                <p className="text-sm text-muted-foreground">"买给妈妈喝，她说关节灵活多了，已经回购第三次！"</p>
-                <p className="text-xs text-muted-foreground mt-1 italic">Bought for mom — 3rd repeat purchase!</p>
+              <div className="p-4">
+                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡</p>
+                <p className="text-xs text-muted-foreground">"买给妈妈喝，已经回购第三次！"</p>
               </div>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
+            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review3} 
-                alt="Customer Review - Before and After Skin Improvement"
+                alt="Customer Review - Skin Improvement"
                 loading="lazy"
                 className="w-full h-auto"
               />
-              <div className="p-5">
-                <p className="text-base font-bold text-foreground mb-1">黄小姐 · 槟城</p>
-                <p className="text-sm text-muted-foreground">"皮肤变得更有弹性了，朋友都问我用了什么保养品！"</p>
-                <p className="text-xs text-muted-foreground mt-1 italic">Skin elasticity improved — friends noticed!</p>
+              <div className="p-4">
+                <p className="text-sm font-bold text-foreground mb-1">黄小姐 · 槟城</p>
+                <p className="text-xs text-muted-foreground">"皮肤更有弹性，朋友都问用了什么保养品！"</p>
               </div>
             </div>
           </div>

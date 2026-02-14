@@ -14,9 +14,9 @@ const products = [
     nameEn: "Set A Package",
     qty: "12罐",
     qtyEn: "12 Bottles x 150ml",
-    priceRM: "RM 199",
+    priceRM: "RM 219",
     priceSGD: "SGD 90",
-    unitRM: "RM 16.58",
+    unitRM: "RM 18.25",
     unitSGD: "SGD 7.50",
     descZh: "入门首选，体验深海胶原蛋白的魅力",
     descEn: "Perfect for first-time users",
@@ -31,9 +31,9 @@ const products = [
     nameEn: "Set B Package",
     qty: "24罐",
     qtyEn: "24 Bottles x 150ml",
-    priceRM: "RM 369",
+    priceRM: "RM 389",
     priceSGD: "SGD 160",
-    unitRM: "RM 15.38",
+    unitRM: "RM 16.21",
     unitSGD: "SGD 6.67",
     descZh: "超值优惠，持续呵护您的健康",
     descEn: "Great value for continued health",
@@ -48,9 +48,9 @@ const products = [
     nameEn: "Set C Package",
     qty: "36罐",
     qtyEn: "36 Bottles x 150ml",
-    priceRM: "RM 499",
+    priceRM: "RM 519",
     priceSGD: "SGD 225",
-    unitRM: "RM 13.86",
+    unitRM: "RM 14.42",
     unitSGD: "SGD 6.25",
     descZh: "全家享用，健康美丽一起分享",
     descEn: "Perfect for the whole family",
@@ -62,21 +62,20 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const [timeLeft, setTimeLeft] = useState(23 * 3600 + 45 * 60); // 23小时45分钟倒计时
+  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30分钟倒计时
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(prev => (prev > 0 ? prev - 1 : 23 * 3600 + 45 * 60)); // 重置倒计时
+      setTimeLeft(prev => (prev > 0 ? prev - 1 : 30 * 60));
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
   const formatTime = (seconds: number) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
+    const minutes = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
   };
 
 

@@ -106,12 +106,9 @@ const BenefitCards = ({ benefits }: { benefits: { icon: any; image: string; titl
             transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)"
           }}
         >
-          <div className="h-40 overflow-hidden rounded-t-lg">
-            <img src={benefit.image} alt={benefit.titleEn} className="w-full h-full object-cover" />
-          </div>
-          <CardContent className="p-5 text-center">
-            <div className="w-10 h-10 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <benefit.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
+          <CardContent className="p-6 text-center">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
+              <benefit.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
             </div>
             <h3 className="text-lg font-serif font-bold text-foreground mb-1">
               {benefit.titleZh}

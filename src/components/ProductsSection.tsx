@@ -92,24 +92,24 @@ const ProductsSection = () => {
         </div>
         
         {/* Limited Time Promo Banner */}
-        <div className="mb-10 max-w-4xl mx-auto">
-          <div className="relative overflow-hidden bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 border border-primary/30 rounded-2xl p-6 shadow-lg">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+        <div className="mb-10 max-w-4xl mx-auto animate-fade-in">
+          <div className="relative overflow-hidden bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 border-2 border-primary/40 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-500 animate-[pulse_3s_cubic-bezier(0.4,0,0.6,1)_infinite]">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                  <Flame className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center flex-shrink-0 animate-[bounce_2s_cubic-bezier(0.68,-0.55,0.265,1.55)_infinite]">
+                  <Flame className="w-6 h-6 text-primary animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
                 </div>
                 <div>
                   <p className="text-lg sm:text-xl font-bold text-foreground">限时优惠 · 买越多省越多</p>
                   <p className="text-sm text-muted-foreground">Limited Time — The More You Buy, The More You Save</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap">
+              <div className="flex items-center gap-2 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap shadow-lg hover:shadow-xl transition-shadow duration-300 animate-[pulse_2.5s_cubic-bezier(0.4,0,0.6,1)_infinite]">
                 SET C 每瓶省最多 Save Most Per Bottle
               </div>
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]" />
           </div>
         </div>
 

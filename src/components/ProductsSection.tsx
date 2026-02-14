@@ -73,12 +73,8 @@ const ProductsSection = () => {
             我们的产品 <span className="text-primary">Our Products</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            精选优质深海鱼鳞，采用先进工艺萃取，每盒12罐，礼盒精美包装
-            <br />
-            <span className="text-base md:text-lg">
-              Premium deep sea fish scales, advanced extraction technology, 12 bottles per box, elegant gift packaging
-            </span>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            深海鱼鳞胶原蛋白 · Premium Deep Sea Fish Collagen
           </p>
           
           {/* Free Shipping Banner */}
@@ -107,7 +103,11 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <Card 
               key={index} 
-              className={`group overflow-hidden border-border/50 bg-card hover:shadow-2xl transition-all duration-500 ${product.isVip ? 'ring-2 ring-amber-500/50' : ''}`}
+              className={`group overflow-hidden border-border/50 bg-card hover:shadow-2xl transition-all duration-500 ${
+                index === 1 
+                  ? 'ring-2 ring-primary shadow-lg scale-[1.02]' 
+                  : product.isVip ? 'ring-2 ring-amber-500/30' : ''
+              }`}
             >
               <div className="relative overflow-hidden aspect-square">
                 <img 
@@ -133,13 +133,13 @@ const ProductsSection = () => {
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Button 
-                  size="lg"
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-primary text-primary-foreground font-bold"
-                  onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
-                >
-                  <ShoppingCart className="w-5 h-5 mr-2" />
-                  立即订购
-                </Button>
+                   size="lg"
+                   className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 md:opacity-0 md:translate-y-full md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300 bg-primary text-primary-foreground font-bold"
+                   onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
+                 >
+                   <ShoppingCart className="w-5 h-5 mr-2" />
+                   立即订购
+                 </Button>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-3">
@@ -156,17 +156,6 @@ const ProductsSection = () => {
                 <p className="text-base text-muted-foreground mb-4">
                   {product.descZh}
                 </p>
-                
-                {/* VIP Benefits - only show for VIP products */}
-                {product.isVip && (
-                  <div className="bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-300 rounded-lg p-3 mb-4">
-                    <p className="text-sm text-amber-900 font-bold flex items-center gap-2">
-                      <span className="text-base">👑</span>
-                      <span>下单即成为 VIP 会员</span>
-                    </p>
-                    <p className="text-xs text-amber-700 ml-6">Order Now = Become VIP Member</p>
-                  </div>
-                )}
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">

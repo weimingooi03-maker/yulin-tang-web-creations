@@ -315,17 +315,26 @@ const BenefitsSection = () => {
                   <h4 className="text-lg font-serif font-bold text-foreground">真空杀菌技术</h4>
                 </div>
                 <p className="text-base text-primary font-semibold mb-2">Vacuum Sterilization</p>
-                <p className="text-sm text-foreground/90 leading-relaxed mb-3">
+                <p className="text-sm text-foreground/90 leading-relaxed mb-1">
                   采用国际标准<span className="font-bold text-primary">高温高压杀菌</span>，无需防腐剂，安全保存
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                  Uses international-standard <span className="font-semibold">high-temperature, high-pressure sterilization</span> — no preservatives needed, safely preserved
                 </p>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start gap-2">
                     <span>1️⃣</span>
-                    <p><span className="font-bold text-foreground">高温高压杀菌</span> - 消灭所有细菌</p>
+                    <div>
+                      <p><span className="font-bold text-foreground">高温高压杀菌</span> - 消灭所有细菌</p>
+                      <p className="text-xs text-muted-foreground">High-temp & high-pressure sterilization — eliminates all bacteria</p>
+                    </div>
                   </div>
                   <div className="flex items-start gap-2">
                     <span>2️⃣</span>
-                    <p><span className="font-bold text-foreground">真空密封</span> - 隔绝外部细菌</p>
+                    <div>
+                      <p><span className="font-bold text-foreground">真空密封</span> - 隔绝外部细菌</p>
+                      <p className="text-xs text-muted-foreground">Vacuum sealed — blocks external bacteria</p>
+                    </div>
                   </div>
                 </div>
               </div>

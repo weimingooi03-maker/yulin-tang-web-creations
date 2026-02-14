@@ -5,6 +5,7 @@ import eatingMethod from "@/assets/eating-method.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
+import review4 from "@/assets/review-4.jpeg";
 import gmpLogo from "@/assets/gmp-logo.png";
 import mestiLogo from "@/assets/mesti-logo.png";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
@@ -373,7 +374,7 @@ const BenefitsSection = () => {
             </h3>
             <p className="text-lg text-primary font-semibold">Customer Reviews</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review1} 
@@ -408,6 +409,18 @@ const BenefitsSection = () => {
               <div className="p-4">
                 <p className="text-sm font-bold text-foreground mb-1">黄小姐 · 槟城</p>
                 <p className="text-xs text-muted-foreground">"皮肤更有弹性，朋友都问用了什么保养品！"</p>
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
+              <img 
+                src={review4} 
+                alt="Customer Review - Knee Pain Improvement"
+                loading="lazy"
+                className="w-full h-auto"
+              />
+              <div className="p-4">
+                <p className="text-sm font-bold text-foreground mb-1">顾客好评</p>
+                <p className="text-xs text-muted-foreground">"妈妈吃了两个星期后，膝盖感觉舒服多了，走路也更顺畅了"</p>
               </div>
             </div>
           </div>

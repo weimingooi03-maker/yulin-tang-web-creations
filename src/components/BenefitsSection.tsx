@@ -1,4 +1,9 @@
 import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck, Calendar, Leaf } from "lucide-react";
+import benefitJoint from "@/assets/benefit-joint.png";
+import benefitBone from "@/assets/benefit-bone.png";
+import benefitBeauty from "@/assets/benefit-beauty.png";
+import benefitHydration from "@/assets/benefit-hydration.png";
+import benefitHairNail from "@/assets/benefit-hair-nail.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
@@ -21,6 +26,7 @@ import sterilizationMachine from "@/assets/sterilization-machine.jpeg";
 const benefits = [
   {
     icon: Heart,
+    image: benefitJoint,
     titleZh: "缓解关节疼痛",
     titleEn: "Joint Pain Relief",
     descZh: "补充关节软骨所需胶原蛋白，有效缓解关节疼痛和僵硬，恢复关节灵活性",
@@ -28,6 +34,7 @@ const benefits = [
   },
   {
     icon: Bone,
+    image: benefitBone,
     titleZh: "强化骨骼",
     titleEn: "Bone Strength",
     descZh: "增强骨密度，预防骨质疏松，特别适合中老年人群保健",
@@ -35,6 +42,7 @@ const benefits = [
   },
   {
     icon: Sparkles,
+    image: benefitBeauty,
     titleZh: "美容养颜",
     titleEn: "Beauty & Anti-Aging",
     descZh: "促进皮肤弹性和光泽，减少细纹和皱纹，由内而外焕发青春",
@@ -42,6 +50,7 @@ const benefits = [
   },
   {
     icon: Droplets,
+    image: benefitHydration,
     titleZh: "深层补水",
     titleEn: "Deep Hydration",
     descZh: "锁住肌肤水分，打造水润光泽肌肤，改善干燥暗沉",
@@ -49,6 +58,7 @@ const benefits = [
   },
   {
     icon: Shield,
+    image: benefitHairNail,
     titleZh: "头发指甲健康",
     titleEn: "Hair & Nail Health",
     descZh: "促进头发和指甲生长，使其更加强韧有光泽",
@@ -57,7 +67,7 @@ const benefits = [
 ];
 
 // Animated Benefit Cards Component
-const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") extends { Heart: infer T } ? { icon: T; titleZh: string; titleEn: string; descZh: string; descEn: string }[] : never }) => {
+const BenefitCards = ({ benefits }: { benefits: { icon: any; image: string; titleZh: string; titleEn: string; descZh: string; descEn: string }[] }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -97,8 +107,8 @@ const BenefitCards = ({ benefits }: { benefits: typeof import("lucide-react") ex
           }}
         >
           <CardContent className="p-6 text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <benefit.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
+            <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden">
+              <img src={benefit.image} alt={benefit.titleEn} className="w-full h-full object-cover" />
             </div>
             <h3 className="text-lg font-serif font-bold text-foreground mb-1">
               {benefit.titleZh}

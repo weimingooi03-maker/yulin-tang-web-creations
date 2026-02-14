@@ -350,7 +350,7 @@ const BenefitsSection = () => {
               <p className="text-xs text-muted-foreground text-center">良好生产规范</p>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-40 h-24 md:w-48 md:h-32 flex items-center justify-center">
+              <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
                 <img 
                   src={mestiLogo} 
                   alt="MeSTI - Makanan Selamat Tanggungjawab Industri"

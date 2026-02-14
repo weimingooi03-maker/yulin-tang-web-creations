@@ -425,7 +425,7 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
               <div className="p-5">
-                <p className="text-base font-bold text-foreground mb-1">林先生 · 新加坡</p>
+                <p className="text-base font-bold text-foreground mb-1">林阿姨 · 新加坡</p>
                 <p className="text-sm text-muted-foreground">"买给妈妈喝，她说关节灵活多了，已经回购第三次！"</p>
                 <p className="text-xs text-muted-foreground mt-1 italic">Bought for mom — 3rd repeat purchase!</p>
               </div>

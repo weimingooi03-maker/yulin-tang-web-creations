@@ -16,10 +16,10 @@ const Index = () => {
       <main className="pt-16">
         <HeroSection />
         <BenefitsSection />
-        <PrecautionsSection />
         <ProductsSection />
         <AboutSection />
         <FAQSection />
+        <PrecautionsSection />
         <ContactSection />
       </main>
       <Footer />

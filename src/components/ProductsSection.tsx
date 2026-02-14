@@ -3,7 +3,7 @@ import productSetB from "@/assets/product-setb.png";
 import productSetC from "@/assets/product-setc-new.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle, Truck, Package } from "lucide-react";
+import { ShoppingCart, MessageCircle, Truck, Package, Flame } from "lucide-react";
 
 const products = [
   {
@@ -14,11 +14,14 @@ const products = [
     qtyEn: "12 Bottles x 150ml",
     priceRM: "RM 199",
     priceSGD: "SGD 90",
+    unitRM: "RM 16.58",
+    unitSGD: "SGD 7.50",
     descZh: "入门首选，体验深海胶原蛋白的魅力",
     descEn: "Perfect for first-time users",
     badge: "体验装",
     badgeEn: "Trial Pack",
     isVip: false,
+    isBestValue: false,
   },
   {
     image: productSetB,
@@ -28,11 +31,14 @@ const products = [
     qtyEn: "24 Bottles x 150ml",
     priceRM: "RM 369",
     priceSGD: "SGD 160",
+    unitRM: "RM 15.38",
+    unitSGD: "SGD 6.67",
     descZh: "超值优惠，持续呵护您的健康",
     descEn: "Great value for continued health",
     badge: "热销款",
     badgeEn: "Best Seller",
     isVip: true,
+    isBestValue: false,
   },
   {
     image: productSetC,
@@ -42,11 +48,14 @@ const products = [
     qtyEn: "36 Bottles x 150ml",
     priceRM: "RM 499",
     priceSGD: "SGD 225",
+    unitRM: "RM 13.86",
+    unitSGD: "SGD 6.25",
     descZh: "全家享用，健康美丽一起分享",
     descEn: "Perfect for the whole family",
     badge: "家庭分享装",
     badgeEn: "Family Pack",
     isVip: true,
+    isBestValue: true,
   },
 ];
 
@@ -82,6 +91,15 @@ const ProductsSection = () => {
           </p>
         </div>
         
+        {/* Limited Time Promo Banner */}
+        <div className="mb-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-6 py-3 rounded-full border-2 border-destructive/30 shadow-md animate-pulse">
+            <Flame className="w-5 h-5" />
+            <span className="font-bold text-sm sm:text-base">🔥 限时优惠进行中 | Limited Time Offer — 买越多省越多！</span>
+            <Flame className="w-5 h-5" />
+          </div>
+        </div>
+
         {/* VIP简洁提示 */}
         <div className="mb-8 text-center">
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-amber-100 to-amber-50 border-2 border-amber-400 text-amber-900 px-5 sm:px-6 py-3 rounded-2xl sm:rounded-full shadow-md">
@@ -109,6 +127,12 @@ const ProductsSection = () => {
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-base font-bold">
                   {product.badge}
                 </div>
+                {/* Best Value Badge */}
+                {product.isBestValue && (
+                  <div className="absolute bottom-4 left-4 bg-destructive text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
+                    <Flame className="w-3 h-3" /> 最划算 Best Value
+                  </div>
+                )}
                 {/* VIP Badge */}
                 {product.isVip && (
                   <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
@@ -152,7 +176,7 @@ const ProductsSection = () => {
                   </div>
                 )}
                 
-                <div className="grid grid-cols-2 gap-3 mb-4">
+                <div className="grid grid-cols-2 gap-3 mb-2">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
                     <p className="text-sm text-muted-foreground mb-1 font-medium">🇲🇾 Malaysia</p>
                     <p className="text-xl font-bold text-primary">{product.priceRM}</p>
@@ -161,6 +185,13 @@ const ProductsSection = () => {
                     <p className="text-sm text-muted-foreground mb-1 font-medium">🇸🇬 Singapore</p>
                     <p className="text-xl font-bold text-primary">{product.priceSGD}</p>
                   </div>
+                </div>
+                <div className={`text-center mb-4 px-3 py-2 rounded-lg ${product.isBestValue ? 'bg-destructive/10 border border-destructive/30' : 'bg-muted/50'}`}>
+                  <p className={`text-xs font-bold ${product.isBestValue ? 'text-destructive' : 'text-muted-foreground'}`}>
+                    每瓶仅 {product.unitRM} / {product.unitSGD}
+                    {product.isBestValue && ' ✨ 最优惠！'}
+                  </p>
+                  <p className="text-xs text-muted-foreground">per bottle</p>
                 </div>
                 
                 <Button 

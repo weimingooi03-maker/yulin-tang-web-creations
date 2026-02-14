@@ -239,14 +239,14 @@ const BenefitsSection = () => {
                 <Sparkles className="w-4 h-4 text-primary" />
               </div>
               <div className="text-xl font-bold text-primary">7500mg</div>
-              <div className="text-xs text-foreground font-medium">胶原蛋白</div>
+              <div className="text-xs font-medium text-foreground">胶原蛋白 Collagen</div>
             </div>
             <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
                 <Leaf className="w-4 h-4 text-primary" />
               </div>
               <div className="text-sm font-bold text-foreground">天然低糖</div>
-              <div className="text-xs text-muted-foreground">Natural</div>
+              <div className="text-xs text-muted-foreground">Low Sugar</div>
             </div>
             <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
@@ -266,8 +266,8 @@ const BenefitsSection = () => {
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
                 <Calendar className="w-4 h-4 text-primary" />
               </div>
-              <div className="text-sm font-bold text-foreground">1年+保质期</div>
-              <div className="text-xs text-muted-foreground">Shelf Life</div>
+              <div className="text-sm font-bold text-foreground">保质期1年+</div>
+              <div className="text-xs text-muted-foreground">1+ Year Shelf Life</div>
             </div>
           </div>
           {/* Images Grid */}
@@ -327,22 +327,27 @@ const BenefitsSection = () => {
 
         {/* Certifications Section */}
         <div className="bg-card rounded-2xl p-8 mb-14 border border-border/50 shadow-lg">
-          <h3 className="text-2xl font-serif font-bold text-foreground text-center mb-2">
+          <h3 className="text-2xl font-serif font-bold text-foreground text-center mb-1">
             品质认证
           </h3>
-          <p className="text-lg text-primary font-semibold text-center mb-8">Quality Certifications</p>
+          <p className="text-lg text-primary font-semibold text-center mb-2">Quality Certifications</p>
+          <p className="text-xs text-muted-foreground text-center mb-8">
+            马来西亚卫生部认证 · Certified by Ministry of Health Malaysia
+          </p>
           
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
             <div className="flex flex-col items-center">
               <div className="w-32 h-32 md:w-40 md:h-40 flex items-center justify-center">
                 <img 
                   src={gmpLogo} 
-                  alt="GMP Food Safety Malaysia"
+                  alt="GMP - Good Manufacturing Practice"
                   loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center font-medium">Good Manufacturing Practice</p>
+              <p className="text-sm font-bold text-foreground mt-2">GMP</p>
+              <p className="text-xs text-muted-foreground text-center">Good Manufacturing Practice</p>
+              <p className="text-xs text-muted-foreground text-center">良好生产规范</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-40 h-24 md:w-48 md:h-32 flex items-center justify-center">
@@ -353,7 +358,9 @@ const BenefitsSection = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center font-medium">Makanan Selamat Tanggungjawab Industri</p>
+              <p className="text-sm font-bold text-foreground mt-2">MeSTI</p>
+              <p className="text-xs text-muted-foreground text-center">Makanan Selamat Tanggungjawab Industri</p>
+              <p className="text-xs text-muted-foreground text-center">食品安全业界责任计划</p>
             </div>
           </div>
         </div>

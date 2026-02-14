@@ -342,18 +342,18 @@ const BenefitsSection = () => {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center">GMP</p>
+              <p className="text-xs text-muted-foreground mt-2 text-center font-medium">Good Manufacturing Practice</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-40 h-24 md:w-48 md:h-32 flex items-center justify-center">
                 <img 
                   src={mestiLogo} 
-                  alt="MeSTI Certification"
+                  alt="MeSTI - Makanan Selamat Tanggungjawab Industri"
                   loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <p className="text-xs text-muted-foreground mt-2 text-center">MeSTI</p>
+              <p className="text-xs text-muted-foreground mt-2 text-center font-medium">Makanan Selamat Tanggungjawab Industri</p>
             </div>
           </div>
         </div>

@@ -155,6 +155,7 @@ const BenefitsSection = () => {
               <img 
                 src={tasteProfile} 
                 alt="Taste Profile - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
+                loading="lazy"
                 className="w-full h-auto"
               />
             </div>
@@ -403,26 +404,44 @@ const BenefitsSection = () => {
             <p className="text-xl text-primary font-semibold">Customer Reviews</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
               <img 
                 src={review1} 
                 alt="Customer Review - Joint Pain Relief Testimonial"
+                loading="lazy"
                 className="w-full h-auto"
               />
+              <div className="p-5">
+                <p className="text-base font-bold text-foreground mb-1">陈女士 · 吉隆坡</p>
+                <p className="text-sm text-muted-foreground">"喝了两个月，膝盖明显不那么痛了，现在每天都在坚持！"</p>
+                <p className="text-xs text-muted-foreground mt-1 italic">Joint pain noticeably improved after 2 months</p>
+              </div>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
               <img 
                 src={review2} 
-                alt="Customer Review - Years of Practice Testimonial"
+                alt="Customer Review - Skin Improvement Testimonial"
+                loading="lazy"
                 className="w-full h-auto"
               />
+              <div className="p-5">
+                <p className="text-base font-bold text-foreground mb-1">林先生 · 新加坡</p>
+                <p className="text-sm text-muted-foreground">"买给妈妈喝，她说关节灵活多了，已经回购第三次！"</p>
+                <p className="text-xs text-muted-foreground mt-1 italic">Bought for mom — 3rd repeat purchase!</p>
+              </div>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-card">
               <img 
                 src={review3} 
                 alt="Customer Review - Before and After Skin Improvement"
+                loading="lazy"
                 className="w-full h-auto"
               />
+              <div className="p-5">
+                <p className="text-base font-bold text-foreground mb-1">黄小姐 · 槟城</p>
+                <p className="text-sm text-muted-foreground">"皮肤变得更有弹性了，朋友都问我用了什么保养品！"</p>
+                <p className="text-xs text-muted-foreground mt-1 italic">Skin elasticity improved — friends noticed!</p>
+              </div>
             </div>
           </div>
         </div>

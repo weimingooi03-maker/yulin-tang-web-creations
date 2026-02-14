@@ -92,7 +92,8 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
               <img 
                 src={heroProduct} 
-                alt="什么是鱼鳞冻"
+                alt="魚鱗堂深海鱼鳞胶原蛋白冻 - 什么是鱼鳞冻"
+                loading="lazy"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               />
             </div>
@@ -100,7 +101,8 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
               <img 
                 src={whatIsFishJellyEn} 
-                alt="What is Fish Scale Jelly"
+                alt="What is Fish Scale Jelly - YULIN TANG Deep Sea Collagen"
+                loading="lazy"
                 className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               />
             </div>

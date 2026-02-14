@@ -234,7 +234,7 @@ const BenefitsSection = () => {
             为什么选择我们
           </h3>
           <p className="text-lg text-primary font-semibold text-center mb-6">Why Choose Us</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8 max-w-4xl mx-auto">
             <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-primary" />
@@ -251,6 +251,13 @@ const BenefitsSection = () => {
             </div>
             <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
+                <Leaf className="w-4 h-4 text-primary" />
+              </div>
+              <div className="text-sm font-bold text-foreground">无添加糖</div>
+              <div className="text-xs text-muted-foreground">No Added Sugar</div>
+            </div>
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
                 <ShieldCheck className="w-4 h-4 text-primary" />
               </div>
               <div className="text-sm font-bold text-foreground">无重金属</div>
@@ -263,7 +270,7 @@ const BenefitsSection = () => {
               <div className="text-sm font-bold text-foreground">无防腐剂</div>
               <div className="text-xs text-muted-foreground">Preservative Free</div>
             </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all col-span-2 md:col-span-1 justify-self-center md:justify-self-auto">
+            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
               <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
                 <Calendar className="w-4 h-4 text-primary" />
               </div>

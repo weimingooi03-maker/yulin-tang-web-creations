@@ -30,7 +30,7 @@ const PrecautionsSection = () => {
       <div className="container mx-auto px-4">
         {/* Header - More prominent */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-bold mb-3 animate-pulse">
+          <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 rounded-full text-sm font-bold mb-3">
             <AlertTriangle className="w-4 h-4" />
             <span>请注意 Please Note</span>
           </div>

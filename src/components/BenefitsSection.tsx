@@ -289,7 +289,6 @@ const BenefitsSection = () => {
                   className="w-full h-auto object-cover"
                 />
               </div>
-              <p className="text-xs text-muted-foreground text-center mt-2">What Can These Ingredients Help With?</p>
             </div>
             <div>
               <div className="rounded-xl overflow-hidden shadow-md">

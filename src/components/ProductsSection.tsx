@@ -3,7 +3,8 @@ import productSetB from "@/assets/product-setb.png";
 import productSetC from "@/assets/product-setc-new.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle, Truck, Package, Flame } from "lucide-react";
+import { ShoppingCart, MessageCircle, Truck, Package, Flame, Clock, AlertCircle } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const products = [
   {
@@ -22,6 +23,8 @@ const products = [
     badgeEn: "Trial Pack",
     isVip: false,
     isBestValue: false,
+    stock: 15,
+    maxStock: 50,
   },
   {
     image: productSetB,
@@ -39,6 +42,8 @@ const products = [
     badgeEn: "Best Seller",
     isVip: true,
     isBestValue: false,
+    stock: 8,
+    maxStock: 50,
   },
   {
     image: productSetC,
@@ -56,10 +61,36 @@ const products = [
     badgeEn: "Family Pack",
     isVip: true,
     isBestValue: true,
+    stock: 22,
+    maxStock: 50,
   },
 ];
 
 const ProductsSection = () => {
+  const [timeLeft, setTimeLeft] = useState(23 * 3600 + 45 * 60); // 23小时45分钟倒计时
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => (prev > 0 ? prev - 1 : 23 * 3600 + 45 * 60)); // 重置倒计时
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  };
+
+  const getStockStatus = (stock: number, maxStock: number) => {
+    const percentage = (stock / maxStock) * 100;
+    if (percentage <= 20) return { label: '库存紧张 Low Stock', color: 'bg-destructive', icon: '⚠️' };
+    if (percentage <= 50) return { label: '库存充足 Available', color: 'bg-amber-600', icon: '⏱️' };
+    return { label: '库存充足 Available', color: 'bg-green-600', icon: '✓' };
+  };
+
   const handleWhatsApp = (nameZh: string, nameEn: string) => {
     const message = encodeURIComponent(`您好！我想订购 ${nameZh}。\nHello! I would like to order ${nameEn}.`);
     window.open(`https://wa.me/601158727742?text=${message}`, "_blank");
@@ -156,6 +187,42 @@ const ProductsSection = () => {
                 <p className="text-base text-muted-foreground mb-4">
                   {product.descZh}
                 </p>
+
+                {/* 紧迫感提示 - 库存和优惠倒计时 */}
+                <div className="space-y-3 mb-4">
+                  {/* 库存条 */}
+                  <div className="bg-muted/40 rounded-lg p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold text-muted-foreground">库存状态 | Stock Status</span>
+                      <span className={`text-xs font-bold ${product.stock <= 10 ? 'text-destructive' : 'text-green-600'}`}>
+                        {product.stock} / {product.maxStock}
+                      </span>
+                    </div>
+                    <div className="w-full bg-secondary/60 rounded-full h-2">
+                      <div 
+                        className={`h-2 rounded-full transition-all duration-300 ${
+                          product.stock <= 10 ? 'bg-destructive' : product.stock <= 25 ? 'bg-amber-500' : 'bg-green-500'
+                        }`}
+                        style={{ width: `${(product.stock / product.maxStock) * 100}%` }}
+                      />
+                    </div>
+                    {product.stock <= 10 && (
+                      <p className="text-xs text-destructive font-bold mt-2 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" /> 库存仅剩 Limited Stock
+                      </p>
+                    )}
+                  </div>
+
+                  {/* 优惠倒计时 */}
+                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="text-xs font-bold text-muted-foreground">优惠倒计时 | Offer Ends In</span>
+                    </div>
+                    <p className="text-lg font-bold text-primary font-mono">{formatTime(timeLeft)}</p>
+                    <p className="text-xs text-muted-foreground mt-1">把握机会，立即订购 | Don't miss out!</p>
+                  </div>
+                </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">

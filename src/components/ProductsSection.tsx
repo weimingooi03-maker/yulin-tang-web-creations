@@ -92,11 +92,24 @@ const ProductsSection = () => {
         </div>
         
         {/* Limited Time Promo Banner */}
-        <div className="mb-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-6 py-3 rounded-full border-2 border-destructive/30 shadow-md animate-pulse">
-            <Flame className="w-5 h-5" />
-            <span className="font-bold text-sm sm:text-base">🔥 限时优惠进行中 | Limited Time Offer — 买越多省越多！</span>
-            <Flame className="w-5 h-5" />
+        <div className="mb-10 max-w-4xl mx-auto">
+          <div className="relative overflow-hidden bg-gradient-to-r from-primary/15 via-primary/5 to-primary/15 border border-primary/30 rounded-2xl p-6 shadow-lg">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <Flame className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <p className="text-lg sm:text-xl font-bold text-foreground">限时优惠 · 买越多省越多</p>
+                  <p className="text-sm text-muted-foreground">Limited Time — The More You Buy, The More You Save</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-primary text-primary-foreground px-5 py-2 rounded-full text-sm font-bold whitespace-nowrap">
+                SET C 每瓶省最多 Save Most Per Bottle
+              </div>
+            </div>
+            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
           </div>
         </div>
 

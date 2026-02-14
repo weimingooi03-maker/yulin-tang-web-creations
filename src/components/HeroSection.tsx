@@ -70,13 +70,8 @@ const HeroSection = () => {
             
             <div className="flex items-center justify-center lg:justify-start gap-6 pt-4 opacity-0 animate-fade-in-delay-8 flex-wrap">
               <div className="text-center">
-                <p className="text-3xl font-bold text-primary">5000+</p>
-                <p className="text-base text-muted-foreground font-medium">组已售出 Sets Sold</p>
-              </div>
-              <div className="w-px h-12 bg-border" />
-              <div className="text-center">
-                <p className="text-3xl font-bold text-primary">500+</p>
-                <p className="text-base text-muted-foreground font-medium">回头客 Repeat Buyers</p>
+                <p className="text-3xl font-bold text-primary">100%</p>
+                <p className="text-base text-muted-foreground font-medium">天然成分 Natural</p>
               </div>
               <div className="w-px h-12 bg-border" />
               <div className="text-center">
@@ -85,9 +80,7 @@ const HeroSection = () => {
               </div>
               <div className="w-px h-12 bg-border" />
               <div className="text-center flex flex-col items-center">
-                <div className="flex gap-2">
-                  <Gift className="w-7 h-7 text-primary" />
-                </div>
+                <Gift className="w-7 h-7 text-primary" />
                 <p className="text-base text-muted-foreground font-medium">送礼滋补佳品</p>
               </div>
             </div>

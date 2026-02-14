@@ -280,21 +280,27 @@ const BenefitsSection = () => {
           </div>
           {/* Images Grid */}
           <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
-            <div className="rounded-xl overflow-hidden shadow-md">
-              <img 
-                src={whyChoose1} 
-                alt="食材可以帮助什么 - Ingredients Benefits"
-                loading="lazy"
-                className="w-full h-auto object-cover"
-              />
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-md">
+                <img 
+                  src={whyChoose1} 
+                  alt="食材可以帮助什么 - Ingredients Benefits"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">What Can These Ingredients Help With?</p>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-md">
-              <img 
-                src={whyChoose2} 
-                alt="3种必需的氨基酸 - Essential Amino Acids"
-                loading="lazy"
-                className="w-full h-auto object-cover"
-              />
+            <div>
+              <div className="rounded-xl overflow-hidden shadow-md">
+                <img 
+                  src={whyChoose2} 
+                  alt="3种必需的氨基酸 - Essential Amino Acids"
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">3 Essential Amino Acids</p>
             </div>
           </div>
 

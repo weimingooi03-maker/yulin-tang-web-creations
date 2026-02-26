@@ -14,14 +14,6 @@ const precautions = [
     titleZh: "肾脏疾病",
     titleEn: "Kidney Disease",
   },
-  {
-    titleZh: "孕妇 / 哺乳期",
-    titleEn: "Pregnancy / Nursing",
-  },
-  {
-    titleZh: "12岁以下孩童",
-    titleEn: "Children Under 12",
-  },
 ];
 
 const PrecautionsSection = () => {

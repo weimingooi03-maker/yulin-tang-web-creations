@@ -190,7 +190,7 @@ const ProductsSection = () => {
                     <span className="text-xs font-bold text-muted-foreground">优惠倒计时 | Offer Ends In</span>
                   </div>
                   <p className="text-lg font-bold text-primary font-mono mb-2">{formatTime(timeLeft)}</p>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     <img 
                       src={voucherImg} 
                       alt="RM20 OFF Voucher 优惠卷" 

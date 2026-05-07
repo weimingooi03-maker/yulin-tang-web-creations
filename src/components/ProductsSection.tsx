@@ -2,6 +2,7 @@ import product4 from "@/assets/product-4.jpeg";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import voucherImg from "@/assets/voucher-rm20.jpeg";
+import voucherSgImg from "@/assets/voucher-sg-freeship.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, MessageCircle, Truck, Package, Flame, Clock } from "lucide-react";
@@ -189,12 +190,19 @@ const ProductsSection = () => {
                     <span className="text-xs font-bold text-muted-foreground">优惠倒计时 | Offer Ends In</span>
                   </div>
                   <p className="text-lg font-bold text-primary font-mono mb-2">{formatTime(timeLeft)}</p>
-                  <img 
-                    src={voucherImg} 
-                    alt="RM20 OFF Voucher 优惠卷" 
-                    className="w-full rounded-md border border-primary/20 shadow-sm"
-                  />
-                  <p className="text-xs text-muted-foreground mt-2">限时优惠卷！把握机会，立即订购 | Limited Voucher! Don't miss out!</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <img 
+                      src={voucherImg} 
+                      alt="RM20 OFF Voucher 优惠卷" 
+                      className="w-full rounded-md border border-primary/20 shadow-sm"
+                    />
+                    <img 
+                      src={voucherSgImg} 
+                      alt="Singapore Free Shipping Voucher 新加坡免运费" 
+                      className="w-full rounded-md border border-primary/20 shadow-sm"
+                    />
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-2">限时优惠卷！把握机会，立即订购 | Limited Vouchers! Don't miss out!</p>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">

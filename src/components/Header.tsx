@@ -28,6 +28,7 @@ const Header = () => {
             <div className="hidden sm:block">
               <span className="text-3xl font-brand text-foreground block leading-tight">魚鱗堂</span>
               <span className="text-sm text-primary tracking-widest font-serif font-medium">YULIN TANG</span>
+              <span className="text-[10px] text-muted-foreground tracking-wide block mt-0.5">Registered with SSM (003726992-W)</span>
             </div>
           </a>
           

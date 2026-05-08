@@ -121,6 +121,9 @@ const Footer = () => {
           <p className="mt-2">
             深海鱼鳞胶原蛋白冻 - 🇲🇾 马来西亚 & 🇸🇬 新加坡 专供
           </p>
+          <p className="mt-2 text-sm text-background/40">
+            Registered with SSM (003726992-W)
+          </p>
         </div>
       </div>
     </footer>

@@ -31,12 +31,6 @@ const faqs = [
     answerZh: "西马和新加坡免运费！东马需额外运费。订单确认后，西马一般2-4个工作日送达，新加坡3-5个工作日，东马5-7个工作日。",
     answerEn: "Free shipping for West Malaysia and Singapore! East Malaysia requires additional shipping fee. After order confirmation: West Malaysia 2-4 business days, Singapore 3-5 days, East Malaysia 5-7 days.",
   },
-  {
-    questionZh: "产品有什么认证吗？",
-    questionEn: "What certifications does the product have?",
-    answerZh: "我们的产品通过了 MESTI 和 GMP 卫生认证，确保产品安全、卫生、高品质。所有成分都是天然的，无添加防腐剂。",
-    answerEn: "Our product is MESTI and GMP certified, ensuring safety, hygiene, and high quality. All ingredients are natural with no preservatives added.",
-  },
 ];
 
 const FAQSection = () => {

@@ -31,12 +31,6 @@ const faqs = [
     answerZh: "西马和新加坡免运费！东马需额外运费。订单确认后，西马一般2-4个工作日送达，新加坡3-5个工作日，东马5-7个工作日。",
     answerEn: "Free shipping for West Malaysia and Singapore! East Malaysia requires additional shipping fee. After order confirmation: West Malaysia 2-4 business days, Singapore 3-5 days, East Malaysia 5-7 days.",
   },
-  {
-    questionZh: "运送范围包括哪些地区？",
-    questionEn: "What areas do you deliver to?",
-    answerZh: "我们目前配送至马来西亚（西马免运费，东马需额外运费）和新加坡。",
-    answerEn: "We currently deliver to Malaysia (free shipping for West Malaysia, additional fee for East Malaysia) and Singapore.",
-  },
 ];
 
 const FAQSection = () => {

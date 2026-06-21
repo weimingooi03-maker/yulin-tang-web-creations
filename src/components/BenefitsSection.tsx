@@ -310,7 +310,7 @@ const BenefitsSection = () => {
               <p className="text-xs text-muted-foreground text-center mt-2">3 Essential Amino Acids</p>
             </div>
           </div>
-
+          </div>
 
         {/* Customer Reviews */}
         <div className="mt-16">

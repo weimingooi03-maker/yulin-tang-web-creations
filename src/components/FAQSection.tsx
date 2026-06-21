@@ -32,10 +32,10 @@ const faqs = [
     answerEn: "Free shipping for West Malaysia and Singapore! East Malaysia requires additional shipping fee. After order confirmation: West Malaysia 2-4 business days, Singapore 3-5 days, East Malaysia 5-7 days.",
   },
   {
-    questionZh: "产品有什么认证吗？",
-    questionEn: "What certifications does the product have?",
-    answerZh: "我们的产品通过了 MESTI 和 GMP 卫生认证，确保产品安全、卫生、高品质。所有成分都是天然的，无添加防腐剂。",
-    answerEn: "Our product is MESTI and GMP certified, ensuring safety, hygiene, and high quality. All ingredients are natural with no preservatives added.",
+    questionZh: "运送范围包括哪些地区？",
+    questionEn: "What areas do you deliver to?",
+    answerZh: "我们目前配送至马来西亚（西马免运费，东马需额外运费）和新加坡。",
+    answerEn: "We currently deliver to Malaysia (free shipping for West Malaysia, additional fee for East Malaysia) and Singapore.",
   },
 ];
 

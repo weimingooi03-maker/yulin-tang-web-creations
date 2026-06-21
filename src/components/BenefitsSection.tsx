@@ -11,8 +11,6 @@ import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
-import gmpLogo from "@/assets/gmp-logo.png";
-import mestiLogo from "@/assets/mesti-logo.png";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
 import tasteProfile from "@/assets/taste-profile.jpeg";
 import whyChoose1 from "@/assets/why-choose-1.jpeg";
@@ -20,7 +18,7 @@ import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";
 import whenToTakeCn from "@/assets/when-to-take-cn.png";
 import whenToTakeEn from "@/assets/when-to-take-en.png";
-import sterilizationMachine from "@/assets/sterilization-machine.jpeg";
+
 
 
 const benefits = [

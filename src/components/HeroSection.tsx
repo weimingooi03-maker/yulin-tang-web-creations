@@ -28,40 +28,6 @@ const HeroSection = () => {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-delay-7">
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 text-xl"
-              onClick={scrollToProducts}
-            >
-              立即订购 Order Now
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary/10 px-8 py-6 text-xl font-semibold"
-              onClick={() => document.getElementById("benefits")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              了解更多 Learn More
-            </Button>
-          </div>
-
-          <div className="flex items-center justify-center gap-6 pt-2 opacity-0 animate-fade-in-delay-8 flex-wrap">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-primary">100%</p>
-              <p className="text-base text-muted-foreground font-medium">天然成分 Natural</p>
-            </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center">
-              <p className="text-3xl">🇲🇾 🇸🇬</p>
-              <p className="text-base text-muted-foreground font-medium">免运费 Free Shipping</p>
-            </div>
-            <div className="w-px h-12 bg-border" />
-            <div className="text-center flex flex-col items-center">
-              <Gift className="w-7 h-7 text-primary" />
-              <p className="text-base text-muted-foreground font-medium">送礼滋补佳品</p>
-            </div>
-          </div>
 
           {/* Product info images */}
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-delay-3 pt-4">

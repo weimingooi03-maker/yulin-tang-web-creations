@@ -87,23 +87,23 @@ const HeroSection = () => {
           </div>
           
           {/* Product images */}
-          <div className="relative opacity-0 animate-fade-in-delay-3 flex flex-col items-center gap-2">
+          <div className="relative opacity-0 animate-fade-in-delay-3 grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
-              <img 
-                src={heroProduct} 
-                alt="魚鱗堂深海鱼鳞胶原蛋白冻 - 什么是鱼鳞冻"
+              <img
+                src={heroZh.url}
+                alt="什么是鱼鳞冻 - 魚鱗堂深海鱼鳞胶原蛋白冻"
                 loading="lazy"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
-              <img 
-                src={whatIsFishJellyEn} 
-                alt="What is Fish Scale Jelly - YULIN TANG Deep Sea Collagen"
+              <img
+                src={heroEn.url}
+                alt="What is Marine Collagen Jelly - YULIN TANG"
                 loading="lazy"
-                className="w-full max-w-md mx-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>

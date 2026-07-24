@@ -1,5 +1,5 @@
-import heroProduct from "@/assets/hero-product.jpeg";
-import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
+import heroZh from "@/assets/what-is-fish-jelly-zh.png.asset.json";
+import heroEn from "@/assets/what-is-fish-jelly-en-new.png.asset.json";
 import logo from "@/assets/logo-transparent.png";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Gift } from "lucide-react";

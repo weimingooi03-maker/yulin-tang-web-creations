@@ -1,4 +1,6 @@
 import heroImage from "@/assets/unique-formula.png.asset.json";
+import heroZh from "@/assets/what-is-fish-jelly-zh.png.asset.json";
+import heroEn from "@/assets/what-is-fish-jelly-en-new.png.asset.json";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Gift } from "lucide-react";
 
@@ -17,7 +19,7 @@ const HeroSection = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-accent/10 blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10 pt-16">
-        <div className="max-w-3xl mx-auto flex flex-col items-center space-y-8">
+        <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
           {/* Feature image */}
           <div className="w-full opacity-0 animate-fade-in-delay-2">
             <img
@@ -59,6 +61,28 @@ const HeroSection = () => {
             <div className="text-center flex flex-col items-center">
               <Gift className="w-7 h-7 text-primary" />
               <p className="text-base text-muted-foreground font-medium">送礼滋补佳品</p>
+            </div>
+          </div>
+
+          {/* Product info images */}
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-delay-3 pt-4">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
+              <img
+                src={heroZh.url}
+                alt="什么是鱼鳞冻 - 魚鱗堂深海鱼鳞胶原蛋白冻"
+                loading="lazy"
+                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
+              <img
+                src={heroEn.url}
+                alt="What is Marine Collagen Jelly - YULIN TANG"
+                loading="lazy"
+                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              />
             </div>
           </div>
         </div>

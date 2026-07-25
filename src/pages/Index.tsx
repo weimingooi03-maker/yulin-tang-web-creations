@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import TrustBanner from "@/components/TrustBanner";
 import BenefitsSection from "@/components/BenefitsSection";
 import PrecautionsSection from "@/components/PrecautionsSection";
 import ProductsSection from "@/components/ProductsSection";

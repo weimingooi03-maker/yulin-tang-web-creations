@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, Droplets } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
@@ -104,6 +104,78 @@ const BenefitsSection = () => {
           ))}
         </div>
 
+        {/* Natural Ingredients */}
+        <div className="mb-16">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+              天然食材
+            </h3>
+            <p className="text-lg text-primary font-semibold">Natural Ingredients</p>
+            <p className="text-sm text-muted-foreground mt-1">
+              精选四种核心成分 · Four Key Ingredients
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
+            {[
+              {
+                icon: Droplets,
+                zh: "深海鱼鳞",
+                en: "Fish Scales",
+                benefitZh: "7500mg 胶原蛋白",
+                benefitEn: "7500mg Collagen",
+                color: "bg-blue-100 text-blue-600",
+              },
+              {
+                icon: Heart,
+                zh: "红枣",
+                en: "Red Dates",
+                benefitZh: "补血养颜",
+                benefitEn: "Nourishes Blood",
+                color: "bg-red-100 text-red-600",
+              },
+              {
+                icon: Moon,
+                zh: "龙眼",
+                en: "Longan",
+                benefitZh: "安神助眠",
+                benefitEn: "Calms & Aids Sleep",
+                color: "bg-amber-100 text-amber-600",
+              },
+              {
+                icon: Leaf,
+                zh: "斑斓",
+                en: "Pandan",
+                benefitZh: "清香解腻",
+                benefitEn: "Refreshing Aroma",
+                color: "bg-green-100 text-green-600",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="p-4 bg-card rounded-2xl border border-border/50 shadow-sm text-center"
+              >
+                <div
+                  className={`w-11 h-11 mx-auto rounded-full flex items-center justify-center mb-2 ${item.color}`}
+                >
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <h4 className="text-base font-bold text-foreground leading-tight">
+                  {item.zh}
+                </h4>
+                <p className="text-xs text-primary font-semibold uppercase tracking-wide mb-1.5">
+                  {item.en}
+                </p>
+                <p className="text-sm text-foreground/90 font-medium">
+                  {item.benefitZh}
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  {item.benefitEn}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Taste Profile Section */}
         <div className="mb-16">

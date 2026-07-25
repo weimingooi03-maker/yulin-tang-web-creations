@@ -261,12 +261,12 @@ const BenefitsSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review2Asset.url} 
-                alt="Customer Review - Mr Lim Singapore, mother's knee pain improved"
+                alt="Customer Review - Mr Lim, mother's knee pain improved"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">Mr Lim · Singapore</p>
+                <p className="text-sm font-bold text-foreground mb-1">Mr Lim</p>
                 <p className="text-xs text-muted-foreground">"After 12 days, my mum's knee pain eased and she can walk much more smoothly!"</p>
               </div>
             </div>

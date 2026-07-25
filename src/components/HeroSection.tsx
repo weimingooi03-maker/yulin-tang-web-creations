@@ -47,13 +47,13 @@ const HeroSection = () => {
           </div>
 
           {/* Product info images */}
-          <div className="w-full max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-delay-3">
+          <div className="w-full max-w-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3 opacity-0 animate-fade-in-delay-3">
             <div className="relative">
               <img
                 src={heroZh}
                 alt="什么是鱼鳞冻 - 魚鱗堂深海鱼鳞胶原蛋白冻"
                 loading="lazy"
-                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+                className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="relative">
@@ -61,7 +61,7 @@ const HeroSection = () => {
                 src={heroEn}
                 alt="What is Marine Collagen Jelly - YULIN TANG"
                 loading="lazy"
-                className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+                className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>

@@ -106,10 +106,14 @@ const HeroSection = () => {
             <div className="absolute -inset-6 bg-gradient-to-tr from-primary/30 via-accent/20 to-primary/30 rounded-[2rem] blur-3xl opacity-70 animate-hero-glow" />
             {/* Slides */}
             <div
-              className="relative overflow-hidden rounded-2xl aspect-square sm:aspect-[4/3] md:aspect-[16/10] shadow-2xl bg-secondary/40 touch-pan-y"
+              className="relative overflow-hidden rounded-2xl aspect-square sm:aspect-[4/3] md:aspect-[16/10] shadow-2xl bg-secondary/40 touch-pan-y cursor-grab active:cursor-grabbing"
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEnd}
+              onMouseDown={onMouseDown}
+              onMouseMove={onMouseMove}
+              onMouseUp={onMouseUp}
+              onMouseLeave={onMouseLeave}
             >
               {heroSlides.map((slide, idx) => (
                 <img

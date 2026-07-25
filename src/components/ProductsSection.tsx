@@ -152,7 +152,7 @@ const ProductsSection = () => {
                 return (
                   <button
                     key={p.id}
-                    onClick={() => setSelectedId(p.id)}
+                    onClick={() => selectSet(p.id)}
                     className={`relative rounded-xl border-2 p-3 sm:p-4 text-left transition-all ${
                       active
                         ? "border-primary bg-primary/5 shadow-md"
@@ -254,6 +254,36 @@ const ProductsSection = () => {
                 </div>
               </div>
 
+              {/* Quantity stepper */}
+              <div className="flex items-center justify-between mb-4 pb-4 border-b border-border/60">
+                <div className="flex flex-col leading-tight">
+                  <span className="text-sm font-semibold text-foreground">份数</span>
+                  <span className="text-[11px] text-muted-foreground">Quantity</span>
+                </div>
+                <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1">
+                  <button
+                    type="button"
+                    aria-label="减少"
+                    onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                    disabled={quantity <= 1}
+                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary/10 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </button>
+                  <span className="w-8 text-center text-lg font-bold text-foreground tabular-nums">
+                    {quantity}
+                  </span>
+                  <button
+                    type="button"
+                    aria-label="增加"
+                    onClick={() => setQuantity((q) => Math.min(99, q + 1))}
+                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary/10 transition"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+
               <Button
                 className={`w-full font-bold text-base py-6 ${
                   selected.isVip
@@ -264,13 +294,8 @@ const ProductsSection = () => {
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 立即购买 Buy Now
+                {quantity > 1 && <span className="ml-2 opacity-90">× {quantity}</span>}
               </Button>
-              <button
-                className="w-full mt-3 text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-4"
-                onClick={() => handleAddToCart(selected)}
-              >
-                加入购物车 Add to Cart
-              </button>
             </CardContent>
           </div>
         </Card>

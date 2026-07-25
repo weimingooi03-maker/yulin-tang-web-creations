@@ -29,10 +29,20 @@ const HeroSection = () => {
           </div>
 
 
+          {/* Section title */}
+          <div className="w-full text-center pt-6 opacity-0 animate-fade-in-delay-3">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-wide">
+              鱼鳞冻介绍
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground mt-2 tracking-wider uppercase">
+              Marine Collagen Jelly Introduction
+            </p>
+            <div className="w-16 h-0.5 bg-primary/40 mx-auto mt-4" />
+          </div>
+
           {/* Product info images */}
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-delay-3 pt-4">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 opacity-0 animate-fade-in-delay-3">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
               <img
                 src={heroZh}
                 alt="什么是鱼鳞冻 - 魚鱗堂深海鱼鳞胶原蛋白冻"
@@ -41,7 +51,6 @@ const HeroSection = () => {
               />
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
               <img
                 src={heroEn}
                 alt="What is Marine Collagen Jelly - YULIN TANG"

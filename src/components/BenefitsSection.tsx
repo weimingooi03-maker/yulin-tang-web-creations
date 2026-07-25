@@ -12,7 +12,7 @@ import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
-import tasteProfile from "@/assets/taste-profile.jpeg";
+import tasteProfile from "@/assets/taste-profile.png";
 import whyChoose1 from "@/assets/why-choose-1.jpeg";
 import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";

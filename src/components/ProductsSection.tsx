@@ -4,6 +4,7 @@ import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Truck, Package, Flame } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 import { useToast } from "@/hooks/use-toast";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";

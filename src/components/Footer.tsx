@@ -1,6 +1,7 @@
 import logo from "@/assets/logo.png";
 import footerLogo from "@/assets/footer-logo.png";
 import { Facebook, Instagram, MessageCircle, Mail, ShoppingBag } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 
 const Footer = () => {
   return (

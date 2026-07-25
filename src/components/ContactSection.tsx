@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone, Mail, Facebook, Instagram, Award, FileCheck, Shield, Handshake } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {

@@ -1,6 +1,7 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 import { useCart } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 

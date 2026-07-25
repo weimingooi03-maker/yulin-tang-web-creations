@@ -80,6 +80,11 @@ const ProductsSection = () => {
   const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
 
+  const unitMY = products[0].priceMY / products[0].qty;
+  const unitSG = products[0].priceSG / products[0].qty;
+  const savingsMY = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
+  const savingsSG = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
+
   const selectSet = (id: string) => {
     setSelectedId(id);
     setQuantity(1);
@@ -178,14 +183,9 @@ const ProductsSection = () => {
                     <div className="text-[11px] sm:text-xs text-muted-foreground font-medium">
                       {p.qtyLabel} · {p.qty} Bottles
                     </div>
-                    <div className="mt-1.5 text-sm sm:text-base font-bold text-foreground">
-                      {p.priceRM}
+                    <div className="mt-1.5 text-[10px] sm:text-xs font-medium text-primary">
+                      选配套 Select
                     </div>
-                    {p.savingsZh && (
-                      <div className="text-[10px] sm:text-xs text-destructive font-semibold mt-0.5">
-                        {p.savingsZh}
-                      </div>
-                    )}
                   </button>
                 );
               })}
@@ -241,7 +241,14 @@ const ProductsSection = () => {
                     </span>
                   </span>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-primary leading-none">{selected.priceRM}</div>
+                    <div className="flex items-center justify-end gap-2">
+                      <div className="text-2xl font-bold text-primary leading-none">{selected.priceRM}</div>
+                      {savingsMY > 0 && (
+                        <div className="bg-destructive/10 text-destructive text-[10px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap">
+                          省 RM {savingsMY}
+                        </div>
+                      )}
+                    </div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitRM}</div>
                   </div>
                 </div>
@@ -254,7 +261,14 @@ const ProductsSection = () => {
                     </span>
                   </span>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-primary leading-none">{selected.priceSGD}</div>
+                    <div className="flex items-center justify-end gap-2">
+                      <div className="text-2xl font-bold text-primary leading-none">{selected.priceSGD}</div>
+                      {savingsSG > 0 && (
+                        <div className="bg-destructive/10 text-destructive text-[10px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap">
+                          Save SGD {savingsSG}
+                        </div>
+                      )}
+                    </div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitSGD}</div>
                   </div>
                 </div>

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -353,11 +353,16 @@ const BenefitsSection = () => {
 
         {/* Customer Reviews */}
         <div className="mt-16">
-          <div className="text-center mb-8">
+          <div className="text-center mb-4">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
               顾客好评
             </h3>
             <p className="text-lg text-primary font-semibold">Customer Reviews</p>
+            <div className="mt-3 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium animate-pulse">
+              <ChevronLeft className="w-4 h-4" />
+              <span>左右滑动查看更多 · Swipe to see more</span>
+              <ChevronRight className="w-4 h-4" />
+            </div>
           </div>
           <Carousel
             opts={{ loop: true, align: "start" }}

@@ -1,6 +1,6 @@
 import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import eatingMethod from "@/assets/eating-method.png";
+import eatingMethod from "@/assets/eating-method-3ways.png.asset.json";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";

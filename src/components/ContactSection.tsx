@@ -185,20 +185,42 @@ const ContactSection = () => {
                   <p className="text-base text-muted-foreground text-center mb-4">
                     Laboratory Test Results
                   </p>
-                  <div className="grid grid-cols-3 gap-3">
-                    <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
-                      <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
-                    </a>
-                    <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
-                      <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
-                    </a>
-                    <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
-                      <p className="text-xs text-center py-2 text-muted-foreground">胶原蛋白 Collagen</p>
-                    </a>
-                  </div>
+
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button
+                        variant="outline"
+                        className="w-full py-6 text-base font-bold border-primary/30 hover:border-primary hover:bg-primary/5 group"
+                      >
+                        <FileText className="w-5 h-5 mr-2 text-primary group-hover:scale-110 transition-transform" />
+                        查看完整报告 · View Full Reports
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                      <DialogHeader>
+                        <DialogTitle className="text-center text-2xl font-bold">
+                          实验室检测报告
+                        </DialogTitle>
+                        <DialogDescription className="text-center text-base">
+                          Laboratory Test Results
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md bg-background">
+                          <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto aspect-[800/1035] object-cover" />
+                          <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
+                        </a>
+                        <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md bg-background">
+                          <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto aspect-[800/1035] object-cover" />
+                          <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
+                        </a>
+                        <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md bg-background">
+                          <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto aspect-[800/1035] object-cover" />
+                          <p className="text-xs text-center py-2 text-muted-foreground">胶原蛋白 Collagen</p>
+                        </a>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </div>
               </div>
             </CardContent>

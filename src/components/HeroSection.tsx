@@ -1,6 +1,6 @@
-import heroImage from "@/assets/unique-formula.png.asset.json";
-import heroZh from "@/assets/what-is-fish-jelly-zh.png.asset.json";
-import heroEn from "@/assets/what-is-fish-jelly-en-new.png.asset.json";
+import heroImage from "@/assets/unique-formula.png";
+import heroZh from "@/assets/what-is-fish-jelly-zh.png";
+import heroEn from "@/assets/what-is-fish-jelly-en.png";
 import { ChevronDown } from "lucide-react";
 
 const HeroSection = () => {

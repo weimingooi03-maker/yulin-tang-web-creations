@@ -1,6 +1,6 @@
 import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import eatingMethod from "@/assets/eating-method-3ways.png.asset.json";
+import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
@@ -174,8 +174,9 @@ const BenefitsSection = () => {
           <div className="max-w-4xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={eatingMethod.url} 
+                src={eatingMethod} 
                 alt="3 种食用方法 - 3 Ways to Enjoy YULIN TANG Fish Scale Collagen Jelly"
+                loading="lazy"
                 className="w-full h-auto"
               />
             </div>

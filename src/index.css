@@ -148,3 +148,19 @@
     font-family: 'Noto Serif SC', serif;
   }
 }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.015); }
+}
+@keyframes hero-glow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.05); }
+}
+@keyframes hero-shimmer {
+  0% { transform: translateX(-100%); }
+  60%, 100% { transform: translateX(100%); }
+}
+.animate-hero-float { animation: hero-float 6s ease-in-out infinite; }
+.animate-hero-glow { animation: hero-glow 5s ease-in-out infinite; }
+.animate-hero-shimmer { animation: hero-shimmer 3.5s ease-in-out infinite; }

@@ -1,4 +1,4 @@
-import setaPhoto from "@/assets/seta-photo.png.asset.json";
+import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import voucherImg from "@/assets/voucher-rm20.jpeg";

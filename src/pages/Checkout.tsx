@@ -106,21 +106,21 @@ const Checkout = () => {
         <p className="text-muted-foreground mb-6">简单 3 步完成订单，客服将透过 WhatsApp 与您确认。</p>
 
         {/* Step indicator */}
-        <div className="flex items-center justify-between gap-2 mb-8">
+        <div className="relative flex items-start justify-between gap-2 mb-8">
           {[
             { num: "1", zh: "检查订单", en: "Check Order" },
             { num: "2", zh: "填资料", en: "Fill Details" },
             { num: "3", zh: "WhatsApp 确认", en: "Confirm" },
-          ].map((s, i) => (
+          ].map((s) => (
             <div key={s.num} className="flex-1 flex flex-col items-center text-center">
               <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mb-2">
                 {s.num}
               </div>
               <p className="text-sm font-semibold leading-tight">{s.zh}</p>
               <p className="text-xs text-muted-foreground leading-tight">{s.en}</p>
-              {i < 2 && <div className="hidden sm:block absolute h-0.5 bg-border w-1/3 -z-10" style={{ top: "2.25rem" }} />}
             </div>
           ))}
+          <div className="hidden sm:block absolute top-5 left-[16.66%] right-[16.66%] h-0.5 bg-border -z-10" />
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">

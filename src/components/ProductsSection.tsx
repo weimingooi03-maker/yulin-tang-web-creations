@@ -1,4 +1,4 @@
-import product4 from "@/assets/product-4.jpeg";
+import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import voucherImg from "@/assets/voucher-rm20.jpeg";
@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const products = [
   {
-    image: product4,
+    image: setaPhoto,
     nameZh: "SET A 配套",
     nameEn: "Set A Package",
     qty: "12罐",

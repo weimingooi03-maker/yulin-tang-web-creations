@@ -222,19 +222,19 @@ const BenefitsSection = () => {
                   Best Time to Enjoy for Maximum Results
                 </p>
               </div>
-              <div className="relative max-w-4xl mx-auto">
+              <div className="relative max-w-4xl mx-auto px-8 md:px-0">
                 {/* Animated Sun - Left */}
-                <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10">
+                <div className="absolute left-0 md:-left-14 top-4 md:top-8 z-10">
                   <div className="relative">
-                    <Sun className="w-12 h-12 md:w-20 md:h-20 text-amber-500 animate-sun" strokeWidth={1.5} />
-                    <div className="absolute inset-0 rounded-full bg-amber-400/20 blur-xl animate-sun-glow" />
+                    <Sun className="w-10 h-10 md:w-16 md:h-16 text-primary animate-sun" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-primary/15 blur-lg animate-sun-glow" />
                   </div>
                 </div>
                 {/* Animated Moon - Right */}
-                <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10">
+                <div className="absolute right-0 md:-right-14 top-4 md:top-8 z-10">
                   <div className="relative">
-                    <Moon className="w-12 h-12 md:w-20 md:h-20 text-indigo-400 animate-moon" strokeWidth={1.5} />
-                    <div className="absolute inset-0 rounded-full bg-indigo-400/20 blur-xl animate-moon-glow" />
+                    <Moon className="w-10 h-10 md:w-16 md:h-16 text-primary/80 animate-moon" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-primary/10 blur-lg animate-moon-glow" />
                   </div>
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">

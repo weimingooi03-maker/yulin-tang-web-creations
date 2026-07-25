@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
 import review3 from "@/assets/review-3.jpeg";
-import review2Asset from "@/assets/review-aunt-lin-sg.jpeg.asset.json";
-import review4Asset from "@/assets/review-beauty-before-after.jpeg.asset.json";
+import review2Asset from "@/assets/review-aunt-lin-sg.jpeg";
+import review4Asset from "@/assets/review-beauty-before-after.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
@@ -336,7 +336,7 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review2Asset.url} 
+                src={review2Asset} 
                 alt="Customer Review - Mr Lim, mother's knee pain improved"
                 loading="lazy"
                 className="w-full h-auto"
@@ -360,7 +360,7 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review4Asset.url} 
+                src={review4Asset} 
                 alt="Customer Review - Visible skin improvement before and after"
                 loading="lazy"
                 className="w-full h-auto"

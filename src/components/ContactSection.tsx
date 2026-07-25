@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshake } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
-import labtestNutrition from "@/assets/labtest-nutrition.jpeg.asset.json";
-import labtestMicrobio from "@/assets/labtest-microbio.jpeg.asset.json";
-import labtestCollagen from "@/assets/labtest-collagen.jpeg.asset.json";
+import labtestNutrition from "@/assets/labtest-nutrition.jpeg";
+import labtestMicrobio from "@/assets/labtest-microbio.jpeg";
+import labtestCollagen from "@/assets/labtest-collagen.jpeg";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {
@@ -178,16 +178,16 @@ const ContactSection = () => {
                     Laboratory Test Results
                   </p>
                   <div className="grid grid-cols-3 gap-3">
-                    <a href={labtestNutrition.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestNutrition.url} alt="Nutrition Lab Test Report" loading="lazy" className="w-full h-auto" />
+                    <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
+                      <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" className="w-full h-auto" />
                       <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
                     </a>
-                    <a href={labtestMicrobio.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestMicrobio.url} alt="Microbiology Lab Test Report" loading="lazy" className="w-full h-auto" />
+                    <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
+                      <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" className="w-full h-auto" />
                       <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
                     </a>
-                    <a href={labtestCollagen.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestCollagen.url} alt="Collagen Analysis Report" loading="lazy" className="w-full h-auto" />
+                    <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
+                      <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" className="w-full h-auto" />
                       <p className="text-xs text-center py-2 text-muted-foreground">胶原蛋白 Collagen</p>
                     </a>
                   </div>

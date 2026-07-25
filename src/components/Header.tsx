@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
-import logoAsset from "@/assets/yulin-tang-logo-transparent.png.asset.json";
+import logoImg from "@/assets/yulin-tang-logo-transparent.png";
 import { useCart } from "@/contexts/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Header = () => {
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
           >
             <img 
-              src={logoAsset.url} 
+              src={logoImg} 
               alt="魚鱗堂 YULIN TANG Logo" 
               className="h-20 md:h-24 w-auto object-contain"
             />

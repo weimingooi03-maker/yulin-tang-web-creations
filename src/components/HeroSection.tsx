@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
 import floralImage from "@/assets/floral-series-coming-soon.png";
-import customers80kAsset from "@/assets/hero-80k-customers.png.asset.json";
+import customers80kImg from "@/assets/hero-80k-customers.png";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
 import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";

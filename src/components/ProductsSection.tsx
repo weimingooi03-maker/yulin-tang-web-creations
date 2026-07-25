@@ -79,6 +79,9 @@ const products = [
   },
 ];
 
+const DISCOUNT_MY = 20; // RM 20 off all MY packages
+const discountSGFor = (id: string) => (id === "set-c" ? 5 : 0); // SGD 5 off Set C only
+
 const ProductsSection = () => {
   const { addItem } = useCart();
   const navigate = useNavigate();
@@ -86,14 +89,14 @@ const ProductsSection = () => {
   const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
 
-  const unitMY = products[0].priceMY / products[0].qty;
-  const unitSG = products[0].priceSG / products[0].qty;
-  const savingsMYUnit = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
-  const savingsSGUnit = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
-  const totalMY = selected.priceMY * quantity;
-  const totalSG = selected.priceSG * quantity;
-  const savingsMY = savingsMYUnit * quantity;
-  const savingsSG = savingsSGUnit * quantity;
+  const discMY = DISCOUNT_MY;
+  const discSG = discountSGFor(selected.id);
+  const discountedMY = selected.priceMY - discMY;
+  const discountedSG = selected.priceSG - discSG;
+  const totalMY = discountedMY * quantity;
+  const totalSG = discountedSG * quantity;
+  const originalTotalMY = selected.priceMY * quantity;
+  const originalTotalSG = selected.priceSG * quantity;
 
   const selectSet = (id: string) => {
     setSelectedId(id);
@@ -106,8 +109,8 @@ const ProductsSection = () => {
     nameEn: p.nameEn,
     qtyLabel: p.qtyEn,
     image: p.image,
-    priceMY: p.priceMY,
-    priceSG: p.priceSG,
+    priceMY: p.priceMY - DISCOUNT_MY,
+    priceSG: p.priceSG - discountSGFor(p.id),
   });
 
   const handleBuyNow = (p: typeof products[number]) => {
@@ -142,6 +145,34 @@ const ProductsSection = () => {
           <p className="text-base text-muted-foreground mt-2">
             FREE Shipping to All Malaysia & Singapore
           </p>
+        </div>
+
+        {/* Voucher Banner */}
+        <div className="max-w-4xl mx-auto mb-6">
+          <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-primary/50 bg-gradient-to-r from-primary/10 via-gold/10 to-accent/10 p-4 sm:p-5 shadow-md">
+            <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
+            <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center sm:text-left">
+              <div className="flex-shrink-0 inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
+                <Sparkles className="w-3.5 h-3.5" /> 限时优惠 · Voucher
+              </div>
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1 text-sm sm:text-base">
+                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
+                  <FlagIcon country="MY" />
+                  <span className="text-primary text-lg">−RM 20</span>
+                  <span className="text-xs text-muted-foreground">全配套 All Packages</span>
+                </span>
+                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
+                  <FlagIcon country="SG" />
+                  <span className="text-primary text-lg">−SGD 5</span>
+                  <span className="text-xs text-muted-foreground">仅限 SET C Only</span>
+                </span>
+              </div>
+            </div>
+            <p className="text-center text-[11px] text-muted-foreground mt-2">
+              已自动套用，无需输入优惠码 · Auto-applied at checkout, no code needed
+            </p>
+          </div>
         </div>
 
         {/* Unified selector */}
@@ -251,9 +282,13 @@ const ProductsSection = () => {
                     </span>
                   </span>
                   <div className="text-right">
+                    <div className="flex items-baseline justify-end gap-2">
+                      <span className="text-sm text-muted-foreground line-through">RM {originalTotalMY}</span>
+                      <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−RM {discMY * quantity}</span>
+                    </div>
                     <div className="text-2xl font-bold text-primary leading-none">RM {totalMY}</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
-                      每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}{quantity > 1 && ` · ${selected.priceRM} × ${quantity}`}
+                      每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}
                     </div>
                   </div>
                 </div>
@@ -266,9 +301,15 @@ const ProductsSection = () => {
                     </span>
                   </span>
                   <div className="text-right">
+                    {discSG > 0 && (
+                      <div className="flex items-baseline justify-end gap-2">
+                        <span className="text-sm text-muted-foreground line-through">SGD {originalTotalSG}</span>
+                        <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−SGD {discSG * quantity}</span>
+                      </div>
+                    )}
                     <div className="text-2xl font-bold text-primary leading-none">SGD {totalSG}</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
-                      每瓶 / per bottle SGD {(totalSG / (selected.qty * quantity)).toFixed(2)}{quantity > 1 && ` · ${selected.priceSGD} × ${quantity}`}
+                      每瓶 / per bottle SGD {(totalSG / (selected.qty * quantity)).toFixed(2)}
                     </div>
                   </div>
                 </div>

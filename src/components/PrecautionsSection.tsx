@@ -14,6 +14,14 @@ const precautions = [
     titleZh: "肾脏疾病",
     titleEn: "Kidney Disease",
   },
+  {
+    titleZh: "正在接受特殊疾病治疗者",
+    titleEn: "Under Special Treatment",
+  },
+  {
+    titleZh: "对产品成分不适合者",
+    titleEn: "Ingredient Sensitivity",
+  },
 ];
 
 const PrecautionsSection = () => {

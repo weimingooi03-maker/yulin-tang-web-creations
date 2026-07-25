@@ -23,6 +23,8 @@ const products = [
     priceSGD: "SGD 99",
     priceMY: 219,
     priceSG: 99,
+    originalMY: 239,
+    originalSG: 109,
     unitRM: "RM 18.25",
     unitSGD: "SGD 8.25",
     badge: "体验装",
@@ -45,6 +47,8 @@ const products = [
     priceSGD: "SGD 160",
     priceMY: 389,
     priceSG: 160,
+    originalMY: 409,
+    originalSG: 170,
     unitRM: "RM 16.21",
     unitSGD: "SGD 6.67",
     badge: "热销款",
@@ -67,6 +71,8 @@ const products = [
     priceSGD: "SGD 230",
     priceMY: 539,
     priceSG: 230,
+    originalMY: 559,
+    originalSG: 240,
     unitRM: "RM 14.97",
     unitSGD: "SGD 6.39",
     badge: "家庭装",
@@ -79,9 +85,6 @@ const products = [
   },
 ];
 
-const DISCOUNT_MY = 20; // RM 20 off all MY packages
-const discountSGFor = (id: string) => (id === "set-c" ? 5 : 0); // SGD 5 off Set C only
-
 const ProductsSection = () => {
   const { addItem } = useCart();
   const navigate = useNavigate();
@@ -89,14 +92,10 @@ const ProductsSection = () => {
   const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
 
-  const discMY = DISCOUNT_MY;
-  const discSG = discountSGFor(selected.id);
-  const discountedMY = selected.priceMY - discMY;
-  const discountedSG = selected.priceSG - discSG;
-  const totalMY = discountedMY * quantity;
-  const totalSG = discountedSG * quantity;
-  const originalTotalMY = selected.priceMY * quantity;
-  const originalTotalSG = selected.priceSG * quantity;
+  const totalMY = selected.priceMY * quantity;
+  const totalSG = selected.priceSG * quantity;
+  const originalTotalMY = selected.originalMY * quantity;
+  const originalTotalSG = selected.originalSG * quantity;
 
   const selectSet = (id: string) => {
     setSelectedId(id);
@@ -109,14 +108,16 @@ const ProductsSection = () => {
     nameEn: p.nameEn,
     qtyLabel: p.qtyEn,
     image: p.image,
-    priceMY: p.priceMY - DISCOUNT_MY,
-    priceSG: p.priceSG - discountSGFor(p.id),
+    priceMY: p.priceMY,
+    priceSG: p.priceSG,
   });
 
   const handleBuyNow = (p: typeof products[number]) => {
     addItem(toCartProduct(p), quantity);
     navigate("/checkout");
   };
+
+
 
 
   return (

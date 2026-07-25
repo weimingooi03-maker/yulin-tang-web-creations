@@ -219,17 +219,15 @@ const ProductsSection = () => {
                 {selected.nameEn}
               </p>
 
-              <div className="flex items-center gap-2 text-sm text-foreground font-semibold mb-3 pb-3 border-b border-border/60">
-                <Package className="w-4 h-4 text-primary" />
-                {selected.qtyLabel} · {selected.qtyEn}
-              </div>
-
-              <div className="flex items-center gap-2 text-sm text-foreground font-semibold mb-4 pb-4 border-b border-border/60">
-                <Sparkles className="w-4 h-4 text-primary" />
-                每瓶 180ml 含 7500mg 深海鱼鳞胶原蛋白
-                <span className="text-xs text-muted-foreground font-medium ml-auto">
-                  7500mg Collagen / Bottle
-                </span>
+              <div className="flex items-center justify-between text-sm text-foreground font-semibold mb-4 pb-4 border-b border-border/60">
+                <div className="flex items-center gap-2">
+                  <Package className="w-4 h-4 text-primary" />
+                  <span>{selected.qtyLabel} · {selected.qtyEn}</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-bold">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>7500mg</span>
+                </div>
               </div>
 
               {/* Prices */}

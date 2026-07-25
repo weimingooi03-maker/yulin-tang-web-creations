@@ -8,7 +8,7 @@ import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-reac
 
 const heroSlides = [
   {
-    src: customers80kAsset.url,
+    src: customers80kImg,
     alt: "服务超过 80,000 名马来西亚与新加坡顾客的胶原产品，好评高达 92% - Trusted by 80,000+ customers across Malaysia & Singapore",
   },
   {

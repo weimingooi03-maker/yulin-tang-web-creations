@@ -9,7 +9,7 @@ import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
-import naturalIngredients from "@/assets/natural-ingredients.png.asset.json";
+import naturalIngredients from "@/assets/natural-ingredients.png";
 
 const benefitVisuals = [
   {

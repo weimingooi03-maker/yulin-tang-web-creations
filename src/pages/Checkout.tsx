@@ -46,6 +46,25 @@ const Checkout = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
+  const MALAYSIAN_STATES = [
+    { value: "Johor", label: "Johor · 柔佛" },
+    { value: "Kedah", label: "Kedah · 吉打" },
+    { value: "Kelantan", label: "Kelantan · 吉兰丹" },
+    { value: "Melaka", label: "Melaka · 马六甲" },
+    { value: "Negeri Sembilan", label: "Negeri Sembilan · 森美兰" },
+    { value: "Pahang", label: "Pahang · 彭亨" },
+    { value: "Penang", label: "Penang · 槟城" },
+    { value: "Perak", label: "Perak · 霹雳" },
+    { value: "Perlis", label: "Perlis · 玻璃市" },
+    { value: "Sabah", label: "Sabah · 沙巴" },
+    { value: "Sarawak", label: "Sarawak · 砂拉越" },
+    { value: "Selangor", label: "Selangor · 雪兰莪" },
+    { value: "Terengganu", label: "Terengganu · 登嘉楼" },
+    { value: "Kuala Lumpur", label: "Kuala Lumpur · 吉隆坡" },
+    { value: "Putrajaya", label: "Putrajaya · 布城" },
+    { value: "Labuan", label: "Labuan · 纳闽" },
+  ];
+
   const composeMessage = (d: z.infer<typeof schema>) => {
     const itemText = items
       .map((item, idx) => {
@@ -57,7 +76,7 @@ const Checkout = () => {
       })
       .join("； ");
 
-    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，城市 City：${d.city}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
-import logo from "@/assets/logo-transparent.png";
+import logoAsset from "@/assets/yulin-tang-logo.png.asset.json";
 import { useCart } from "@/contexts/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -44,15 +44,18 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="魚鱗堂 Logo" className="h-12 w-auto" />
-            <div className="hidden sm:block">
-              <span className="text-3xl font-brand text-foreground block leading-tight">魚鱗堂</span>
-              <span className="text-sm text-primary tracking-widest font-serif font-medium">YULIN TANG</span>
-            </div>
+          {/* Centered Logo */}
+          <a 
+            href="#" 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
+          >
+            <img 
+              src={logoAsset.url} 
+              alt="魚鱗堂 YULIN TANG Logo" 
+              className="h-14 md:h-16 w-auto object-contain"
+            />
           </a>
           
           {/* Desktop Navigation */}

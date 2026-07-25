@@ -212,21 +212,39 @@ const BenefitsSection = () => {
               </div>
             </div>
             
-            {/* When to Take Images */}
-            <div className="grid md:grid-cols-2 gap-2 mt-8">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={whenToTakeCn} 
-                  alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前"
-                  className="w-full h-auto"
-                />
+            {/* Best Time to Take */}
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+                  什么时候吃效果最佳？
+                </h3>
+                <p className="text-lg text-primary font-semibold">
+                  Best Time to Enjoy for Maximum Results
+                </p>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={whenToTakeEn} 
-                  alt="When to Take - Before Breakfast or Before Bed"
-                  className="w-full h-auto"
-                />
+              <div className="relative max-w-4xl mx-auto">
+                {/* Animated Sun - Left */}
+                <div className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 z-10">
+                  <div className="relative">
+                    <Sun className="w-12 h-12 md:w-20 md:h-20 text-amber-500 animate-sun" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-amber-400/20 blur-xl animate-sun-glow" />
+                  </div>
+                </div>
+                {/* Animated Moon - Right */}
+                <div className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 z-10">
+                  <div className="relative">
+                    <Moon className="w-12 h-12 md:w-20 md:h-20 text-indigo-400 animate-moon" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-indigo-400/20 blur-xl animate-moon-glow" />
+                  </div>
+                </div>
+                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+                  <img
+                    src={bestTimeToTake.url}
+                    alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前一小时"
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>

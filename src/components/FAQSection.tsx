@@ -14,10 +14,10 @@ const faqs = [
     answerEn: "Fish scale collagen jelly is natural collagen extracted from deep-sea fish scales, made into a delicious jelly form. Compared to collagen powder, it's easier to absorb and requires no mixing - just open and enjoy!",
   },
   {
-    questionZh: "每天应该吃多少？什么时候吃最好？",
-    questionEn: "How much should I consume daily? When is the best time to take it?",
-    answerZh: "建议每天1罐。最佳服用时间是早上空腹或睡前，这时吸收效果最好。可以直接饮用，也可以冷藏后变成果冻食用。",
-    answerEn: "We recommend 1 can daily. Best taken on an empty stomach in the morning or before bed for optimal absorption. Can be consumed directly or refrigerated into jelly.",
+    questionZh: "里面的成分有什么？",
+    questionEn: "What are the ingredients?",
+    answerZh: "主要成分为天然鱼鳞胶原蛋白，搭配红枣、龙眼与斑斓精制而成。红枣补血养颜，龙眼安神助眠，斑斓清香解腻，让口感更温润顺口。",
+    answerEn: "Made with natural fish scale collagen, red dates, longan and pandan. Red dates nourish blood and skin, longan calms the mind and aids sleep, while pandan adds a refreshing aroma for a smoother taste.",
   },
   {
     questionZh: "多久能看到效果？",

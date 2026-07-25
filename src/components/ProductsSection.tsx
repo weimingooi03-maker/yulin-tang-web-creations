@@ -162,10 +162,10 @@ const ProductsSection = () => {
                 <span>👇</span>
               </div>
               <p className="text-sm font-semibold text-foreground mt-2">
-                请选择您的罐数
+                请选择您的配套
               </p>
               <p className="text-xs text-muted-foreground tracking-wider">
-                Please Select Your Bottle Quantity
+                Please Select Your Package
               </p>
             </div>
             <div className="grid grid-cols-3 gap-2 sm:gap-4">
@@ -191,23 +191,15 @@ const ProductsSection = () => {
                         热销 Best Seller
                       </div>
                     )}
-                    <div className="flex flex-col items-center gap-0.5">
-                      <span className={`text-2xl sm:text-3xl font-bold leading-none ${active ? "text-primary" : "text-foreground"}`}>
-                        {p.qty}
-                      </span>
-                      <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
-                        Bottles
-                      </span>
-                      <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
-                        罐
-                      </span>
-                    </div>
-                    <div className={`mt-2 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full inline-block ${
-                      active
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-muted text-muted-foreground"
-                    }`}>
+                    <div className="text-lg sm:text-xl font-bold leading-tight">
                       SET {p.id.slice(-1).toUpperCase()}
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+                      {p.qtyLabel} · {p.qtyEn}
+                    </div>
+                    <div className="mt-2 space-y-0.5">
+                      <div className="text-xs text-muted-foreground line-through">RM {p.originalMY}</div>
+                      <div className="text-sm sm:text-base font-bold text-primary">RM {p.priceMY}</div>
                     </div>
                     {active && (
                       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">

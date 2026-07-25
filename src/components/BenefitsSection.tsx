@@ -1,125 +1,58 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck } from "lucide-react";
-import benefitJoint from "@/assets/benefit-joint.png";
-import benefitBone from "@/assets/benefit-bone.png";
-import benefitBeauty from "@/assets/benefit-beauty.png";
-import benefitHydration from "@/assets/benefit-hydration.png";
-import benefitHairNail from "@/assets/benefit-hair-nail.png";
+import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { useEffect, useRef, useState } from "react";
 import eatingMethod from "@/assets/eating-method.png";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
-import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
 import tasteProfile from "@/assets/taste-profile.png";
 import whenToTakeCn from "@/assets/when-to-take-cn.png";
 import whenToTakeEn from "@/assets/when-to-take-en.png";
+import benefitJointBone from "@/assets/benefit-joint-bone.png";
+import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 
-
-
-const benefits = [
+const benefitVisuals = [
   {
-    icon: Heart,
-    image: benefitJoint,
-    titleZh: "缓解关节疼痛",
-    titleEn: "Joint Pain Relief",
-    descZh: "补充关节软骨所需胶原蛋白，有效缓解关节疼痛和僵硬，恢复关节灵活性",
-    descEn: "Replenishes cartilage collagen, effectively relieves joint pain and stiffness, restores mobility",
+    image: benefitJointBone,
+    alt: "缓解关节疼痛 强化骨骼 - Relieve Joint Pain & Strengthen Bones",
+    highlights: [
+      {
+        icon: Heart,
+        titleZh: "缓解关节疼痛",
+        titleEn: "Relieve Joint Pain",
+        descZh: "深海鱼鳞胶原直达关节软骨，舒缓僵硬酸痛",
+        descEn: "Marine collagen targets cartilage to ease stiffness & soreness",
+      },
+      {
+        icon: Bone,
+        titleZh: "强化骨骼密度",
+        titleEn: "Strengthen Bones",
+        descZh: "补充胶原蛋白与钙质，让骨骼更强韧有力",
+        descEn: "Rebuilds collagen matrix for stronger, denser bones",
+      },
+    ],
   },
   {
-    icon: Bone,
-    image: benefitBone,
-    titleZh: "强化骨骼",
-    titleEn: "Bone Strength",
-    descZh: "增强骨密度，预防骨质疏松，特别适合中老年人群保健",
-    descEn: "Enhances bone density, prevents osteoporosis, ideal for middle-aged and elderly health",
-  },
-  {
-    icon: Sparkles,
-    image: benefitBeauty,
-    titleZh: "美容养颜",
-    titleEn: "Beauty & Anti-Aging",
-    descZh: "促进皮肤弹性和光泽，减少细纹和皱纹，由内而外焕发青春",
-    descEn: "Promotes skin elasticity and radiance, reduces fine lines, rejuvenates from within",
-  },
-  {
-    icon: Droplets,
-    image: benefitHydration,
-    titleZh: "深层补水",
-    titleEn: "Deep Hydration",
-    descZh: "锁住肌肤水分，打造水润光泽肌肤，改善干燥暗沉",
-    descEn: "Locks in moisture for hydrated, glowing skin, improves dryness and dullness",
-  },
-  {
-    icon: Shield,
-    image: benefitHairNail,
-    titleZh: "头发指甲健康",
-    titleEn: "Hair & Nail Health",
-    descZh: "促进头发和指甲生长，使其更加强韧有光泽",
-    descEn: "Promotes healthy hair and nail growth, making them stronger and shinier",
+    image: benefitBeautyComplexion,
+    alt: "养颜美容 改变气色 - Beautify Skin & Improve Complexion",
+    highlights: [
+      {
+        icon: Sparkles,
+        titleZh: "养颜美容",
+        titleEn: "Beautify Skin",
+        descZh: "由内而外补水锁水，肌肤紧致水润有弹性",
+        descEn: "Deep hydration for firmer, dewy, elastic skin",
+      },
+      {
+        icon: ShieldCheck,
+        titleZh: "改变气色",
+        titleEn: "Improve Complexion",
+        descZh: "促进循环，唤醒自然红润好气色",
+        descEn: "Boosts radiance for a naturally rosy, healthy glow",
+      },
+    ],
   },
 ];
-
-// Animated Benefit Cards Component
-const BenefitCards = ({ benefits }: { benefits: { icon: any; image: string; titleZh: string; titleEn: string; descZh: string; descEn: string }[] }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-      {benefits.map((benefit, index) => (
-        <Card 
-          key={index} 
-          className={`group hover:shadow-lg transition-all duration-300 border-border/50 bg-card hover:-translate-y-1 ${
-            isVisible 
-              ? "opacity-100 translate-y-0" 
-              : "opacity-0 translate-y-4"
-          }`}
-          style={{ 
-            transitionDelay: isVisible ? `${index * 100}ms` : "0ms",
-            transitionProperty: "all",
-            transitionDuration: "500ms",
-            transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)"
-          }}
-        >
-          <CardContent className="p-6 text-center">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-              <benefit.icon className="w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors" />
-            </div>
-            <h3 className="text-lg font-serif font-bold text-foreground mb-1">
-              {benefit.titleZh}
-            </h3>
-            <p className="text-sm text-primary font-semibold mb-2">
-              {benefit.titleEn}
-            </p>
-            <p className="text-sm text-foreground/80 leading-relaxed">
-              {benefit.descZh}
-            </p>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  );
-};
 
 const BenefitsSection = () => {
   return (
@@ -131,11 +64,56 @@ const BenefitsSection = () => {
             产品功效
           </h2>
           <p className="text-lg text-primary font-semibold mb-3">Benefits</p>
-          <div className="w-24 h-1 bg-primary mx-auto" />
+          <div className="w-24 h-1 bg-primary mx-auto mb-4" />
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-foreground/80">
+            一瓶 7500mg 深海鱼鳞胶原，四大核心功效，由内而外全面呵护
+            <span className="block text-sm text-muted-foreground mt-1">
+              7,500mg marine collagen per bottle — four core benefits that care for you inside out
+            </span>
+          </p>
         </div>
-        
-        {/* Benefits Cards */}
-        <BenefitCards benefits={benefits} />
+
+        {/* Benefit Visual Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+          {benefitVisuals.map((item, idx) => (
+            <Card
+              key={idx}
+              className="group overflow-hidden border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <CardContent className="p-6 space-y-4">
+                {item.highlights.map((h, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                      <h.icon className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-serif font-bold text-foreground leading-tight">
+                        {h.titleZh}
+                        <span className="ml-2 text-sm text-primary font-semibold uppercase tracking-wide">
+                          {h.titleEn}
+                        </span>
+                      </h4>
+                      <p className="text-sm text-foreground/80 leading-relaxed mt-1">
+                        {h.descZh}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{h.descEn}</p>
+                    </div>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
 
         {/* Taste Profile Section */}
         <div className="mb-16">

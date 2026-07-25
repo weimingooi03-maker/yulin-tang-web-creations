@@ -1,8 +1,6 @@
 import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
-import voucherImg from "@/assets/voucher-rm20.jpeg";
-import voucherSgImg from "@/assets/voucher-sg-freeship.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, MessageCircle, Truck, Package, Flame, Clock } from "lucide-react";

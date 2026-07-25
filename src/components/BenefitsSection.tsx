@@ -120,7 +120,7 @@ const BenefitsSection = () => {
           <div className="max-w-3xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50 mb-6">
               <img
-                src={naturalIngredients.url}
+                src={naturalIngredients}
                 alt="天然食材功效图 - Natural Ingredients Benefits: Longan, Red Dates, Pandan"
                 loading="lazy"
                 className="w-full h-auto"

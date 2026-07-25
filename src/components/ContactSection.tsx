@@ -155,8 +155,11 @@ const ContactSection = () => {
               </h3>
               
               <div className="space-y-6">
-                <div className="text-center">
-                  <p className="text-5xl mb-2">🇲🇾 🇸🇬</p>
+              <div className="text-center">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <FlagIcon country="MY" className="w-10" />
+                    <FlagIcon country="SG" className="w-10" />
+                  </div>
                   <p className="font-bold text-lg text-foreground">马来西亚 & 新加坡</p>
                   <p className="text-base text-muted-foreground">Malaysia & Singapore</p>
                   <p className="text-primary font-bold text-lg mt-2">全马 & 新加坡免运费</p>

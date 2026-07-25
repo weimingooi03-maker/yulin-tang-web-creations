@@ -46,8 +46,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">服务区域 Service Area</h4>
             <ul className="space-y-3 text-base text-background/70">
-              <li>🇲🇾 马来西亚 Malaysia</li>
-              <li>🇸🇬 新加坡 Singapore</li>
+              <li className="inline-flex items-center gap-1.5"><FlagIcon country="MY" className="w-4" /> 马来西亚 Malaysia</li>
+              <li className="inline-flex items-center gap-1.5"><FlagIcon country="SG" className="w-4" /> 新加坡 Singapore</li>
             </ul>
             <p className="text-primary text-base mt-4 font-bold">
               全马 & 新加坡免运费
@@ -119,8 +119,8 @@ const Footer = () => {
         
         <div className="border-t border-background/20 pt-8 text-center text-base text-background/50">
           <p>© 2026 魚鱗堂 YULIN TANG. All rights reserved.</p>
-          <p className="mt-2">
-            深海鱼鳞胶原蛋白冻 - 🇲🇾 马来西亚 & 🇸🇬 新加坡 专供
+          <p className="mt-2 inline-flex items-center justify-center gap-1.5 flex-wrap">
+            深海鱼鳞胶原蛋白冻 - <FlagIcon country="MY" className="w-4" /> 马来西亚 & <FlagIcon country="SG" className="w-4" /> 新加坡 专供
           </p>
           <p className="mt-2 text-sm text-background/40">
             Registered with SSM (003726992-W)

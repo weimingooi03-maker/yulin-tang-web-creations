@@ -121,7 +121,9 @@ const ProductsSection = () => {
           {/* Free Shipping Banner */}
           <div className="mt-8 inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-4 rounded-full">
             <Truck className="w-6 h-6" />
-            <span className="font-bold text-base sm:text-lg">🇲🇾 全马 & 🇸🇬 新加坡 免运费</span>
+            <span className="font-bold text-base sm:text-lg inline-flex items-center gap-1.5">
+              <FlagIcon country="MY" /> 全马 & <FlagIcon country="SG" /> 新加坡 免运费
+            </span>
           </div>
           <p className="text-base text-muted-foreground mt-2">
             FREE Shipping to All Malaysia & Singapore
@@ -191,11 +193,15 @@ const ProductsSection = () => {
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇲🇾 Malaysia</p>
+                    <p className="text-sm text-muted-foreground mb-1 font-medium inline-flex items-center justify-center gap-1.5">
+                      <FlagIcon country="MY" /> Malaysia
+                    </p>
                     <p className="text-xl font-bold text-primary">{product.priceRM}</p>
                   </div>
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium">🇸🇬 Singapore</p>
+                    <p className="text-sm text-muted-foreground mb-1 font-medium inline-flex items-center justify-center gap-1.5">
+                      <FlagIcon country="SG" /> Singapore
+                    </p>
                     <p className="text-xl font-bold text-primary">{product.priceSGD}</p>
                   </div>
                 </div>

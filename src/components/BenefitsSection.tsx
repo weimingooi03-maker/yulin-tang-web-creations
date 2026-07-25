@@ -1,6 +1,6 @@
 import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import eatingMethod from "@/assets/eating-method.png";
+import eatingMethod from "@/assets/eating-method-3ways.png.asset.json";
 import review1 from "@/assets/review-1.jpeg";
 import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
@@ -175,30 +175,40 @@ const BenefitsSection = () => {
           <div className="max-w-4xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={eatingMethod} 
-                alt="How to Enjoy - Drink directly or refrigerate as jelly"
+                src={eatingMethod.url} 
+                alt="3 种食用方法 - 3 Ways to Enjoy YULIN TANG Fish Scale Collagen Jelly"
                 className="w-full h-auto"
               />
             </div>
-            <div className="grid md:grid-cols-2 gap-8 mt-8 text-center">
-              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">水状直接饮用</h4>
-                <p className="text-lg text-primary font-semibold mb-3">Drink Directly (Liquid)</p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  开封即饮，口感顺滑，淡淡清香，方便快捷
+            <div className="grid md:grid-cols-3 gap-6 mt-8 text-center">
+              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-xl font-serif font-bold text-foreground mb-2">直接开瓶食用</h4>
+                <p className="text-base text-primary font-semibold mb-3">Enjoy Directly</p>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  开瓶即饮，方便快捷
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Ready to drink, smooth texture with a light aroma, quick and convenient
+                <p className="text-xs text-muted-foreground mt-2">
+                  Open and drink, convenient and ready to enjoy.
                 </p>
               </div>
-              <div className="p-8 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-2xl font-serif font-bold text-foreground mb-3">冷藏成果冻</h4>
-                <p className="text-lg text-primary font-semibold mb-3">Refrigerate as Jelly</p>
-                <p className="text-base text-foreground/80 leading-relaxed">
-                  放入冰箱冷藏几小时，可享用果冻口感，清凉爽口
+              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-xl font-serif font-bold text-foreground mb-2">热水泡罐子</h4>
+                <p className="text-base text-primary font-semibold mb-3">Pour with Hot Water</p>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  倒入热水，温润好吸收
                 </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Refrigerate for a few hours for a refreshing jelly treat, cool and delicious
+                <p className="text-xs text-muted-foreground mt-2">
+                  Pour in hot water, warm and nourishing collagen drink.
+                </p>
+              </div>
+              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
+                <h4 className="text-xl font-serif font-bold text-foreground mb-2">放冰箱果冻口感</h4>
+                <p className="text-base text-primary font-semibold mb-3">Chill for Jelly Texture</p>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  冷藏后Q弹爽口
+                </p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  Chill in the fridge for a bouncy, jelly-like texture.
                 </p>
               </div>
             </div>

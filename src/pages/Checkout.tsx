@@ -152,7 +152,7 @@ const Checkout = () => {
                   <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
                   {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
                 </div>
-                <div className="grid sm:grid-cols-3 gap-4">
+                <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
                   <div>
                     <Label htmlFor="city">城市 City *</Label>
                     <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
@@ -163,11 +163,13 @@ const Checkout = () => {
                     <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
                     {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
                   </div>
-                  <div>
-                    <Label htmlFor="state">州属 State *</Label>
-                    <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
-                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
-                  </div>
+                  {region === "MY" && (
+                    <div>
+                      <Label htmlFor="state">州属 State *</Label>
+                      <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
+                      {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <Label>送货地区 Region *</Label>

@@ -3,7 +3,7 @@ import heroImage from "@/assets/unique-formula.png";
 import floralAsset from "@/assets/floral-series-coming-soon.png.asset.json";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Pause, Play } from "lucide-react";
 
 const heroSlides = [
   {

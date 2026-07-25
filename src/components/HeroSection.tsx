@@ -75,19 +75,41 @@ const HeroSection = () => {
             {/* Glow aura */}
             <div className="absolute -inset-6 bg-gradient-to-tr from-primary/30 via-accent/20 to-primary/30 rounded-[2rem] blur-3xl opacity-70 animate-hero-glow" />
             {/* Slides */}
-            <div className="relative overflow-hidden rounded-2xl aspect-square sm:aspect-[4/3] md:aspect-[16/10] shadow-2xl bg-secondary/40">
+            <div
+              className="relative overflow-hidden rounded-2xl aspect-square sm:aspect-[4/3] md:aspect-[16/10] shadow-2xl bg-secondary/40 touch-pan-y"
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               {heroSlides.map((slide, idx) => (
                 <img
                   key={slide.src}
                   src={slide.src}
                   alt={slide.alt}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+                  draggable={false}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out select-none ${
                     idx === activeSlide ? "opacity-100 animate-hero-float" : "opacity-0"
                   }`}
                 />
               ))}
               {/* Shimmer sweep */}
               <div className="pointer-events-none absolute inset-0 -translate-x-full animate-hero-shimmer bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+
+              {/* Manual arrows */}
+              <button
+                onClick={goToPrev}
+                aria-label="上一张 Previous slide"
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/60 backdrop-blur-sm border border-white/20 text-foreground/80 hover:text-primary hover:bg-white/50 transition-colors shadow-sm"
+              >
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+              <button
+                onClick={goToNext}
+                aria-label="下一张 Next slide"
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full bg-background/60 backdrop-blur-sm border border-white/20 text-foreground/80 hover:text-primary hover:bg-white/50 transition-colors shadow-sm"
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
 
               {/* Slide controls: clickable dots + play/pause */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10 px-3 py-1.5 rounded-full bg-background/60 backdrop-blur-sm border border-white/20 shadow-sm">

@@ -224,11 +224,6 @@ const Checkout = () => {
                 </div>
               </div>
               <div>
-                <Label htmlFor="email">邮箱 Email (选填)</Label>
-                <Input id="email" type="email" value={form.email} onChange={set("email")} maxLength={120} />
-                {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
-              </div>
-              <div>
                 <Label htmlFor="address">完整地址 Full Address *</Label>
                 <Textarea
                   id="address"

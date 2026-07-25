@@ -155,30 +155,30 @@ const ProductsSection = () => {
         <Card className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-xl">
           {/* Segmented picker */}
           <div className="p-4 sm:p-6 bg-gradient-to-b from-primary/10 to-muted/30 border-b-2 border-primary/30">
-            <div className="flex flex-col items-center gap-1 mb-4">
+            <div className="flex flex-col items-center gap-1 mb-5">
               <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold shadow-md animate-pulse">
                 <span>👇</span>
                 <span>点击下方选择配套 · TAP TO CHOOSE</span>
                 <span>👇</span>
               </div>
               <p className="text-sm font-semibold text-foreground mt-2">
-                请选择您的配套
+                请选择您的罐数
               </p>
               <p className="text-xs text-muted-foreground tracking-wider">
-                Please Select Your Package
+                Please Select Your Bottle Quantity
               </p>
             </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-3">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4">
               {products.map((p) => {
                 const active = p.id === selectedId;
                 return (
                   <button
                     key={p.id}
                     onClick={() => selectSet(p.id)}
-                    className={`relative rounded-xl border-2 p-3 sm:p-4 text-left transition-all ${
+                    className={`relative rounded-2xl border-2 p-3 sm:p-5 text-center transition-all ${
                       active
-                        ? "border-primary bg-primary/5 shadow-md"
-                        : "border-border bg-background hover:border-primary/40"
+                        ? "border-primary bg-primary/5 shadow-lg shadow-primary/10 scale-[1.02]"
+                        : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
                     }`}
                   >
                     {p.isBestValue && (
@@ -191,18 +191,29 @@ const ProductsSection = () => {
                         热销 Best Seller
                       </div>
                     )}
-                    <div className="flex items-center justify-between mb-1">
-                      <span className={`font-bold text-sm sm:text-base ${active ? "text-primary" : "text-foreground"}`}>
-                        SET {p.id.slice(-1).toUpperCase()}
+                    <div className="flex flex-col items-center gap-0.5">
+                      <span className={`text-2xl sm:text-3xl font-bold leading-none ${active ? "text-primary" : "text-foreground"}`}>
+                        {p.qty}
                       </span>
-                      {active && <Check className="w-4 h-4 text-primary" />}
+                      <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+                        Bottles
+                      </span>
+                      <span className="text-[10px] sm:text-xs text-muted-foreground font-medium">
+                        罐
+                      </span>
                     </div>
-                    <div className="text-[11px] sm:text-xs text-muted-foreground font-medium">
-                      {p.qtyLabel} · {p.qty} Bottles
+                    <div className={`mt-2 text-[10px] sm:text-xs font-bold px-2 py-0.5 rounded-full inline-block ${
+                      active
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-muted text-muted-foreground"
+                    }`}>
+                      SET {p.id.slice(-1).toUpperCase()}
                     </div>
-                    <div className="mt-1.5 text-[10px] sm:text-xs font-medium text-primary">
-                      选配套 Select
-                    </div>
+                    {active && (
+                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
+                        <Check className="w-3 h-3" />
+                      </div>
+                    )}
                   </button>
                 );
               })}

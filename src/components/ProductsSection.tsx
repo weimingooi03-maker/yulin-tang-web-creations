@@ -148,7 +148,7 @@ const ProductsSection = () => {
               key={index} 
               className={`group overflow-hidden border-border/50 bg-card hover:shadow-2xl transition-all duration-500 ${
                 index === 1 
-                  ? 'ring-2 ring-primary shadow-lg scale-[1.02]' 
+                  ? 'ring-2 ring-primary shadow-lg lg:scale-[1.02]' 
                   : product.isVip ? 'ring-2 ring-amber-500/30' : ''
               }`}
             >
@@ -156,102 +156,79 @@ const ProductsSection = () => {
                 <img 
                   src={product.image} 
                   alt={product.nameEn}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                {/* Badge */}
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-base font-bold">
-                  {product.badge}
-                </div>
-                {/* Best Value Badge */}
-                {product.isBestValue && (
-                  <div className="absolute bottom-4 left-4 bg-destructive text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                    <Flame className="w-3 h-3" /> 最划算 Best Value
+                {/* Single top-right badge: VIP takes precedence, otherwise category */}
+                {product.isVip ? (
+                  <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                    <span>👑</span> VIP
+                  </div>
+                ) : (
+                  <div className="absolute top-4 right-4 bg-primary/95 text-primary-foreground px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                    {product.badge}
                   </div>
                 )}
-                {/* VIP Badge */}
-                {product.isVip && (
-                  <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
-                    <span>👑</span> VIP
+                {product.isBestValue && (
+                  <div className="absolute bottom-4 left-4 bg-destructive text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
+                    <Flame className="w-3 h-3" /> 最划算 Best Value
                   </div>
                 )}
               </div>
               <CardContent className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <Package className="w-5 h-5 text-primary" />
-                  <span className="text-2xl font-bold text-primary">{product.qty}</span>
-                  <span className="text-lg text-muted-foreground">/ {product.qtyEn}</span>
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-1">
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-foreground leading-tight">
                   {product.nameZh}
                 </h3>
-                <p className="text-base text-muted-foreground mb-3 font-medium">
+                <p className="text-sm text-muted-foreground font-medium mb-3">
                   {product.nameEn}
                 </p>
-                <p className="text-base text-muted-foreground mb-4">
-                  {product.descZh}
-                </p>
-                
-                <div className="grid grid-cols-2 gap-3 mb-2">
-                  <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium inline-flex items-center justify-center gap-1.5">
-                      <FlagIcon country="MY" /> Malaysia
-                    </p>
-                    <p className="text-xl font-bold text-primary">{product.priceRM}</p>
+
+                {/* Qty + per-bottle inline meta */}
+                <div className="flex items-center flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground mb-5 pb-4 border-b border-border/60">
+                  <span className="inline-flex items-center gap-1.5 text-foreground font-semibold">
+                    <Package className="w-4 h-4 text-primary" />
+                    {product.qty} · {product.qtyEn}
+                  </span>
+                  <span className={product.isBestValue ? 'text-destructive font-semibold' : ''}>
+                    每瓶 {product.unitRM} / {product.unitSGD}
+                  </span>
+                </div>
+
+                {/* Prices — single row, no boxes */}
+                <div className="flex items-baseline justify-between mb-5">
+                  <div className="flex items-baseline gap-2">
+                    <FlagIcon country="MY" />
+                    <span className="text-2xl font-bold text-primary">{product.priceRM}</span>
                   </div>
-                  <div className="bg-secondary/50 rounded-lg p-4 text-center">
-                    <p className="text-sm text-muted-foreground mb-1 font-medium inline-flex items-center justify-center gap-1.5">
-                      <FlagIcon country="SG" /> Singapore
-                    </p>
-                    <p className="text-xl font-bold text-primary">{product.priceSGD}</p>
+                  <div className="flex items-baseline gap-2">
+                    <FlagIcon country="SG" />
+                    <span className="text-2xl font-bold text-primary">{product.priceSGD}</span>
                   </div>
                 </div>
-                <div className={`text-center mb-4 px-3 py-2 rounded-lg ${product.isBestValue ? 'bg-destructive/10 border border-destructive/30' : 'bg-muted/50'}`}>
-                  <p className={`text-xs font-bold ${product.isBestValue ? 'text-destructive' : 'text-muted-foreground'}`}>
-                    每瓶仅 {product.unitRM} / {product.unitSGD}
-                    {product.isBestValue && ' ✨ 最优惠！'}
-                  </p>
-                  <p className="text-xs text-muted-foreground">per bottle</p>
-                </div>
-                
-                {product.isVip ? (
-                  <div className="space-y-2">
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground font-bold text-lg py-6 shadow-lg animate-cta-pulse"
-                      onClick={() => handleBuyNow(product)}
-                    >
-                      <ShoppingCart className="w-5 h-5 mr-2" />
-                      立即购买
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      className="w-full border-primary/40 text-primary hover:bg-primary/5 font-semibold text-base py-5"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      加入购物车
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="space-y-2">
-                    <Button 
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
-                      onClick={() => handleBuyNow(product)}
-                    >
-                      <ShoppingCart className="w-5 h-5 mr-2" />
-                      立即购买
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      className="w-full border-primary/40 text-primary hover:bg-primary/5 font-semibold text-base py-5"
-                      onClick={() => handleAddToCart(product)}
-                    >
-                      加入购物车
-                    </Button>
-                  </div>
-                )}
+
+                {/* Primary action + secondary text link */}
+                <Button 
+                  className={`w-full font-bold text-base py-6 ${
+                    product.isVip
+                      ? 'bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground shadow-lg'
+                      : 'bg-primary text-primary-foreground hover:bg-primary/90'
+                  }`}
+                  onClick={() => handleBuyNow(product)}
+                >
+                  <ShoppingCart className="w-5 h-5 mr-2" />
+                  立即购买 Buy Now
+                </Button>
+                <button 
+                  className="w-full mt-3 text-sm text-muted-foreground hover:text-primary transition-colors underline underline-offset-4"
+                  onClick={() => handleAddToCart(product)}
+                >
+                  加入购物车 Add to Cart
+                </button>
               </CardContent>
             </Card>
           ))}
         </div>
+
       </div>
     </section>
   );

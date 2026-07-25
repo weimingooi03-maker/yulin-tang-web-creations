@@ -2,9 +2,9 @@ import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
-import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
-import review4 from "@/assets/review-4.jpeg";
+import review2Asset from "@/assets/review-aunt-lin-sg.jpeg.asset.json";
+import review4Asset from "@/assets/review-beauty-before-after.jpeg.asset.json";
 import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
@@ -260,14 +260,15 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review2} 
-                alt="Customer Review - Repeat Purchase"
+                src={review2Asset.url} 
+                alt="Customer Review - Aunt Lin Singapore, mother's knee pain improved"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡</p>
-                <p className="text-xs text-muted-foreground">"买给妈妈喝，已经回购第三次！"</p>
+                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡 Aunt Lin · Singapore</p>
+                <p className="text-xs text-muted-foreground">"妈妈喝了12天，膝盖不痛，走路更顺畅了！"</p>
+                <p className="text-xs text-muted-foreground italic mt-1">"After 12 days, mum's joint pain eased and she can walk faster!"</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
@@ -284,14 +285,15 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review4} 
-                alt="Customer Review - Knee Pain Improvement"
+                src={review4Asset.url} 
+                alt="Customer Review - Visible skin improvement before and after"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">顾客好评</p>
-                <p className="text-xs text-muted-foreground">"妈妈吃了两个星期后，膝盖感觉舒服多了，走路也更顺畅了"</p>
+                <p className="text-sm font-bold text-foreground mb-1">真实见证 · Real Result</p>
+                <p className="text-xs text-muted-foreground">"肤色更均匀，痘痘减少，肌肤透亮有光泽！"</p>
+                <p className="text-xs text-muted-foreground italic mt-1">"Skin looks more even, fewer breakouts, and a natural healthy glow!"</p>
               </div>
             </div>
           </div>

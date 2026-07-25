@@ -55,20 +55,6 @@ const Checkout = () => {
     return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，城市 City：${d.city}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
   };
 
-  const messagePreview = useMemo(() => {
-    if (items.length === 0) return "购物车是空的，请先添加商品。";
-    return composeMessage(form);
-  }, [items, form, region, subtotal, currencySymbol]);
-
-  const copyMessage = async () => {
-    try {
-      await navigator.clipboard.writeText(messagePreview);
-      toast({ title: "已复制", description: "消息已复制到剪贴板，可直接粘贴到 WhatsApp。" });
-    } catch {
-      toast({ title: "复制失败", description: "请手动复制预览内容。", variant: "destructive" });
-    }
-  };
-
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 

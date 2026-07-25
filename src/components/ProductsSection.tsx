@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const products = [
   {
-    image: setaPhoto.url,
+    image: setaPhoto,
     nameZh: "SET A 配套",
     nameEn: "Set A Package",
     qty: "12罐",

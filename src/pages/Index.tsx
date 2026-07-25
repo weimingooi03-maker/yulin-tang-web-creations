@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import TrustBanner from "@/components/TrustBanner";
 import BenefitsSection from "@/components/BenefitsSection";
 import PrecautionsSection from "@/components/PrecautionsSection";
 import ProductsSection from "@/components/ProductsSection";
@@ -8,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import StickyBuyBar from "@/components/StickyBuyBar";
 
 const Index = () => {
   return (
@@ -15,6 +17,7 @@ const Index = () => {
       <Header />
       <main className="pt-16">
         <HeroSection />
+        <TrustBanner />
         <BenefitsSection />
         <ProductsSection />
         <PrecautionsSection />
@@ -24,6 +27,7 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <StickyBuyBar />
     </div>
   );
 };

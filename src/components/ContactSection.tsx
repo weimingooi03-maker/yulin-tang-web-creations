@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageCircle, Phone, Mail, Facebook, Instagram, Award, FileCheck, Shield, Handshake } from "lucide-react";
+import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshake } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
+import labtestNutrition from "@/assets/labtest-nutrition.jpeg.asset.json";
+import labtestMicrobio from "@/assets/labtest-microbio.jpeg.asset.json";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {
@@ -168,22 +170,22 @@ const ContactSection = () => {
                 
                 <div className="border-t border-border pt-6">
                   <div className="flex items-center justify-center gap-3 mb-3">
-                    <Shield className="w-7 h-7 text-primary" />
-                    <Award className="w-7 h-7 text-primary" />
+                    <FlaskConical className="w-7 h-7 text-primary" />
                   </div>
-                  <p className="font-bold text-lg text-foreground text-center mb-2">MESTI & GMP 认证</p>
+                  <p className="font-bold text-lg text-foreground text-center mb-1">实验室检测报告</p>
                   <p className="text-base text-muted-foreground text-center mb-4">
-                    Malaysia MESTI & GMP Certified
+                    Laboratory Test Results
                   </p>
-                  <a 
-                    href="/certifications/CERT_FOR_YLT.pdf" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <FileCheck className="w-5 h-5" />
-                    <span className="text-base font-medium underline">查看认证证书 View Certificate</span>
-                  </a>
+                  <div className="grid grid-cols-2 gap-3">
+                    <a href={labtestNutrition.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
+                      <img src={labtestNutrition.url} alt="Nutrition Lab Test Report" loading="lazy" className="w-full h-auto" />
+                      <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
+                    </a>
+                    <a href={labtestMicrobio.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
+                      <img src={labtestMicrobio.url} alt="Microbiology Lab Test Report" loading="lazy" className="w-full h-auto" />
+                      <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
+                    </a>
+                  </div>
                 </div>
               </div>
             </CardContent>

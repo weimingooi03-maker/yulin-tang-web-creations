@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { useCart } from "@/contexts/CartContext";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
+import { ArrowLeft, MessageCircle, ShoppingBag, Copy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -41,6 +41,34 @@ const Checkout = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
+  const composeMessage = (d: typeof form) => {
+    const itemText = items
+      .map((item, idx) => {
+        const price = region === "MY" ? item.priceMY : item.priceSG;
+        const lineTotal = price * item.quantity;
+        // Strip 配套 from English name per existing convention
+        const en = item.nameEn.replace(/配套/g, "").trim();
+        return `${idx + 1}. ${item.nameZh} / ${en} × ${item.quantity} = ${currencySymbol} ${lineTotal.toFixed(2)}`;
+      })
+      .join("； ");
+
+    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，城市 City：${d.city}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+  };
+
+  const messagePreview = useMemo(() => {
+    if (items.length === 0) return "购物车是空的，请先添加商品。";
+    return composeMessage(form);
+  }, [items, form, region, subtotal, currencySymbol]);
+
+  const copyMessage = async () => {
+    try {
+      await navigator.clipboard.writeText(messagePreview);
+      toast({ title: "已复制", description: "消息已复制到剪贴板，可直接粘贴到 WhatsApp。" });
+    } catch {
+      toast({ title: "复制失败", description: "请手动复制预览内容。", variant: "destructive" });
+    }
+  };
+
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
@@ -69,40 +97,7 @@ const Checkout = () => {
     setSubmitting(true);
 
     const d = result.data;
-    const lines: string[] = [];
-    lines.push("🛒 *新订单 New Order*");
-    lines.push("");
-    lines.push("*订购商品 Items:*");
-    items.forEach((item, idx) => {
-      const price = region === "MY" ? item.priceMY : item.priceSG;
-      const lineTotal = price * item.quantity;
-      // Strip 配套 from English name per existing convention
-      const en = item.nameEn.replace(/配套/g, "").trim();
-      lines.push(
-        `${idx + 1}. ${item.nameZh} / ${en} × ${item.quantity} = ${currencySymbol} ${lineTotal.toFixed(2)}`
-      );
-    });
-    lines.push("");
-    lines.push(`*小计 Subtotal:* ${currencySymbol} ${subtotal.toFixed(2)}`);
-    lines.push(`*送货地区 Region:* ${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}`);
-    lines.push("");
-    lines.push("*收货信息 Shipping Details:*");
-    lines.push(`姓名 Name: ${d.name}`);
-    lines.push(`电话 Phone: ${d.phone}`);
-    if (d.email) lines.push(`邮箱 Email: ${d.email}`);
-    lines.push(`地址 Address: ${d.address}`);
-    lines.push(`城市 City: ${d.city}`);
-    lines.push(`邮编 Postcode: ${d.postcode}`);
-    if (region === "MY") lines.push(`州属 State: ${d.state}`);
-    if (d.notes) {
-      lines.push("");
-      lines.push(`*备注 Notes:* ${d.notes}`);
-    }
-    lines.push("");
-    lines.push("请协助确认订单与付款方式，谢谢！");
-    lines.push("Please confirm the order and payment details. Thank you!");
-
-    const message = encodeURIComponent(lines.join("\n"));
+    const message = encodeURIComponent(composeMessage(d));
     window.open(`https://wa.me/${WA_NUMBER}?text=${message}`, "_blank");
 
     toast({
@@ -193,6 +188,30 @@ const Checkout = () => {
                 <div>
                   <Label htmlFor="notes">备注 Notes (选填)</Label>
                   <Textarea id="notes" value={form.notes} onChange={set("notes")} maxLength={500} rows={3} />
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h2 className="text-lg font-bold">WhatsApp 下单消息模板 Order Message Template</h2>
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={copyMessage}
+                    disabled={items.length === 0}
+                    className="gap-1"
+                  >
+                    <Copy className="w-4 h-4" /> 复制 Copy
+                  </Button>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">
+                  系统已自动把商品、数量、价格、收货信息和总额串成一段话，确认无误后点击发送即可传给客服。
+                </p>
+                <div className="bg-muted/50 border rounded-lg p-4 text-sm text-foreground break-words leading-relaxed">
+                  {messagePreview}
                 </div>
               </CardContent>
             </Card>

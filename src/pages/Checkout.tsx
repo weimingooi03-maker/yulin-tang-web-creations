@@ -39,7 +39,6 @@ const Checkout = () => {
     phone: "",
     email: "",
     address: "",
-    city: "",
     postcode: "",
     state: "",
     notes: "",

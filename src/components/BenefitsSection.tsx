@@ -175,8 +175,8 @@ const BenefitsSection = () => {
           <div className="max-w-4xl mx-auto">
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img 
-                src={eatingMethod} 
-                alt="How to Enjoy - Drink directly or refrigerate as jelly"
+                src={eatingMethod.url} 
+                alt="3 种食用方法 - 3 Ways to Enjoy YULIN TANG Fish Scale Collagen Jelly"
                 className="w-full h-auto"
               />
             </div>

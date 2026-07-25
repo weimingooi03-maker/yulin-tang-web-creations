@@ -59,26 +59,19 @@ const BenefitsSection = () => {
     <section id="benefits" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Product Benefits */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-3">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-2">
             产品功效
           </h2>
-          <p className="text-lg text-primary font-semibold mb-3">Benefits</p>
-          <div className="w-24 h-1 bg-primary mx-auto mb-4" />
-          <p className="max-w-2xl mx-auto text-base md:text-lg text-foreground/80">
-            一瓶 7500mg 深海鱼鳞胶原，四大核心功效，由内而外全面呵护
-            <span className="block text-sm text-muted-foreground mt-1">
-              7,500mg marine collagen per bottle — four core benefits that care for you inside out
-            </span>
-          </p>
+          <p className="text-base text-primary font-semibold tracking-wide">Benefits</p>
         </div>
 
         {/* Benefit Visual Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
           {benefitVisuals.map((item, idx) => (
             <Card
               key={idx}
-              className="group overflow-hidden border-border/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1"
+              className="group overflow-hidden border-border/50 shadow-md hover:shadow-xl transition-all duration-500"
             >
               <div className="relative overflow-hidden">
                 <img
@@ -87,25 +80,23 @@ const BenefitsSection = () => {
                   loading="lazy"
                   className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
               </div>
-              <CardContent className="p-6 space-y-4">
+              <CardContent className="p-5 space-y-3">
                 {item.highlights.map((h, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
-                      <h.icon className="w-5 h-5 text-primary" />
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center">
+                      <h.icon className="w-4 h-4 text-primary" />
                     </div>
-                    <div>
-                      <h4 className="text-lg font-serif font-bold text-foreground leading-tight">
+                    <div className="min-w-0">
+                      <h4 className="text-base font-bold text-foreground leading-tight">
                         {h.titleZh}
-                        <span className="ml-2 text-sm text-primary font-semibold uppercase tracking-wide">
+                        <span className="ml-1.5 text-xs text-primary font-semibold uppercase tracking-wide">
                           {h.titleEn}
                         </span>
                       </h4>
-                      <p className="text-sm text-foreground/80 leading-relaxed mt-1">
+                      <p className="text-sm text-foreground/80 leading-snug">
                         {h.descZh}
                       </p>
-                      <p className="text-xs text-muted-foreground mt-0.5">{h.descEn}</p>
                     </div>
                   </div>
                 ))}

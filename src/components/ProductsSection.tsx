@@ -3,8 +3,8 @@ import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle, Truck, Package, Flame, Clock } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ShoppingCart, MessageCircle, Truck, Package, Flame } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const products = [
   {

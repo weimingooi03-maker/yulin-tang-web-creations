@@ -196,8 +196,8 @@ const ContactSection = () => {
                         查看完整报告 · View Full Reports
                       </Button>
                     </DialogTrigger>
-                    <DialogContent className="max-w-5xl w-[95vw] max-h-[95vh] overflow-y-auto p-4 md:p-8">
-                      <DialogHeader className="mb-4">
+                    <DialogContent className="max-w-4xl w-[95vw] max-h-[95vh] overflow-y-auto p-4 md:p-8">
+                      <DialogHeader className="mb-6">
                         <DialogTitle className="text-center text-2xl md:text-3xl font-bold">
                           实验室检测报告
                         </DialogTitle>
@@ -205,24 +205,33 @@ const ContactSection = () => {
                           Laboratory Test Results · 点击图片可放大查看
                         </DialogDescription>
                       </DialogHeader>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
-                        <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-md hover:shadow-xl bg-background">
-                          <div className="bg-muted/30 p-2">
-                            <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto max-h-[70vh] object-contain mx-auto" />
+                      <div className="space-y-8 pt-2">
+                        <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
+                          <div className="bg-muted/40 p-3 md:p-4">
+                            <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={1108} height={1089} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
                           </div>
-                          <p className="text-sm font-semibold text-center py-3 text-foreground">营养成分 Nutrition</p>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            营养成分报告 Nutrition Report
+                          </p>
                         </a>
-                        <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-md hover:shadow-xl bg-background">
-                          <div className="bg-muted/30 p-2">
-                            <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto max-h-[70vh] object-contain mx-auto" />
+                        <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
+                          <div className="bg-muted/40 p-3 md:p-4">
+                            <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={1108} height={940} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
                           </div>
-                          <p className="text-sm font-semibold text-center py-3 text-foreground">微生物 Microbiology</p>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            微生物检测报告 Microbiology Report
+                          </p>
                         </a>
-                        <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-md hover:shadow-xl bg-background">
-                          <div className="bg-muted/30 p-2">
-                            <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={800} height={1035} className="w-full h-auto max-h-[70vh] object-contain mx-auto" />
+                        <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
+                          <div className="bg-muted/40 p-3 md:p-4">
+                            <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={1184} height={1164} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
                           </div>
-                          <p className="text-sm font-semibold text-center py-3 text-foreground">胶原蛋白 Collagen</p>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            胶原蛋白检测报告 Collagen Report
+                          </p>
                         </a>
                       </div>
                     </DialogContent>

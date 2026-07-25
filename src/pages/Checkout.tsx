@@ -70,11 +70,15 @@ const Checkout = () => {
         const lineTotal = price * item.quantity;
         // Strip 配套 from English name per existing convention
         const en = item.nameEn.replace(/配套/g, "").trim();
-        return `${idx + 1}. ${item.nameZh} / ${en} × ${item.quantity} = ${currencySymbol} ${lineTotal.toFixed(2)}`;
+        return `${idx + 1}. *${item.nameZh}* / ${en}\n   数量 Qty：× ${item.quantity}\n   小计 Subtotal：${currencySymbol} ${lineTotal.toFixed(2)}`;
       })
-      .join("； ");
+      .join("\n\n");
 
-    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+    const regionLine = region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore";
+    const stateLine = region === "MY" && d.state ? `\n州属 State：${d.state}` : "";
+    const notesLine = d.notes ? `\n\n📝 *备注 Notes*\n${d.notes}` : "";
+
+    return `🛒 *新订单 New Order*\n您好，我想下单以下商品：\n\n📦 *订购商品 Ordered Items*\n\n${itemText}\n\n💰 *订单总额 Order Total*\n合计 Total：${currencySymbol} ${subtotal.toFixed(2)}\n运费 Shipping：免运 Free\n送货地区 Region：${regionLine}\n\n🚚 *收货资料 Shipping Details*\n姓名 Name：${d.name}\n电话 Phone：${d.phone}\n地址 Address：${d.address}\n邮编 Postcode：${d.postcode}${stateLine}${notesLine}\n\n请协助确认订单与付款方式，谢谢！\nPlease confirm the order and payment details. Thank you!`;
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>

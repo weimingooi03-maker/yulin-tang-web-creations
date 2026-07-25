@@ -247,7 +247,7 @@ const ProductsSection = () => {
                   <div className="text-right">
                     <div className="text-2xl font-bold text-primary leading-none">RM {totalMY}</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
-                      每瓶 / per bottle RM {(selected.priceMY / selected.qty).toFixed(2)}{quantity > 1 && ` · ${selected.priceRM} × ${quantity}`}
+                      每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}{quantity > 1 && ` · ${selected.priceRM} × ${quantity}`}
                     </div>
                   </div>
                 </div>

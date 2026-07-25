@@ -80,6 +80,11 @@ const ProductsSection = () => {
   const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
 
+  const unitMY = products[0].priceMY / products[0].qty;
+  const unitSG = products[0].priceSG / products[0].qty;
+  const savingsMY = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
+  const savingsSG = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
+
   const selectSet = (id: string) => {
     setSelectedId(id);
     setQuantity(1);

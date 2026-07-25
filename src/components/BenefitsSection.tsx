@@ -12,7 +12,7 @@ import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
-import tasteProfile from "@/assets/taste-profile.jpeg";
+import tasteProfile from "@/assets/taste-profile.png";
 import whyChoose1 from "@/assets/why-choose-1.jpeg";
 import whyChoose2 from "@/assets/why-choose-2.jpeg";
 import whyChoose3 from "@/assets/why-choose-3.png";
@@ -150,21 +150,21 @@ const BenefitsSection = () => {
             <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
               <img 
                 src={tasteProfile} 
-                alt="Taste Profile - 50% Red Date, 40% Longan, 10% Pandan, 0% Fishy"
+                alt="Taste Profile - 50% Longan, 40% Red Dates, 10% Pandan, 0% Fishy Taste"
                 loading="lazy"
                 className="w-full h-auto"
               />
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
               <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
                 <p className="text-2xl font-bold text-primary mb-1">50%</p>
-                <p className="text-lg font-bold text-foreground">红枣味</p>
-                <p className="text-sm text-muted-foreground">Red Date</p>
+                <p className="text-lg font-bold text-foreground">龙眼味</p>
+                <p className="text-sm text-muted-foreground">Longan</p>
               </div>
               <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
                 <p className="text-2xl font-bold text-primary mb-1">40%</p>
-                <p className="text-lg font-bold text-foreground">桂圆味</p>
-                <p className="text-sm text-muted-foreground">Longan</p>
+                <p className="text-lg font-bold text-foreground">红枣味</p>
+                <p className="text-sm text-muted-foreground">Red Dates</p>
               </div>
               <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
                 <p className="text-2xl font-bold text-primary mb-1">10%</p>
@@ -176,6 +176,26 @@ const BenefitsSection = () => {
                 <p className="text-lg font-bold text-foreground">鱼腥味</p>
                 <p className="text-sm text-muted-foreground">No Fishy Taste</p>
               </div>
+            </div>
+            {/* 100% Refund Guarantee */}
+            <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-r from-primary/5 via-card to-primary/5 p-6 shadow-lg">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
+                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
+                  <ShieldCheck className="w-7 h-7 text-primary" />
+                </div>
+                <div>
+                  <p className="text-xl md:text-2xl font-serif font-bold text-foreground mb-1">
+                    有腥味，100% 退款
+                  </p>
+                  <p className="text-base md:text-lg text-primary font-semibold">
+                    100% Refund if Fishy Taste
+                  </p>
+                </div>
+              </div>
+              <p className="text-center text-sm text-muted-foreground mt-3 max-w-xl mx-auto">
+                我们对口感充满信心。若开瓶后品尝到任何鱼腥味，请联系客服全额退款。
+                <span className="block sm:inline"> We stand by our taste. Contact us for a full refund if you detect any fishy flavor.</span>
+              </p>
             </div>
           </div>
         </div>

@@ -52,7 +52,7 @@ const Header = () => {
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
           >
             <img 
-              src={logoAsset.url} 
+              src={logo} 
               alt="魚鱗堂 YULIN TANG Logo" 
               className="h-14 md:h-16 w-auto object-contain"
             />

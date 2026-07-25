@@ -46,8 +46,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">服务区域 Service Area</h4>
             <ul className="space-y-3 text-base text-background/70">
-              <li className="inline-flex items-center gap-1.5"><FlagIcon country="MY" className="w-4" /> 马来西亚 Malaysia</li>
-              <li className="inline-flex items-center gap-1.5"><FlagIcon country="SG" className="w-4" /> 新加坡 Singapore</li>
+              <li className="flex items-center gap-1.5"><FlagIcon country="MY" className="w-4" /> 马来西亚 Malaysia</li>
+              <li className="flex items-center gap-1.5"><FlagIcon country="SG" className="w-4" /> 新加坡 Singapore</li>
             </ul>
             <p className="text-primary text-base mt-4 font-bold">
               全马 & 新加坡免运费

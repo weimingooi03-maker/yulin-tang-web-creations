@@ -11,7 +11,7 @@ const heroSlides = [
     alt: "魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen",
   },
   {
-    src: floralAsset.url,
+    src: floralImage,
     alt: "魚鱗堂 花香系列 即将推出 Floral Series Coming Soon - Chrysanthemum Flavor",
   },
 ];

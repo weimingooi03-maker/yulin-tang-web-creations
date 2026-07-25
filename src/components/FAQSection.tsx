@@ -28,8 +28,8 @@ const faqs = [
   {
     questionZh: "运费怎么算？多久能收到？",
     questionEn: "How is shipping calculated? When will I receive my order?",
-    answerZh: "西马和新加坡免运费！东马需额外运费。订单确认后，西马一般2-4个工作日送达，新加坡3-5个工作日，东马5-7个工作日。",
-    answerEn: "Free shipping for West Malaysia and Singapore! East Malaysia requires additional shipping fee. After order confirmation: West Malaysia 2-4 business days, Singapore 3-5 days, East Malaysia 5-7 days.",
+    answerZh: "全马和新加坡免运费！订单确认后，马来西亚一般2-4个工作日送达，新加坡3-5个工作日。",
+    answerEn: "Free shipping to all Malaysia and Singapore! After order confirmation: Malaysia 2-4 business days, Singapore 3-5 business days.",
   },
 ];
 

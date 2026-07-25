@@ -74,7 +74,7 @@ const Checkout = () => {
       })
       .join("； ");
 
-    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>

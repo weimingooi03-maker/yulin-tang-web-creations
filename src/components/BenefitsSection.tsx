@@ -254,21 +254,20 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">陈女士 · 吉隆坡</p>
-                <p className="text-xs text-muted-foreground">"喝了两个月，膝盖明显不那么痛了！"</p>
+                <p className="text-sm font-bold text-foreground mb-1">Ms Tan · Kuala Lumpur</p>
+                <p className="text-xs text-muted-foreground">"After two months, my knee pain has noticeably eased!"</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
                 src={review2Asset.url} 
-                alt="Customer Review - Aunt Lin Singapore, mother's knee pain improved"
+                alt="Customer Review - Mrs Lim Singapore, mother's knee pain improved"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡 Aunt Lin · Singapore</p>
-                <p className="text-xs text-muted-foreground">"妈妈喝了12天，膝盖不痛，走路更顺畅了！"</p>
-                <p className="text-xs text-muted-foreground italic mt-1">"After 12 days, mum's joint pain eased and she can walk faster!"</p>
+                <p className="text-sm font-bold text-foreground mb-1">Mrs Lim · Singapore</p>
+                <p className="text-xs text-muted-foreground">"After 12 days, my mum's knee pain eased and she can walk much more smoothly!"</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
@@ -279,8 +278,8 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">黄小姐 · 槟城</p>
-                <p className="text-xs text-muted-foreground">"皮肤更有弹性，朋友都问用了什么保养品！"</p>
+                <p className="text-sm font-bold text-foreground mb-1">Ms Ng</p>
+                <p className="text-xs text-muted-foreground">"My skin feels more elastic. Friends keep asking what skincare I use!"</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
@@ -291,9 +290,8 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">真实见证 · Real Result</p>
-                <p className="text-xs text-muted-foreground">"肤色更均匀，痘痘减少，肌肤透亮有光泽！"</p>
-                <p className="text-xs text-muted-foreground italic mt-1">"Skin looks more even, fewer breakouts, and a natural healthy glow!"</p>
+                <p className="text-sm font-bold text-foreground mb-1">Real Result</p>
+                <p className="text-xs text-muted-foreground">"Skin looks more even, fewer breakouts, and a natural healthy glow!"</p>
               </div>
             </div>
           </div>

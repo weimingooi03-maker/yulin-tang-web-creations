@@ -19,14 +19,41 @@ const heroSlides = [
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const goToNext = () => setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+  const goToPrev = () => setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
 
   useEffect(() => {
     if (!isPlaying) return;
     const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+      goToNext();
     }, 4500);
     return () => clearInterval(interval);
   }, [isPlaying]);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const distance = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 40;
+    if (distance > minSwipeDistance) {
+      goToNext();
+    } else if (distance < -minSwipeDistance) {
+      goToPrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const scrollToProducts = () => {
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });

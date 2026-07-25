@@ -54,6 +54,11 @@ const Header = () => {
             <img 
               src={logoImg} 
               alt="魚鱗堂 YULIN TANG Logo" 
+              width={480}
+              height={480}
+              decoding="async"
+              fetchPriority="high"
+              sizes="(max-width: 768px) 80px, 96px"
               className="h-20 md:h-24 w-auto object-contain"
             />
           </a>

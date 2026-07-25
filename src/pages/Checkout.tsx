@@ -93,7 +93,7 @@ const Checkout = () => {
     lines.push(`地址 Address: ${d.address}`);
     lines.push(`城市 City: ${d.city}`);
     lines.push(`邮编 Postcode: ${d.postcode}`);
-    lines.push(`州属 State: ${d.state}`);
+    if (region === "MY") lines.push(`州属 State: ${d.state}`);
     if (d.notes) {
       lines.push("");
       lines.push(`*备注 Notes:* ${d.notes}`);

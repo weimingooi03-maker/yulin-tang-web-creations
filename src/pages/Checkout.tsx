@@ -97,7 +97,7 @@ const Checkout = () => {
       return;
     }
     if (region === "MY" && !result.data.state.trim()) {
-      setErrors({ state: "请输入州属" });
+      setErrors({ state: "Please select a state" });
       toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
       return;
     }

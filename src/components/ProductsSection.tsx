@@ -30,6 +30,8 @@ const products = [
     isVip: false,
     isBestValue: false,
     savingsZh: null as string | null,
+    stockLeft: 18,
+    stockTotal: 40,
   },
   {
     id: "set-b",
@@ -50,6 +52,8 @@ const products = [
     isVip: true,
     isBestValue: false,
     savingsZh: "省 RM 49",
+    stockLeft: 7,
+    stockTotal: 40,
   },
   {
     id: "set-c",
@@ -70,6 +74,8 @@ const products = [
     isVip: true,
     isBestValue: true,
     savingsZh: "省 RM 118",
+    stockLeft: 4,
+    stockTotal: 30,
   },
 ];
 
@@ -267,6 +273,34 @@ const ProductsSection = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Stock urgency bar */}
+              {(() => {
+                const pct = Math.max(5, Math.min(100, Math.round((selected.stockLeft / selected.stockTotal) * 100)));
+                const low = selected.stockLeft <= 5;
+                return (
+                  <div className="mb-4" aria-live="polite">
+                    <div className="flex items-center justify-between text-xs font-semibold mb-1.5">
+                      <span className={low ? "text-destructive" : "text-foreground"}>
+                        本周仅剩 {selected.stockLeft} 份
+                      </span>
+                      <span className="text-muted-foreground">
+                        Only {selected.stockLeft} left this week
+                      </span>
+                    </div>
+                    <div className="relative h-2 rounded-full bg-muted overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all duration-700 ease-out ${
+                          low
+                            ? "bg-gradient-to-r from-destructive via-orange-500 to-destructive animate-pulse"
+                            : "bg-gradient-to-r from-primary via-gold to-accent"
+                        }`}
+                        style={{ width: `${100 - pct + 5}%` }}
+                      />
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* Quantity stepper */}
               <div

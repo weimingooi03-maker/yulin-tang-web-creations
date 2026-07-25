@@ -4,7 +4,8 @@ import floralImage from "@/assets/floral-series-coming-soon.png";
 import customers80kImg from "@/assets/hero-80k-customers.png";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
-import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play, Users } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const heroSlides = [
   {
@@ -204,9 +205,28 @@ const HeroSection = () => {
                 loading="lazy"
                 className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
               />
+          </div>
+
+          {/* Animated stat: 80,000+ happy customers */}
+          <div className="w-full flex justify-center pt-8 opacity-0 animate-fade-in-delay-3">
+            <div className="inline-flex items-center gap-3 sm:gap-4 px-5 sm:px-7 py-3 sm:py-4 rounded-full border border-primary/25 bg-gradient-to-r from-primary/5 via-gold/10 to-accent/5 shadow-sm backdrop-blur-sm">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-primary/10 flex items-center justify-center">
+                <Users className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex flex-col leading-tight text-left">
+                <AnimatedCounter
+                  end={80000}
+                  suffix="+"
+                  className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary via-gold to-accent bg-clip-text text-transparent tabular-nums"
+                />
+                <span className="text-xs sm:text-sm font-semibold text-foreground">
+                  满意顾客 <span className="text-primary">Happy Customers</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
 
       {/* Scroll indicator */}

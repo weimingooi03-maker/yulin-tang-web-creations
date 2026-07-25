@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart } from "lucide-react";
 import logo from "@/assets/logo-transparent.png";
+import { useCart } from "@/contexts/CartContext";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { count, openCart } = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
     { href: "#benefits", labelZh: "功效", labelEn: "Benefits" },
@@ -15,8 +20,27 @@ const Header = () => {
 
   const scrollTo = (href: string) => {
     setIsMenuOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+      return;
+    }
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const CartButton = ({ className = "" }: { className?: string }) => (
+    <button
+      onClick={openCart}
+      aria-label="购物车 Cart"
+      className={`relative p-2 hover:bg-muted rounded-full transition-colors ${className}`}
+    >
+      <ShoppingCart className="w-6 h-6 text-foreground" />
+      {count > 0 && (
+        <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] font-bold rounded-full min-w-[18px] h-[18px] px-1 flex items-center justify-center">
+          {count}
+        </span>
+      )}
+    </button>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
@@ -49,19 +73,24 @@ const Header = () => {
             >
               立即订购
             </Button>
+            <CartButton />
           </nav>
           
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="w-7 h-7 text-foreground" />
-            ) : (
-              <Menu className="w-7 h-7 text-foreground" />
-            )}
-          </button>
+          {/* Mobile actions */}
+          <div className="md:hidden flex items-center gap-1">
+            <CartButton />
+            <button 
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-7 h-7 text-foreground" />
+              ) : (
+                <Menu className="w-7 h-7 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
         
         {/* Mobile Navigation */}

@@ -18,26 +18,32 @@ const HeroSection = () => {
       <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-accent/10 blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10 pt-16">
-        <div className="max-w-4xl mx-auto flex flex-col items-center space-y-8">
-          {/* Feature image */}
-          <div className="w-full opacity-0 animate-fade-in-delay-2">
-            <img
-              src={heroImage}
-              alt="魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen"
-              className="w-full rounded-2xl shadow-xl"
-            />
+        <div className="max-w-5xl mx-auto flex flex-col items-center space-y-8">
+          {/* Feature image - hero attraction */}
+          <div className="relative w-full opacity-0 animate-fade-in-delay-2">
+            {/* Glow aura */}
+            <div className="absolute -inset-6 bg-gradient-to-tr from-primary/30 via-accent/20 to-primary/30 rounded-[2rem] blur-3xl opacity-70 animate-hero-glow" />
+            {/* Shimmer sweep */}
+            <div className="relative overflow-hidden rounded-2xl">
+              <img
+                src={heroImage}
+                alt="魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen"
+                className="w-full rounded-2xl shadow-2xl animate-hero-float"
+              />
+              <div className="pointer-events-none absolute inset-0 -translate-x-full animate-hero-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            </div>
           </div>
 
 
           {/* Section title */}
           <div className="w-full text-center pt-6 opacity-0 animate-fade-in-delay-3">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary tracking-wide">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-wide" style={{ color: "hsl(var(--gold-dark))" }}>
               鱼鳞冻介绍
             </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mt-2 tracking-wider uppercase">
+            <p className="text-base sm:text-lg mt-2 tracking-wider uppercase font-semibold" style={{ color: "hsl(var(--gold-dark))" }}>
               Marine Collagen Jelly Introduction
             </p>
-            <div className="w-16 h-0.5 bg-primary/40 mx-auto mt-4" />
+            <div className="w-16 h-0.5 mx-auto mt-4" style={{ background: "hsl(var(--gold-dark) / 0.6)" }} />
           </div>
 
           {/* Product info images */}

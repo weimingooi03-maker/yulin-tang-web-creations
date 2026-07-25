@@ -30,6 +30,8 @@ const products = [
     isVip: false,
     isBestValue: false,
     savingsZh: null as string | null,
+    stockLeft: 18,
+    stockTotal: 40,
   },
   {
     id: "set-b",
@@ -50,6 +52,8 @@ const products = [
     isVip: true,
     isBestValue: false,
     savingsZh: "省 RM 49",
+    stockLeft: 7,
+    stockTotal: 40,
   },
   {
     id: "set-c",
@@ -70,6 +74,8 @@ const products = [
     isVip: true,
     isBestValue: true,
     savingsZh: "省 RM 118",
+    stockLeft: 4,
+    stockTotal: 30,
   },
 ];
 

@@ -260,14 +260,15 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review2} 
-                alt="Customer Review - Repeat Purchase"
+                src={review2Asset.url} 
+                alt="Customer Review - Aunt Lin Singapore, mother's knee pain improved"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡</p>
-                <p className="text-xs text-muted-foreground">"买给妈妈喝，已经回购第三次！"</p>
+                <p className="text-sm font-bold text-foreground mb-1">林阿姨 · 新加坡 Aunt Lin · Singapore</p>
+                <p className="text-xs text-muted-foreground">"妈妈喝了12天，膝盖不痛，走路更顺畅了！"</p>
+                <p className="text-xs text-muted-foreground italic mt-1">"After 12 days, mum's joint pain eased and she can walk faster!"</p>
               </div>
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">

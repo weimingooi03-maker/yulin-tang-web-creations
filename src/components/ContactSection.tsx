@@ -4,6 +4,7 @@ import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshak
 import { FlagIcon } from "@/components/FlagIcon";
 import labtestNutrition from "@/assets/labtest-nutrition.jpeg.asset.json";
 import labtestMicrobio from "@/assets/labtest-microbio.jpeg.asset.json";
+import labtestCollagen from "@/assets/labtest-collagen.jpeg.asset.json";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {
@@ -176,7 +177,7 @@ const ContactSection = () => {
                   <p className="text-base text-muted-foreground text-center mb-4">
                     Laboratory Test Results
                   </p>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                     <a href={labtestNutrition.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
                       <img src={labtestNutrition.url} alt="Nutrition Lab Test Report" loading="lazy" className="w-full h-auto" />
                       <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
@@ -184,6 +185,10 @@ const ContactSection = () => {
                     <a href={labtestMicrobio.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
                       <img src={labtestMicrobio.url} alt="Microbiology Lab Test Report" loading="lazy" className="w-full h-auto" />
                       <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
+                    </a>
+                    <a href={labtestCollagen.url} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md col-span-2 md:col-span-1">
+                      <img src={labtestCollagen.url} alt="Collagen Analysis Report" loading="lazy" className="w-full h-auto" />
+                      <p className="text-xs text-center py-2 text-muted-foreground">胶原蛋白 Collagen</p>
                     </a>
                   </div>
                 </div>

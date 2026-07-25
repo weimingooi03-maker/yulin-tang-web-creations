@@ -18,13 +18,15 @@ const heroSlides = [
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
+    if (!isPlaying) return;
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4500);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPlaying]);
 
   const scrollToProducts = () => {
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });

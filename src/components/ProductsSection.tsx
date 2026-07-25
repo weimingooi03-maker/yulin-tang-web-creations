@@ -23,8 +23,8 @@ const products = [
     priceSGD: "SGD 99",
     priceMY: 219,
     priceSG: 99,
-    originalMY: 239,
-    originalSG: 109,
+    originalMY: 299,
+    originalSG: 118,
     unitRM: "RM 18.25",
     unitSGD: "SGD 8.25",
     badge: "体验装",
@@ -47,8 +47,8 @@ const products = [
     priceSGD: "SGD 160",
     priceMY: 389,
     priceSG: 160,
-    originalMY: 409,
-    originalSG: 170,
+    originalMY: 499,
+    originalSG: 218,
     unitRM: "RM 16.21",
     unitSGD: "SGD 6.67",
     badge: "热销款",
@@ -71,8 +71,8 @@ const products = [
     priceSGD: "SGD 230",
     priceMY: 539,
     priceSG: 230,
-    originalMY: 559,
-    originalSG: 240,
+    originalMY: 699,
+    originalSG: 299,
     unitRM: "RM 14.97",
     unitSGD: "SGD 6.39",
     badge: "家庭装",
@@ -148,34 +148,19 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Voucher Banner */}
+        {/* Free Shipping Voucher Banner */}
         <div className="max-w-4xl mx-auto mb-6">
           <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-primary/50 bg-gradient-to-r from-primary/10 via-gold/10 to-accent/10 p-4 sm:p-5 shadow-md">
             <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
             <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
             <div className="flex flex-col items-center gap-3 text-center">
-              <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm">
-                <Sparkles className="w-3.5 h-3.5" /> 限时优惠 · Special Offer
-              </div>
-              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm sm:text-base">
-                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
-                  <FlagIcon country="MY" />
-                  <span className="text-primary text-lg">立减 RM 20</span>
-                  <span className="text-xs text-muted-foreground">全配套 All Sets</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 font-bold text-foreground">
-                  <FlagIcon country="SG" />
-                  <span className="text-primary text-lg">立减 SGD 10</span>
-                  <span className="text-xs text-muted-foreground">全配套 All Sets</span>
-                </span>
-              </div>
-              <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-foreground border border-accent/30 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
-                <Truck className="w-4 h-4 text-primary" />
+              <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-foreground border border-accent/30 px-4 py-2 rounded-full text-sm sm:text-base font-semibold">
+                <Truck className="w-5 h-5 text-primary" />
                 <span>还免了高达 RM 30 运费 · Plus FREE Shipping worth up to RM 30</span>
               </div>
             </div>
             <p className="text-center text-[11px] text-muted-foreground mt-3">
-              已自动套用新价格，无需输入优惠码 · New prices auto-applied, no code needed
+              全马及新加坡免运费 · Free shipping auto-applied, no code needed
             </p>
           </div>
         </div>

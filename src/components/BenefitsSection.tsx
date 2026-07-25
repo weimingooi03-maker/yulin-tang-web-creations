@@ -1,5 +1,14 @@
+import { useRef } from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
 import review3 from "@/assets/review-3.jpeg";

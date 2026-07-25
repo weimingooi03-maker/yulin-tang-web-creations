@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
 import floralImage from "@/assets/floral-series-coming-soon.png";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
-import { ChevronDown, Pause, Play } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 const heroSlides = [
   {

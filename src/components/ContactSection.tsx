@@ -4,6 +4,7 @@ import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshak
 import { FlagIcon } from "@/components/FlagIcon";
 import labtestNutrition from "@/assets/labtest-nutrition.jpeg.asset.json";
 import labtestMicrobio from "@/assets/labtest-microbio.jpeg.asset.json";
+import labtestCollagen from "@/assets/labtest-collagen.jpeg.asset.json";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {

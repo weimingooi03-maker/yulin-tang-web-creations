@@ -210,7 +210,7 @@ const ProductsSection = () => {
                   <div className="space-y-2">
                     <Button 
                       className="w-full bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground font-bold text-lg py-6 shadow-lg animate-cta-pulse"
-                      onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
+                      onClick={() => handleBuyNow(product)}
                     >
                       <ShoppingCart className="w-5 h-5 mr-2" />
                       立即购买
@@ -218,19 +218,28 @@ const ProductsSection = () => {
                     <Button 
                       variant="outline"
                       className="w-full border-primary/40 text-primary hover:bg-primary/5 font-semibold text-base py-5"
-                      onClick={() => handleAddToCart(product.nameZh, product.nameEn)}
+                      onClick={() => handleAddToCart(product)}
                     >
                       加入购物车
                     </Button>
                   </div>
                 ) : (
-                  <Button 
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
-                    onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
-                  >
-                    <MessageCircle className="w-5 h-5 mr-2" />
-                    WhatsApp 订购
-                  </Button>
+                  <div className="space-y-2">
+                    <Button 
+                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
+                      onClick={() => handleBuyNow(product)}
+                    >
+                      <ShoppingCart className="w-5 h-5 mr-2" />
+                      立即购买
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="w-full border-primary/40 text-primary hover:bg-primary/5 font-semibold text-base py-5"
+                      onClick={() => handleAddToCart(product)}
+                    >
+                      加入购物车
+                    </Button>
+                  </div>
                 )}
               </CardContent>
             </Card>

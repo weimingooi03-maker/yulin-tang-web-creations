@@ -359,72 +359,36 @@ const BenefitsSection = () => {
             </h3>
             <p className="text-lg text-primary font-semibold">Customer Reviews</p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
-              <img 
-                src={review1} 
-                alt="Customer Review - Joint Pain Relief"
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={800}
-                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
-                className="w-full h-auto aspect-square object-cover"
-              />
-              <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">Ms Tan · Kuala Lumpur</p>
-                <p className="text-xs text-muted-foreground">"After two months, my knee pain has noticeably eased!"</p>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
-              <img 
-                src={review2Asset} 
-                alt="Customer Review - Mr Lim, mother's knee pain improved"
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={800}
-                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
-                className="w-full h-auto aspect-square object-cover"
-              />
-              <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">Mr Lim</p>
-                <p className="text-xs text-muted-foreground">"After 12 days, my mum's knee pain eased and she can walk much more smoothly!"</p>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
-              <img 
-                src={review3} 
-                alt="Customer Review - Skin Improvement"
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={800}
-                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
-                className="w-full h-auto aspect-square object-cover"
-              />
-              <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">Ms Ng</p>
-                <p className="text-xs text-muted-foreground">"My skin feels more elastic. Friends keep asking what skincare I use!"</p>
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
-              <img 
-                src={review4Asset} 
-                alt="Customer Review - Visible skin improvement before and after"
-                loading="lazy"
-                decoding="async"
-                width={800}
-                height={800}
-                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
-                className="w-full h-auto aspect-square object-cover"
-              />
-              <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">Real Result</p>
-                <p className="text-xs text-muted-foreground">"Skin looks more even, fewer breakouts, and a natural healthy glow!"</p>
-              </div>
-            </div>
-          </div>
+          <Carousel
+            opts={{ loop: true, align: "start" }}
+            plugins={[autoplay.current]}
+            className="max-w-6xl mx-auto px-6 sm:px-10"
+          >
+            <CarouselContent className="-ml-4">
+              {reviews.map((r, i) => (
+                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full hover:shadow-xl transition-shadow duration-300">
+                    <img
+                      src={r.img}
+                      alt={r.alt}
+                      loading="lazy"
+                      decoding="async"
+                      width={800}
+                      height={800}
+                      sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
+                      className="w-full h-auto aspect-square object-cover"
+                    />
+                    <div className="p-4">
+                      <p className="text-sm font-bold text-foreground mb-1">{r.name}</p>
+                      <p className="text-xs text-muted-foreground">"{r.quote}"</p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex -left-2" />
+            <CarouselNext className="hidden sm:flex -right-2" />
+          </Carousel>
         </div>
       </div>
     </section>

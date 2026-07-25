@@ -179,15 +179,15 @@ const ContactSection = () => {
                   </p>
                   <div className="grid grid-cols-3 gap-3">
                     <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" className="w-full h-auto" />
+                      <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
                       <p className="text-xs text-center py-2 text-muted-foreground">营养成分 Nutrition</p>
                     </a>
                     <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" className="w-full h-auto" />
+                      <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
                       <p className="text-xs text-center py-2 text-muted-foreground">微生物 Microbiology</p>
                     </a>
                     <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-border hover:border-primary transition-colors shadow-sm hover:shadow-md">
-                      <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" className="w-full h-auto" />
+                      <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={800} height={1035} sizes="(max-width: 640px) 30vw, (max-width: 1024px) 22vw, 200px" className="w-full h-auto aspect-[800/1035] object-cover" />
                       <p className="text-xs text-center py-2 text-muted-foreground">胶原蛋白 Collagen</p>
                     </a>
                   </div>

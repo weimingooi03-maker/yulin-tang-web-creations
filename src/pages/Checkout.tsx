@@ -20,7 +20,6 @@ import { useToast } from "@/hooks/use-toast";
 const schema = z.object({
   name: z.string().trim().min(1, "请输入姓名").max(80),
   phone: z.string().trim().min(6, "请输入有效电话").max(30),
-  email: z.string().trim().email("邮箱格式不正确").max(120).optional().or(z.literal("")),
   address: z.string().trim().min(8, "请输入完整地址").max(300),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
   state: z.string().trim().max(60).optional().or(z.literal("")),
@@ -37,7 +36,6 @@ const Checkout = () => {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    email: "",
     address: "",
     postcode: "",
     state: "",
@@ -76,7 +74,7 @@ const Checkout = () => {
       })
       .join("； ");
 
-    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -224,11 +222,6 @@ const Checkout = () => {
                   <Input id="phone" value={form.phone} onChange={set("phone")} maxLength={30} placeholder="+60 / +65" />
                   {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
                 </div>
-              </div>
-              <div>
-                <Label htmlFor="email">邮箱 Email (选填)</Label>
-                <Input id="email" type="email" value={form.email} onChange={set("email")} maxLength={120} />
-                {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
               </div>
               <div>
                 <Label htmlFor="address">完整地址 Full Address *</Label>

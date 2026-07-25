@@ -332,18 +332,18 @@ const Checkout = () => {
 
           {/* Step 3: WhatsApp confirm */}
           <div className="flex items-start gap-3 mb-2">
-            <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">3</div>
+            <div className="w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xs shrink-0">3</div>
             <div>
-              <h2 className="text-lg font-bold">发送 WhatsApp 确认 Send WhatsApp Confirmation</h2>
-              <p className="text-sm text-muted-foreground">点击按钮后系统会自动串接 WhatsApp，把订单与收货资料一起传给客服。</p>
+              <h2 className="text-sm font-bold">发送 WhatsApp 确认 Send WhatsApp Confirmation</h2>
+              <p className="text-xs text-muted-foreground">点击按钮后系统会自动串接 WhatsApp，把订单与收货资料一起传给客服。</p>
             </div>
           </div>
           <Button
             type="submit"
             disabled={submitting || items.length === 0}
-            className="w-full bg-gradient-to-r from-primary via-gold to-accent text-primary-foreground font-bold text-lg py-6"
+            className="w-full bg-gradient-to-r from-primary via-gold to-accent text-primary-foreground font-semibold text-sm py-4"
           >
-            <MessageCircle className="w-5 h-5 mr-2" />
+            <MessageCircle className="w-4 h-4 mr-2" />
             通过 WhatsApp 确认订单 Confirm via WhatsApp
           </Button>
         </form>

@@ -82,8 +82,12 @@ const ProductsSection = () => {
 
   const unitMY = products[0].priceMY / products[0].qty;
   const unitSG = products[0].priceSG / products[0].qty;
-  const savingsMY = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
-  const savingsSG = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
+  const savingsMYUnit = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
+  const savingsSGUnit = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
+  const totalMY = selected.priceMY * quantity;
+  const totalSG = selected.priceSG * quantity;
+  const savingsMY = savingsMYUnit * quantity;
+  const savingsSG = savingsSGUnit * quantity;
 
   const selectSet = (id: string) => {
     setSelectedId(id);

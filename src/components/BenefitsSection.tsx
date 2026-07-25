@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, Droplets } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";
@@ -9,6 +9,7 @@ import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
+import naturalIngredients from "@/assets/natural-ingredients.png.asset.json";
 
 const benefitVisuals = [
   {

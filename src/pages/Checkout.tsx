@@ -78,7 +78,47 @@ const Checkout = () => {
     const stateLine = region === "MY" && d.state ? `\n州属 State：${d.state}` : "";
     const notesLine = d.notes ? `\n\n📝 *备注 Notes*\n${d.notes}` : "";
 
-    return `🛒 *新订单 New Order*\n您好，我想下单以下商品：\n\n📦 *订购商品 Ordered Items*\n\n${itemText}\n\n💰 *订单总额 Order Total*\n合计 Total：${currencySymbol} ${subtotal.toFixed(2)}\n运费 Shipping：免运 Free\n送货地区 Region：${regionLine}\n\n🚚 *收货资料 Shipping Details*\n姓名 Name：${d.name}\n电话 Phone：${d.phone}\n地址 Address：${d.address}\n邮编 Postcode：${d.postcode}${stateLine}${notesLine}\n\n请协助确认订单与付款方式，谢谢！\nPlease confirm the order and payment details. Thank you!`;
+    return [
+      "🛒 *新订单 New Order*",
+      "",
+      "您好，我想下单以下商品。",
+      "Hi, I would like to place an order.",
+      "",
+      "────────────",
+      "",
+      "📦 *订购商品 Ordered Items*",
+      "",
+      itemText,
+      "",
+      "────────────",
+      "",
+      "💰 *订单总额 Order Total*",
+      "",
+      `合计 Total：${currencySymbol} ${subtotal.toFixed(2)}`,
+      "运费 Shipping：免运 Free",
+      `送货地区 Region：${regionLine}`,
+      "",
+      "────────────",
+      "",
+      "🚚 *收货资料 Shipping Details*",
+      "",
+      `姓名 Name：\n${d.name}`,
+      "",
+      `电话 Phone：\n${d.phone}`,
+      "",
+      `地址 Address：\n${d.address}`,
+      "",
+      `邮编 Postcode：\n${d.postcode}`,
+      stateLine,
+      notesLine,
+      "",
+      "────────────",
+      "",
+      "请协助确认订单与付款方式，谢谢！",
+      "Please confirm the order and payment details. Thank you!",
+    ]
+      .filter(Boolean)
+      .join("\n");
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>

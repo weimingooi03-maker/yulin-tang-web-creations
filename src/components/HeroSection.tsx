@@ -204,6 +204,7 @@ const HeroSection = () => {
                 loading="lazy"
                 className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
               />
+            </div>
           </div>
         </div>
       </div>

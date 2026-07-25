@@ -246,14 +246,16 @@ const ProductsSection = () => {
                   </span>
                   <div className="text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <div className="text-2xl font-bold text-primary leading-none">{selected.priceRM}</div>
+                      <div className="text-2xl font-bold text-primary leading-none">RM {totalMY}</div>
                       {savingsMY > 0 && (
                         <div className="bg-destructive/10 text-destructive text-[10px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap">
                           省 RM {savingsMY}
                         </div>
                       )}
                     </div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitRM}</div>
+                    <div className="text-[11px] text-muted-foreground mt-0.5">
+                      每瓶 / per bottle {selected.unitRM}{quantity > 1 && ` · ${selected.priceRM} × ${quantity}`}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
@@ -266,14 +268,16 @@ const ProductsSection = () => {
                   </span>
                   <div className="text-right">
                     <div className="flex items-center justify-end gap-2">
-                      <div className="text-2xl font-bold text-primary leading-none">{selected.priceSGD}</div>
+                      <div className="text-2xl font-bold text-primary leading-none">SGD {totalSG}</div>
                       {savingsSG > 0 && (
                         <div className="bg-destructive/10 text-destructive text-[10px] font-bold px-1.5 py-0.5 rounded whitespace-nowrap">
                           Save SGD {savingsSG}
                         </div>
                       )}
                     </div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitSGD}</div>
+                    <div className="text-[11px] text-muted-foreground mt-0.5">
+                      每瓶 / per bottle {selected.unitSGD}{quantity > 1 && ` · ${selected.priceSGD} × ${quantity}`}
+                    </div>
                   </div>
                 </div>
               </div>

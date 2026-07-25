@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshake } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
-import labtestNutrition from "@/assets/labtest-nutrition.jpeg.asset.json";
-import labtestMicrobio from "@/assets/labtest-microbio.jpeg.asset.json";
-import labtestCollagen from "@/assets/labtest-collagen.jpeg.asset.json";
+import labtestNutrition from "@/assets/labtest-nutrition.jpeg";
+import labtestMicrobio from "@/assets/labtest-microbio.jpeg";
+import labtestCollagen from "@/assets/labtest-collagen.jpeg";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {

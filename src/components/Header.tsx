@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ShoppingCart } from "lucide-react";
-import logo from "@/assets/yulin-tang-logo.png";
+import logoAsset from "@/assets/yulin-tang-logo-transparent.png.asset.json";
 import { useCart } from "@/contexts/CartContext";
 import { useNavigate, useLocation } from "react-router-dom";
 

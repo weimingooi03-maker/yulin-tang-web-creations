@@ -17,7 +17,7 @@ const schema = z.object({
   address: z.string().trim().min(5, "请输入完整地址").max(300),
   city: z.string().trim().min(1, "请输入城市").max(60),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
-  state: z.string().trim().min(1, "请输入州属").max(60),
+  state: z.string().trim().max(60).optional().or(z.literal("")),
   notes: z.string().trim().max(500).optional().or(z.literal("")),
 });
 

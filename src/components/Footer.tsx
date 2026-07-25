@@ -49,10 +49,10 @@ const Footer = () => {
               <li>🇸🇬 新加坡 Singapore</li>
             </ul>
             <p className="text-primary text-base mt-4 font-bold">
-              全西马 & 新加坡免运费
+              全马 & 新加坡免运费
             </p>
             <p className="text-background/60 text-sm">
-              东马运费另计
+              Free Shipping to All Malaysia & Singapore
             </p>
           </div>
           

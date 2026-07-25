@@ -22,8 +22,8 @@ const faqs = [
   {
     questionZh: "产品有没有添加防腐剂？可以保存多久？",
     questionEn: "Are preservatives added? How long can it be kept?",
-    answerZh: "无添加防腐剂，经过高温杀菌确保无菌，可保存一年。住家式售卖无杀菌保障，请谨慎选择。",
-    answerEn: "No preservatives added. High-temperature sterilization ensures a sterile product with a one-year shelf life. Home-made sellers often lack sterilization, so choose carefully.",
+    answerZh: "无添加防腐剂，经过高温杀菌确保无菌，可保存一年。",
+    answerEn: "No preservatives added. High-temperature sterilization ensures a sterile product with a one-year shelf life.",
   },
   {
     questionZh: "多久能看到效果？",
@@ -60,29 +60,34 @@ const FAQSection = () => {
         </div>
 
         {/* FAQ Accordion */}
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="space-y-3 md:space-y-4">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-card border border-border/50 rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border border-border/50 rounded-xl px-4 md:px-6 shadow-sm hover:shadow-md transition-shadow"
             >
-              <AccordionTrigger className="text-left py-5 hover:no-underline">
-                <div className="pr-4">
-                  <p className="text-lg font-semibold text-foreground mb-1">
-                    {faq.questionZh}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {faq.questionEn}
-                  </p>
+              <AccordionTrigger className="text-left py-4 md:py-5 hover:no-underline gap-3">
+                <div className="flex items-start gap-3 pr-2">
+                  <span className="hidden sm:flex shrink-0 items-center justify-center w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-bold mt-0.5">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p className="text-base md:text-lg font-semibold text-foreground mb-0.5">
+                      {faq.questionZh}
+                    </p>
+                    <p className="text-xs md:text-sm text-muted-foreground">
+                      {faq.questionEn}
+                    </p>
+                  </div>
                 </div>
               </AccordionTrigger>
-              <AccordionContent className="pb-5">
+              <AccordionContent className="pb-4 md:pb-5">
                 <div className="pt-2 border-t border-border/30">
-                  <p className="text-base text-foreground/90 leading-relaxed mb-3 mt-4">
+                  <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-2 mt-3 md:mt-4">
                     {faq.answerZh}
                   </p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     {faq.answerEn}
                   </p>
                 </div>

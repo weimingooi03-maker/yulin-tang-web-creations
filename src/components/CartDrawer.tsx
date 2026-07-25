@@ -1,6 +1,7 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetFooter } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 import { useCart } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
@@ -28,15 +29,15 @@ const CartDrawer = () => {
           <div className="inline-flex rounded-full border border-border overflow-hidden">
             <button
               onClick={() => setRegion("MY")}
-              className={`px-3 py-1 text-sm font-medium ${region === "MY" ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground"}`}
+              className={`px-3 py-1 text-sm font-medium inline-flex items-center gap-1.5 ${region === "MY" ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground"}`}
             >
-              🇲🇾 MY
+              <FlagIcon country="MY" className="w-4" /> MY
             </button>
             <button
               onClick={() => setRegion("SG")}
-              className={`px-3 py-1 text-sm font-medium ${region === "SG" ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground"}`}
+              className={`px-3 py-1 text-sm font-medium inline-flex items-center gap-1.5 ${region === "SG" ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground"}`}
             >
-              🇸🇬 SG
+              <FlagIcon country="SG" className="w-4" /> SG
             </button>
           </div>
         </div>
@@ -89,8 +90,8 @@ const CartDrawer = () => {
                 {currencySymbol} {subtotal.toFixed(2)}
               </span>
             </div>
-            <p className="text-xs text-muted-foreground">
-              {region === "MY" ? "🇲🇾 全马免运 Free shipping" : "🇸🇬 新加坡免运 Free shipping"}
+            <p className="text-xs text-muted-foreground inline-flex items-center gap-1.5">
+              {region === "MY" ? <><FlagIcon country="MY" className="w-3.5" /> 全马免运 Free shipping</> : <><FlagIcon country="SG" className="w-3.5" /> 新加坡免运 Free shipping</>}
             </p>
             <Button
               disabled={items.length === 0}

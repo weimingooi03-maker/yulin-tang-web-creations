@@ -170,25 +170,3 @@
   70% { box-shadow: 0 0 0 12px hsl(var(--primary) / 0); }
 }
 .animate-cta-pulse { animation: cta-pulse 2.2s ease-out infinite; }
-
-@keyframes sun-rotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.08); }
-  100% { transform: rotate(360deg) scale(1); }
-}
-@keyframes sun-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.3); }
-}
-@keyframes moon-float {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-8px) scale(1.06); }
-}
-@keyframes moon-glow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.25); }
-}
-.animate-sun { animation: sun-rotate 12s linear infinite; }
-.animate-sun-glow { animation: sun-glow 3s ease-in-out infinite; }
-.animate-moon { animation: moon-float 4s ease-in-out infinite; }
-.animate-moon-glow { animation: moon-glow 3.5s ease-in-out infinite; }

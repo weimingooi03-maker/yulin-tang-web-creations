@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Sun, Moon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png.asset.json";
 import review1 from "@/assets/review-1.jpeg";
@@ -6,8 +6,7 @@ import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
-import whenToTakeCn from "@/assets/when-to-take-cn.png";
-import whenToTakeEn from "@/assets/when-to-take-en.png";
+import bestTimeToTake from "@/assets/best-time-to-take.png.asset.json";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 

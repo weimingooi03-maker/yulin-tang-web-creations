@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
+import floralAsset from "@/assets/floral-series-coming-soon.png.asset.json";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
 import { ChevronDown } from "lucide-react";
 
+const heroSlides = [
+  {
+    src: heroImage,
+    alt: "魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen",
+  },
+  {
+    src: floralAsset.url,
+    alt: "魚鱗堂 花香系列 即将推出 Floral Series Coming Soon - Chrysanthemum Flavor",
+  },
+];
+
 const HeroSection = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToProducts = () => {
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -19,18 +41,40 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10 pt-16">
         <div className="max-w-6xl mx-auto flex flex-col items-center space-y-8">
-          {/* Feature image - hero attraction */}
+          {/* Feature image carousel - hero attraction */}
           <div className="relative w-full max-w-5xl opacity-0 animate-fade-in-delay-2">
             {/* Glow aura */}
             <div className="absolute -inset-6 bg-gradient-to-tr from-primary/30 via-accent/20 to-primary/30 rounded-[2rem] blur-3xl opacity-70 animate-hero-glow" />
-            {/* Shimmer sweep */}
-            <div className="relative overflow-hidden rounded-2xl">
-              <img
-                src={heroImage}
-                alt="魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen"
-                className="w-full rounded-2xl shadow-2xl animate-hero-float"
-              />
-              <div className="pointer-events-none absolute inset-0 -translate-x-full animate-hero-shimmer bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+            {/* Slides */}
+            <div className="relative overflow-hidden rounded-2xl aspect-square sm:aspect-[4/3] md:aspect-[16/10] shadow-2xl bg-secondary/40">
+              {heroSlides.map((slide, idx) => (
+                <img
+                  key={slide.src}
+                  src={slide.src}
+                  alt={slide.alt}
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+                    idx === activeSlide ? "opacity-100 animate-hero-float" : "opacity-0"
+                  }`}
+                />
+              ))}
+              {/* Shimmer sweep */}
+              <div className="pointer-events-none absolute inset-0 -translate-x-full animate-hero-shimmer bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+
+              {/* Slide indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {heroSlides.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveSlide(idx)}
+                    aria-label={`Slide ${idx + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${
+                      idx === activeSlide
+                        ? "w-8 bg-primary shadow-md shadow-primary/50"
+                        : "w-1.5 bg-foreground/30 hover:bg-foreground/50"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 

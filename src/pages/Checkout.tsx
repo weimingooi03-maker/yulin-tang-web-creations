@@ -238,10 +238,10 @@ const Checkout = () => {
               <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-2" : ""}`}>
                 {region === "MY" && (
                   <div>
-                    <Label htmlFor="state">州属 State *</Label>
+                    <Label htmlFor="state">State *</Label>
                     <Select value={form.state} onValueChange={(value) => setForm((f) => ({ ...f, state: value }))}>
                       <SelectTrigger id="state" className="w-full mt-1.5">
-                        <SelectValue placeholder="选择州属 Select state" />
+                        <SelectValue placeholder="Select state" />
                       </SelectTrigger>
                       <SelectContent>
                         {MALAYSIAN_STATES.map((s) => (

@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { useCart } from "@/contexts/CartContext";
@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, MessageCircle, ShoppingBag, Copy } from "lucide-react";
+import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({

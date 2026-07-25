@@ -21,6 +21,8 @@ const HeroSection = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
+  const dragStartX = useRef<number | null>(null);
+  const isDragging = useRef(false);
 
   const goToNext = () => setActiveSlide((prev) => (prev + 1) % heroSlides.length);
   const goToPrev = () => setActiveSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
@@ -53,6 +55,34 @@ const HeroSection = () => {
     }
     touchStartX.current = null;
     touchEndX.current = null;
+  };
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    dragStartX.current = e.clientX;
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    e.preventDefault();
+  };
+
+  const onMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging.current || dragStartX.current === null) return;
+    isDragging.current = false;
+    const distance = dragStartX.current - e.clientX;
+    const minDragDistance = 40;
+    if (distance > minDragDistance) {
+      goToNext();
+    } else if (distance < -minDragDistance) {
+      goToPrev();
+    }
+    dragStartX.current = null;
+  };
+
+  const onMouseLeave = () => {
+    isDragging.current = false;
+    dragStartX.current = null;
   };
 
   const scrollToProducts = () => {

@@ -63,7 +63,36 @@ const benefitVisuals = [
   },
 ];
 
+const reviews = [
+  {
+    img: review1,
+    alt: "Customer Review - Joint Pain Relief",
+    name: "Ms Tan · Kuala Lumpur",
+    quote: "After two months, my knee pain has noticeably eased!",
+  },
+  {
+    img: review2Asset,
+    alt: "Customer Review - Mr Lim, mother's knee pain improved",
+    name: "Mr Lim",
+    quote: "After 12 days, my mum's knee pain eased and she can walk much more smoothly!",
+  },
+  {
+    img: review3,
+    alt: "Customer Review - Skin Improvement",
+    name: "Ms Ng",
+    quote: "My skin feels more elastic. Friends keep asking what skincare I use!",
+  },
+  {
+    img: review4Asset,
+    alt: "Customer Review - Visible skin improvement before and after",
+    name: "Real Result",
+    quote: "Skin looks more even, fewer breakouts, and a natural healthy glow!",
+  },
+];
+
 const BenefitsSection = () => {
+  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
+
   return (
     <section id="benefits" className="py-16 bg-secondary/30">
       <div className="container mx-auto px-4">

@@ -255,34 +255,53 @@ const ProductsSection = () => {
               </div>
 
               {/* Quantity stepper */}
-              <div className="flex items-center justify-between mb-4 pb-4 border-b border-border/60">
+              <div
+                role="group"
+                aria-labelledby="qty-label"
+                aria-describedby="qty-help"
+                className="flex items-center justify-between mb-4 pb-4 border-b border-border/60"
+              >
                 <div className="flex flex-col leading-tight">
-                  <span className="text-sm font-semibold text-foreground">份数</span>
-                  <span className="text-[11px] text-muted-foreground">Quantity</span>
+                  <span id="qty-label" className="text-sm font-semibold text-foreground">
+                    份数 / Quantity
+                  </span>
+                  <span id="qty-help" className="text-[11px] text-muted-foreground">
+                    使用 + / − 按钮或键盘 Enter/Space 调整 (1–99)
+                  </span>
                 </div>
-                <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1">
+                <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition">
                   <button
                     type="button"
-                    aria-label="减少"
+                    aria-label={`减少份数，当前 ${quantity} 份 Decrease quantity`}
+                    aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     disabled={quantity <= 1}
-                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary/10 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
-                    <Minus className="w-4 h-4" />
+                    <Minus className="w-4 h-4" aria-hidden="true" />
                   </button>
-                  <span className="w-8 text-center text-lg font-bold text-foreground tabular-nums">
+                  <span
+                    id="qty-value"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    className="w-8 text-center text-lg font-bold text-foreground tabular-nums"
+                  >
                     {quantity}
                   </span>
                   <button
                     type="button"
-                    aria-label="增加"
+                    aria-label={`增加份数，当前 ${quantity} 份 Increase quantity`}
+                    aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.min(99, q + 1))}
-                    className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-primary/10 transition"
+                    disabled={quantity >= 99}
+                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
-                    <Plus className="w-4 h-4" />
+                    <Plus className="w-4 h-4" aria-hidden="true" />
                   </button>
                 </div>
               </div>
+
 
               <Button
                 className={`w-full font-bold text-base py-6 ${

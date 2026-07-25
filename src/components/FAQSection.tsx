@@ -20,6 +20,12 @@ const faqs = [
     answerEn: "Made with natural fish scale collagen, red dates, longan and pandan. Red dates nourish blood and skin, longan calms the mind and aids sleep, while pandan adds a refreshing aroma for a smoother taste.",
   },
   {
+    questionZh: "产品有没有添加防腐剂？可以保存多久？",
+    questionEn: "Are preservatives added? How long can it be kept?",
+    answerZh: "无添加防腐剂，经过高温杀菌确保无菌，可保存一年。住家式售卖无杀菌保障，请谨慎选择。",
+    answerEn: "No preservatives added. High-temperature sterilization ensures a sterile product with a one-year shelf life. Home-made sellers often lack sterilization, so choose carefully.",
+  },
+  {
     questionZh: "多久能看到效果？",
     questionEn: "How long before I see results?",
     answerZh: "效果因人而异。大多数顾客在持续食用2-4周后开始感受到皮肤更有弹性、关节更灵活。建议持续食用3个月以上获得最佳效果。",

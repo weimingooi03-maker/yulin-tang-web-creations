@@ -7,6 +7,13 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -14,8 +21,7 @@ const schema = z.object({
   name: z.string().trim().min(1, "请输入姓名").max(80),
   phone: z.string().trim().min(6, "请输入有效电话").max(30),
   email: z.string().trim().email("邮箱格式不正确").max(120).optional().or(z.literal("")),
-  address: z.string().trim().min(5, "请输入完整地址").max(300),
-  city: z.string().trim().min(1, "请输入城市").max(60),
+  address: z.string().trim().min(8, "请输入完整地址").max(300),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
   state: z.string().trim().max(60).optional().or(z.literal("")),
   notes: z.string().trim().max(500).optional().or(z.literal("")),
@@ -33,13 +39,31 @@ const Checkout = () => {
     phone: "",
     email: "",
     address: "",
-    city: "",
     postcode: "",
     state: "",
     notes: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
+
+  const MALAYSIAN_STATES = [
+    { value: "Johor", label: "Johor · 柔佛" },
+    { value: "Kedah", label: "Kedah · 吉打" },
+    { value: "Kelantan", label: "Kelantan · 吉兰丹" },
+    { value: "Melaka", label: "Melaka · 马六甲" },
+    { value: "Negeri Sembilan", label: "Negeri Sembilan · 森美兰" },
+    { value: "Pahang", label: "Pahang · 彭亨" },
+    { value: "Penang", label: "Penang · 槟城" },
+    { value: "Perak", label: "Perak · 霹雳" },
+    { value: "Perlis", label: "Perlis · 玻璃市" },
+    { value: "Sabah", label: "Sabah · 沙巴" },
+    { value: "Sarawak", label: "Sarawak · 砂拉越" },
+    { value: "Selangor", label: "Selangor · 雪兰莪" },
+    { value: "Terengganu", label: "Terengganu · 登嘉楼" },
+    { value: "Kuala Lumpur", label: "Kuala Lumpur · 吉隆坡" },
+    { value: "Putrajaya", label: "Putrajaya · 布城" },
+    { value: "Labuan", label: "Labuan · 纳闽" },
+  ];
 
   const composeMessage = (d: z.infer<typeof schema>) => {
     const itemText = items
@@ -52,7 +76,7 @@ const Checkout = () => {
       })
       .join("； ");
 
-    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，城市 City：${d.city}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
+    return `🛒 新订单 New Order | 您好，我想下单：${itemText}。合计总额 Total：${currencySymbol} ${subtotal.toFixed(2)}。送货地区 Region：${region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore"}。收货信息 Shipping：姓名 Name：${d.name}，电话 Phone：${d.phone}${d.email ? `，邮箱 Email：${d.email}` : ""}，地址 Address：${d.address}，邮编 Postcode：${d.postcode}${region === "MY" && d.state ? `，州属 State：${d.state}` : ""}${d.notes ? `，备注 Notes：${d.notes}` : ""}。请协助确认订单与付款方式，谢谢！Please confirm the order and payment details. Thank you!`;
   };
 
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -207,28 +231,41 @@ const Checkout = () => {
                 {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
               </div>
               <div>
-                <Label htmlFor="address">详细地址 Address *</Label>
-                <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
+                <Label htmlFor="address">完整地址 Full Address *</Label>
+                <Textarea
+                  id="address"
+                  value={form.address}
+                  onChange={set("address")}
+                  maxLength={300}
+                  rows={3}
+                  placeholder="请填写完整街道地址、门牌号码与地区"
+                />
                 {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
               </div>
-              <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
-                <div>
-                  <Label htmlFor="city">城市 City *</Label>
-                  <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
-                  {errors.city && <p className="text-xs text-destructive mt-1">{errors.city}</p>}
-                </div>
+              <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-2" : ""}`}>
+                {region === "MY" && (
+                  <div>
+                    <Label htmlFor="state">州属 State *</Label>
+                    <Select value={form.state} onValueChange={(value) => setForm((f) => ({ ...f, state: value }))}>
+                      <SelectTrigger id="state" className="w-full mt-1.5">
+                        <SelectValue placeholder="选择州属 Select state" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {MALAYSIAN_STATES.map((s) => (
+                          <SelectItem key={s.value} value={s.value}>
+                            {s.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
+                  </div>
+                )}
                 <div>
                   <Label htmlFor="postcode">邮编 Postcode *</Label>
                   <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
                   {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
                 </div>
-                {region === "MY" && (
-                  <div>
-                    <Label htmlFor="state">州属 State *</Label>
-                    <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
-                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
-                  </div>
-                )}
               </div>
               <div>
                 <Label>送货地区 Region *</Label>

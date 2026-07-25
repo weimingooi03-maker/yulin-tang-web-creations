@@ -45,22 +45,22 @@ const Checkout = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const MALAYSIAN_STATES = [
-    { value: "Johor", label: "Johor · 柔佛" },
-    { value: "Kedah", label: "Kedah · 吉打" },
-    { value: "Kelantan", label: "Kelantan · 吉兰丹" },
-    { value: "Melaka", label: "Melaka · 马六甲" },
-    { value: "Negeri Sembilan", label: "Negeri Sembilan · 森美兰" },
-    { value: "Pahang", label: "Pahang · 彭亨" },
-    { value: "Penang", label: "Penang · 槟城" },
-    { value: "Perak", label: "Perak · 霹雳" },
-    { value: "Perlis", label: "Perlis · 玻璃市" },
-    { value: "Sabah", label: "Sabah · 沙巴" },
-    { value: "Sarawak", label: "Sarawak · 砂拉越" },
-    { value: "Selangor", label: "Selangor · 雪兰莪" },
-    { value: "Terengganu", label: "Terengganu · 登嘉楼" },
-    { value: "Kuala Lumpur", label: "Kuala Lumpur · 吉隆坡" },
-    { value: "Putrajaya", label: "Putrajaya · 布城" },
-    { value: "Labuan", label: "Labuan · 纳闽" },
+    { value: "Johor", label: "Johor" },
+    { value: "Kedah", label: "Kedah" },
+    { value: "Kelantan", label: "Kelantan" },
+    { value: "Melaka", label: "Melaka" },
+    { value: "Negeri Sembilan", label: "Negeri Sembilan" },
+    { value: "Pahang", label: "Pahang" },
+    { value: "Penang", label: "Penang" },
+    { value: "Perak", label: "Perak" },
+    { value: "Perlis", label: "Perlis" },
+    { value: "Sabah", label: "Sabah" },
+    { value: "Sarawak", label: "Sarawak" },
+    { value: "Selangor", label: "Selangor" },
+    { value: "Terengganu", label: "Terengganu" },
+    { value: "Kuala Lumpur", label: "Kuala Lumpur" },
+    { value: "Putrajaya", label: "Putrajaya" },
+    { value: "Labuan", label: "Labuan" },
   ];
 
   const composeMessage = (d: z.infer<typeof schema>) => {
@@ -97,7 +97,7 @@ const Checkout = () => {
       return;
     }
     if (region === "MY" && !result.data.state.trim()) {
-      setErrors({ state: "请输入州属" });
+      setErrors({ state: "Please select a state" });
       toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
       return;
     }
@@ -238,10 +238,10 @@ const Checkout = () => {
               <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-2" : ""}`}>
                 {region === "MY" && (
                   <div>
-                    <Label htmlFor="state">州属 State *</Label>
+                    <Label htmlFor="state">State *</Label>
                     <Select value={form.state} onValueChange={(value) => setForm((f) => ({ ...f, state: value }))}>
                       <SelectTrigger id="state" className="w-full mt-1.5">
-                        <SelectValue placeholder="选择州属 Select state" />
+                        <SelectValue placeholder="Select state" />
                       </SelectTrigger>
                       <SelectContent>
                         {MALAYSIAN_STATES.map((s) => (

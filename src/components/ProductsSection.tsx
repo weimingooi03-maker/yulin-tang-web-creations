@@ -4,7 +4,7 @@ import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus } from "lucide-react";
+import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";

@@ -61,28 +61,18 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30分钟倒计时
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => (prev > 0 ? prev - 1 : 30 * 60));
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  };
-
-
-
+  const { toast } = useToast();
 
   const handleWhatsApp = (nameZh: string, nameEn: string) => {
     const message = encodeURIComponent(`您好！我想订购 ${nameZh}。\nHello! I would like to order ${nameEn}.`);
     window.open(`https://wa.me/601158727742?text=${message}`, "_blank");
+  };
+
+  const handleAddToCart = (nameZh: string, nameEn: string) => {
+    toast({
+      title: "已加入购物车",
+      description: `${nameZh} / ${nameEn} 已加入购物车，点击「立即购买」即可下单。`,
+    });
   };
 
   return (

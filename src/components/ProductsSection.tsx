@@ -231,20 +231,28 @@ const ProductsSection = () => {
               <div className="space-y-2 mb-5">
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <FlagIcon country="MY" /> 马来西亚
+                    <FlagIcon country="MY" />
+                    <span className="flex flex-col leading-tight">
+                      <span className="text-foreground font-semibold">马来西亚</span>
+                      <span className="text-[11px]">Malaysia</span>
+                    </span>
                   </span>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-primary leading-none">{selected.priceRM}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 {selected.unitRM}</div>
+                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitRM}</div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <FlagIcon country="SG" /> 新加坡
+                    <FlagIcon country="SG" />
+                    <span className="flex flex-col leading-tight">
+                      <span className="text-foreground font-semibold">新加坡</span>
+                      <span className="text-[11px]">Singapore</span>
+                    </span>
                   </span>
                   <div className="text-right">
                     <div className="text-2xl font-bold text-primary leading-none">{selected.priceSGD}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 {selected.unitSGD}</div>
+                    <div className="text-[11px] text-muted-foreground mt-0.5">每瓶 / per bottle {selected.unitSGD}</div>
                   </div>
                 </div>
               </div>

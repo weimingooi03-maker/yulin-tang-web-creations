@@ -158,8 +158,8 @@ const ContactSection = () => {
                   <p className="text-5xl mb-2">🇲🇾 🇸🇬</p>
                   <p className="font-bold text-lg text-foreground">马来西亚 & 新加坡</p>
                   <p className="text-base text-muted-foreground">Malaysia & Singapore</p>
-                  <p className="text-primary font-bold text-lg mt-2">全西马 & 新加坡免运费</p>
-                  <p className="text-sm text-muted-foreground">东马运费另计</p>
+                  <p className="text-primary font-bold text-lg mt-2">全马 & 新加坡免运费</p>
+                  <p className="text-sm text-muted-foreground">Free Shipping to All Malaysia & Singapore</p>
                 </div>
                 
                 <div className="border-t border-border pt-6">

@@ -244,7 +244,7 @@ const Checkout = () => {
                     <div className="border-t mt-4 pt-4 space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className="text-muted-foreground">运费 Shipping</span>
-                        <span>{region === "MY" ? "西马免运 · 东马另计" : "免运 Free"}</span>
+                        <span>免运 Free</span>
                       </div>
                       <div className="flex justify-between text-lg font-bold pt-2 border-t">
                         <span>合计 Total</span>

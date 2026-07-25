@@ -90,7 +90,7 @@ const CartDrawer = () => {
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              {region === "MY" ? "西马免运 · 东马运费另计" : "🇸🇬 新加坡免运 Free shipping"}
+              {region === "MY" ? "🇲🇾 全马免运 Free shipping" : "🇸🇬 新加坡免运 Free shipping"}
             </p>
             <Button
               disabled={items.length === 0}

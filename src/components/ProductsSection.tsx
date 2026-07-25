@@ -120,10 +120,10 @@ const ProductsSection = () => {
           {/* Free Shipping Banner */}
           <div className="mt-8 inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-4 rounded-full">
             <Truck className="w-6 h-6" />
-            <span className="font-bold text-base sm:text-lg">🇲🇾 全西马 & 🇸🇬 新加坡 免运费 | East Malaysia: Extra Shipping | 东马运费另计</span>
+            <span className="font-bold text-base sm:text-lg">🇲🇾 全马 & 🇸🇬 新加坡 免运费</span>
           </div>
           <p className="text-base text-muted-foreground mt-2">
-            FREE Shipping in West Malaysia & Singapore | East Malaysia shipping charges apply
+            FREE Shipping to All Malaysia & Singapore
           </p>
         </div>
         

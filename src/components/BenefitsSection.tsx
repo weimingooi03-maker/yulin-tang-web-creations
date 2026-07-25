@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bone, Heart } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Sun, Moon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png.asset.json";
 import review1 from "@/assets/review-1.jpeg";
@@ -6,8 +6,7 @@ import review2 from "@/assets/review-2.jpeg";
 import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
-import whenToTakeCn from "@/assets/when-to-take-cn.png";
-import whenToTakeEn from "@/assets/when-to-take-en.png";
+import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 
@@ -213,21 +212,39 @@ const BenefitsSection = () => {
               </div>
             </div>
             
-            {/* When to Take Images */}
-            <div className="grid md:grid-cols-2 gap-2 mt-8">
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={whenToTakeCn} 
-                  alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前"
-                  className="w-full h-auto"
-                />
+            {/* Best Time to Take */}
+            <div className="mt-16">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+                  什么时候吃效果最佳？
+                </h3>
+                <p className="text-lg text-primary font-semibold">
+                  Best Time to Enjoy for Maximum Results
+                </p>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
-                  src={whenToTakeEn} 
-                  alt="When to Take - Before Breakfast or Before Bed"
-                  className="w-full h-auto"
-                />
+              <div className="relative max-w-4xl mx-auto px-8 md:px-0">
+                {/* Animated Sun - Left */}
+                <div className="absolute left-0 md:-left-14 top-4 md:top-8 z-10">
+                  <div className="relative">
+                    <Sun className="w-10 h-10 md:w-16 md:h-16 text-primary animate-sun" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-primary/15 blur-lg animate-sun-glow" />
+                  </div>
+                </div>
+                {/* Animated Moon - Right */}
+                <div className="absolute right-0 md:-right-14 top-4 md:top-8 z-10">
+                  <div className="relative">
+                    <Moon className="w-10 h-10 md:w-16 md:h-16 text-primary/80 animate-moon" strokeWidth={1.5} />
+                    <div className="absolute inset-0 rounded-full bg-primary/10 blur-lg animate-moon-glow" />
+                  </div>
+                </div>
+                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
+                  <img
+                    src={bestTimeToTake}
+                    alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前一小时"
+                    loading="lazy"
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
             </div>
           </div>

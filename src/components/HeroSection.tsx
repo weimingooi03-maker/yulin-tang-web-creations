@@ -4,7 +4,8 @@ import floralImage from "@/assets/floral-series-coming-soon.png";
 import customers80kImg from "@/assets/hero-80k-customers.png";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
-import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play, Users } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const heroSlides = [
   {

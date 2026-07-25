@@ -22,7 +22,7 @@ const HeroSection = () => {
           {/* Feature image */}
           <div className="w-full opacity-0 animate-fade-in-delay-2">
             <img
-              src={heroImage.url}
+              src={heroImage}
               alt="魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen"
               className="w-full rounded-2xl shadow-xl"
             />
@@ -34,7 +34,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-2xl" />
               <img
-                src={heroZh.url}
+                src={heroZh}
                 alt="什么是鱼鳞冻 - 魚鱗堂深海鱼鳞胶原蛋白冻"
                 loading="lazy"
                 className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
@@ -43,7 +43,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent rounded-2xl" />
               <img
-                src={heroEn.url}
+                src={heroEn}
                 alt="What is Marine Collagen Jelly - YULIN TANG"
                 loading="lazy"
                 className="w-full rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"

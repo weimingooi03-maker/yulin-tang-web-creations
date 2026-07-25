@@ -1,4 +1,4 @@
-import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck, Calendar, Leaf } from "lucide-react";
+import { Sparkles, Heart, Shield, Droplets, Bone, Coffee, Users, ShieldCheck } from "lucide-react";
 import benefitJoint from "@/assets/benefit-joint.png";
 import benefitBone from "@/assets/benefit-bone.png";
 import benefitBeauty from "@/assets/benefit-beauty.png";
@@ -13,9 +13,6 @@ import review3 from "@/assets/review-3.jpeg";
 import review4 from "@/assets/review-4.jpeg";
 import whatIsFishJellyEn from "@/assets/what-is-fish-jelly-en.png";
 import tasteProfile from "@/assets/taste-profile.png";
-import whyChoose1 from "@/assets/why-choose-1.jpeg";
-import whyChoose2 from "@/assets/why-choose-2.jpeg";
-import whyChoose3 from "@/assets/why-choose-3.png";
 import whenToTakeCn from "@/assets/when-to-take-cn.png";
 import whenToTakeEn from "@/assets/when-to-take-en.png";
 
@@ -256,81 +253,6 @@ const BenefitsSection = () => {
             </div>
           </div>
         </div>
-        {/* Why Choose Us */}
-        <div className="bg-card rounded-2xl p-8 mb-14 border border-border/50 shadow-lg">
-          <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground text-center mb-1">
-            为什么选择我们
-          </h3>
-          <p className="text-lg text-primary font-semibold text-center mb-6">Why Choose Us</p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8 max-w-4xl mx-auto">
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-xl font-bold text-primary">7500mg</div>
-              <div className="text-xs font-medium text-foreground">胶原蛋白 Collagen</div>
-            </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-sm font-bold text-foreground">天然低糖</div>
-              <div className="text-xs text-muted-foreground">Low Sugar</div>
-            </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Leaf className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-sm font-bold text-foreground">无添加糖</div>
-              <div className="text-xs text-muted-foreground">No Added Sugar</div>
-            </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-sm font-bold text-foreground">无重金属</div>
-              <div className="text-xs text-muted-foreground">Heavy Metal Free</div>
-            </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <ShieldCheck className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-sm font-bold text-foreground">无防腐剂</div>
-              <div className="text-xs text-muted-foreground">Preservative Free</div>
-            </div>
-            <div className="bg-card border border-primary/30 rounded-lg p-4 text-center shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                <Calendar className="w-4 h-4 text-primary" />
-              </div>
-              <div className="text-sm font-bold text-foreground">保质期1年+</div>
-              <div className="text-xs text-muted-foreground">1+ Year Shelf Life</div>
-            </div>
-          </div>
-          {/* Images Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8 max-w-2xl mx-auto">
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img 
-                  src={whyChoose1} 
-                  alt="食材可以帮助什么 - Ingredients Benefits"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="rounded-xl overflow-hidden shadow-md">
-                <img 
-                  src={whyChoose2} 
-                  alt="3种必需的氨基酸 - Essential Amino Acids"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-              <p className="text-xs text-muted-foreground text-center mt-2">3 Essential Amino Acids</p>
-            </div>
-          </div>
-          </div>
 
         {/* Customer Reviews */}
         <div className="mt-16">

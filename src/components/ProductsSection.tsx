@@ -4,11 +4,11 @@ import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, Package, Flame, Check, Crown } from "lucide-react";
+import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
-import { useToast } from "@/hooks/use-toast";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
+
 
 const products = [
   {
@@ -74,11 +74,16 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const { toast } = useToast();
-  const { addItem, openCart } = useCart();
+  const { addItem } = useCart();
   const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState("set-b");
+  const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
+
+  const selectSet = (id: string) => {
+    setSelectedId(id);
+    setQuantity(1);
+  };
 
   const toCartProduct = (p: typeof products[number]): CartProduct => ({
     id: p.id,
@@ -90,19 +95,11 @@ const ProductsSection = () => {
     priceSG: p.priceSG,
   });
 
-  const handleAddToCart = (p: typeof products[number]) => {
-    addItem(toCartProduct(p));
-    toast({
-      title: "已加入购物车",
-      description: `${p.nameZh} / ${p.nameEn} 已加入购物车。`,
-    });
-    openCart();
-  };
-
   const handleBuyNow = (p: typeof products[number]) => {
-    addItem(toCartProduct(p));
+    addItem(toCartProduct(p), quantity);
     navigate("/checkout");
   };
+
 
   return (
     <section id="products" className="py-20 bg-background">

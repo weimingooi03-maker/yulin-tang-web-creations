@@ -90,10 +90,10 @@ const FAQSection = () => {
               </AccordionTrigger>
               <AccordionContent className="pb-4 md:pb-5">
                 <div className="pt-2 border-t border-border/30">
-                  <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-2 mt-3 md:mt-4">
+                  <p className="text-sm md:text-base text-foreground/90 leading-relaxed mb-2 mt-3 md:mt-4 whitespace-pre-line">
                     {faq.answerZh}
                   </p>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                     {faq.answerEn}
                   </p>
                 </div>

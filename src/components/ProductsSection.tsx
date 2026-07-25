@@ -197,10 +197,6 @@ const ProductsSection = () => {
                     <div className="text-[10px] sm:text-xs text-muted-foreground font-medium">
                       {p.qtyLabel} · {p.qtyEn}
                     </div>
-                    <div className="mt-2 space-y-0.5">
-                      <div className="text-xs text-muted-foreground line-through">RM {p.originalMY}</div>
-                      <div className="text-sm sm:text-base font-bold text-primary">RM {p.priceMY}</div>
-                    </div>
                     {active && (
                       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
                         <Check className="w-3 h-3" />

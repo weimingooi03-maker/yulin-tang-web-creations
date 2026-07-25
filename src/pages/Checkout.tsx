@@ -41,7 +41,7 @@ const Checkout = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
 
-  const composeMessage = (d: typeof form) => {
+  const composeMessage = (d: z.infer<typeof schema>) => {
     const itemText = items
       .map((item, idx) => {
         const price = region === "MY" ? item.priceMY : item.priceSG;

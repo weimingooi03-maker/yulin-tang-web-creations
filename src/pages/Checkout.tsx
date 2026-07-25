@@ -60,6 +60,11 @@ const Checkout = () => {
       toast({ title: "请检查表单", description: "有必填项未填写", variant: "destructive" });
       return;
     }
+    if (region === "MY" && !result.data.state.trim()) {
+      setErrors({ state: "请输入州属" });
+      toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
+      return;
+    }
     setErrors({});
     setSubmitting(true);
 

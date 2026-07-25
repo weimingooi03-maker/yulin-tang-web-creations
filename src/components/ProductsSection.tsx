@@ -178,14 +178,9 @@ const ProductsSection = () => {
                     <div className="text-[11px] sm:text-xs text-muted-foreground font-medium">
                       {p.qtyLabel} · {p.qty} Bottles
                     </div>
-                    <div className="mt-1.5 text-sm sm:text-base font-bold text-foreground">
-                      {p.priceRM}
+                    <div className="mt-1.5 text-[10px] sm:text-xs font-medium text-primary">
+                      选配套 Select
                     </div>
-                    {p.savingsZh && (
-                      <div className="text-[10px] sm:text-xs text-destructive font-semibold mt-0.5">
-                        {p.savingsZh}
-                      </div>
-                    )}
                   </button>
                 );
               })}

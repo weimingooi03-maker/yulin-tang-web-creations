@@ -132,21 +132,23 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* VIP tip */}
-        <div className="mb-6 text-center">
-          <div className="inline-flex flex-wrap justify-center items-center gap-2 bg-gradient-to-r from-amber-100 to-amber-50 border border-amber-400 text-amber-900 px-5 py-2.5 rounded-full shadow-sm">
-            <Crown className="w-4 h-4" />
-            <span className="font-bold text-sm">购买 SET B / SET C 即成为 VIP 会员</span>
-          </div>
-        </div>
-
         {/* Unified selector */}
         <Card className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-xl">
           {/* Segmented picker */}
-          <div className="p-4 sm:p-5 bg-muted/40 border-b border-border/50">
-            <p className="text-xs font-semibold text-muted-foreground text-center mb-3 tracking-wider">
-              选择您的配套 · CHOOSE YOUR PACKAGE
-            </p>
+          <div className="p-4 sm:p-6 bg-gradient-to-b from-primary/10 to-muted/30 border-b-2 border-primary/30">
+            <div className="flex flex-col items-center gap-1 mb-4">
+              <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold shadow-md animate-pulse">
+                <span>👇</span>
+                <span>点击下方选择配套 · TAP TO CHOOSE</span>
+                <span>👇</span>
+              </div>
+              <p className="text-sm font-semibold text-foreground mt-2">
+                请选择您的配套
+              </p>
+              <p className="text-xs text-muted-foreground tracking-wider">
+                Please Select Your Package
+              </p>
+            </div>
             <div className="grid grid-cols-3 gap-2 sm:gap-3">
               {products.map((p) => {
                 const active = p.id === selectedId;

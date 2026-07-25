@@ -290,7 +290,7 @@ const ProductsSection = () => {
                   <div className="text-right">
                     <div className="flex items-baseline justify-end gap-2">
                       <span className="text-sm text-muted-foreground line-through">RM {originalTotalMY}</span>
-                      <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−RM {discMY * quantity}</span>
+                      <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−RM {originalTotalMY - totalMY}</span>
                     </div>
                     <div className="text-2xl font-bold text-primary leading-none">RM {totalMY}</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
@@ -307,12 +307,10 @@ const ProductsSection = () => {
                     </span>
                   </span>
                   <div className="text-right">
-                    {discSG > 0 && (
-                      <div className="flex items-baseline justify-end gap-2">
-                        <span className="text-sm text-muted-foreground line-through">SGD {originalTotalSG}</span>
-                        <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−SGD {discSG * quantity}</span>
-                      </div>
-                    )}
+                    <div className="flex items-baseline justify-end gap-2">
+                      <span className="text-sm text-muted-foreground line-through">SGD {originalTotalSG}</span>
+                      <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−SGD {originalTotalSG - totalSG}</span>
+                    </div>
                     <div className="text-2xl font-bold text-primary leading-none">SGD {totalSG}</div>
                     <div className="text-[11px] text-muted-foreground mt-0.5">
                       每瓶 / per bottle SGD {(totalSG / (selected.qty * quantity)).toFixed(2)}

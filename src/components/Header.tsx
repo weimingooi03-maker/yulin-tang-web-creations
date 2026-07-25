@@ -73,19 +73,24 @@ const Header = () => {
             >
               立即订购
             </Button>
+            <CartButton />
           </nav>
           
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? (
-              <X className="w-7 h-7 text-foreground" />
-            ) : (
-              <Menu className="w-7 h-7 text-foreground" />
-            )}
-          </button>
+          {/* Mobile actions */}
+          <div className="md:hidden flex items-center gap-1">
+            <CartButton />
+            <button 
+              className="p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-7 h-7 text-foreground" />
+              ) : (
+                <Menu className="w-7 h-7 text-foreground" />
+              )}
+            </button>
+          </div>
         </div>
         
         {/* Mobile Navigation */}

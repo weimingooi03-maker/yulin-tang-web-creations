@@ -103,172 +103,176 @@ const Checkout = () => {
         </Link>
 
         <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground">结账 Checkout</h1>
-        <p className="text-muted-foreground mb-8">填写收货信息后，订单将通过 WhatsApp 发送给我们确认。</p>
+        <p className="text-muted-foreground mb-6">简单 3 步完成订单，客服将透过 WhatsApp 与您确认。</p>
 
-        <div className="grid lg:grid-cols-5 gap-8">
-          {/* Form */}
-          <form onSubmit={handleSubmit} className="lg:col-span-3 space-y-5">
-            <Card>
-              <CardContent className="pt-6 space-y-4">
-                <h2 className="text-lg font-bold">收货信息 Shipping Info</h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">姓名 Name *</Label>
-                    <Input id="name" value={form.name} onChange={set("name")} maxLength={80} />
-                    {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">电话 Phone *</Label>
-                    <Input id="phone" value={form.phone} onChange={set("phone")} maxLength={30} placeholder="+60 / +65" />
-                    {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="email">邮箱 Email (选填)</Label>
-                  <Input id="email" type="email" value={form.email} onChange={set("email")} maxLength={120} />
-                  {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="address">详细地址 Address *</Label>
-                  <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
-                  {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
-                </div>
-                <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
-                  <div>
-                    <Label htmlFor="city">城市 City *</Label>
-                    <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
-                    {errors.city && <p className="text-xs text-destructive mt-1">{errors.city}</p>}
-                  </div>
-                  <div>
-                    <Label htmlFor="postcode">邮编 Postcode *</Label>
-                    <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
-                    {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
-                  </div>
-                  {region === "MY" && (
-                    <div>
-                      <Label htmlFor="state">州属 State *</Label>
-                      <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
-                      {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
-                    </div>
-                  )}
-                </div>
-                <div>
-                  <Label>送货地区 Region *</Label>
-                  <div className="inline-flex rounded-full border border-border overflow-hidden mt-2">
-                    <button
-                      type="button"
-                      onClick={() => setRegion("MY")}
-                      className={`px-4 py-2 text-sm font-medium ${region === "MY" ? "bg-primary text-primary-foreground" : ""}`}
-                    >
-                      🇲🇾 Malaysia
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setRegion("SG")}
-                      className={`px-4 py-2 text-sm font-medium ${region === "SG" ? "bg-primary text-primary-foreground" : ""}`}
-                    >
-                      🇸🇬 Singapore
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <Label htmlFor="notes">备注 Notes (选填)</Label>
-                  <Textarea id="notes" value={form.notes} onChange={set("notes")} maxLength={500} rows={3} />
-                </div>
-              </CardContent>
-            </Card>
+        {/* Step indicator */}
+        <div className="flex items-center justify-between gap-2 mb-8">
+          {[
+            { num: "1", zh: "检查订单", en: "Check Order" },
+            { num: "2", zh: "填资料", en: "Fill Details" },
+            { num: "3", zh: "WhatsApp 确认", en: "Confirm" },
+          ].map((s, i) => (
+            <div key={s.num} className="flex-1 flex flex-col items-center text-center">
+              <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg mb-2">
+                {s.num}
+              </div>
+              <p className="text-sm font-semibold leading-tight">{s.zh}</p>
+              <p className="text-xs text-muted-foreground leading-tight">{s.en}</p>
+              {i < 2 && <div className="hidden sm:block absolute h-0.5 bg-border w-1/3 -z-10" style={{ top: "2.25rem" }} />}
+            </div>
+          ))}
+        </div>
 
-            <Card>
-              <CardContent className="pt-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h2 className="text-lg font-bold">WhatsApp 下单消息模板 Order Message Template</h2>
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={copyMessage}
-                    disabled={items.length === 0}
-                    className="gap-1"
-                  >
-                    <Copy className="w-4 h-4" /> 复制 Copy
-                  </Button>
-                </div>
-                <p className="text-sm text-muted-foreground mb-3">
-                  系统已自动把商品、数量、价格、收货信息和总额串成一段话，确认无误后点击发送即可传给客服。
-                </p>
-                <div className="bg-muted/50 border rounded-lg p-4 text-sm text-foreground break-words leading-relaxed">
-                  {messagePreview}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Button
-              type="submit"
-              disabled={submitting || items.length === 0}
-              className="w-full bg-gradient-to-r from-primary via-gold to-accent text-primary-foreground font-bold text-lg py-6"
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              通过 WhatsApp 确认订单 Confirm via WhatsApp
-            </Button>
-          </form>
-
-          {/* Summary */}
-          <div className="lg:col-span-2">
-            <Card className="lg:sticky lg:top-6">
-              <CardContent className="pt-6">
-                <h2 className="text-lg font-bold flex items-center gap-2 mb-4">
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Step 1: Order Summary */}
+          <Card>
+            <CardContent className="pt-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">1</div>
+                <h2 className="text-lg font-bold flex items-center gap-2">
                   <ShoppingBag className="w-5 h-5" /> 订单摘要 Order Summary
                 </h2>
-                {items.length === 0 ? (
-                  <div className="text-center py-8 text-muted-foreground">
-                    <p>购物车是空的</p>
-                    <Link to="/#products" className="text-primary underline text-sm">继续购物 Continue Shopping</Link>
-                  </div>
-                ) : (
-                  <>
-                    <div className="divide-y">
-                      {items.map((item) => {
-                        const price = region === "MY" ? item.priceMY : item.priceSG;
-                        return (
-                          <div key={item.id} className="py-3 flex gap-3">
-                            <img src={item.image} alt={item.nameEn} className="w-14 h-14 rounded object-cover border" />
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold truncate">{item.nameZh}</p>
-                              <p className="text-xs text-muted-foreground">{item.qtyLabel}</p>
-                              <div className="flex items-center justify-between mt-1">
-                                <div className="inline-flex items-center border rounded text-xs">
-                                  <button type="button" onClick={() => updateQty(item.id, item.quantity - 1)} className="px-2 py-0.5">-</button>
-                                  <span className="px-2">{item.quantity}</span>
-                                  <button type="button" onClick={() => updateQty(item.id, item.quantity + 1)} className="px-2 py-0.5">+</button>
-                                </div>
-                                <span className="text-sm font-bold text-primary">
-                                  {currencySymbol} {(price * item.quantity).toFixed(2)}
-                                </span>
+              </div>
+              {items.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>购物车是空的</p>
+                  <Link to="/#products" className="text-primary underline text-sm">继续购物 Continue Shopping</Link>
+                </div>
+              ) : (
+                <>
+                  <div className="divide-y">
+                    {items.map((item) => {
+                      const price = region === "MY" ? item.priceMY : item.priceSG;
+                      return (
+                        <div key={item.id} className="py-3 flex gap-3">
+                          <img src={item.image} alt={item.nameEn} className="w-14 h-14 rounded object-cover border" />
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold truncate">{item.nameZh}</p>
+                            <p className="text-xs text-muted-foreground">{item.qtyLabel}</p>
+                            <div className="flex items-center justify-between mt-1">
+                              <div className="inline-flex items-center border rounded text-xs">
+                                <button type="button" onClick={() => updateQty(item.id, item.quantity - 1)} className="px-2 py-0.5">-</button>
+                                <span className="px-2">{item.quantity}</span>
+                                <button type="button" onClick={() => updateQty(item.id, item.quantity + 1)} className="px-2 py-0.5">+</button>
                               </div>
+                              <span className="text-sm font-bold text-primary">
+                                {currencySymbol} {(price * item.quantity).toFixed(2)}
+                              </span>
                             </div>
-                            <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-muted-foreground hover:text-destructive">
-                              移除
-                            </button>
                           </div>
-                        );
-                      })}
+                          <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-muted-foreground hover:text-destructive">
+                            移除
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="border-t mt-4 pt-4 space-y-1">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">运费 Shipping</span>
+                      <span>免运 Free</span>
                     </div>
-                    <div className="border-t mt-4 pt-4 space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">运费 Shipping</span>
-                        <span>免运 Free</span>
-                      </div>
-                      <div className="flex justify-between text-lg font-bold pt-2 border-t">
-                        <span>合计 Total</span>
-                        <span className="text-primary">{currencySymbol} {subtotal.toFixed(2)}</span>
-                      </div>
+                    <div className="flex justify-between text-lg font-bold pt-2 border-t">
+                      <span>合计 Total</span>
+                      <span className="text-primary">{currencySymbol} {subtotal.toFixed(2)}</span>
                     </div>
-                  </>
+                  </div>
+                </>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Step 2: Shipping Info */}
+          <Card>
+            <CardContent className="pt-6 space-y-4">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">2</div>
+                <h2 className="text-lg font-bold">收货信息 Shipping Info</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="name">姓名 Name *</Label>
+                  <Input id="name" value={form.name} onChange={set("name")} maxLength={80} />
+                  {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
+                </div>
+                <div>
+                  <Label htmlFor="phone">电话 Phone *</Label>
+                  <Input id="phone" value={form.phone} onChange={set("phone")} maxLength={30} placeholder="+60 / +65" />
+                  {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="email">邮箱 Email (选填)</Label>
+                <Input id="email" type="email" value={form.email} onChange={set("email")} maxLength={120} />
+                {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
+              </div>
+              <div>
+                <Label htmlFor="address">详细地址 Address *</Label>
+                <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
+                {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
+              </div>
+              <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+                <div>
+                  <Label htmlFor="city">城市 City *</Label>
+                  <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
+                  {errors.city && <p className="text-xs text-destructive mt-1">{errors.city}</p>}
+                </div>
+                <div>
+                  <Label htmlFor="postcode">邮编 Postcode *</Label>
+                  <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
+                  {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
+                </div>
+                {region === "MY" && (
+                  <div>
+                    <Label htmlFor="state">州属 State *</Label>
+                    <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
+                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
+                  </div>
                 )}
-              </CardContent>
-            </Card>
+              </div>
+              <div>
+                <Label>送货地区 Region *</Label>
+                <div className="inline-flex rounded-full border border-border overflow-hidden mt-2">
+                  <button
+                    type="button"
+                    onClick={() => setRegion("MY")}
+                    className={`px-4 py-2 text-sm font-medium ${region === "MY" ? "bg-primary text-primary-foreground" : ""}`}
+                  >
+                    🇲🇾 Malaysia
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setRegion("SG")}
+                    className={`px-4 py-2 text-sm font-medium ${region === "SG" ? "bg-primary text-primary-foreground" : ""}`}
+                  >
+                    🇸🇬 Singapore
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Label htmlFor="notes">备注 Notes (选填)</Label>
+                <Textarea id="notes" value={form.notes} onChange={set("notes")} maxLength={500} rows={3} />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Step 3: WhatsApp confirm */}
+          <div className="flex items-start gap-3 mb-2">
+            <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shrink-0">3</div>
+            <div>
+              <h2 className="text-lg font-bold">发送 WhatsApp 确认 Send WhatsApp Confirmation</h2>
+              <p className="text-sm text-muted-foreground">点击按钮后系统会自动串接 WhatsApp，把订单与收货资料一起传给客服。</p>
+            </div>
           </div>
-        </div>
+          <Button
+            type="submit"
+            disabled={submitting || items.length === 0}
+            className="w-full bg-gradient-to-r from-primary via-gold to-accent text-primary-foreground font-bold text-lg py-6"
+          >
+            <MessageCircle className="w-5 h-5 mr-2" />
+            通过 WhatsApp 确认订单 Confirm via WhatsApp
+          </Button>
+        </form>
       </div>
     </div>
   );

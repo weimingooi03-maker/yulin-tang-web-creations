@@ -285,14 +285,15 @@ const BenefitsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg bg-card">
               <img 
-                src={review4} 
-                alt="Customer Review - Knee Pain Improvement"
+                src={review4Asset.url} 
+                alt="Customer Review - Visible skin improvement before and after"
                 loading="lazy"
                 className="w-full h-auto"
               />
               <div className="p-4">
-                <p className="text-sm font-bold text-foreground mb-1">顾客好评</p>
-                <p className="text-xs text-muted-foreground">"妈妈吃了两个星期后，膝盖感觉舒服多了，走路也更顺畅了"</p>
+                <p className="text-sm font-bold text-foreground mb-1">真实见证 · Real Result</p>
+                <p className="text-xs text-muted-foreground">"肤色更均匀，痘痘减少，肌肤透亮有光泽！"</p>
+                <p className="text-xs text-muted-foreground italic mt-1">"Skin looks more even, fewer breakouts, and a natural healthy glow!"</p>
               </div>
             </div>
           </div>

@@ -41,7 +41,7 @@ const faqs = [
     questionZh: "怎么下单购买？",
     questionEn: "How do I place an order?",
     answerZh: "选择您想要的配套与数量，点击「立即购买」填写收货资料，系统会自动把订单信息串接到 WhatsApp，由专属客服直接为您确认订单与安排发货。",
-    answerEn: "Select your preferred package and quantity, click "Buy Now" to fill in your delivery details. Your order info will be sent directly to WhatsApp, where our dedicated team will confirm and arrange shipment for you.",
+    answerEn: "Select your preferred package and quantity, click 'Buy Now' to fill in your delivery details. Your order info will be sent directly to WhatsApp, where our dedicated team will confirm and arrange shipment for you.",
   },
 ];
 

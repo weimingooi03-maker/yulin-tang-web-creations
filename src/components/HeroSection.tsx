@@ -178,7 +178,7 @@ const HeroSection = () => {
 
           {/* Section title */}
           <div className="w-full text-center pt-6 opacity-0 animate-fade-in-delay-3">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-wide bg-gradient-to-r from-primary via-gold to-accent bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-wide text-black">
               鱼鳞冻介绍
             </h2>
             <p className="text-base sm:text-lg mt-2 tracking-wider uppercase font-semibold bg-gradient-to-r from-primary via-gold to-accent bg-clip-text text-transparent">

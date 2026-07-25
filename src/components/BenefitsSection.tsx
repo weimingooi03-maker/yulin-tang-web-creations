@@ -1,4 +1,4 @@
-import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, Droplets, FishSymbol } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, Droplets } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import eatingMethod from "@/assets/eating-method-3ways.png";
 import review1 from "@/assets/review-1.jpeg";

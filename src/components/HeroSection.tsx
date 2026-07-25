@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
-import floralAsset from "@/assets/floral-series-coming-soon.png.asset.json";
+import floralImage from "@/assets/floral-series-coming-soon.png";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Pause, Play } from "lucide-react";
 
 const heroSlides = [
   {
@@ -11,20 +11,22 @@ const heroSlides = [
     alt: "魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen",
   },
   {
-    src: floralAsset.url,
+    src: floralImage,
     alt: "魚鱗堂 花香系列 即将推出 Floral Series Coming Soon - Chrysanthemum Flavor",
   },
 ];
 
 const HeroSection = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
+    if (!isPlaying) return;
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % heroSlides.length);
     }, 4500);
     return () => clearInterval(interval);
-  }, []);
+  }, [isPlaying]);
 
   const scrollToProducts = () => {
     document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
@@ -60,13 +62,13 @@ const HeroSection = () => {
               {/* Shimmer sweep */}
               <div className="pointer-events-none absolute inset-0 -translate-x-full animate-hero-shimmer bg-gradient-to-r from-transparent via-white/25 to-transparent" />
 
-              {/* Slide indicators */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {/* Slide controls: clickable dots + play/pause */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10 px-3 py-1.5 rounded-full bg-background/60 backdrop-blur-sm border border-white/20 shadow-sm">
                 {heroSlides.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveSlide(idx)}
-                    aria-label={`Slide ${idx + 1}`}
+                    aria-label={`切换到第 ${idx + 1} 张 Slide ${idx + 1}`}
                     className={`h-1.5 rounded-full transition-all duration-500 ${
                       idx === activeSlide
                         ? "w-8 bg-primary shadow-md shadow-primary/50"
@@ -74,6 +76,13 @@ const HeroSection = () => {
                     }`}
                   />
                 ))}
+                <button
+                  onClick={() => setIsPlaying((prev) => !prev)}
+                  aria-label={isPlaying ? "暂停轮播 Pause slideshow" : "播放轮播 Play slideshow"}
+                  className="ml-1 p-1 rounded-full text-foreground/70 hover:text-primary hover:bg-white/40 transition-colors"
+                >
+                  {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+                </button>
               </div>
             </div>
           </div>

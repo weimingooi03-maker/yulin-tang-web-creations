@@ -1,11 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
 import floralImage from "@/assets/floral-series-coming-soon.png";
+import customers80kAsset from "@/assets/hero-80k-customers.png.asset.json";
 import heroZh from "@/assets/what-is-fish-jelly-zh.png";
 import heroEn from "@/assets/what-is-fish-jelly-en.png";
 import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 const heroSlides = [
+  {
+    src: customers80kAsset.url,
+    alt: "服务超过 80,000 名马来西亚与新加坡顾客的胶原产品，好评高达 92% - Trusted by 80,000+ customers across Malaysia & Singapore",
+  },
   {
     src: heroImage,
     alt: "魚鱗堂 独特配方 Unique Formula - Selected Deep-Sea Fish Scales Collagen",

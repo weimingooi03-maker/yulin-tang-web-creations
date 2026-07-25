@@ -327,7 +327,11 @@ const BenefitsSection = () => {
                 src={review1} 
                 alt="Customer Review - Joint Pain Relief"
                 loading="lazy"
-                className="w-full h-auto"
+                decoding="async"
+                width={800}
+                height={800}
+                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
+                className="w-full h-auto aspect-square object-cover"
               />
               <div className="p-4">
                 <p className="text-sm font-bold text-foreground mb-1">Ms Tan · Kuala Lumpur</p>
@@ -339,7 +343,11 @@ const BenefitsSection = () => {
                 src={review2Asset} 
                 alt="Customer Review - Mr Lim, mother's knee pain improved"
                 loading="lazy"
-                className="w-full h-auto"
+                decoding="async"
+                width={800}
+                height={800}
+                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
+                className="w-full h-auto aspect-square object-cover"
               />
               <div className="p-4">
                 <p className="text-sm font-bold text-foreground mb-1">Mr Lim</p>
@@ -351,7 +359,11 @@ const BenefitsSection = () => {
                 src={review3} 
                 alt="Customer Review - Skin Improvement"
                 loading="lazy"
-                className="w-full h-auto"
+                decoding="async"
+                width={800}
+                height={800}
+                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
+                className="w-full h-auto aspect-square object-cover"
               />
               <div className="p-4">
                 <p className="text-sm font-bold text-foreground mb-1">Ms Ng</p>
@@ -363,7 +375,11 @@ const BenefitsSection = () => {
                 src={review4Asset} 
                 alt="Customer Review - Visible skin improvement before and after"
                 loading="lazy"
-                className="w-full h-auto"
+                decoding="async"
+                width={800}
+                height={800}
+                sizes="(max-width: 768px) 45vw, (max-width: 1200px) 22vw, 280px"
+                className="w-full h-auto aspect-square object-cover"
               />
               <div className="p-4">
                 <p className="text-sm font-bold text-foreground mb-1">Real Result</p>

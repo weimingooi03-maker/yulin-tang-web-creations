@@ -9,7 +9,6 @@ import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import StickyBuyBar from "@/components/StickyBuyBar";
 
 const Index = () => {
   return (
@@ -27,7 +26,6 @@ const Index = () => {
       </main>
       <Footer />
       <FloatingWhatsApp />
-      <StickyBuyBar />
     </div>
   );
 };

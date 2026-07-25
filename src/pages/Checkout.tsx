@@ -231,28 +231,41 @@ const Checkout = () => {
                 {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
               </div>
               <div>
-                <Label htmlFor="address">详细地址 Address *</Label>
-                <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
+                <Label htmlFor="address">完整地址 Full Address *</Label>
+                <Textarea
+                  id="address"
+                  value={form.address}
+                  onChange={set("address")}
+                  maxLength={300}
+                  rows={3}
+                  placeholder="请填写完整街道地址、门牌号码与地区"
+                />
                 {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
               </div>
-              <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
-                <div>
-                  <Label htmlFor="city">城市 City *</Label>
-                  <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
-                  {errors.city && <p className="text-xs text-destructive mt-1">{errors.city}</p>}
-                </div>
+              <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-2" : ""}`}>
+                {region === "MY" && (
+                  <div>
+                    <Label htmlFor="state">州属 State *</Label>
+                    <Select value={form.state} onValueChange={(value) => setForm((f) => ({ ...f, state: value }))}>
+                      <SelectTrigger id="state" className="w-full mt-1.5">
+                        <SelectValue placeholder="选择州属 Select state" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {MALAYSIAN_STATES.map((s) => (
+                          <SelectItem key={s.value} value={s.value}>
+                            {s.label}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
+                  </div>
+                )}
                 <div>
                   <Label htmlFor="postcode">邮编 Postcode *</Label>
                   <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
                   {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
                 </div>
-                {region === "MY" && (
-                  <div>
-                    <Label htmlFor="state">州属 State *</Label>
-                    <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
-                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
-                  </div>
-                )}
               </div>
               <div>
                 <Label>送货地区 Region *</Label>

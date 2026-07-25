@@ -64,7 +64,7 @@ const Header = () => {
           </a>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 ml-auto">
             {navItems.map((item) => (
               <button
                 key={item.href}
@@ -81,14 +81,13 @@ const Header = () => {
             >
               立即订购
             </Button>
-            <CartButton />
           </nav>
-          
-          {/* Mobile actions */}
-          <div className="md:hidden flex items-center gap-1">
+
+          {/* Right-side actions: cart always at the far right */}
+          <div className="flex items-center gap-1 md:gap-2 md:pl-4">
             <CartButton />
             <button 
-              className="p-2"
+              className="p-2 md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menu"
             >

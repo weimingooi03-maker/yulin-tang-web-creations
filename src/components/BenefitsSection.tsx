@@ -239,7 +239,7 @@ const BenefitsSection = () => {
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
                   <img
-                    src={bestTimeToTake.url}
+                    src={bestTimeToTake}
                     alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前一小时"
                     loading="lazy"
                     className="w-full h-auto"

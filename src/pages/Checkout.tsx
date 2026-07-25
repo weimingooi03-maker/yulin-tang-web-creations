@@ -17,7 +17,7 @@ const schema = z.object({
   address: z.string().trim().min(5, "请输入完整地址").max(300),
   city: z.string().trim().min(1, "请输入城市").max(60),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
-  state: z.string().trim().min(1, "请输入州属").max(60),
+  state: z.string().trim().max(60).optional().or(z.literal("")),
   notes: z.string().trim().max(500).optional().or(z.literal("")),
 });
 
@@ -60,6 +60,11 @@ const Checkout = () => {
       toast({ title: "请检查表单", description: "有必填项未填写", variant: "destructive" });
       return;
     }
+    if (region === "MY" && !result.data.state.trim()) {
+      setErrors({ state: "请输入州属" });
+      toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
+      return;
+    }
     setErrors({});
     setSubmitting(true);
 
@@ -88,7 +93,7 @@ const Checkout = () => {
     lines.push(`地址 Address: ${d.address}`);
     lines.push(`城市 City: ${d.city}`);
     lines.push(`邮编 Postcode: ${d.postcode}`);
-    lines.push(`州属 State: ${d.state}`);
+    if (region === "MY") lines.push(`州属 State: ${d.state}`);
     if (d.notes) {
       lines.push("");
       lines.push(`*备注 Notes:* ${d.notes}`);
@@ -147,7 +152,7 @@ const Checkout = () => {
                   <Input id="address" value={form.address} onChange={set("address")} maxLength={300} />
                   {errors.address && <p className="text-xs text-destructive mt-1">{errors.address}</p>}
                 </div>
-                <div className="grid sm:grid-cols-3 gap-4">
+                <div className={`grid gap-4 ${region === "MY" ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
                   <div>
                     <Label htmlFor="city">城市 City *</Label>
                     <Input id="city" value={form.city} onChange={set("city")} maxLength={60} />
@@ -158,11 +163,13 @@ const Checkout = () => {
                     <Input id="postcode" value={form.postcode} onChange={set("postcode")} maxLength={15} />
                     {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
                   </div>
-                  <div>
-                    <Label htmlFor="state">州属 State *</Label>
-                    <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
-                    {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
-                  </div>
+                  {region === "MY" && (
+                    <div>
+                      <Label htmlFor="state">州属 State *</Label>
+                      <Input id="state" value={form.state} onChange={set("state")} maxLength={60} />
+                      {errors.state && <p className="text-xs text-destructive mt-1">{errors.state}</p>}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <Label>送货地区 Region *</Label>

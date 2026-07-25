@@ -137,32 +137,17 @@ const ProductsSection = () => {
           </p>
 
           {/* Free Shipping Banner */}
-          <div className="mt-8 inline-flex items-center gap-2 bg-primary/10 text-primary px-6 py-4 rounded-full">
-            <Truck className="w-6 h-6" />
-            <span className="font-bold text-base sm:text-lg inline-flex items-center gap-1.5 flex-wrap justify-center">
-              <FlagIcon country="MY" /> 全马 & <FlagIcon country="SG" /> 新加坡 免运费
-            </span>
+          <div className="mt-8 inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary via-primary/90 to-accent text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 rounded-full shadow-lg shadow-primary/20 animate-pulse">
+            <div className="flex items-center gap-2">
+              <Truck className="w-6 h-6 sm:w-7 sm:h-7" />
+              <span className="font-bold text-lg sm:text-xl md:text-2xl inline-flex items-center gap-2 flex-wrap justify-center">
+                <FlagIcon country="MY" /> 全马 <span className="opacity-80">&</span> <FlagIcon country="SG" /> 新加坡 免运费
+              </span>
+            </div>
           </div>
-          <p className="text-base text-muted-foreground mt-2">
+          <p className="text-base sm:text-lg text-muted-foreground mt-3 font-semibold tracking-wide">
             FREE Shipping to All Malaysia & Singapore
           </p>
-        </div>
-
-        {/* Free Shipping Voucher Banner */}
-        <div className="max-w-4xl mx-auto mb-6">
-          <div className="relative overflow-hidden rounded-2xl border-2 border-dashed border-primary/50 bg-gradient-to-r from-primary/10 via-gold/10 to-accent/10 p-4 sm:p-5 shadow-md">
-            <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
-            <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-background border-2 border-primary/50" />
-            <div className="flex flex-col items-center gap-3 text-center">
-              <div className="inline-flex items-center gap-2 bg-accent/15 text-accent-foreground border border-accent/30 px-4 py-2 rounded-full text-sm sm:text-base font-semibold">
-                <Truck className="w-5 h-5 text-primary" />
-                <span>还免了高达 RM 30 运费 · Plus FREE Shipping worth up to RM 30</span>
-              </div>
-            </div>
-            <p className="text-center text-[11px] text-muted-foreground mt-3">
-              全马及新加坡免运费 · Free shipping auto-applied, no code needed
-            </p>
-          </div>
         </div>
 
 

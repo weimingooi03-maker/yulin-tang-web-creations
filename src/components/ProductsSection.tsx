@@ -79,6 +79,9 @@ const products = [
   },
 ];
 
+const DISCOUNT_MY = 20; // RM 20 off all MY packages
+const discountSGFor = (id: string) => (id === "set-c" ? 5 : 0); // SGD 5 off Set C only
+
 const ProductsSection = () => {
   const { addItem } = useCart();
   const navigate = useNavigate();
@@ -86,14 +89,14 @@ const ProductsSection = () => {
   const [quantity, setQuantity] = useState(1);
   const selected = products.find((p) => p.id === selectedId)!;
 
-  const unitMY = products[0].priceMY / products[0].qty;
-  const unitSG = products[0].priceSG / products[0].qty;
-  const savingsMYUnit = Math.max(0, Math.round(unitMY * selected.qty - selected.priceMY));
-  const savingsSGUnit = Math.max(0, Math.round(unitSG * selected.qty - selected.priceSG));
-  const totalMY = selected.priceMY * quantity;
-  const totalSG = selected.priceSG * quantity;
-  const savingsMY = savingsMYUnit * quantity;
-  const savingsSG = savingsSGUnit * quantity;
+  const discMY = DISCOUNT_MY;
+  const discSG = discountSGFor(selected.id);
+  const discountedMY = selected.priceMY - discMY;
+  const discountedSG = selected.priceSG - discSG;
+  const totalMY = discountedMY * quantity;
+  const totalSG = discountedSG * quantity;
+  const originalTotalMY = selected.priceMY * quantity;
+  const originalTotalSG = selected.priceSG * quantity;
 
   const selectSet = (id: string) => {
     setSelectedId(id);
@@ -106,8 +109,8 @@ const ProductsSection = () => {
     nameEn: p.nameEn,
     qtyLabel: p.qtyEn,
     image: p.image,
-    priceMY: p.priceMY,
-    priceSG: p.priceSG,
+    priceMY: p.priceMY - DISCOUNT_MY,
+    priceSG: p.priceSG - discountSGFor(p.id),
   });
 
   const handleBuyNow = (p: typeof products[number]) => {

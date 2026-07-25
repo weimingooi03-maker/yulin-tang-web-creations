@@ -3,8 +3,8 @@ import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, MessageCircle, Truck, Package, Flame, Clock } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ShoppingCart, MessageCircle, Truck, Package, Flame } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const products = [
   {
@@ -61,28 +61,18 @@ const products = [
 ];
 
 const ProductsSection = () => {
-  const [timeLeft, setTimeLeft] = useState(30 * 60); // 30分钟倒计时
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => (prev > 0 ? prev - 1 : 30 * 60));
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatTime = (seconds: number) => {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  };
-
-
-
+  const { toast } = useToast();
 
   const handleWhatsApp = (nameZh: string, nameEn: string) => {
     const message = encodeURIComponent(`您好！我想订购 ${nameZh}。\nHello! I would like to order ${nameEn}.`);
     window.open(`https://wa.me/601158727742?text=${message}`, "_blank");
+  };
+
+  const handleAddToCart = (nameZh: string, nameEn: string) => {
+    toast({
+      title: "已加入购物车",
+      description: `${nameZh} / ${nameEn} 已加入购物车，点击「立即购买」即可下单。`,
+    });
   };
 
   return (
@@ -155,15 +145,6 @@ const ProductsSection = () => {
                     <span>👑</span> VIP
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <Button 
-                   size="lg"
-                   className="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 md:opacity-0 md:translate-y-full md:group-hover:translate-y-0 md:group-hover:opacity-100 transition-all duration-300 bg-primary text-primary-foreground font-bold"
-                   onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
-                 >
-                   <ShoppingCart className="w-5 h-5 mr-2" />
-                   立即订购
-                 </Button>
               </div>
               <CardContent className="p-6">
                 <div className="flex items-center gap-2 mb-3">
@@ -180,16 +161,6 @@ const ProductsSection = () => {
                 <p className="text-base text-muted-foreground mb-4">
                   {product.descZh}
                 </p>
-
-                {/* 优惠倒计时 */}
-                <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-lg p-3 mb-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Clock className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-bold text-muted-foreground">优惠倒计时 | Offer Ends In</span>
-                  </div>
-                  <p className="text-lg font-bold text-primary font-mono">{formatTime(timeLeft)}</p>
-                </div>
-                
                 
                 <div className="grid grid-cols-2 gap-3 mb-2">
                   <div className="bg-secondary/50 rounded-lg p-4 text-center">
@@ -209,13 +180,32 @@ const ProductsSection = () => {
                   <p className="text-xs text-muted-foreground">per bottle</p>
                 </div>
                 
-                <Button 
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
-                  onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  WhatsApp 订购
-                </Button>
+                {product.isVip ? (
+                  <div className="space-y-2">
+                    <Button 
+                      className="w-full bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground font-bold text-lg py-6 shadow-lg animate-cta-pulse"
+                      onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
+                    >
+                      <ShoppingCart className="w-5 h-5 mr-2" />
+                      立即购买
+                    </Button>
+                    <Button 
+                      variant="outline"
+                      className="w-full border-primary/40 text-primary hover:bg-primary/5 font-semibold text-base py-5"
+                      onClick={() => handleAddToCart(product.nameZh, product.nameEn)}
+                    >
+                      加入购物车
+                    </Button>
+                  </div>
+                ) : (
+                  <Button 
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-lg py-6"
+                    onClick={() => handleWhatsApp(product.nameZh, product.nameEn)}
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    WhatsApp 订购
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}

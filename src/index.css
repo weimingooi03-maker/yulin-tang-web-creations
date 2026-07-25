@@ -164,3 +164,9 @@
 .animate-hero-float { animation: hero-float 6s ease-in-out infinite; }
 .animate-hero-glow { animation: hero-glow 5s ease-in-out infinite; }
 .animate-hero-shimmer { animation: hero-shimmer 3.5s ease-in-out infinite; }
+
+@keyframes cta-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.45); }
+  70% { box-shadow: 0 0 0 12px hsl(var(--primary) / 0); }
+}
+.animate-cta-pulse { animation: cta-pulse 2.2s ease-out infinite; }

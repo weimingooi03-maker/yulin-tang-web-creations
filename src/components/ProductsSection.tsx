@@ -178,7 +178,7 @@ const ProductsSection = () => {
                       role="tab"
                       aria-selected={active}
                       onClick={() => setCountry(c)}
-                      className={`inline-flex items-center justify-center gap-2 rounded-full py-2.5 text-sm font-semibold transition-all ${
+                      className={`inline-flex items-center justify-center gap-2 rounded-full py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
                         active
                           ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
                           : "text-muted-foreground hover:text-foreground"

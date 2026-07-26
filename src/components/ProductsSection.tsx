@@ -159,16 +159,17 @@ const ProductsSection = () => {
         <Card className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-xl">
           {/* Country + Package picker */}
           <div className="p-4 sm:p-6 bg-gradient-to-b from-primary/10 to-muted/30 border-b-2 border-primary/30">
-            {/* Country selector */}
-            <div className="mb-6">
-              <div className="text-center mb-3">
-                <p className="text-sm font-semibold text-foreground">选择收货国家</p>
-                <p className="text-xs text-muted-foreground tracking-wider">Select Shipping Country</p>
-              </div>
+            <div className="text-center mb-4">
+              <p className="text-sm font-semibold text-foreground">选择国家 & 配套</p>
+              <p className="text-xs text-muted-foreground tracking-wider">Select Country & Package</p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+              {/* Country selector */}
               <div
                 role="tablist"
                 aria-label="Select shipping country"
-                className="grid grid-cols-2 gap-3 max-w-sm mx-auto p-1.5 bg-muted rounded-full"
+                className="flex p-1 bg-muted rounded-full"
               >
                 {(["MY", "SG"] as const).map((c) => {
                   const active = country === c;
@@ -178,66 +179,62 @@ const ProductsSection = () => {
                       role="tab"
                       aria-selected={active}
                       onClick={() => setCountry(c)}
-                      className={`inline-flex items-center justify-center gap-2 rounded-full py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
+                      className={`inline-flex items-center justify-center gap-1.5 rounded-full py-2 px-2.5 sm:px-4 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
                         active
                           ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      <FlagIcon country={c} />
-                      {c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}
+                      <FlagIcon country={c} className="w-4 h-auto sm:w-5" />
+                      <span className="hidden sm:inline">{c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}</span>
+                      <span className="sm:hidden">{c === "MY" ? "马来西亚" : "新加坡"}</span>
                     </button>
                   );
                 })}
               </div>
-            </div>
 
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-6" />
+              {/* Divider */}
+              <div className="hidden sm:block w-px h-9 bg-primary/20" />
 
-            {/* Package selector */}
-            <div className="flex flex-col items-center gap-1 mb-5">
-              <p className="text-sm font-semibold text-foreground">请选择您的配套</p>
-              <p className="text-xs text-muted-foreground tracking-wider">
-                Please Select Your Package
-              </p>
-            </div>
-            <div className="grid grid-cols-3 gap-2 sm:gap-4">
-              {products.map((p) => {
-                const active = p.id === selectedId;
-                return (
-                  <button
-                    key={p.id}
-                    onClick={() => selectSet(p.id)}
-                    className={`relative rounded-2xl border-2 p-3 sm:p-5 text-center transition-all ${
-                      active
-                        ? "border-primary bg-primary/5 shadow-lg shadow-primary/10 scale-[1.02]"
-                        : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
-                    }`}
-                  >
-                    {p.isBestValue && (
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-destructive text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm flex items-center gap-1">
-                        <Flame className="w-3 h-3" /> 最划算
+              {/* Package selector */}
+              <div className="flex gap-1.5 sm:gap-2">
+                {products.map((p) => {
+                  const active = p.id === selectedId;
+                  return (
+                    <button
+                      key={p.id}
+                      onClick={() => selectSet(p.id)}
+                      className={`relative rounded-xl border-2 px-2.5 py-2 sm:px-4 sm:py-2.5 text-center transition-all min-w-[4.5rem] sm:min-w-[6rem] ${
+                        active
+                          ? "border-primary bg-primary/5 shadow-md shadow-primary/10"
+                          : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
+                      }`}
+                    >
+                      {p.isBestValue && (
+                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-destructive text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap shadow-sm flex items-center gap-0.5">
+                          <Flame className="w-2.5 h-2.5" /> 最划算
+                        </div>
+                      )}
+                      {!p.isBestValue && p.id === "set-b" && (
+                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[9px] font-bold px-1.5 py-0.5 rounded-full whitespace-nowrap shadow-sm">
+                          热销
+                        </div>
+                      )}
+                      <div className="text-sm sm:text-base font-bold leading-tight">
+                        SET {p.id.slice(-1).toUpperCase()}
                       </div>
-                    )}
-                    {!p.isBestValue && p.id === "set-b" && (
-                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm">
-                        热销 Best Seller
+                      <div className="text-[10px] text-muted-foreground font-medium leading-tight">
+                        {p.qtyLabel}
                       </div>
-                    )}
-                    <div className="text-lg sm:text-xl font-bold leading-tight">
-                      SET {p.id.slice(-1).toUpperCase()}
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-muted-foreground font-medium">
-                      {p.qtyLabel} · {p.qtyEn}
-                    </div>
-                    {active && (
-                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
-                        <Check className="w-3 h-3" />
-                      </div>
-                    )}
-                  </button>
-                );
-              })}
+                      {active && (
+                        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
+                          <Check className="w-2.5 h-2.5" />
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 

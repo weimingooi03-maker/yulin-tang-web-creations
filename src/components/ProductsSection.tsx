@@ -279,39 +279,7 @@ const ProductsSection = () => {
                 </div>
               </div>
 
-              {/* Country selector */}
-              <div className="mb-4">
-                <div className="text-[11px] font-semibold text-muted-foreground mb-1.5 tracking-wide">
-                  收货国家 / Shipping to
-                </div>
-                <div
-                  role="tablist"
-                  aria-label="Select shipping country"
-                  className="grid grid-cols-2 gap-2 p-1 bg-muted rounded-full"
-                >
-                  {(["MY", "SG"] as const).map((c) => {
-                    const active = country === c;
-                    return (
-                      <button
-                        key={c}
-                        role="tab"
-                        aria-selected={active}
-                        onClick={() => setCountry(c)}
-                        className={`inline-flex items-center justify-center gap-2 rounded-full py-2 text-sm font-semibold transition-all ${
-                          active
-                            ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
-                            : "text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        <FlagIcon country={c} />
-                        {c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* MY: countdown extra discount · SG: free gift with order */}
+              {/* Regional promotion */}
               {isMY ? (
                 <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">

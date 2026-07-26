@@ -259,11 +259,9 @@ const ProductsSection = () => {
                   <div className="text-right">
                     <div className="flex items-baseline justify-end gap-2">
                       <span className="text-sm text-muted-foreground line-through">RM {originalTotalMY}</span>
-                      <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−RM {originalTotalMY - totalMY}</span>
+                      <span className="text-xs font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">−RM {originalTotalMY - totalMY}</span>
                     </div>
-                    <div className="inline-block mt-1 px-3 py-1 rounded-lg bg-destructive/10 shadow-sm">
-                      <div className="text-3xl sm:text-4xl font-extrabold text-destructive leading-none tracking-tight">RM {totalMY}</div>
-                    </div>
+                    <div className="text-2xl sm:text-3xl font-extrabold text-destructive leading-none tracking-tight">RM {totalMY}</div>
                     <div className="text-[11px] text-muted-foreground mt-1">
                       每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}
                     </div>

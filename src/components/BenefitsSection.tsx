@@ -19,6 +19,7 @@ import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 import naturalIngredients from "@/assets/natural-ingredients.png";
+import sterilizationSafety from "@/assets/sterilization-safety.png.asset.json";
 
 const benefitVisuals = [
   {
@@ -348,6 +349,50 @@ const BenefitsSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Safety & Preservation */}
+        <div className="mb-16">
+          <div className="text-center mb-6">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
+              高温真空杀菌
+            </h3>
+            <p className="text-lg text-primary font-semibold">
+              High Temperature Vacuum Sterilization
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">
+              锁住营养 · 安心饮用 · Lock in Nutrition · Safe to Drink
+            </p>
+          </div>
+
+          <div className="max-w-2xl mx-auto">
+            <Card className="overflow-hidden border-border/50 shadow-xl">
+              <div className="rounded-2xl overflow-hidden">
+                <img
+                  src={sterilizationSafety.url}
+                  alt="高温真空杀菌 - 365天常温保存，无防腐剂，锁住营养安心饮用"
+                  loading="lazy"
+                  className="w-full h-auto"
+                />
+              </div>
+              <CardContent className="p-5 text-center">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="p-2 bg-primary/5 rounded-xl">
+                    <p className="text-sm font-bold text-foreground">高温杀菌</p>
+                    <p className="text-[10px] text-muted-foreground">Sterilized</p>
+                  </div>
+                  <div className="p-2 bg-primary/5 rounded-xl">
+                    <p className="text-sm font-bold text-foreground">常温保存</p>
+                    <p className="text-[10px] text-muted-foreground">Room Temp</p>
+                  </div>
+                  <div className="p-2 bg-primary/5 rounded-xl">
+                    <p className="text-sm font-bold text-foreground">无防腐剂</p>
+                    <p className="text-[10px] text-muted-foreground">No Preservatives</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
 

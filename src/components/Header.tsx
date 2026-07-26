@@ -63,31 +63,11 @@ const Header = () => {
             />
           </a>
           
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-6 ml-auto">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => scrollTo(item.href)}
-                className="text-muted-foreground hover:text-foreground transition-colors text-base font-medium"
-              >
-                {item.labelZh} <span className="text-primary">{item.labelEn}</span>
-              </button>
-            ))}
-            <Button 
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold text-base"
-              onClick={() => scrollTo("#contact")}
-            >
-              立即订购
-            </Button>
-          </nav>
-
-          {/* Right-side actions: cart always at the far right */}
-          <div className="flex items-center gap-1 md:gap-2 md:pl-4">
+          {/* Right-side actions: cart + hamburger menu on all sizes */}
+          <div className="flex items-center gap-1 md:gap-2">
             <CartButton />
-            <button 
-              className="p-2 md:hidden"
+            <button
+              className="p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menu"
             >
@@ -100,9 +80,9 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Mobile Navigation */}
+        {/* Nav Menu (all sizes) */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button

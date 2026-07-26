@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({

@@ -98,11 +98,10 @@ const ProductsSection = () => {
   const currency = isMY ? "RM" : "SGD";
   const unitPrice = isMY ? selected.priceMY : selected.priceSG;
   const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
-  const extraOff = isMY ? EXTRA_OFF_MY : EXTRA_OFF_SG;
 
-  const subtotal = unitPrice * quantity;
+  // Prices shown are already the final promo prices (MY already includes the −RM20).
+  const total = unitPrice * quantity;
   const originalTotal = unitOriginal * quantity;
-  const total = Math.max(0, subtotal - extraOff);
   const totalSavings = originalTotal - total;
 
   const selectSet = (id: string) => {

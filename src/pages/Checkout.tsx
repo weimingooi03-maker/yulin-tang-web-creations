@@ -15,6 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ArrowLeft, MessageCircle, ShoppingBag } from "lucide-react";
+import { FlagIcon } from "@/components/FlagIcon";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -310,16 +311,16 @@ const Checkout = () => {
                   <button
                     type="button"
                     onClick={() => setRegion("MY")}
-                    className={`px-4 py-2 text-sm font-medium ${region === "MY" ? "bg-primary text-primary-foreground" : ""}`}
+                    className={`px-4 py-2 text-sm font-medium inline-flex items-center gap-2 ${region === "MY" ? "bg-primary text-primary-foreground" : ""}`}
                   >
-                    🇲🇾 Malaysia
+                    <FlagIcon country="MY" className="w-4" /> Malaysia
                   </button>
                   <button
                     type="button"
                     onClick={() => setRegion("SG")}
-                    className={`px-4 py-2 text-sm font-medium ${region === "SG" ? "bg-primary text-primary-foreground" : ""}`}
+                    className={`px-4 py-2 text-sm font-medium inline-flex items-center gap-2 ${region === "SG" ? "bg-primary text-primary-foreground" : ""}`}
                   >
-                    🇸🇬 Singapore
+                    <FlagIcon country="SG" className="w-4" /> Singapore
                   </button>
                 </div>
               </div>

@@ -4,11 +4,10 @@ import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer } from "lucide-react";
+import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
-
 
 const products = [
   {
@@ -72,7 +71,6 @@ const products = [
 
 const COUNTDOWN_SECONDS = 30 * 60;
 const EXTRA_OFF_MY = 20;
-const EXTRA_OFF_SG = 5;
 
 const ProductsSection = () => {
   const { addItem } = useCart();
@@ -99,7 +97,6 @@ const ProductsSection = () => {
   const unitPrice = isMY ? selected.priceMY : selected.priceSG;
   const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
 
-  // Prices shown are already the final promo prices (MY already includes the −RM20).
   const total = unitPrice * quantity;
   const originalTotal = unitOriginal * quantity;
   const totalSavings = originalTotal - total;
@@ -127,11 +124,12 @@ const ProductsSection = () => {
   return (
     <section id="products" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        {/* Section header */}
+        <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-2">
-            我们的产品
+            选择配套
           </h2>
-          <p className="text-lg text-primary font-semibold mb-4">Our Products</p>
+          <p className="text-lg text-primary font-semibold mb-4">Select Your Package</p>
           <div className="w-24 h-1 bg-primary mx-auto mb-6" />
           <p className="text-lg md:text-xl text-foreground font-medium max-w-2xl mx-auto">
             深海鱼鳞胶原蛋白
@@ -140,101 +138,111 @@ const ProductsSection = () => {
             Premium Deep-Sea Fish Scales Collagen
           </p>
 
-          {/* Free Shipping Banner */}
-          <div className="mt-8 inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 bg-gradient-to-r from-primary via-primary/90 to-accent text-primary-foreground px-6 sm:px-8 py-4 sm:py-5 rounded-full shadow-lg shadow-primary/20 animate-pulse">
-            <div className="flex items-center gap-2">
-              <Truck className="w-6 h-6 sm:w-7 sm:h-7" />
-              <span className="font-bold text-lg sm:text-xl md:text-2xl inline-flex items-center gap-2 flex-wrap justify-center">
-                <FlagIcon country="MY" /> 全马 <span className="opacity-80">&</span> <FlagIcon country="SG" /> 新加坡 免运费
-              </span>
-            </div>
+          {/* Free shipping banner */}
+          <div className="mt-8 inline-flex items-center gap-2 bg-gradient-to-r from-primary via-primary/90 to-accent text-primary-foreground px-5 py-3 rounded-full shadow-lg shadow-primary/20">
+            <Truck className="w-5 h-5" />
+            <span className="font-bold text-base sm:text-lg inline-flex items-center gap-1.5">
+              <FlagIcon country="MY" /> 全马 <span className="opacity-80">&</span> <FlagIcon country="SG" /> 新加坡 免运费
+            </span>
           </div>
-          <p className="text-base sm:text-lg text-muted-foreground mt-3 font-semibold tracking-wide">
+          <p className="text-sm sm:text-base text-muted-foreground mt-2 font-medium tracking-wide">
             FREE Shipping to All Malaysia & Singapore
           </p>
         </div>
 
-
-        {/* Unified selector */}
-        <Card className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-xl">
-          {/* Country + Package picker */}
-          <div className="p-5 sm:p-7 bg-gradient-to-b from-primary/10 to-muted/30 border-b-2 border-primary/30">
-            <div className="text-center mb-5">
-              <p className="text-base sm:text-lg font-bold text-foreground">选择国家 & 配套</p>
-              <p className="text-sm text-muted-foreground tracking-wider">Select Country & Package</p>
+        {/* Main package card */}
+        <Card className="max-w-5xl mx-auto overflow-hidden border-border/50 shadow-xl">
+          {/* Country selector */}
+          <div className="px-5 pt-6 pb-4 sm:px-8 sm:pt-8 sm:pb-5 bg-gradient-to-b from-primary/10 to-muted/30 border-b border-primary/20">
+            <div className="text-center mb-4">
+              <p className="text-base font-bold text-foreground">选择国家</p>
+              <p className="text-xs text-muted-foreground tracking-wider">Select Country</p>
             </div>
+            <div
+              role="tablist"
+              aria-label="Select shipping country"
+              className="flex justify-center p-1 bg-muted rounded-full max-w-md mx-auto"
+            >
+              {(["MY", "SG"] as const).map((c) => {
+                const active = country === c;
+                return (
+                  <button
+                    key={c}
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => setCountry(c)}
+                    className={`flex-1 inline-flex items-center justify-center gap-2 rounded-full py-2.5 px-4 text-sm sm:text-base font-semibold whitespace-nowrap transition-all ${
+                      active
+                        ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <FlagIcon country={c} className="w-5 h-auto sm:w-6" />
+                    <span>{c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-              {/* Country selector */}
-              <div
-                role="tablist"
-                aria-label="Select shipping country"
-                className="flex p-1.5 bg-muted rounded-full"
-              >
-                {(["MY", "SG"] as const).map((c) => {
-                  const active = country === c;
-                  return (
-                    <button
-                      key={c}
-                      role="tab"
-                      aria-selected={active}
-                      onClick={() => setCountry(c)}
-                      className={`inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 px-3 sm:px-5 text-sm sm:text-base font-semibold whitespace-nowrap transition-all ${
-                        active
-                          ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
-                          : "text-muted-foreground hover:text-foreground"
-                      }`}
-                    >
-                      <FlagIcon country={c} className="w-5 h-auto sm:w-6" />
-                      <span className="hidden sm:inline">{c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}</span>
-                      <span className="sm:hidden">{c === "MY" ? "马来西亚" : "新加坡"}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Divider */}
-              <div className="hidden sm:block w-px h-10 bg-primary/20" />
-
-              {/* Package selector */}
-              <div className="flex gap-2 sm:gap-3">
-                {products.map((p) => {
-                  const active = p.id === selectedId;
-                  return (
-                    <button
-                      key={p.id}
-                      onClick={() => selectSet(p.id)}
-                      className={`relative rounded-xl border-2 px-3 py-2.5 sm:px-5 sm:py-3 text-center transition-all min-w-[5rem] sm:min-w-[7rem] ${
-                        active
-                          ? "border-primary bg-primary/5 shadow-md shadow-primary/10"
-                          : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
-                      }`}
-                    >
-                      {p.isBestValue && (
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-destructive text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm flex items-center gap-0.5">
-                          <Flame className="w-3 h-3" /> 最划算
-                        </div>
-                      )}
-                      {!p.isBestValue && p.id === "set-b" && (
-                        <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm">
-                          热销
-                        </div>
-                      )}
-                      <div className="text-base sm:text-lg font-bold leading-tight">
-                        SET {p.id.slice(-1).toUpperCase()}
+          {/* Package selector */}
+          <div className="px-5 py-5 sm:px-8 sm:py-6 border-b border-border/60">
+            <div className="text-center mb-4">
+              <p className="text-base font-bold text-foreground">选择配套</p>
+              <p className="text-xs text-muted-foreground tracking-wider">Select Package</p>
+            </div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              {products.map((p) => {
+                const active = p.id === selectedId;
+                const price = isMY ? p.priceMY : p.priceSG;
+                const original = isMY ? p.originalMY : p.originalSG;
+                return (
+                  <button
+                    key={p.id}
+                    onClick={() => selectSet(p.id)}
+                    className={`relative rounded-2xl border-2 p-3 sm:p-4 text-center transition-all ${
+                      active
+                        ? "border-primary bg-primary/5 shadow-md shadow-primary/10"
+                        : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
+                    }`}
+                  >
+                    {p.isBestValue && (
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-destructive text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm flex items-center gap-0.5">
+                        <Flame className="w-2.5 h-2.5 sm:w-3 sm:h-3" /> 最划算 Best Value
                       </div>
-                      <div className="text-xs text-muted-foreground font-medium leading-tight">
-                        {p.qtyLabel}
+                    )}
+                    {!p.isBestValue && p.id === "set-b" && (
+                      <div className="absolute -top-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap shadow-sm">
+                        热销 Best Seller
                       </div>
-                      {active && (
-                        <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
-                          <Check className="w-3 h-3" />
-                        </div>
-                      )}
-                    </button>
-                  );
-                })}
-              </div>
+                    )}
+                    <div className="aspect-square w-full mb-2 sm:mb-3 rounded-xl overflow-hidden bg-muted/30">
+                      <img
+                        src={p.image}
+                        alt={p.nameEn}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="text-base sm:text-xl font-bold leading-tight text-foreground">
+                      SET {p.id.slice(-1).toUpperCase()}
+                    </div>
+                    <div className="text-[10px] sm:text-xs text-muted-foreground font-medium leading-tight mb-1 sm:mb-2">
+                      {p.qtyLabel} · {p.qtyEn}
+                    </div>
+                    <div className="text-xs sm:text-sm text-muted-foreground line-through">
+                      {currency} {original}
+                    </div>
+                    <div className="text-lg sm:text-2xl font-extrabold text-destructive leading-none">
+                      {currency} {price}
+                    </div>
+                    {active && (
+                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">
+                        <Check className="w-3 h-3 sm:w-4 sm:h-4" />
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -299,10 +307,10 @@ const ProductsSection = () => {
                 </div>
               ) : (
                 <div className="mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-3 py-2.5 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-primary shrink-0" />
+                  <Gift className="w-4 h-4 text-primary shrink-0" />
                   <div className="leading-tight min-w-0">
                     <div className="text-xs sm:text-sm font-bold text-primary truncate">
-                      🎁 新加坡下单额外赠送产品
+                      新加坡下单额外赠送产品
                     </div>
                     <div className="text-[10px] text-muted-foreground truncate">
                       Free bonus gift with every Singapore order
@@ -311,14 +319,14 @@ const ProductsSection = () => {
                 </div>
               )}
 
-              {/* Price (single country) */}
+              {/* Price */}
               <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
                   <span className="text-sm text-muted-foreground line-through">
                     {currency} {originalTotal}
                   </span>
                   <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">
-                    省 {currency} {totalSavings}
+                    省 {currency} {totalSavings} · Save {currency} {totalSavings}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
@@ -371,7 +379,7 @@ const ProductsSection = () => {
                     份数 / Quantity
                   </span>
                   <span id="qty-help" className="text-[11px] text-muted-foreground">
-                    使用 + / − 按钮或键盘 Enter/Space 调整 (1–99)
+                    使用 + / − 按钮调整 (1–99) · Use + / − to adjust
                   </span>
                 </div>
                 <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition">
@@ -406,7 +414,6 @@ const ProductsSection = () => {
                   </button>
                 </div>
               </div>
-
 
               <Button
                 className={`w-full font-bold text-base py-6 ${

@@ -157,17 +157,46 @@ const ProductsSection = () => {
 
         {/* Unified selector */}
         <Card className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-xl">
-          {/* Segmented picker */}
+          {/* Country + Package picker */}
           <div className="p-4 sm:p-6 bg-gradient-to-b from-primary/10 to-muted/30 border-b-2 border-primary/30">
-            <div className="flex flex-col items-center gap-1 mb-5">
-              <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold shadow-md animate-pulse">
-                <span>👇</span>
-                <span>点击下方选择配套 · TAP TO CHOOSE</span>
-                <span>👇</span>
+            {/* Country selector */}
+            <div className="mb-6">
+              <div className="text-center mb-3">
+                <p className="text-sm font-semibold text-foreground">选择收货国家</p>
+                <p className="text-xs text-muted-foreground tracking-wider">Select Shipping Country</p>
               </div>
-              <p className="text-sm font-semibold text-foreground mt-2">
-                请选择您的配套
-              </p>
+              <div
+                role="tablist"
+                aria-label="Select shipping country"
+                className="grid grid-cols-2 gap-3 max-w-sm mx-auto p-1.5 bg-muted rounded-full"
+              >
+                {(["MY", "SG"] as const).map((c) => {
+                  const active = country === c;
+                  return (
+                    <button
+                      key={c}
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setCountry(c)}
+                      className={`inline-flex items-center justify-center gap-2 rounded-full py-2.5 text-xs sm:text-sm font-semibold whitespace-nowrap transition-all ${
+                        active
+                          ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      <FlagIcon country={c} />
+                      {c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent mb-6" />
+
+            {/* Package selector */}
+            <div className="flex flex-col items-center gap-1 mb-5">
+              <p className="text-sm font-semibold text-foreground">请选择您的配套</p>
               <p className="text-xs text-muted-foreground tracking-wider">
                 Please Select Your Package
               </p>
@@ -250,39 +279,7 @@ const ProductsSection = () => {
                 </div>
               </div>
 
-              {/* Country selector */}
-              <div className="mb-4">
-                <div className="text-[11px] font-semibold text-muted-foreground mb-1.5 tracking-wide">
-                  收货国家 / Shipping to
-                </div>
-                <div
-                  role="tablist"
-                  aria-label="Select shipping country"
-                  className="grid grid-cols-2 gap-2 p-1 bg-muted rounded-full"
-                >
-                  {(["MY", "SG"] as const).map((c) => {
-                    const active = country === c;
-                    return (
-                      <button
-                        key={c}
-                        role="tab"
-                        aria-selected={active}
-                        onClick={() => setCountry(c)}
-                        className={`inline-flex items-center justify-center gap-2 rounded-full py-2 text-sm font-semibold transition-all ${
-                          active
-                            ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
-                            : "text-muted-foreground hover:text-foreground"
-                        }`}
-                      >
-                        <FlagIcon country={c} />
-                        {c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* MY: countdown extra discount · SG: free gift with order */}
+              {/* Regional promotion */}
               {isMY ? (
                 <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">

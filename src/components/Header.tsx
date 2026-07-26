@@ -80,9 +80,9 @@ const Header = () => {
           </div>
         </div>
         
-        {/* Mobile Navigation */}
+        {/* Nav Menu (all sizes) */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
+          <div className="py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button

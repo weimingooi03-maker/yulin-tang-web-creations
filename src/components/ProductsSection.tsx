@@ -194,8 +194,6 @@ const ProductsSection = () => {
             <div className="grid grid-cols-3 gap-3 sm:gap-4">
               {products.map((p) => {
                 const active = p.id === selectedId;
-                const price = isMY ? p.priceMY : p.priceSG;
-                const original = isMY ? p.originalMY : p.originalSG;
                 return (
                   <button
                     key={p.id}
@@ -228,12 +226,6 @@ const ProductsSection = () => {
                     </div>
                     <div className="text-[10px] sm:text-xs text-muted-foreground font-medium leading-tight mb-1 sm:mb-2">
                       {p.qtyLabel} · {p.qtyEn}
-                    </div>
-                    <div className="text-xs sm:text-sm text-muted-foreground line-through">
-                      {currency} {original}
-                    </div>
-                    <div className="text-lg sm:text-2xl font-extrabold text-destructive leading-none">
-                      {currency} {price}
                     </div>
                     {active && (
                       <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground rounded-full p-0.5 shadow-sm">

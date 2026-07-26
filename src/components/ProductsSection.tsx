@@ -282,26 +282,40 @@ const ProductsSection = () => {
                 </div>
               </div>
 
-              {/* Countdown extra discount */}
-              <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 min-w-0">
-                  <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
+              {/* MY: countdown extra discount · SG: free gift with order */}
+              {isMY ? (
+                <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
+                    <div className="leading-tight min-w-0">
+                      <div className="text-xs sm:text-sm font-bold text-destructive truncate">
+                        限时额外 −RM {EXTRA_OFF_MY}（已包含在价钱内）
+                      </div>
+                      <div className="text-[10px] text-muted-foreground truncate">
+                        Extra RM {EXTRA_OFF_MY} off already applied · ends soon
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-live="polite"
+                    className="tabular-nums font-mono font-bold text-sm sm:text-base bg-destructive text-white rounded-lg px-2.5 py-1 shadow-sm"
+                  >
+                    {mm}:{ss}
+                  </div>
+                </div>
+              ) : (
+                <div className="mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-3 py-2.5 flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-primary shrink-0" />
                   <div className="leading-tight min-w-0">
-                    <div className="text-xs sm:text-sm font-bold text-destructive truncate">
-                      限时额外 −{currency} {extraOff}
+                    <div className="text-xs sm:text-sm font-bold text-primary truncate">
+                      🎁 新加坡下单额外赠送产品
                     </div>
                     <div className="text-[10px] text-muted-foreground truncate">
-                      Extra {currency} {extraOff} off · ends soon
+                      Free bonus gift with every Singapore order
                     </div>
                   </div>
                 </div>
-                <div
-                  aria-live="polite"
-                  className="tabular-nums font-mono font-bold text-sm sm:text-base bg-destructive text-white rounded-lg px-2.5 py-1 shadow-sm"
-                >
-                  {mm}:{ss}
-                </div>
-              </div>
+              )}
 
               {/* Price (single country) */}
               <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">

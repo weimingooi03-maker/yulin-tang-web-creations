@@ -247,7 +247,7 @@ const ProductsSection = () => {
               </div>
 
               {/* Prices */}
-              <div className="space-y-2 mb-5">
+              <div className="space-y-3 mb-5">
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                     <FlagIcon country="MY" />
@@ -261,8 +261,10 @@ const ProductsSection = () => {
                       <span className="text-sm text-muted-foreground line-through">RM {originalTotalMY}</span>
                       <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−RM {originalTotalMY - totalMY}</span>
                     </div>
-                    <div className="text-2xl font-bold text-primary leading-none">RM {totalMY}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">
+                    <div className="inline-block mt-1 px-3 py-1 rounded-lg bg-destructive/10 shadow-sm">
+                      <div className="text-3xl sm:text-4xl font-extrabold text-destructive leading-none tracking-tight">RM {totalMY}</div>
+                    </div>
+                    <div className="text-[11px] text-muted-foreground mt-1">
                       每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}
                     </div>
                   </div>
@@ -280,8 +282,10 @@ const ProductsSection = () => {
                       <span className="text-sm text-muted-foreground line-through">SGD {originalTotalSG}</span>
                       <span className="text-[10px] font-bold text-destructive bg-destructive/10 px-1.5 py-0.5 rounded">−SGD {originalTotalSG - totalSG}</span>
                     </div>
-                    <div className="text-2xl font-bold text-primary leading-none">SGD {totalSG}</div>
-                    <div className="text-[11px] text-muted-foreground mt-0.5">
+                    <div className="inline-block mt-1 px-3 py-1 rounded-lg bg-destructive/10 shadow-sm">
+                      <div className="text-3xl sm:text-4xl font-extrabold text-destructive leading-none tracking-tight">SGD {totalSG}</div>
+                    </div>
+                    <div className="text-[11px] text-muted-foreground mt-1">
                       每瓶 / per bottle SGD {(totalSG / (selected.qty * quantity)).toFixed(2)}
                     </div>
                   </div>

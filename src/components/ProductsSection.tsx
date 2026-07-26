@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles } from "lucide-react";
+import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
@@ -19,19 +19,14 @@ const products = [
     qty: 12,
     qtyLabel: "12罐",
     qtyEn: "12 Bottles x 180ml",
-    priceRM: "RM 219",
-    priceSGD: "SGD 99",
-    priceMY: 219,
+    priceMY: 199,
     priceSG: 99,
     originalMY: 299,
     originalSG: 118,
-    unitRM: "RM 18.25",
-    unitSGD: "SGD 8.25",
     badge: "体验装",
     badgeEn: "Trial",
     isVip: false,
     isBestValue: false,
-    savingsZh: null as string | null,
     stockLeft: 18,
     stockTotal: 40,
   },
@@ -43,19 +38,14 @@ const products = [
     qty: 24,
     qtyLabel: "24罐",
     qtyEn: "24 Bottles x 180ml",
-    priceRM: "RM 389",
-    priceSGD: "SGD 160",
-    priceMY: 389,
+    priceMY: 369,
     priceSG: 160,
     originalMY: 499,
     originalSG: 218,
-    unitRM: "RM 16.21",
-    unitSGD: "SGD 6.67",
     badge: "热销款",
     badgeEn: "Best Seller",
     isVip: true,
     isBestValue: false,
-    savingsZh: "省 RM 49",
     stockLeft: 7,
     stockTotal: 40,
   },
@@ -67,35 +57,53 @@ const products = [
     qty: 36,
     qtyLabel: "36罐",
     qtyEn: "36 Bottles x 180ml",
-    priceRM: "RM 539",
-    priceSGD: "SGD 230",
-    priceMY: 539,
+    priceMY: 499,
     priceSG: 230,
     originalMY: 699,
     originalSG: 299,
-    unitRM: "RM 14.97",
-    unitSGD: "SGD 6.39",
     badge: "家庭装",
     badgeEn: "Family",
     isVip: true,
     isBestValue: true,
-    savingsZh: "省 RM 118",
     stockLeft: 4,
     stockTotal: 30,
   },
 ];
+
+const COUNTDOWN_SECONDS = 30 * 60;
+const EXTRA_OFF_MY = 20;
+const EXTRA_OFF_SG = 5;
 
 const ProductsSection = () => {
   const { addItem } = useCart();
   const navigate = useNavigate();
   const [selectedId, setSelectedId] = useState("set-b");
   const [quantity, setQuantity] = useState(1);
+  const [country, setCountry] = useState<"MY" | "SG">("MY");
+  const [secondsLeft, setSecondsLeft] = useState(COUNTDOWN_SECONDS);
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setSecondsLeft((s) => (s <= 1 ? COUNTDOWN_SECONDS : s - 1));
+    }, 1000);
+    return () => clearInterval(t);
+  }, []);
+
+  const mm = String(Math.floor(secondsLeft / 60)).padStart(2, "0");
+  const ss = String(secondsLeft % 60).padStart(2, "0");
+
   const selected = products.find((p) => p.id === selectedId)!;
 
-  const totalMY = selected.priceMY * quantity;
-  const totalSG = selected.priceSG * quantity;
-  const originalTotalMY = selected.originalMY * quantity;
-  const originalTotalSG = selected.originalSG * quantity;
+  const isMY = country === "MY";
+  const currency = isMY ? "RM" : "SGD";
+  const unitPrice = isMY ? selected.priceMY : selected.priceSG;
+  const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
+  const extraOff = isMY ? EXTRA_OFF_MY : EXTRA_OFF_SG;
+
+  const subtotal = unitPrice * quantity;
+  const originalTotal = unitOriginal * quantity;
+  const total = Math.max(0, subtotal - extraOff);
+  const totalSavings = originalTotal - total;
 
   const selectSet = (id: string) => {
     setSelectedId(id);
@@ -116,9 +124,6 @@ const ProductsSection = () => {
     addItem(toCartProduct(p), quantity);
     navigate("/checkout");
   };
-
-
-
 
   return (
     <section id="products" className="py-20 bg-background">
@@ -246,45 +251,76 @@ const ProductsSection = () => {
                 </div>
               </div>
 
-              {/* Prices */}
-              <div className="space-y-3 mb-5">
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <FlagIcon country="MY" />
-                    <span className="flex flex-col leading-tight">
-                      <span className="text-foreground font-semibold">马来西亚</span>
-                      <span className="text-[11px]">Malaysia</span>
-                    </span>
-                  </span>
-                  <div className="text-right">
-                    <div className="flex items-baseline justify-end gap-2">
-                      <span className="text-sm text-muted-foreground line-through">RM {originalTotalMY}</span>
-                      <span className="text-xs font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">−RM {originalTotalMY - totalMY}</span>
+              {/* Country selector */}
+              <div className="mb-4">
+                <div className="text-[11px] font-semibold text-muted-foreground mb-1.5 tracking-wide">
+                  收货国家 / Shipping to
+                </div>
+                <div
+                  role="tablist"
+                  aria-label="Select shipping country"
+                  className="grid grid-cols-2 gap-2 p-1 bg-muted rounded-full"
+                >
+                  {(["MY", "SG"] as const).map((c) => {
+                    const active = country === c;
+                    return (
+                      <button
+                        key={c}
+                        role="tab"
+                        aria-selected={active}
+                        onClick={() => setCountry(c)}
+                        className={`inline-flex items-center justify-center gap-2 rounded-full py-2 text-sm font-semibold transition-all ${
+                          active
+                            ? "bg-background text-foreground shadow-md ring-1 ring-primary/30"
+                            : "text-muted-foreground hover:text-foreground"
+                        }`}
+                      >
+                        <FlagIcon country={c} />
+                        {c === "MY" ? "马来西亚 Malaysia" : "新加坡 Singapore"}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Countdown extra discount */}
+              <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 min-w-0">
+                  <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
+                  <div className="leading-tight min-w-0">
+                    <div className="text-xs sm:text-sm font-bold text-destructive truncate">
+                      限时额外 −{currency} {extraOff}
                     </div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-destructive leading-none tracking-tight">RM {totalMY}</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">
-                      每瓶 / per bottle RM {(totalMY / (selected.qty * quantity)).toFixed(2)}
+                    <div className="text-[10px] text-muted-foreground truncate">
+                      Extra {currency} {extraOff} off · ends soon
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                    <FlagIcon country="SG" />
-                    <span className="flex flex-col leading-tight">
-                      <span className="text-foreground font-semibold">新加坡</span>
-                      <span className="text-[11px]">Singapore</span>
-                    </span>
+                <div
+                  aria-live="polite"
+                  className="tabular-nums font-mono font-bold text-sm sm:text-base bg-destructive text-white rounded-lg px-2.5 py-1 shadow-sm"
+                >
+                  {mm}:{ss}
+                </div>
+              </div>
+
+              {/* Price (single country) */}
+              <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
+                <div className="flex items-baseline justify-between gap-2 mb-1">
+                  <span className="text-sm text-muted-foreground line-through">
+                    {currency} {originalTotal}
                   </span>
-                  <div className="text-right">
-                    <div className="flex items-baseline justify-end gap-2">
-                      <span className="text-sm text-muted-foreground line-through">SGD {originalTotalSG}</span>
-                      <span className="text-xs font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">−SGD {originalTotalSG - totalSG}</span>
-                    </div>
-                    <div className="text-2xl sm:text-3xl font-extrabold text-destructive leading-none tracking-tight">SGD {totalSG}</div>
-                    <div className="text-[11px] text-muted-foreground mt-1">
-                      每瓶 / per bottle SGD {(totalSG / (selected.qty * quantity)).toFixed(2)}
-                    </div>
-                  </div>
+                  <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">
+                    省 {currency} {totalSavings}
+                  </span>
+                </div>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight">
+                    {currency} {total}
+                  </span>
+                </div>
+                <div className="text-[11px] text-muted-foreground mt-2">
+                  每瓶 / per bottle {currency} {(total / (selected.qty * quantity)).toFixed(2)}
                 </div>
               </div>
 

@@ -57,7 +57,7 @@ const products = [
     qty: 36,
     qtyLabel: "36罐",
     qtyEn: "36 Bottles x 180ml",
-    priceMY: 499,
+    priceMY: 519,
     priceSG: 230,
     originalMY: 699,
     originalSG: 299,

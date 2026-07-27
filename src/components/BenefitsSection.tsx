@@ -68,28 +68,40 @@ const benefitVisuals = [
 
 const reviews = [
   {
-    img: review1,
-    alt: "Customer Review - Joint Pain Relief",
-    name: "Ms Tan · Kuala Lumpur",
-    quote: "After two months, my knee pain has noticeably eased!",
+    img: reviewFishy.url,
+    alt: "Customer Review - No fishy taste",
+    name: "Taste Approved",
+    quote: "It doesn't taste fishy, and it's not overly sweet.",
   },
   {
-    img: review2Asset,
-    alt: "Customer Review - Mr Lim, mother's knee pain improved",
-    name: "Mr Lim",
-    quote: "After 12 days, my mum's knee pain eased and she can walk much more smoothly!",
+    img: reviewKnees.url,
+    alt: "Customer Review - Knees feel more comfortable after 2 weeks",
+    name: "Mom · 2 Weeks",
+    quote: "Knees feel more comfortable and walking is much smoother!",
   },
   {
-    img: review3,
-    alt: "Customer Review - Skin Improvement",
-    name: "Ms Ng",
-    quote: "My skin feels more elastic. Friends keep asking what skincare I use!",
+    img: reviewWalk.url,
+    alt: "Customer Review - Can walk longer without resting",
+    name: "Mom · 2 Weeks",
+    quote: "She can walk much longer without needing to rest.",
   },
   {
-    img: review4Asset,
-    alt: "Customer Review - Visible skin improvement before and after",
+    img: reviewSkinVisible.url,
+    alt: "Customer Review - Visible skin changes, healthier glow",
     name: "Real Result",
-    quote: "Skin looks more even, fewer breakouts, and a natural healthy glow!",
+    quote: "My skin has become more stable, I feel more confident every day!",
+  },
+  {
+    img: reviewSkinAcne.url,
+    alt: "Customer Review - Soothes redness and acne",
+    name: "Skin Recovery",
+    quote: "Soothes redness & acne, skin looks smooth and radiant.",
+  },
+  {
+    img: reviewOverall.url,
+    alt: "Customer Review - Joint & skin improvement",
+    name: "Loyal Customer",
+    quote: "Joint pain improved, skin smoother — daily life feels easier!",
   },
 ];
 

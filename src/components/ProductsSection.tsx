@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
+import giftBoxPhoto from "@/assets/product-box-bottle.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";

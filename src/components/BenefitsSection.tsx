@@ -414,8 +414,14 @@ const BenefitsSection = () => {
                       className="w-full h-auto aspect-square object-cover"
                     />
                     <div className="p-4">
-                      <p className="text-sm font-bold text-foreground mb-1">{r.name}</p>
-                      <p className="text-xs text-muted-foreground">"{r.quote}"</p>
+                      <p className="text-sm font-bold text-foreground mb-1">
+                        {r.nameZh}
+                        <span className="ml-1.5 text-xs text-primary font-semibold uppercase tracking-wide">
+                          {r.nameEn}
+                        </span>
+                      </p>
+                      <p className="text-xs text-foreground/90 leading-snug mb-1">"{r.quoteZh}"</p>
+                      <p className="text-[10px] text-muted-foreground leading-snug">"{r.quoteEn}"</p>
                     </div>
                   </div>
                 </CarouselItem>

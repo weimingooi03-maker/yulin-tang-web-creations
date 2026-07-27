@@ -5,7 +5,7 @@ import productSetC from "@/assets/setc-photo.png";
 import giftBoxAsset from "@/assets/gift-box-packaging-v2.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";
+import { ShoppingCart, Truck, Package, Flame, Check, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,6 @@ const products = [
     originalSG: 118,
     badge: "体验装",
     badgeEn: "Trial",
-    isVip: false,
     isBestValue: false,
     stockLeft: 18,
     stockTotal: 40,
@@ -44,7 +43,6 @@ const products = [
     originalSG: 218,
     badge: "热销款",
     badgeEn: "Best Seller",
-    isVip: true,
     isBestValue: false,
     stockLeft: 7,
     stockTotal: 40,
@@ -63,7 +61,6 @@ const products = [
     originalSG: 299,
     badge: "家庭装",
     badgeEn: "Family",
-    isVip: true,
     isBestValue: true,
     stockLeft: 4,
     stockTotal: 30,
@@ -272,11 +269,6 @@ const ProductsSection = () => {
                 alt={selected.nameEn}
                 className="w-full h-full object-cover animate-fade-in"
               />
-              {selected.isVip && (
-                <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
-                  <Crown className="w-3 h-3" /> VIP
-                </div>
-              )}
             </div>
 
             <CardContent className="p-6 sm:p-8 flex flex-col justify-center">
@@ -433,11 +425,7 @@ const ProductsSection = () => {
               </div>
 
               <Button
-                className={`w-full font-bold text-base py-6 ${
-                  selected.isVip
-                    ? "bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground shadow-lg"
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
+                className="w-full font-bold text-base py-6 bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => handleBuyNow(selected)}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />

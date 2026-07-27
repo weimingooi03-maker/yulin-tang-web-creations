@@ -269,11 +269,6 @@ const ProductsSection = () => {
                 alt={selected.nameEn}
                 className="w-full h-full object-cover animate-fade-in"
               />
-              {selected.isVip && (
-                <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 shadow-md">
-                  <Crown className="w-3 h-3" /> VIP
-                </div>
-              )}
             </div>
 
             <CardContent className="p-6 sm:p-8 flex flex-col justify-center">
@@ -430,11 +425,7 @@ const ProductsSection = () => {
               </div>
 
               <Button
-                className={`w-full font-bold text-base py-6 ${
-                  selected.isVip
-                    ? "bg-gradient-to-r from-primary via-gold to-accent hover:opacity-90 text-primary-foreground shadow-lg"
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
+                className="w-full font-bold text-base py-6 bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => handleBuyNow(selected)}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />

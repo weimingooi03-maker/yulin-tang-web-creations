@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
-import giftBoxAsset from "@/assets/gift-box-packaging-v2.png.asset.json";
+import giftBoxAsset from "@/assets/gift-box-packaging-v2.png";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";
@@ -154,9 +154,9 @@ const ProductsSection = () => {
         {/* Gift box packaging banner */}
         <div className="max-w-3xl mx-auto mb-8">
           <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <div className="w-full sm:w-36 md:w-40 shrink-0 rounded-xl overflow-hidden bg-background shadow-sm">
+            <div className="w-28 sm:w-32 md:w-40 shrink-0 rounded-xl overflow-hidden bg-background shadow-sm">
               <img
-                src={giftBoxAsset.url}
+                src={giftBoxAsset}
                 alt="精美礼盒包装 Premium Gift Box Packaging"
                 className="w-full h-auto object-cover"
               />

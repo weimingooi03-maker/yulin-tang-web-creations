@@ -10,12 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.png";
-import reviewFishy from "@/assets/review-fishy-taste.jpeg.asset.json";
-import reviewKnees from "@/assets/review-knees-comfort.jpeg.asset.json";
-import reviewWalk from "@/assets/review-walk-longer.jpeg.asset.json";
-import reviewSkinVisible from "@/assets/review-skin-visible.jpeg.asset.json";
-import reviewSkinAcne from "@/assets/review-skin-acne.jpeg.asset.json";
-import reviewOverall from "@/assets/review-overall.jpeg.asset.json";
+import reviewFishy from "@/assets/review-fishy-taste.jpeg";
+import reviewKnees from "@/assets/review-knees-comfort.jpeg";
+import reviewWalk from "@/assets/review-walk-longer.jpeg";
+import reviewSkinVisible from "@/assets/review-skin-visible.jpeg";
+import reviewSkinAcne from "@/assets/review-skin-acne.jpeg";
+import reviewOverall from "@/assets/review-overall.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
@@ -68,7 +68,7 @@ const benefitVisuals = [
 
 const reviews = [
   {
-    img: reviewFishy.url,
+    img: reviewFishy,
     alt: "Customer Review - No fishy taste",
     nameZh: "口感认可",
     nameEn: "Taste Approved",
@@ -76,7 +76,7 @@ const reviews = [
     quoteEn: "It doesn't taste fishy, and it's not overly sweet.",
   },
   {
-    img: reviewKnees.url,
+    img: reviewKnees,
     alt: "Customer Review - Knees feel more comfortable after 2 weeks",
     nameZh: "2星期就见效",
     nameEn: "Results in 2 Weeks",
@@ -84,7 +84,7 @@ const reviews = [
     quoteEn: "Knees feel more comfortable and walking is much smoother!",
   },
   {
-    img: reviewWalk.url,
+    img: reviewWalk,
     alt: "Customer Review - Can walk longer without resting",
     nameZh: "走路更有力",
     nameEn: "Walk Longer",
@@ -92,7 +92,7 @@ const reviews = [
     quoteEn: "She can walk much longer without needing to rest.",
   },
   {
-    img: reviewSkinVisible.url,
+    img: reviewSkinVisible,
     alt: "Customer Review - Visible skin changes, healthier glow",
     nameZh: "真实改善",
     nameEn: "Real Result",
@@ -100,7 +100,7 @@ const reviews = [
     quoteEn: "My skin has become more stable, I feel more confident every day!",
   },
   {
-    img: reviewSkinAcne.url,
+    img: reviewSkinAcne,
     alt: "Customer Review - Soothes redness and acne",
     nameZh: "肌肤修复",
     nameEn: "Skin Recovery",
@@ -108,7 +108,7 @@ const reviews = [
     quoteEn: "Soothes redness & acne, skin looks smooth and radiant.",
   },
   {
-    img: reviewOverall.url,
+    img: reviewOverall,
     alt: "Customer Review - Joint & skin improvement",
     nameZh: "忠实顾客",
     nameEn: "Loyal Customer",
@@ -401,22 +401,22 @@ const BenefitsSection = () => {
           >
             <CarouselContent className="-ml-4">
               {reviews.map((r, i) => (
-                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full hover:shadow-xl transition-shadow duration-300">
-                    <img
-                      src={r.img}
-                      alt={r.alt}
-                      loading="lazy"
-                      decoding="async"
-                      width={800}
-                      height={800}
-                      sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
-                      className="w-full h-auto aspect-square object-cover"
-                    />
-                    <div className="p-4">
+                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 flex">
+                  <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full w-full hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div className="aspect-square overflow-hidden bg-muted/30">
+                      <img
+                        src={r.img}
+                        alt={r.alt}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4 flex flex-col flex-grow">
                       <p className="text-sm font-bold text-foreground mb-1">
                         {r.nameZh}
-                        <span className="ml-1.5 text-xs text-primary font-semibold uppercase tracking-wide">
+                        <span className="ml-1.5 text-[10px] sm:text-xs text-primary font-semibold uppercase tracking-wide">
                           {r.nameEn}
                         </span>
                       </p>

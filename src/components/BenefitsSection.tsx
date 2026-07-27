@@ -10,10 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.png";
-import review1 from "@/assets/review-1.jpeg";
-import review3 from "@/assets/review-3.jpeg";
-import review2Asset from "@/assets/review-aunt-lin-sg.jpeg";
-import review4Asset from "@/assets/review-beauty-before-after.jpeg";
+import reviewFishy from "@/assets/review-fishy-taste.jpeg.asset.json";
+import reviewKnees from "@/assets/review-knees-comfort.jpeg.asset.json";
+import reviewWalk from "@/assets/review-walk-longer.jpeg.asset.json";
+import reviewSkinVisible from "@/assets/review-skin-visible.jpeg.asset.json";
+import reviewSkinAcne from "@/assets/review-skin-acne.jpeg.asset.json";
+import reviewOverall from "@/assets/review-overall.jpeg.asset.json";
 import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
@@ -66,28 +68,40 @@ const benefitVisuals = [
 
 const reviews = [
   {
-    img: review1,
-    alt: "Customer Review - Joint Pain Relief",
-    name: "Ms Tan · Kuala Lumpur",
-    quote: "After two months, my knee pain has noticeably eased!",
+    img: reviewFishy.url,
+    alt: "Customer Review - No fishy taste",
+    name: "Taste Approved",
+    quote: "It doesn't taste fishy, and it's not overly sweet.",
   },
   {
-    img: review2Asset,
-    alt: "Customer Review - Mr Lim, mother's knee pain improved",
-    name: "Mr Lim",
-    quote: "After 12 days, my mum's knee pain eased and she can walk much more smoothly!",
+    img: reviewKnees.url,
+    alt: "Customer Review - Knees feel more comfortable after 2 weeks",
+    name: "Mom · 2 Weeks",
+    quote: "Knees feel more comfortable and walking is much smoother!",
   },
   {
-    img: review3,
-    alt: "Customer Review - Skin Improvement",
-    name: "Ms Ng",
-    quote: "My skin feels more elastic. Friends keep asking what skincare I use!",
+    img: reviewWalk.url,
+    alt: "Customer Review - Can walk longer without resting",
+    name: "Mom · 2 Weeks",
+    quote: "She can walk much longer without needing to rest.",
   },
   {
-    img: review4Asset,
-    alt: "Customer Review - Visible skin improvement before and after",
+    img: reviewSkinVisible.url,
+    alt: "Customer Review - Visible skin changes, healthier glow",
     name: "Real Result",
-    quote: "Skin looks more even, fewer breakouts, and a natural healthy glow!",
+    quote: "My skin has become more stable, I feel more confident every day!",
+  },
+  {
+    img: reviewSkinAcne.url,
+    alt: "Customer Review - Soothes redness and acne",
+    name: "Skin Recovery",
+    quote: "Soothes redness & acne, skin looks smooth and radiant.",
+  },
+  {
+    img: reviewOverall.url,
+    alt: "Customer Review - Joint & skin improvement",
+    name: "Loyal Customer",
+    quote: "Joint pain improved, skin smoother — daily life feels easier!",
   },
 ];
 

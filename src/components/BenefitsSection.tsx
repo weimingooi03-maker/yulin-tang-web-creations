@@ -21,7 +21,7 @@ import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 import naturalIngredients from "@/assets/natural-ingredients.png";
-import sterilizationSafety from "@/assets/sterilization-safety.png.asset.json";
+
 
 const benefitVisuals = [
   {

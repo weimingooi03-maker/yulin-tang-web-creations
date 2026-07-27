@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import setaPhoto from "@/assets/seta-photo.png";
 import productSetB from "@/assets/setb-photo.png";
 import productSetC from "@/assets/setc-photo.png";
+import giftBoxPhoto from "@/assets/product-box-bottle.jpeg";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Truck, Package, Flame, Check, Crown, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";
@@ -148,6 +149,30 @@ const ProductsSection = () => {
           <p className="text-sm sm:text-base text-muted-foreground mt-2 font-medium tracking-wide">
             FREE Shipping to All Malaysia & Singapore
           </p>
+        </div>
+
+        {/* Gift box packaging banner */}
+        <div className="max-w-3xl mx-auto mb-8">
+          <div className="rounded-2xl border border-border/60 bg-muted/20 p-4 sm:p-5 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="w-full sm:w-40 md:w-48 shrink-0 rounded-xl overflow-hidden bg-background shadow-sm">
+              <img
+                src={giftBoxPhoto}
+                alt="精美礼盒包装 Premium Gift Box Packaging"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="text-center sm:text-left">
+              <p className="text-lg sm:text-xl font-bold text-foreground mb-1">
+                精美礼盒包装
+              </p>
+              <p className="text-sm sm:text-base text-primary font-semibold mb-2">
+                Premium Gift Box Packaging
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                真实出货包装 · 送礼自用两相宜 · Actual packaging shipped to you
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Main package card */}

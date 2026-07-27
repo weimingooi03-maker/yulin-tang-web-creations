@@ -126,7 +126,7 @@ const HeroSection = () => {
                   src={slide.src}
                   alt={slide.alt}
                   draggable={false}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1400ms] ease-in-out select-none ${
+                  className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-[1400ms] ease-in-out select-none ${
                     idx === activeSlide ? "opacity-100 animate-hero-float" : "opacity-0"
                   }`}
                 />

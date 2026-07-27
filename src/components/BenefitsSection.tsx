@@ -401,22 +401,22 @@ const BenefitsSection = () => {
           >
             <CarouselContent className="-ml-4">
               {reviews.map((r, i) => (
-                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full hover:shadow-xl transition-shadow duration-300">
-                    <img
-                      src={r.img}
-                      alt={r.alt}
-                      loading="lazy"
-                      decoding="async"
-                      width={800}
-                      height={800}
-                      sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
-                      className="w-full h-auto aspect-square object-cover"
-                    />
-                    <div className="p-4">
+                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 flex">
+                  <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full w-full hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                    <div className="aspect-square overflow-hidden bg-muted/30">
+                      <img
+                        src={r.img}
+                        alt={r.alt}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="p-4 flex flex-col flex-grow">
                       <p className="text-sm font-bold text-foreground mb-1">
                         {r.nameZh}
-                        <span className="ml-1.5 text-xs text-primary font-semibold uppercase tracking-wide">
+                        <span className="ml-1.5 text-[10px] sm:text-xs text-primary font-semibold uppercase tracking-wide">
                           {r.nameEn}
                         </span>
                       </p>

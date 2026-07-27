@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import sterilizationSafety from "@/assets/sterilization-safety.png.asset.json";
+import sterilizationSafety from "@/assets/sterilization-safety.png";
 
 const SafetySection = () => {
   return (

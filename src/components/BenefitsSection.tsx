@@ -10,12 +10,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.png";
-import reviewFishy from "@/assets/review-fishy-taste.jpeg.asset.json";
-import reviewKnees from "@/assets/review-knees-comfort.jpeg.asset.json";
-import reviewWalk from "@/assets/review-walk-longer.jpeg.asset.json";
-import reviewSkinVisible from "@/assets/review-skin-visible.jpeg.asset.json";
-import reviewSkinAcne from "@/assets/review-skin-acne.jpeg.asset.json";
-import reviewOverall from "@/assets/review-overall.jpeg.asset.json";
+import reviewFishy from "@/assets/review-fishy-taste.jpeg";
+import reviewKnees from "@/assets/review-knees-comfort.jpeg";
+import reviewWalk from "@/assets/review-walk-longer.jpeg";
+import reviewSkinVisible from "@/assets/review-skin-visible.jpeg";
+import reviewSkinAcne from "@/assets/review-skin-acne.jpeg";
+import reviewOverall from "@/assets/review-overall.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
 import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";

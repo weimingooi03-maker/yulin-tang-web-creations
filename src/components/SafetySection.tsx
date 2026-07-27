@@ -18,7 +18,7 @@ const SafetySection = () => {
           <Card className="overflow-hidden border-border/50 shadow-xl">
             <div className="rounded-2xl overflow-hidden p-4">
               <img
-                src={sterilizationSafety.url}
+                src={sterilizationSafety}
                 alt="高温真空杀菌 - 365天常温保存，无防腐剂，锁住营养安心饮用"
                 loading="lazy"
                 className="w-full max-w-sm mx-auto h-auto"

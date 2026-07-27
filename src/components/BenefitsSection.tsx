@@ -68,7 +68,7 @@ const benefitVisuals = [
 
 const reviews = [
   {
-    img: reviewFishy.url,
+    img: reviewFishy,
     alt: "Customer Review - No fishy taste",
     nameZh: "口感认可",
     nameEn: "Taste Approved",
@@ -76,7 +76,7 @@ const reviews = [
     quoteEn: "It doesn't taste fishy, and it's not overly sweet.",
   },
   {
-    img: reviewKnees.url,
+    img: reviewKnees,
     alt: "Customer Review - Knees feel more comfortable after 2 weeks",
     nameZh: "2星期就见效",
     nameEn: "Results in 2 Weeks",
@@ -84,7 +84,7 @@ const reviews = [
     quoteEn: "Knees feel more comfortable and walking is much smoother!",
   },
   {
-    img: reviewWalk.url,
+    img: reviewWalk,
     alt: "Customer Review - Can walk longer without resting",
     nameZh: "走路更有力",
     nameEn: "Walk Longer",
@@ -92,7 +92,7 @@ const reviews = [
     quoteEn: "She can walk much longer without needing to rest.",
   },
   {
-    img: reviewSkinVisible.url,
+    img: reviewSkinVisible,
     alt: "Customer Review - Visible skin changes, healthier glow",
     nameZh: "真实改善",
     nameEn: "Real Result",
@@ -100,7 +100,7 @@ const reviews = [
     quoteEn: "My skin has become more stable, I feel more confident every day!",
   },
   {
-    img: reviewSkinAcne.url,
+    img: reviewSkinAcne,
     alt: "Customer Review - Soothes redness and acne",
     nameZh: "肌肤修复",
     nameEn: "Skin Recovery",
@@ -108,7 +108,7 @@ const reviews = [
     quoteEn: "Soothes redness & acne, skin looks smooth and radiant.",
   },
   {
-    img: reviewOverall.url,
+    img: reviewOverall,
     alt: "Customer Review - Joint & skin improvement",
     nameZh: "忠实顾客",
     nameEn: "Loyal Customer",

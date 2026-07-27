@@ -70,38 +70,50 @@ const reviews = [
   {
     img: reviewFishy.url,
     alt: "Customer Review - No fishy taste",
-    name: "Taste Approved",
-    quote: "It doesn't taste fishy, and it's not overly sweet.",
+    nameZh: "口感认可",
+    nameEn: "Taste Approved",
+    quoteZh: "没有鱼腥味，也不会太甜。",
+    quoteEn: "It doesn't taste fishy, and it's not overly sweet.",
   },
   {
     img: reviewKnees.url,
     alt: "Customer Review - Knees feel more comfortable after 2 weeks",
-    name: "Mom · 2 Weeks",
-    quote: "Knees feel more comfortable and walking is much smoother!",
+    nameZh: "2星期就见效",
+    nameEn: "Results in 2 Weeks",
+    quoteZh: "膝盖比较舒服，走路也顺畅多了！",
+    quoteEn: "Knees feel more comfortable and walking is much smoother!",
   },
   {
     img: reviewWalk.url,
     alt: "Customer Review - Can walk longer without resting",
-    name: "Mom · 2 Weeks",
-    quote: "She can walk much longer without needing to rest.",
+    nameZh: "走路更有力",
+    nameEn: "Walk Longer",
+    quoteZh: "可以走更久，不需要一直停下来休息。",
+    quoteEn: "She can walk much longer without needing to rest.",
   },
   {
     img: reviewSkinVisible.url,
     alt: "Customer Review - Visible skin changes, healthier glow",
-    name: "Real Result",
-    quote: "My skin has become more stable, I feel more confident every day!",
+    nameZh: "真实改善",
+    nameEn: "Real Result",
+    quoteZh: "皮肤变得比较稳定，每天都更有自信！",
+    quoteEn: "My skin has become more stable, I feel more confident every day!",
   },
   {
     img: reviewSkinAcne.url,
     alt: "Customer Review - Soothes redness and acne",
-    name: "Skin Recovery",
-    quote: "Soothes redness & acne, skin looks smooth and radiant.",
+    nameZh: "肌肤修复",
+    nameEn: "Skin Recovery",
+    quoteZh: "舒缓泛红和痘痘，皮肤看起来光滑透亮。",
+    quoteEn: "Soothes redness & acne, skin looks smooth and radiant.",
   },
   {
     img: reviewOverall.url,
     alt: "Customer Review - Joint & skin improvement",
-    name: "Loyal Customer",
-    quote: "Joint pain improved, skin smoother — daily life feels easier!",
+    nameZh: "忠实顾客",
+    nameEn: "Loyal Customer",
+    quoteZh: "关节比较不痛，皮肤更滑顺，日常生活轻松多了！",
+    quoteEn: "Joint pain improved, skin smoother — daily life feels easier!",
   },
 ];
 
@@ -402,8 +414,14 @@ const BenefitsSection = () => {
                       className="w-full h-auto aspect-square object-cover"
                     />
                     <div className="p-4">
-                      <p className="text-sm font-bold text-foreground mb-1">{r.name}</p>
-                      <p className="text-xs text-muted-foreground">"{r.quote}"</p>
+                      <p className="text-sm font-bold text-foreground mb-1">
+                        {r.nameZh}
+                        <span className="ml-1.5 text-xs text-primary font-semibold uppercase tracking-wide">
+                          {r.nameEn}
+                        </span>
+                      </p>
+                      <p className="text-xs text-foreground/90 leading-snug mb-1">"{r.quoteZh}"</p>
+                      <p className="text-[10px] text-muted-foreground leading-snug">"{r.quoteEn}"</p>
                     </div>
                   </div>
                 </CarouselItem>

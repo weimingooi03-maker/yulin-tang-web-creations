@@ -24,6 +24,9 @@ const schema = z.object({
   address: z.string().trim().min(8, "请输入完整地址").max(300),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
   state: z.string().trim().max(60).optional().or(z.literal("")),
+  paymentMethod: z.enum(["bank", "tng", "qr", "cod"], {
+    errorMap: () => ({ message: "请选择付款方式" }),
+  }),
   notes: z.string().trim().max(500).optional().or(z.literal("")),
 });
 
@@ -40,6 +43,7 @@ const Checkout = () => {
     address: "",
     postcode: "",
     state: "",
+    paymentMethod: "" as "bank" | "tng" | "qr" | "cod" | "",
     notes: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -63,6 +67,18 @@ const Checkout = () => {
     { value: "Putrajaya", label: "Putrajaya" },
     { value: "Labuan", label: "Labuan" },
   ];
+
+  const PAYMENT_OPTIONS = [
+    { value: "bank", zh: "银行转账", en: "Bank Transfer", note: "Bank Account" },
+    { value: "tng", zh: "TNG 电子钱包", en: "TNG eWallet", note: "Touch 'n Go" },
+    { value: "qr", zh: "QR 扫码付款", en: "QR Payment", note: "DuitNow / PayNow" },
+    { value: "cod", zh: "货到付款", en: "Cash on Delivery", note: "Pay upon delivery" },
+  ] as const;
+
+  const paymentLabel = (value: string) => {
+    const opt = PAYMENT_OPTIONS.find((o) => o.value === value);
+    return opt ? `${opt.zh} / ${opt.en}` : value;
+  };
 
   const composeMessage = (d: z.infer<typeof schema>) => {
     const itemText = items
@@ -98,6 +114,12 @@ const Checkout = () => {
       `合计 Total：${currencySymbol} ${subtotal.toFixed(2)}`,
       "运费 Shipping：免运 Free",
       `送货地区 Region：${regionLine}`,
+      "",
+      "────────────",
+      "",
+      "💳 *付款方式偏好 Payment Preference*",
+      "",
+      paymentLabel(d.paymentMethod),
       "",
       "────────────",
       "",
@@ -144,6 +166,11 @@ const Checkout = () => {
     if (region === "MY" && !result.data.state.trim()) {
       setErrors({ state: "Please select a state" });
       toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
+      return;
+    }
+    if (!result.data.paymentMethod) {
+      setErrors({ paymentMethod: "请选择付款方式 / Please select a payment method" });
+      toast({ title: "请检查表单", description: "请选择付款方式", variant: "destructive" });
       return;
     }
     setErrors({});
@@ -324,6 +351,33 @@ const Checkout = () => {
                   </button>
                 </div>
               </div>
+
+              <div>
+                <Label className="mb-2 block">付款方式偏好 Payment Method Preference *</Label>
+                <p className="text-xs text-muted-foreground mb-3">选择偏好后，客服将透过 WhatsApp 发送对应付款详情。</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {PAYMENT_OPTIONS.map((opt) => {
+                    const selected = form.paymentMethod === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        onClick={() => setForm((f) => ({ ...f, paymentMethod: opt.value }))}
+                        className={`text-left border rounded-lg px-3 py-3 transition-all ${
+                          selected
+                            ? "border-primary bg-primary/10 ring-1 ring-primary"
+                            : "border-border hover:border-primary/50 hover:bg-muted/50"
+                        }`}
+                      >
+                        <p className={`text-sm font-semibold ${selected ? "text-primary" : ""}`}>{opt.zh}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{opt.en}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+                {errors.paymentMethod && <p className="text-xs text-destructive mt-2">{errors.paymentMethod}</p>}
+              </div>
+
               <div>
                 <Label htmlFor="notes">备注 Notes (选填)</Label>
                 <Textarea id="notes" value={form.notes} onChange={set("notes")} maxLength={500} rows={3} />

@@ -272,7 +272,8 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-lg font-bold pt-2 border-t">
                       <span>合计 Total</span>
-                      <span className="text-primary">{currencySymbol} {subtotal.toFixed(2)}</span>
+                      <span className="text-primary tabular-nums">{formatPrice(subtotal)}</span>
+
                     </div>
                   </div>
                 </>

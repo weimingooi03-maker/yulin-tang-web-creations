@@ -333,22 +333,23 @@ const ProductsSection = () => {
               {/* Price */}
               <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <span className="text-sm text-muted-foreground line-through">
-                    {currency} {originalTotal}
+                  <span className="text-sm text-muted-foreground line-through tabular-nums">
+                    {formatPrice(originalTotal, country)}
                   </span>
-                  <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">
-                    省 {currency} {totalSavings} · Save {currency} {totalSavings}
+                  <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded tabular-nums">
+                    省 Save {formatPrice(totalSavings, country)}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight">
-                    {currency} {total}
+                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
+                    {formatPrice(total, country)}
                   </span>
                 </div>
-                <div className="text-[11px] text-muted-foreground mt-2">
-                  每瓶 / per bottle {currency} {(total / (selected.qty * quantity)).toFixed(2)}
+                <div className="text-[11px] text-muted-foreground mt-2 tabular-nums">
+                  每瓶 / per bottle {formatPrice(total / (selected.qty * quantity), country)}
                 </div>
               </div>
+
 
               {/* Stock urgency bar */}
               {(() => {

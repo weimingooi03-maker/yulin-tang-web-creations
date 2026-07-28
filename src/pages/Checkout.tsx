@@ -24,6 +24,9 @@ const schema = z.object({
   address: z.string().trim().min(8, "请输入完整地址").max(300),
   postcode: z.string().trim().min(3, "请输入邮编").max(15),
   state: z.string().trim().max(60).optional().or(z.literal("")),
+  paymentMethod: z.enum(["bank", "tng", "qr", "cod"], {
+    errorMap: () => ({ message: "请选择付款方式" }),
+  }),
   notes: z.string().trim().max(500).optional().or(z.literal("")),
 });
 

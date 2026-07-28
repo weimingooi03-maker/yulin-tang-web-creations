@@ -59,9 +59,10 @@ const CartDrawer = () => {
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-sm truncate">{item.nameZh}</p>
                     <p className="text-xs text-muted-foreground truncate">{item.nameEn} · {item.qtyLabel}</p>
-                    <p className="text-primary font-bold text-sm mt-1">
-                      {currencySymbol} {(price * item.quantity).toFixed(2)}
+                    <p className="text-primary font-bold text-sm mt-1 tabular-nums">
+                      {formatPrice(price * item.quantity)}
                     </p>
+
                   </div>
                   <div className="flex flex-col items-end justify-between">
                     <button onClick={() => removeItem(item.id)} className="text-muted-foreground hover:text-destructive">

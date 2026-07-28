@@ -97,10 +97,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     subtotal,
     currency: region === "MY" ? "RM" : "SGD",
     currencySymbol: region === "MY" ? "RM" : "$",
+    formatPrice: (amount, options) => formatPrice(amount, region as PriceRegion, options),
     isOpen,
     openCart: () => setIsOpen(true),
     closeCart: () => setIsOpen(false),
   };
+
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

@@ -93,7 +93,6 @@ const ProductsSection = () => {
   const selected = products.find((p) => p.id === selectedId)!;
 
   const isMY = country === "MY";
-  const currency = isMY ? "RM" : "SGD";
   const unitPrice = isMY ? selected.priceMY : selected.priceSG;
   const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
 

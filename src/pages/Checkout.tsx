@@ -113,9 +113,10 @@ const Checkout = () => {
       "",
       "💰 *订单总额 Order Total*",
       "",
-      `合计 Total：${currencySymbol} ${subtotal.toFixed(2)}`,
+      `合计 Total：${formatPrice(subtotal)}`,
       "运费 Shipping：免运 Free",
       `送货地区 Region：${regionLine}`,
+
       "",
       "────────────",
       "",

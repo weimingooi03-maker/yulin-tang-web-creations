@@ -168,6 +168,11 @@ const Checkout = () => {
       toast({ title: "请检查表单", description: "马来西亚订单请填写州属", variant: "destructive" });
       return;
     }
+    if (!result.data.paymentMethod) {
+      setErrors({ paymentMethod: "请选择付款方式 / Please select a payment method" });
+      toast({ title: "请检查表单", description: "请选择付款方式", variant: "destructive" });
+      return;
+    }
     setErrors({});
     setSubmitting(true);
 

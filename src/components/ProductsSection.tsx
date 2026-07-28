@@ -9,6 +9,8 @@ import { ShoppingCart, Truck, Package, Flame, Check, Minus, Plus, Sparkles, Time
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
+import { formatPrice } from "@/lib/utils";
+
 
 const products = [
   {
@@ -91,7 +93,6 @@ const ProductsSection = () => {
   const selected = products.find((p) => p.id === selectedId)!;
 
   const isMY = country === "MY";
-  const currency = isMY ? "RM" : "SGD";
   const unitPrice = isMY ? selected.priceMY : selected.priceSG;
   const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
 
@@ -300,12 +301,13 @@ const ProductsSection = () => {
                     <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
                     <div className="leading-tight min-w-0">
                       <div className="text-xs sm:text-sm font-bold text-destructive truncate">
-                        限时额外 −RM {EXTRA_OFF_MY}（已包含在价钱内）
+                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off（已包含在价钱内）
                       </div>
                       <div className="text-[10px] text-muted-foreground truncate">
-                        Extra RM {EXTRA_OFF_MY} off already applied · ends soon
+                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off already applied · ends soon
                       </div>
                     </div>
+
                   </div>
                   <div
                     aria-live="polite"
@@ -331,22 +333,23 @@ const ProductsSection = () => {
               {/* Price */}
               <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <span className="text-sm text-muted-foreground line-through">
-                    {currency} {originalTotal}
+                  <span className="text-sm text-muted-foreground line-through tabular-nums">
+                    {formatPrice(originalTotal, country)}
                   </span>
-                  <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded">
-                    省 {currency} {totalSavings} · Save {currency} {totalSavings}
+                  <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded tabular-nums">
+                    省 Save {formatPrice(totalSavings, country)}
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight">
-                    {currency} {total}
+                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
+                    {formatPrice(total, country)}
                   </span>
                 </div>
-                <div className="text-[11px] text-muted-foreground mt-2">
-                  每瓶 / per bottle {currency} {(total / (selected.qty * quantity)).toFixed(2)}
+                <div className="text-[11px] text-muted-foreground mt-2 tabular-nums">
+                  每瓶 / per bottle {formatPrice(total / (selected.qty * quantity), country)}
                 </div>
               </div>
+
 
               {/* Stock urgency bar */}
               {(() => {

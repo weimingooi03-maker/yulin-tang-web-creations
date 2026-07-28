@@ -6,7 +6,8 @@ import { useCart } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
-  const { isOpen, closeCart, items, updateQty, removeItem, subtotal, currencySymbol, region, setRegion, count } = useCart();
+  const { isOpen, closeCart, items, updateQty, removeItem, subtotal, formatPrice, region, setRegion, count } = useCart();
+
   const navigate = useNavigate();
 
   const goCheckout = () => {
@@ -58,9 +59,10 @@ const CartDrawer = () => {
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-sm truncate">{item.nameZh}</p>
                     <p className="text-xs text-muted-foreground truncate">{item.nameEn} · {item.qtyLabel}</p>
-                    <p className="text-primary font-bold text-sm mt-1">
-                      {currencySymbol} {(price * item.quantity).toFixed(2)}
+                    <p className="text-primary font-bold text-sm mt-1 tabular-nums">
+                      {formatPrice(price * item.quantity)}
                     </p>
+
                   </div>
                   <div className="flex flex-col items-end justify-between">
                     <button onClick={() => removeItem(item.id)} className="text-muted-foreground hover:text-destructive">
@@ -86,10 +88,11 @@ const CartDrawer = () => {
           <div className="w-full space-y-3">
             <div className="flex justify-between items-baseline">
               <span className="text-muted-foreground">小计 Subtotal</span>
-              <span className="text-2xl font-bold text-primary">
-                {currencySymbol} {subtotal.toFixed(2)}
+              <span className="text-2xl font-bold text-primary tabular-nums">
+                {formatPrice(subtotal)}
               </span>
             </div>
+
             <p className="text-xs text-muted-foreground inline-flex items-center gap-1.5">
               {region === "MY" ? <><FlagIcon country="MY" className="w-3.5" /> 全马免运 Free shipping</> : <><FlagIcon country="SG" className="w-3.5" /> 新加坡免运 Free shipping</>}
             </p>

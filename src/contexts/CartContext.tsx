@@ -1,4 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, ReactNode } from "react";
+import { formatPrice, type PriceRegion } from "@/lib/utils";
+
 
 export type Region = "MY" | "SG";
 
@@ -26,10 +28,12 @@ type CartContextType = {
   subtotal: number;
   currency: string;
   currencySymbol: string;
+  formatPrice: (amount: number, options?: { decimals?: number; compact?: boolean }) => string;
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
 };
+
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -93,10 +97,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     subtotal,
     currency: region === "MY" ? "RM" : "SGD",
     currencySymbol: region === "MY" ? "RM" : "$",
+    formatPrice: (amount, options) => formatPrice(amount, region as PriceRegion, options),
     isOpen,
     openCart: () => setIsOpen(true),
     closeCart: () => setIsOpen(false),
   };
+
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

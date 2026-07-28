@@ -33,7 +33,8 @@ const schema = z.object({
 const WA_NUMBER = "601158727742";
 
 const Checkout = () => {
-  const { items, subtotal, currencySymbol, region, setRegion, clear, updateQty, removeItem } = useCart();
+  const { items, subtotal, formatPrice, region, setRegion, clear, updateQty, removeItem } = useCart();
+
   const { toast } = useToast();
   const navigate = useNavigate();
 
@@ -87,8 +88,9 @@ const Checkout = () => {
         const lineTotal = price * item.quantity;
         // Strip 配套 from English name per existing convention
         const en = item.nameEn.replace(/配套/g, "").trim();
-        return `${idx + 1}. *${item.nameZh}* / ${en}\n   数量 Qty：× ${item.quantity}\n   小计 Subtotal：${currencySymbol} ${lineTotal.toFixed(2)}`;
+        return `${idx + 1}. *${item.nameZh}* / ${en}\n   数量 Qty：× ${item.quantity}\n   小计 Subtotal：${formatPrice(lineTotal)}`;
       })
+
       .join("\n\n");
 
     const regionLine = region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore";
@@ -111,9 +113,10 @@ const Checkout = () => {
       "",
       "💰 *订单总额 Order Total*",
       "",
-      `合计 Total：${currencySymbol} ${subtotal.toFixed(2)}`,
+      `合计 Total：${formatPrice(subtotal)}`,
       "运费 Shipping：免运 Free",
       `送货地区 Region：${regionLine}`,
+
       "",
       "────────────",
       "",
@@ -249,9 +252,10 @@ const Checkout = () => {
                                 <span className="px-2">{item.quantity}</span>
                                 <button type="button" onClick={() => updateQty(item.id, item.quantity + 1)} className="px-2 py-0.5">+</button>
                               </div>
-                              <span className="text-sm font-bold text-primary">
-                                {currencySymbol} {(price * item.quantity).toFixed(2)}
+                              <span className="text-sm font-bold text-primary tabular-nums">
+                                {formatPrice(price * item.quantity)}
                               </span>
+
                             </div>
                           </div>
                           <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-muted-foreground hover:text-destructive">
@@ -268,7 +272,8 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-lg font-bold pt-2 border-t">
                       <span>合计 Total</span>
-                      <span className="text-primary">{currencySymbol} {subtotal.toFixed(2)}</span>
+                      <span className="text-primary tabular-nums">{formatPrice(subtotal)}</span>
+
                     </div>
                   </div>
                 </>

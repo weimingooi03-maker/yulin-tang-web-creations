@@ -33,7 +33,8 @@ const schema = z.object({
 const WA_NUMBER = "601158727742";
 
 const Checkout = () => {
-  const { items, subtotal, currencySymbol, region, setRegion, clear, updateQty, removeItem } = useCart();
+  const { items, subtotal, formatPrice, region, setRegion, clear, updateQty, removeItem } = useCart();
+
   const { toast } = useToast();
   const navigate = useNavigate();
 

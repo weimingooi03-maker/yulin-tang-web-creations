@@ -92,7 +92,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     count,
     subtotal,
     currency: region === "MY" ? "RM" : "SGD",
-    currencySymbol: region === "MY" ? "RM" : "S$",
+    currencySymbol: region === "MY" ? "RM" : "$",
     isOpen,
     openCart: () => setIsOpen(true),
     closeCart: () => setIsOpen(false),

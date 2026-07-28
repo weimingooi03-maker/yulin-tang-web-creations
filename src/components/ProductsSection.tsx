@@ -9,6 +9,8 @@ import { ShoppingCart, Truck, Package, Flame, Check, Minus, Plus, Sparkles, Time
 import { FlagIcon } from "@/components/FlagIcon";
 import { useCart, type CartProduct } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
+import { formatPrice } from "@/lib/utils";
+
 
 const products = [
   {

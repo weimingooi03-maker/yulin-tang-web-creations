@@ -302,12 +302,13 @@ const ProductsSection = () => {
                     <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
                     <div className="leading-tight min-w-0">
                       <div className="text-xs sm:text-sm font-bold text-destructive truncate">
-                        限时额外 −RM {EXTRA_OFF_MY}（已包含在价钱内）
+                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off（已包含在价钱内）
                       </div>
                       <div className="text-[10px] text-muted-foreground truncate">
-                        Extra RM {EXTRA_OFF_MY} off already applied · ends soon
+                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off already applied · ends soon
                       </div>
                     </div>
+
                   </div>
                   <div
                     aria-live="polite"

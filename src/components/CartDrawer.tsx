@@ -88,10 +88,11 @@ const CartDrawer = () => {
           <div className="w-full space-y-3">
             <div className="flex justify-between items-baseline">
               <span className="text-muted-foreground">小计 Subtotal</span>
-              <span className="text-2xl font-bold text-primary">
-                {currencySymbol} {subtotal.toFixed(2)}
+              <span className="text-2xl font-bold text-primary tabular-nums">
+                {formatPrice(subtotal)}
               </span>
             </div>
+
             <p className="text-xs text-muted-foreground inline-flex items-center gap-1.5">
               {region === "MY" ? <><FlagIcon country="MY" className="w-3.5" /> 全马免运 Free shipping</> : <><FlagIcon country="SG" className="w-3.5" /> 新加坡免运 Free shipping</>}
             </p>

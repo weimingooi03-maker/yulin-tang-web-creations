@@ -28,10 +28,12 @@ type CartContextType = {
   subtotal: number;
   currency: string;
   currencySymbol: string;
+  formatPrice: (amount: number, options?: { decimals?: number; compact?: boolean }) => string;
   isOpen: boolean;
   openCart: () => void;
   closeCart: () => void;
 };
+
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 

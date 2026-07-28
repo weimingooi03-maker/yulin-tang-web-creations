@@ -351,6 +351,33 @@ const Checkout = () => {
                   </button>
                 </div>
               </div>
+
+              <div>
+                <Label className="mb-2 block">付款方式偏好 Payment Method Preference *</Label>
+                <p className="text-xs text-muted-foreground mb-3">选择偏好后，客服将透过 WhatsApp 发送对应付款详情。</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {PAYMENT_OPTIONS.map((opt) => {
+                    const selected = form.paymentMethod === opt.value;
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        onClick={() => setForm((f) => ({ ...f, paymentMethod: opt.value }))}
+                        className={`text-left border rounded-lg px-3 py-3 transition-all ${
+                          selected
+                            ? "border-primary bg-primary/10 ring-1 ring-primary"
+                            : "border-border hover:border-primary/50 hover:bg-muted/50"
+                        }`}
+                      >
+                        <p className={`text-sm font-semibold ${selected ? "text-primary" : ""}`}>{opt.zh}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5">{opt.en}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+                {errors.paymentMethod && <p className="text-xs text-destructive mt-2">{errors.paymentMethod}</p>}
+              </div>
+
               <div>
                 <Label htmlFor="notes">备注 Notes (选填)</Label>
                 <Textarea id="notes" value={form.notes} onChange={set("notes")} maxLength={500} rows={3} />

@@ -68,6 +68,18 @@ const Checkout = () => {
     { value: "Labuan", label: "Labuan" },
   ];
 
+  const PAYMENT_OPTIONS = [
+    { value: "bank", zh: "银行转账", en: "Bank Transfer", note: "Bank Account" },
+    { value: "tng", zh: "TNG 电子钱包", en: "TNG eWallet", note: "Touch 'n Go" },
+    { value: "qr", zh: "QR 扫码付款", en: "QR Payment", note: "DuitNow / PayNow" },
+    { value: "cod", zh: "货到付款", en: "Cash on Delivery", note: "Pay upon delivery" },
+  ] as const;
+
+  const paymentLabel = (value: string) => {
+    const opt = PAYMENT_OPTIONS.find((o) => o.value === value);
+    return opt ? `${opt.zh} / ${opt.en}` : value;
+  };
+
   const composeMessage = (d: z.infer<typeof schema>) => {
     const itemText = items
       .map((item, idx) => {
@@ -102,6 +114,12 @@ const Checkout = () => {
       `合计 Total：${currencySymbol} ${subtotal.toFixed(2)}`,
       "运费 Shipping：免运 Free",
       `送货地区 Region：${regionLine}`,
+      "",
+      "────────────",
+      "",
+      "💳 *付款方式偏好 Payment Preference*",
+      "",
+      paymentLabel(d.paymentMethod),
       "",
       "────────────",
       "",

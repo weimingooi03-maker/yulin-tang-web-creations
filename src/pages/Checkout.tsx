@@ -88,7 +88,8 @@ const Checkout = () => {
         const lineTotal = price * item.quantity;
         // Strip 配套 from English name per existing convention
         const en = item.nameEn.replace(/配套/g, "").trim();
-        return `${idx + 1}. *${item.nameZh}* / ${en}\n   数量 Qty：× ${item.quantity}\n   小计 Subtotal：${currencySymbol} ${lineTotal.toFixed(2)}`;
+        return `${idx + 1}. *${item.nameZh}* / ${en}\n   数量 Qty：× ${item.quantity}\n   小计 Subtotal：${formatPrice(lineTotal)}`;
+
       })
       .join("\n\n");
 

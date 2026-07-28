@@ -252,9 +252,10 @@ const Checkout = () => {
                                 <span className="px-2">{item.quantity}</span>
                                 <button type="button" onClick={() => updateQty(item.id, item.quantity + 1)} className="px-2 py-0.5">+</button>
                               </div>
-                              <span className="text-sm font-bold text-primary">
-                                {currencySymbol} {(price * item.quantity).toFixed(2)}
+                              <span className="text-sm font-bold text-primary tabular-nums">
+                                {formatPrice(price * item.quantity)}
                               </span>
+
                             </div>
                           </div>
                           <button type="button" onClick={() => removeItem(item.id)} className="text-xs text-muted-foreground hover:text-destructive">

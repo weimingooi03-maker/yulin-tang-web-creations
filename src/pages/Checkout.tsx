@@ -43,6 +43,7 @@ const Checkout = () => {
     address: "",
     postcode: "",
     state: "",
+    paymentMethod: "" as "bank" | "tng" | "qr" | "cod" | "",
     notes: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});

@@ -6,7 +6,8 @@ import { useCart } from "@/contexts/CartContext";
 import { useNavigate } from "react-router-dom";
 
 const CartDrawer = () => {
-  const { isOpen, closeCart, items, updateQty, removeItem, subtotal, currencySymbol, region, setRegion, count } = useCart();
+  const { isOpen, closeCart, items, updateQty, removeItem, subtotal, formatPrice, region, setRegion, count } = useCart();
+
   const navigate = useNavigate();
 
   const goCheckout = () => {

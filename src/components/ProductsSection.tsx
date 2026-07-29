@@ -263,7 +263,7 @@ const ProductsSection = () => {
 
           {/* Selected package detail */}
           <div className="grid md:grid-cols-2">
-            <div className="relative aspect-square md:aspect-auto bg-muted/20 overflow-hidden">
+            <div className="relative hidden md:block bg-muted/20 overflow-hidden">
               <img
                 key={selected.id}
                 src={selected.image}
@@ -271,6 +271,7 @@ const ProductsSection = () => {
                 className="w-full h-full object-cover animate-fade-in"
               />
             </div>
+
 
             <CardContent className="p-4 sm:p-8 flex flex-col justify-center">
               <div className="inline-flex self-start items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold mb-2 sm:mb-3">

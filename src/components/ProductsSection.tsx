@@ -263,7 +263,7 @@ const ProductsSection = () => {
 
           {/* Selected package detail */}
           <div className="grid md:grid-cols-2">
-            <div className="relative aspect-square md:aspect-auto bg-muted/20 overflow-hidden">
+            <div className="relative hidden md:block bg-muted/20 overflow-hidden">
               <img
                 key={selected.id}
                 src={selected.image}
@@ -272,55 +272,56 @@ const ProductsSection = () => {
               />
             </div>
 
-            <CardContent className="p-6 sm:p-8 flex flex-col justify-center">
-              <div className="inline-flex self-start items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-semibold mb-3">
+
+            <CardContent className="p-4 sm:p-8 flex flex-col justify-center">
+              <div className="inline-flex self-start items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold mb-2 sm:mb-3">
                 {selected.badge} · {selected.badgeEn}
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+              <h3 className="text-xl sm:text-3xl font-bold text-foreground leading-tight">
                 {selected.nameZh}
               </h3>
-              <p className="text-sm text-muted-foreground font-medium mb-4">
+              <p className="text-xs sm:text-sm text-muted-foreground font-medium mb-3 sm:mb-4">
                 {selected.nameEn}
               </p>
 
-              <div className="flex items-center justify-between text-sm text-foreground font-semibold mb-4 pb-4 border-b border-border/60">
-                <div className="flex items-center gap-2">
-                  <Package className="w-4 h-4 text-primary" />
-                  <span>{selected.qtyLabel} · {selected.qtyEn}</span>
+              <div className="flex items-center justify-between text-xs sm:text-sm text-foreground font-semibold mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-border/60 gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                  <Package className="w-4 h-4 text-primary shrink-0" />
+                  <span className="truncate">{selected.qtyLabel} · {selected.qtyEn}</span>
                 </div>
-                <div className="flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-bold">
-                  <Sparkles className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold shrink-0">
+                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   <span>7500mg</span>
                 </div>
               </div>
 
               {/* Regional promotion */}
               {isMY ? (
-                <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
+                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
                     <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
                     <div className="leading-tight min-w-0">
-                      <div className="text-xs sm:text-sm font-bold text-destructive truncate">
-                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off（已包含在价钱内）
+                      <div className="text-[11px] sm:text-sm font-bold text-destructive truncate">
+                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off
                       </div>
                       <div className="text-[10px] text-muted-foreground truncate">
-                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off already applied · ends soon
+                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off · ends soon
                       </div>
                     </div>
 
                   </div>
                   <div
                     aria-live="polite"
-                    className="tabular-nums font-mono font-bold text-sm sm:text-base bg-destructive text-white rounded-lg px-2.5 py-1 shadow-sm"
+                    className="tabular-nums font-mono font-bold text-xs sm:text-base bg-destructive text-white rounded-lg px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-sm shrink-0"
                   >
                     {mm}:{ss}
                   </div>
                 </div>
               ) : (
-                <div className="mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-3 py-2.5 flex items-center gap-2">
+                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2">
                   <Gift className="w-4 h-4 text-primary shrink-0" />
                   <div className="leading-tight min-w-0">
-                    <div className="text-xs sm:text-sm font-bold text-primary truncate">
+                    <div className="text-[11px] sm:text-sm font-bold text-primary truncate">
                       新加坡下单额外赠送产品
                     </div>
                     <div className="text-[10px] text-muted-foreground truncate">
@@ -331,9 +332,9 @@ const ProductsSection = () => {
               )}
 
               {/* Price */}
-              <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
+              <div className="mb-3 sm:mb-5 rounded-xl bg-muted/30 border border-border/60 p-3 sm:p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <span className="text-sm text-muted-foreground line-through tabular-nums">
+                  <span className="text-xs sm:text-sm text-muted-foreground line-through tabular-nums">
                     {formatPrice(originalTotal, country)}
                   </span>
                   <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded tabular-nums">
@@ -341,14 +342,15 @@ const ProductsSection = () => {
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
+                  <span className="text-3xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
                     {formatPrice(total, country)}
                   </span>
                 </div>
-                <div className="text-[11px] text-muted-foreground mt-2 tabular-nums">
+                <div className="text-[11px] text-muted-foreground mt-1.5 sm:mt-2 tabular-nums">
                   每瓶 / per bottle {formatPrice(total / (selected.qty * quantity), country)}
                 </div>
               </div>
+
 
 
               {/* Stock urgency bar */}
@@ -356,16 +358,16 @@ const ProductsSection = () => {
                 const pct = Math.max(5, Math.min(100, Math.round((selected.stockLeft / selected.stockTotal) * 100)));
                 const low = selected.stockLeft <= 5;
                 return (
-                  <div className="mb-4" aria-live="polite">
-                    <div className="flex items-center justify-between text-xs font-semibold mb-1.5">
-                      <span className={low ? "text-destructive" : "text-foreground"}>
+                  <div className="mb-3 sm:mb-4" aria-live="polite">
+                    <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold mb-1 sm:mb-1.5 gap-2">
+                      <span className={`truncate ${low ? "text-destructive" : "text-foreground"}`}>
                         本周仅剩 {selected.stockLeft} 份
                       </span>
-                      <span className="text-muted-foreground">
-                        Only {selected.stockLeft} left this week
+                      <span className="text-muted-foreground truncate">
+                        Only {selected.stockLeft} left
                       </span>
                     </div>
-                    <div className="relative h-2 rounded-full bg-muted overflow-hidden">
+                    <div className="relative h-1.5 sm:h-2 rounded-full bg-muted overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all duration-700 ease-out ${
                           low
@@ -384,24 +386,24 @@ const ProductsSection = () => {
                 role="group"
                 aria-labelledby="qty-label"
                 aria-describedby="qty-help"
-                className="flex items-center justify-between mb-4 pb-4 border-b border-border/60"
+                className="flex items-center justify-between mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-border/60 gap-2"
               >
-                <div className="flex flex-col leading-tight">
-                  <span id="qty-label" className="text-sm font-semibold text-foreground">
+                <div className="flex flex-col leading-tight min-w-0">
+                  <span id="qty-label" className="text-xs sm:text-sm font-semibold text-foreground">
                     份数 / Quantity
                   </span>
-                  <span id="qty-help" className="text-[11px] text-muted-foreground">
+                  <span id="qty-help" className="hidden sm:block text-[11px] text-muted-foreground">
                     使用 + / − 按钮调整 (1–99) · Use + / − to adjust
                   </span>
                 </div>
-                <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition">
+                <div className="flex items-center gap-2 sm:gap-3 border-2 border-border rounded-full px-1.5 py-0.5 sm:px-2 sm:py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition shrink-0">
                   <button
                     type="button"
                     aria-label={`减少份数，当前 ${quantity} 份 Decrease quantity`}
                     aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     disabled={quantity <= 1}
-                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
                     <Minus className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -410,7 +412,7 @@ const ProductsSection = () => {
                     role="status"
                     aria-live="polite"
                     aria-atomic="true"
-                    className="w-8 text-center text-lg font-bold text-foreground tabular-nums"
+                    className="w-7 sm:w-8 text-center text-base sm:text-lg font-bold text-foreground tabular-nums"
                   >
                     {quantity}
                   </span>
@@ -420,7 +422,7 @@ const ProductsSection = () => {
                     aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.min(99, q + 1))}
                     disabled={quantity >= 99}
-                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
                     <Plus className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -428,13 +430,14 @@ const ProductsSection = () => {
               </div>
 
               <Button
-                className="w-full font-bold text-base py-6 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="w-full font-bold text-sm sm:text-base py-4 sm:py-6 bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => handleBuyNow(selected)}
               >
-                <ShoppingCart className="w-5 h-5 mr-2" />
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 立即购买 Buy Now
                 {quantity > 1 && <span className="ml-2 opacity-90">× {quantity}</span>}
               </Button>
+
             </CardContent>
           </div>
         </Card>

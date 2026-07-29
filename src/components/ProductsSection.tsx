@@ -357,16 +357,16 @@ const ProductsSection = () => {
                 const pct = Math.max(5, Math.min(100, Math.round((selected.stockLeft / selected.stockTotal) * 100)));
                 const low = selected.stockLeft <= 5;
                 return (
-                  <div className="mb-4" aria-live="polite">
-                    <div className="flex items-center justify-between text-xs font-semibold mb-1.5">
-                      <span className={low ? "text-destructive" : "text-foreground"}>
+                  <div className="mb-3 sm:mb-4" aria-live="polite">
+                    <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold mb-1 sm:mb-1.5 gap-2">
+                      <span className={`truncate ${low ? "text-destructive" : "text-foreground"}`}>
                         本周仅剩 {selected.stockLeft} 份
                       </span>
-                      <span className="text-muted-foreground">
-                        Only {selected.stockLeft} left this week
+                      <span className="text-muted-foreground truncate">
+                        Only {selected.stockLeft} left
                       </span>
                     </div>
-                    <div className="relative h-2 rounded-full bg-muted overflow-hidden">
+                    <div className="relative h-1.5 sm:h-2 rounded-full bg-muted overflow-hidden">
                       <div
                         className={`h-full rounded-full transition-all duration-700 ease-out ${
                           low
@@ -385,24 +385,24 @@ const ProductsSection = () => {
                 role="group"
                 aria-labelledby="qty-label"
                 aria-describedby="qty-help"
-                className="flex items-center justify-between mb-4 pb-4 border-b border-border/60"
+                className="flex items-center justify-between mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-border/60 gap-2"
               >
-                <div className="flex flex-col leading-tight">
-                  <span id="qty-label" className="text-sm font-semibold text-foreground">
+                <div className="flex flex-col leading-tight min-w-0">
+                  <span id="qty-label" className="text-xs sm:text-sm font-semibold text-foreground">
                     份数 / Quantity
                   </span>
-                  <span id="qty-help" className="text-[11px] text-muted-foreground">
+                  <span id="qty-help" className="hidden sm:block text-[11px] text-muted-foreground">
                     使用 + / − 按钮调整 (1–99) · Use + / − to adjust
                   </span>
                 </div>
-                <div className="flex items-center gap-3 border-2 border-border rounded-full px-2 py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition">
+                <div className="flex items-center gap-2 sm:gap-3 border-2 border-border rounded-full px-1.5 py-0.5 sm:px-2 sm:py-1 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/30 transition shrink-0">
                   <button
                     type="button"
                     aria-label={`减少份数，当前 ${quantity} 份 Decrease quantity`}
                     aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     disabled={quantity <= 1}
-                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
                     <Minus className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -411,7 +411,7 @@ const ProductsSection = () => {
                     role="status"
                     aria-live="polite"
                     aria-atomic="true"
-                    className="w-8 text-center text-lg font-bold text-foreground tabular-nums"
+                    className="w-7 sm:w-8 text-center text-base sm:text-lg font-bold text-foreground tabular-nums"
                   >
                     {quantity}
                   </span>
@@ -421,7 +421,7 @@ const ProductsSection = () => {
                     aria-controls="qty-value"
                     onClick={() => setQuantity((q) => Math.min(99, q + 1))}
                     disabled={quantity >= 99}
-                    className="w-9 h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center hover:bg-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 disabled:opacity-40 disabled:cursor-not-allowed transition"
                   >
                     <Plus className="w-4 h-4" aria-hidden="true" />
                   </button>
@@ -429,13 +429,14 @@ const ProductsSection = () => {
               </div>
 
               <Button
-                className="w-full font-bold text-base py-6 bg-primary text-primary-foreground hover:bg-primary/90"
+                className="w-full font-bold text-sm sm:text-base py-4 sm:py-6 bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => handleBuyNow(selected)}
               >
-                <ShoppingCart className="w-5 h-5 mr-2" />
+                <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 立即购买 Buy Now
                 {quantity > 1 && <span className="ml-2 opacity-90">× {quantity}</span>}
               </Button>
+
             </CardContent>
           </div>
         </Card>

@@ -272,55 +272,55 @@ const ProductsSection = () => {
               />
             </div>
 
-            <CardContent className="p-6 sm:p-8 flex flex-col justify-center">
-              <div className="inline-flex self-start items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-semibold mb-3">
+            <CardContent className="p-4 sm:p-8 flex flex-col justify-center">
+              <div className="inline-flex self-start items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-semibold mb-2 sm:mb-3">
                 {selected.badge} · {selected.badgeEn}
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-foreground leading-tight">
+              <h3 className="text-xl sm:text-3xl font-bold text-foreground leading-tight">
                 {selected.nameZh}
               </h3>
-              <p className="text-sm text-muted-foreground font-medium mb-4">
+              <p className="text-xs sm:text-sm text-muted-foreground font-medium mb-3 sm:mb-4">
                 {selected.nameEn}
               </p>
 
-              <div className="flex items-center justify-between text-sm text-foreground font-semibold mb-4 pb-4 border-b border-border/60">
-                <div className="flex items-center gap-2">
-                  <Package className="w-4 h-4 text-primary" />
-                  <span>{selected.qtyLabel} · {selected.qtyEn}</span>
+              <div className="flex items-center justify-between text-xs sm:text-sm text-foreground font-semibold mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-border/60 gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                  <Package className="w-4 h-4 text-primary shrink-0" />
+                  <span className="truncate">{selected.qtyLabel} · {selected.qtyEn}</span>
                 </div>
-                <div className="flex items-center gap-1.5 bg-primary/10 text-primary px-2.5 py-1 rounded-full text-xs font-bold">
-                  <Sparkles className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-bold shrink-0">
+                  <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                   <span>7500mg</span>
                 </div>
               </div>
 
               {/* Regional promotion */}
               {isMY ? (
-                <div className="mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-3 py-2.5 flex items-center justify-between gap-2">
+                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
                     <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
                     <div className="leading-tight min-w-0">
-                      <div className="text-xs sm:text-sm font-bold text-destructive truncate">
-                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off（已包含在价钱内）
+                      <div className="text-[11px] sm:text-sm font-bold text-destructive truncate">
+                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off
                       </div>
                       <div className="text-[10px] text-muted-foreground truncate">
-                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off already applied · ends soon
+                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off · ends soon
                       </div>
                     </div>
 
                   </div>
                   <div
                     aria-live="polite"
-                    className="tabular-nums font-mono font-bold text-sm sm:text-base bg-destructive text-white rounded-lg px-2.5 py-1 shadow-sm"
+                    className="tabular-nums font-mono font-bold text-xs sm:text-base bg-destructive text-white rounded-lg px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-sm shrink-0"
                   >
                     {mm}:{ss}
                   </div>
                 </div>
               ) : (
-                <div className="mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-3 py-2.5 flex items-center gap-2">
+                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2">
                   <Gift className="w-4 h-4 text-primary shrink-0" />
                   <div className="leading-tight min-w-0">
-                    <div className="text-xs sm:text-sm font-bold text-primary truncate">
+                    <div className="text-[11px] sm:text-sm font-bold text-primary truncate">
                       新加坡下单额外赠送产品
                     </div>
                     <div className="text-[10px] text-muted-foreground truncate">
@@ -331,9 +331,9 @@ const ProductsSection = () => {
               )}
 
               {/* Price */}
-              <div className="mb-5 rounded-xl bg-muted/30 border border-border/60 p-4">
+              <div className="mb-3 sm:mb-5 rounded-xl bg-muted/30 border border-border/60 p-3 sm:p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
-                  <span className="text-sm text-muted-foreground line-through tabular-nums">
+                  <span className="text-xs sm:text-sm text-muted-foreground line-through tabular-nums">
                     {formatPrice(originalTotal, country)}
                   </span>
                   <span className="text-[11px] font-bold text-destructive bg-destructive/10 px-2 py-0.5 rounded tabular-nums">
@@ -341,14 +341,15 @@ const ProductsSection = () => {
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-4xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
+                  <span className="text-3xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
                     {formatPrice(total, country)}
                   </span>
                 </div>
-                <div className="text-[11px] text-muted-foreground mt-2 tabular-nums">
+                <div className="text-[11px] text-muted-foreground mt-1.5 sm:mt-2 tabular-nums">
                   每瓶 / per bottle {formatPrice(total / (selected.qty * quantity), country)}
                 </div>
               </div>
+
 
 
               {/* Stock urgency bar */}

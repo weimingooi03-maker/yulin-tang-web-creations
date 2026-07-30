@@ -93,25 +93,25 @@ const Checkout = () => {
 
       .join("\n\n");
 
-    const regionLine = region === "MY" ? "🇲🇾 Malaysia" : "🇸🇬 Singapore";
+    const regionLine = region === "MY" ? "Malaysia" : "Singapore";
     const stateLine = region === "MY" && d.state ? `\n州属 State：${d.state}` : "";
-    const notesLine = d.notes ? `\n\n📝 *备注 Notes*\n${d.notes}` : "";
+    const notesLine = d.notes ? `\n\n*备注 Notes*\n${d.notes}` : "";
 
     return [
-      "🛒 *新订单 New Order*",
+      "*新订单 New Order*",
       "",
       "您好，我想下单以下商品。",
       "Hi, I would like to place an order.",
       "",
       "────────────",
       "",
-      "📦 *订购商品 Ordered Items*",
+      "*订购商品 Ordered Items*",
       "",
       itemText,
       "",
       "────────────",
       "",
-      "💰 *订单总额 Order Total*",
+      "*订单总额 Order Total*",
       "",
       `合计 Total：${formatPrice(subtotal)}`,
       "运费 Shipping：免运 Free",
@@ -120,13 +120,13 @@ const Checkout = () => {
       "",
       "────────────",
       "",
-      "💳 *付款方式偏好 Payment Preference*",
+      "*付款方式偏好 Payment Preference*",
       "",
       paymentLabel(d.paymentMethod),
       "",
       "────────────",
       "",
-      "🚚 *收货资料 Shipping Details*",
+      "*收货资料 Shipping Details*",
       "",
       `姓名 Name：\n${d.name}`,
       "",

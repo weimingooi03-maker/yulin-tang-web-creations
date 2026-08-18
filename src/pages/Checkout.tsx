@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { z } from "zod";
 import { useCart } from "@/contexts/CartContext";
 import { Button } from "@/components/ui/button";
@@ -37,6 +37,21 @@ const Checkout = () => {
 
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [highlightRegion, setHighlightRegion] = useState(false);
+
+  useEffect(() => {
+    if (location.hash === "#region-select") {
+      const el = document.getElementById("region-select");
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          setHighlightRegion(true);
+          setTimeout(() => setHighlightRegion(false), 2500);
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   const [form, setForm] = useState({
     name: "",
@@ -337,7 +352,7 @@ const Checkout = () => {
                   {errors.postcode && <p className="text-xs text-destructive mt-1">{errors.postcode}</p>}
                 </div>
               </div>
-              <div>
+              <div id="region-select" className={`rounded-xl transition-shadow ${highlightRegion ? "ring-2 ring-primary ring-offset-2" : ""}`}>
                 <Label>送货地区 Region *</Label>
                 <div className="inline-flex rounded-full border border-border overflow-hidden mt-2">
                   <button

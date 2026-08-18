@@ -8,14 +8,15 @@ import ProductsSection from "@/components/ProductsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Footer from "@/components/Footer";import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import SparkleBackground from "@/components/SparkleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/60 to-muted/60">
+    <div className="min-h-screen bg-[hsl(var(--cream))]">
+      <SparkleBackground />
       <Header />
-      <main className="pt-24 md:pt-28">
+      <main className="relative z-10 pt-24 md:pt-28">
         <HeroSection />
         <IntroSection />
         <BenefitsSection />

@@ -9,17 +9,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import eatingMethod from "@/assets/eating-method-3ways.png";
-import tasteProfile from "@/assets/taste-profile.png";
-import reviewFishy from "@/assets/review-fishy-taste.jpeg";
-import reviewKnees from "@/assets/review-knees-comfort.jpeg";
-import reviewWalk from "@/assets/review-walk-longer.jpeg";
-import reviewSkinVisible from "@/assets/review-skin-visible.jpeg";
-import reviewSkinAcne from "@/assets/review-skin-acne.jpeg";
-import reviewOverall from "@/assets/review-overall.jpeg";
-import benefitJointBone from "@/assets/benefit-joint-bone.png";
-import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
-import naturalIngredients from "@/assets/natural-ingredients.png";
+import eatingMethod from "@/assets/eating-method-3ways.webp";
+import tasteProfile from "@/assets/taste-profile.webp";
+import reviewFishy from "@/assets/review-fishy-taste.webp";
+import reviewKnees from "@/assets/review-knees-comfort.webp";
+import reviewWalk from "@/assets/review-walk-longer.webp";
+import reviewSkinVisible from "@/assets/review-skin-visible.webp";
+import reviewSkinAcne from "@/assets/review-skin-acne.webp";
+import reviewOverall from "@/assets/review-overall.webp";
+import benefitJointBone from "@/assets/benefit-joint-bone.webp";
+import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.webp";
+import naturalIngredients from "@/assets/natural-ingredients.webp";
 
 
 const benefitVisuals = [

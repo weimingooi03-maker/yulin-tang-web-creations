@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import sterilizationSafety from "@/assets/sterilization-safety.png";
+import sterilizationSafety from "@/assets/sterilization-safety.webp";
 
 const SafetySection = () => {
   return (

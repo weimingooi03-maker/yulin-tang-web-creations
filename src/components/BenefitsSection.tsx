@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { ShieldCheck, Sparkles, Bone, Heart, Leaf, Moon, ChevronLeft, ChevronRight } from "lucide-react";
+import { ShieldCheck, Sparkles, Bone, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -16,7 +16,6 @@ import reviewWalk from "@/assets/review-walk-longer.jpeg";
 import reviewSkinVisible from "@/assets/review-skin-visible.jpeg";
 import reviewSkinAcne from "@/assets/review-skin-acne.jpeg";
 import reviewOverall from "@/assets/review-overall.jpeg";
-import tasteProfile from "@/assets/taste-profile.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 import naturalIngredients from "@/assets/natural-ingredients.png";
@@ -190,58 +189,6 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
             </div>
-
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                {
-                  icon: Moon,
-                  zh: "龙眼干",
-                  en: "Dried Longan",
-                  benefitZh: "补益心脾，养血安神",
-                  benefitEn: "Nourishes blood & calms the mind",
-                  color: "bg-amber-100 text-amber-700",
-                },
-                {
-                  icon: Heart,
-                  zh: "红枣",
-                  en: "Red Dates",
-                  benefitZh: "补中益气，养血健脾",
-                  benefitEn: "Boosts Qi & nourishes blood",
-                  color: "bg-red-100 text-red-700",
-                },
-                {
-                  icon: Leaf,
-                  zh: "斑斓",
-                  en: "Pandan",
-                  benefitZh: "清香怡人，帮助消化",
-                  benefitEn: "Refreshing & aids digestion",
-                  color: "bg-green-100 text-green-700",
-                },
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="p-3 sm:p-4 bg-card rounded-2xl border border-border/50 shadow-sm text-center"
-                >
-                  <div
-                    className={`w-9 h-9 sm:w-10 sm:h-10 mx-auto rounded-full flex items-center justify-center mb-2 ${item.color}`}
-                  >
-                    <item.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <h4 className="text-sm sm:text-base font-bold text-foreground leading-tight">
-                    {item.zh}
-                  </h4>
-                  <p className="text-[10px] sm:text-xs text-primary font-semibold uppercase tracking-wide mb-1">
-                    {item.en}
-                  </p>
-                  <p className="text-xs sm:text-sm text-foreground/90 font-medium leading-snug">
-                    {item.benefitZh}
-                  </p>
-                  <p className="text-[10px] text-muted-foreground leading-snug">
-                    {item.benefitEn}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -252,36 +199,6 @@ const BenefitsSection = () => {
           </h3>
           <p className="text-lg text-primary font-semibold text-center mb-6">Taste Profile</p>
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
-              <img 
-                src={tasteProfile} 
-                alt="Taste Profile - 50% Longan, 40% Red Dates, 10% Pandan, 0% Fishy Taste"
-                loading="lazy"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center mb-6">
-              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
-                <p className="text-2xl font-bold text-primary mb-1">50%</p>
-                <p className="text-lg font-bold text-foreground">龙眼味</p>
-                <p className="text-sm text-muted-foreground">Longan</p>
-              </div>
-              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
-                <p className="text-2xl font-bold text-primary mb-1">40%</p>
-                <p className="text-lg font-bold text-foreground">红枣味</p>
-                <p className="text-sm text-muted-foreground">Red Dates</p>
-              </div>
-              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
-                <p className="text-2xl font-bold text-primary mb-1">10%</p>
-                <p className="text-lg font-bold text-foreground">斑斓味</p>
-                <p className="text-sm text-muted-foreground">Pandan</p>
-              </div>
-              <div className="p-4 bg-card rounded-2xl border border-border/50 shadow-md">
-                <p className="text-2xl font-bold text-primary mb-1">0%</p>
-                <p className="text-lg font-bold text-foreground">鱼腥味</p>
-                <p className="text-sm text-muted-foreground">No Fishy Taste</p>
-              </div>
-            </div>
             {/* 100% Refund Guarantee */}
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-r from-primary/5 via-card to-primary/5 p-6 shadow-lg">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
@@ -319,38 +236,6 @@ const BenefitsSection = () => {
                 loading="lazy"
                 className="w-full h-auto"
               />
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 mt-8 text-center">
-              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-xl font-serif font-bold text-foreground mb-2">直接开瓶食用</h4>
-                <p className="text-base text-primary font-semibold mb-3">Enjoy Directly</p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  开瓶即饮，方便快捷
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Open and drink, convenient and ready to enjoy.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-xl font-serif font-bold text-foreground mb-2">热水泡罐子</h4>
-                <p className="text-base text-primary font-semibold mb-3">Pour with Hot Water</p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  倒入热水，温润好吸收
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Pour in hot water, warm and nourishing collagen drink.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-2xl border border-border/50 shadow-md">
-                <h4 className="text-xl font-serif font-bold text-foreground mb-2">放冰箱果冻口感</h4>
-                <p className="text-base text-primary font-semibold mb-3">Chill for Jelly Texture</p>
-                <p className="text-sm text-foreground/80 leading-relaxed">
-                  冷藏后Q弹爽口
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  Chill in the fridge for a bouncy, jelly-like texture.
-                </p>
-              </div>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import heroEn from "@/assets/what-is-fish-jelly-en.png";
 
 const IntroSection = () => {
   return (
-    <section className="py-12 md:py-16">
+    <section id="intro" className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto flex flex-col items-center space-y-8">
           {/* Section title */}

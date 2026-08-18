@@ -10,6 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.png";
+import tasteProfile from "@/assets/taste-profile.png";
 import reviewFishy from "@/assets/review-fishy-taste.jpeg";
 import reviewKnees from "@/assets/review-knees-comfort.jpeg";
 import reviewWalk from "@/assets/review-walk-longer.jpeg";
@@ -199,6 +200,14 @@ const BenefitsSection = () => {
           </h3>
           <p className="text-lg text-primary font-semibold text-center mb-6">Taste Profile</p>
           <div className="max-w-3xl mx-auto">
+            <div className="rounded-3xl overflow-hidden shadow-2xl mb-8">
+              <img
+                src={tasteProfile}
+                alt="Taste Profile - 50% Longan, 40% Red Dates, 10% Pandan, 0% Fishy Taste"
+                loading="lazy"
+                className="w-full h-auto"
+              />
+            </div>
             {/* 100% Refund Guarantee */}
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-r from-primary/5 via-card to-primary/5 p-6 shadow-lg">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">

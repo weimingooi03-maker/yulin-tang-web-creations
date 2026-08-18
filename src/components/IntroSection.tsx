@@ -1,5 +1,5 @@
-import heroZh from "@/assets/what-is-fish-jelly-zh.png";
-import heroEn from "@/assets/what-is-fish-jelly-en.png";
+import heroZh from "@/assets/what-is-fish-jelly-zh.webp";
+import heroEn from "@/assets/what-is-fish-jelly-en.webp";
 
 const IntroSection = () => {
   return (

@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 relative">
-        <div className="flex items-center justify-between h-24 md:h-28">
+        <div className="flex items-center justify-between h-28 md:h-32">
           {/* Desktop nav (md and up) */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
@@ -72,12 +72,21 @@ const Header = () => {
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 768px) 80px, 96px"
-              className="h-20 md:h-24 w-auto object-contain"
+              className="h-24 md:h-32 w-auto object-contain"
             />
           </a>
 
           {/* Right-side actions */}
           <div className="flex items-center gap-1 md:gap-3">
+            <a
+              href="https://wa.me/601158727742"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="客服 Customer Service"
+              className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-muted transition-colors text-xl leading-none"
+            >
+              💬
+            </a>
             <Button
               size="sm"
               className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-bold"

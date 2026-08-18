@@ -10,9 +10,9 @@ import {
 } from "@/components/ui/dialog";
 import { MessageCircle, Phone, Mail, Facebook, Instagram, FlaskConical, Handshake, FileText } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
-import labtestNutrition from "@/assets/labtest-nutrition.jpeg";
-import labtestMicrobio from "@/assets/labtest-microbio.jpeg";
-import labtestCollagen from "@/assets/labtest-collagen.jpeg";
+import labtestNutrition from "@/assets/labtest-nutrition.webp";
+import labtestMicrobio from "@/assets/labtest-microbio.webp";
+import labtestCollagen from "@/assets/labtest-collagen.webp";
 
 const ContactSection = () => {
   const handleWhatsApp = () => {

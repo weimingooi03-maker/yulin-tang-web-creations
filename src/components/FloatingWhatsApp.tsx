@@ -22,9 +22,13 @@ const FloatingWhatsApp = () => {
       {/* 了解产品 Button */}
       <button
         onClick={scrollToIntro}
-        className="flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
+        className="relative flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
         aria-label="了解产品 Learn About Product"
       >
+        <span className="absolute -top-1 -right-1 flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+        </span>
         <Info className="w-4 h-4 text-primary shrink-0" />
         <span className="text-xs font-bold text-primary whitespace-nowrap">了解产品</span>
       </button>
@@ -32,9 +36,13 @@ const FloatingWhatsApp = () => {
       {/* 了解配套 Button */}
       <button
         onClick={scrollToProducts}
-        className="flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
+        className="relative flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
         aria-label="了解配套 Learn About Packages"
       >
+        <span className="absolute -top-1 -right-1 flex h-3 w-3">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
+          <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+        </span>
         <Package className="w-4 h-4 text-primary shrink-0" />
         <span className="text-xs font-bold text-primary whitespace-nowrap">了解配套</span>
       </button>

@@ -7,7 +7,7 @@ const PackagePreviewSection = () => {
   };
 
   return (
-    <section className="py-6 md:py-8">
+    <section className="pt-0 pb-6 md:pb-8">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-3">
           <p className="text-lg sm:text-2xl font-serif font-bold text-foreground tracking-wide">

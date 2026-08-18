@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import heroImage from "@/assets/unique-formula.png";
 import floralImage from "@/assets/floral-series-coming-soon.png";
 import customers80kImg from "@/assets/hero-80k-customers.png";
-import { ChevronDown, ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 const heroSlides = [
   {
@@ -88,12 +88,8 @@ const HeroSection = () => {
     dragStartX.current = null;
   };
 
-  const scrollToProducts = () => {
-    document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary to-muted" />
 
@@ -101,7 +97,7 @@ const HeroSection = () => {
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-accent/10 blur-3xl" />
 
-      <div className="container mx-auto px-4 relative z-10 pt-16">
+      <div className="container mx-auto px-4 relative z-10 pt-6 pb-6 md:pt-8 md:pb-8">
         <div className="max-w-6xl mx-auto flex flex-col items-center space-y-8">
           {/* Feature image carousel - hero attraction */}
           <div className="relative w-full max-w-5xl opacity-0 animate-fade-in-delay-2">
@@ -174,14 +170,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <button
-        onClick={scrollToProducts}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer"
-      >
-        <ChevronDown className="w-10 h-10 text-primary" />
-      </button>
     </section>
   );
 };

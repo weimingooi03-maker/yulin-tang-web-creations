@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import eatingMethod from "@/assets/eating-method-3ways.webp";
 import tasteProfile from "@/assets/taste-profile.webp";
+import refundBanner from "@/assets/refund-guarantee-banner.webp";
 import reviewFishy from "@/assets/review-fishy-taste.webp";
 import reviewKnees from "@/assets/review-knees-comfort.webp";
 import reviewWalk from "@/assets/review-walk-longer.webp";
@@ -208,25 +209,14 @@ const BenefitsSection = () => {
                 className="w-full h-auto"
               />
             </div>
-            {/* 100% Refund Guarantee */}
-            <div className="relative overflow-hidden rounded-2xl border-2 border-primary/30 bg-gradient-to-r from-primary/5 via-card to-primary/5 p-6 shadow-lg">
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center sm:text-left">
-                <div className="flex-shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center">
-                  <ShieldCheck className="w-7 h-7 text-primary" />
-                </div>
-                <div>
-                  <p className="text-xl md:text-2xl font-serif font-bold text-foreground mb-1">
-                    有腥味，100% 退款
-                  </p>
-                  <p className="text-base md:text-lg text-primary font-semibold">
-                    100% Refund if Fishy Taste
-                  </p>
-                </div>
-              </div>
-              <p className="text-center text-sm text-muted-foreground mt-3 max-w-xl mx-auto">
-                我们对口感充满信心。若开瓶后品尝到任何鱼腥味，请联系客服全额退款。
-                <span className="block sm:inline"> We stand by our taste. Contact us for a full refund if you detect any fishy flavor.</span>
-              </p>
+            {/* Refund Guarantee Banner */}
+            <div className="rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src={refundBanner}
+                alt="有腥味，100% 退款 / 100% Refund if Fishy Taste"
+                loading="lazy"
+                className="w-full h-auto"
+              />
             </div>
           </div>
         </div>

@@ -406,6 +406,9 @@ const Checkout = () => {
             <MessageCircle className="w-4 h-4 mr-2" />
             通过 WhatsApp 确认订单 Confirm via WhatsApp
           </Button>
+          <p className="text-xs text-muted-foreground text-center mt-3">
+            通过 WhatsApp 付款 Payment through WhatsApp
+          </p>
         </form>
       </div>
     </div>

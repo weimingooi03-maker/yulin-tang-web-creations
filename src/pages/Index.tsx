@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import VoucherBanner from "@/components/VoucherBanner";
 import IntroSection from "@/components/IntroSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import SafetySection from "@/components/SafetySection";
@@ -19,6 +20,7 @@ const Index = () => {
       <Header />
       <main className="relative z-10 pt-24 md:pt-28">
         <HeroSection />
+        <VoucherBanner />
         <IntroSection />
         <BenefitsSection />
         <SafetySection />

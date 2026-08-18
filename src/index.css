@@ -165,6 +165,13 @@
 .animate-hero-glow { animation: hero-glow 5s ease-in-out infinite; }
 .animate-hero-shimmer { animation: hero-shimmer 3.5s ease-in-out infinite; }
 
+@keyframes sparkle-fall {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  8% { opacity: var(--sparkle-max-opacity, 0.4); }
+  92% { opacity: var(--sparkle-max-opacity, 0.4); }
+  100% { transform: translateY(110vh) translateX(var(--sparkle-drift, 0px)); opacity: 0; }
+}
+
 @keyframes cta-pulse {
   0%, 100% { box-shadow: 0 0 0 0 hsl(var(--primary) / 0.45); }
   70% { box-shadow: 0 0 0 12px hsl(var(--primary) / 0); }

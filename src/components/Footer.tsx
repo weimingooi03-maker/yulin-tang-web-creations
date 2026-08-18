@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.png";
-import footerLogo from "@/assets/footer-logo.png";
+import footerLogo from "@/assets/footer-logo.webp";
 import { Facebook, Instagram, MessageCircle, Mail, ShoppingBag } from "lucide-react";
 import { FlagIcon } from "@/components/FlagIcon";
 

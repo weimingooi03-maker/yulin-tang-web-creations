@@ -17,7 +17,6 @@ import reviewSkinVisible from "@/assets/review-skin-visible.jpeg";
 import reviewSkinAcne from "@/assets/review-skin-acne.jpeg";
 import reviewOverall from "@/assets/review-overall.jpeg";
 import tasteProfile from "@/assets/taste-profile.png";
-import bestTimeToTake from "@/assets/best-time-to-take.png";
 import benefitJointBone from "@/assets/benefit-joint-bone.png";
 import benefitBeautyComplexion from "@/assets/benefit-beauty-complexion.png";
 import naturalIngredients from "@/assets/natural-ingredients.png";
@@ -353,33 +352,8 @@ const BenefitsSection = () => {
                 </p>
               </div>
             </div>
-            
-            {/* Best Time to Take */}
-            <div className="mt-16">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
-                  什么时候吃效果最佳？
-                </h3>
-                <p className="text-lg text-primary font-semibold">
-                  Best Time to Enjoy for Maximum Results
-                </p>
-              </div>
-              <div className="relative max-w-4xl mx-auto">
-                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/50">
-                  <img
-                    src={bestTimeToTake}
-                    alt="什么时候吃效果最佳 - 早上空腹前或晚上睡前一小时"
-                    loading="lazy"
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
-
-
-
 
         {/* Customer Reviews */}
         <div className="mt-16">

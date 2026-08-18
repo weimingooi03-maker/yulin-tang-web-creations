@@ -47,7 +47,7 @@ const PackagePreviewSection = () => {
           </div>
 
           <Button onClick={scrollToProducts} className="w-full font-bold" variant="default">
-            立即选购 View Packages
+            了解配套 View Packages
             <ArrowRight className="w-4 h-4 ml-1.5" />
           </Button>
         </div>

@@ -119,7 +119,7 @@ const BenefitsSection = () => {
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
 
   return (
-    <section id="benefits" className="py-16 bg-secondary/30">
+    <section id="benefits" className="py-16">
       <div className="container mx-auto px-4">
         {/* Product Benefits */}
         <div className="text-center mb-10">

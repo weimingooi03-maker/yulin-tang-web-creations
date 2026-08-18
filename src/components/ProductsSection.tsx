@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { formatPrice } from "@/lib/utils";
 
 
-const products = [
+export const products = [
   {
     id: "set-a",
     image: setaPhoto,
@@ -121,7 +121,7 @@ const ProductsSection = () => {
   };
 
   return (
-    <section id="products" className="py-20 bg-background">
+    <section id="products" className="py-20">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-10">

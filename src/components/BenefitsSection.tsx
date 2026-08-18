@@ -117,7 +117,7 @@ const reviews = [
 ];
 
 const BenefitsSection = () => {
-  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const autoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }));
 
   return (
     <section id="benefits" className="py-16">
@@ -269,7 +269,7 @@ const BenefitsSection = () => {
           >
             <CarouselContent className="-ml-4">
               {reviews.map((r, i) => (
-                <CarouselItem key={i} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 flex">
+                <CarouselItem key={i} className="pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3 flex">
                   <div className="rounded-2xl overflow-hidden shadow-lg bg-card h-full w-full hover:shadow-xl transition-shadow duration-300 flex flex-col">
                     <div className="aspect-square overflow-hidden bg-muted/30">
                       <img
@@ -277,19 +277,19 @@ const BenefitsSection = () => {
                         alt={r.alt}
                         loading="lazy"
                         decoding="async"
-                        sizes="(max-width: 768px) 45vw, (max-width: 1200px) 30vw, 280px"
+                        sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 380px"
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="p-4 flex flex-col flex-grow">
-                      <p className="text-sm font-bold text-foreground mb-1">
+                    <div className="p-5 flex flex-col flex-grow">
+                      <p className="text-base font-bold text-foreground mb-1.5">
                         {r.nameZh}
-                        <span className="ml-1.5 text-[10px] sm:text-xs text-primary font-semibold uppercase tracking-wide">
+                        <span className="ml-1.5 text-xs sm:text-sm text-primary font-semibold uppercase tracking-wide">
                           {r.nameEn}
                         </span>
                       </p>
-                      <p className="text-xs text-foreground/90 leading-snug mb-1">"{r.quoteZh}"</p>
-                      <p className="text-[10px] text-muted-foreground leading-snug">"{r.quoteEn}"</p>
+                      <p className="text-sm text-foreground/90 leading-snug mb-1.5">"{r.quoteZh}"</p>
+                      <p className="text-xs text-muted-foreground leading-snug">"{r.quoteEn}"</p>
                     </div>
                   </div>
                 </CarouselItem>

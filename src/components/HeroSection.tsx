@@ -91,7 +91,7 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary to-muted" />
+      <div className="absolute inset-0 bg-[hsl(var(--cream))]" />
 
       {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl" />

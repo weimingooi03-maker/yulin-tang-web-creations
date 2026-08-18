@@ -45,29 +45,49 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 relative">
-        <div className="flex items-center justify-end h-24 md:h-28">
+        <div className="flex items-center justify-between h-24 md:h-28">
+          {/* Desktop nav (md and up) */}
+          <nav className="hidden md:flex items-center gap-6">
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => scrollTo(item.href)}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.labelZh} <span className="text-primary">{item.labelEn}</span>
+              </button>
+            ))}
+          </nav>
+
           {/* Centered Logo */}
-          <a 
-            href="#" 
+          <a
+            href="#"
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
           >
-            <img 
-              src={logoImg} 
-              alt="魚鱗堂 YULIN TANG Logo" 
-              width={480}
-              height={480}
+            <img
+              src={logoImg}
+              alt="魚鱗堂 YULIN TANG Logo"
+              width={420}
+              height={420}
               decoding="async"
               fetchPriority="high"
               sizes="(max-width: 768px) 80px, 96px"
               className="h-20 md:h-24 w-auto object-contain"
             />
           </a>
-          
-          {/* Right-side actions: cart + hamburger menu on all sizes */}
-          <div className="flex items-center gap-1 md:gap-2">
+
+          {/* Right-side actions */}
+          <div className="flex items-center gap-1 md:gap-3">
+            <Button
+              size="sm"
+              className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
+              onClick={() => scrollTo("#contact")}
+            >
+              立即订购 Order Now
+            </Button>
             <CartButton />
             <button
-              className="p-2"
+              className="p-2 md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Menu"
             >
@@ -79,10 +99,10 @@ const Header = () => {
             </button>
           </div>
         </div>
-        
-        {/* Nav Menu (all sizes) */}
+
+        {/* Nav Menu (mobile only) */}
         {isMenuOpen && (
-          <div className="py-4 border-t border-border">
+          <div className="py-4 border-t border-border md:hidden">
             <nav className="flex flex-col gap-4">
               {navItems.map((item) => (
                 <button
@@ -93,7 +113,7 @@ const Header = () => {
                   {item.labelZh} <span className="text-primary">{item.labelEn}</span>
                 </button>
               ))}
-              <Button 
+              <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 w-full font-bold text-lg"
                 onClick={() => scrollTo("#contact")}

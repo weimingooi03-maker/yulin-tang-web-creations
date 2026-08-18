@@ -99,6 +99,10 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 relative z-10 pt-6 pb-6 md:pt-8 md:pb-8">
         <div className="max-w-6xl mx-auto flex flex-col items-center space-y-8">
+          {/* SEO: visually-hidden primary heading (page has no other H1) */}
+          <h1 className="sr-only">
+            魚鱗堂 YULIN TANG 深海鱼鳞胶原蛋白冻 - 缓解关节疼痛、强化骨骼、养颜美容，马来西亚新加坡免运费配送
+          </h1>
           {/* Feature image carousel - hero attraction */}
           <div className="relative w-full max-w-5xl opacity-0 animate-fade-in-delay-2">
             {/* Glow aura */}

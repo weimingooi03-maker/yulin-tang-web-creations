@@ -70,7 +70,6 @@ export const products = [
 ];
 
 const COUNTDOWN_SECONDS = 30 * 60;
-const EXTRA_OFF_MY = 20;
 
 const ProductsSection = () => {
   const { addItem } = useCart();
@@ -95,6 +94,7 @@ const ProductsSection = () => {
   const isMY = country === "MY";
   const unitPrice = isMY ? selected.priceMY : selected.priceSG;
   const unitOriginal = isMY ? selected.originalMY : selected.originalSG;
+  const myExtraOff = selected.originalMY - selected.priceMY;
 
   const total = unitPrice * quantity;
   const originalTotal = unitOriginal * quantity;
@@ -296,40 +296,48 @@ const ProductsSection = () => {
               </div>
 
               {/* Regional promotion */}
-              {isMY ? (
-                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-destructive/40 bg-destructive/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-2 min-w-0">
-                    <Timer className="w-4 h-4 text-destructive shrink-0 animate-pulse" />
-                    <div className="leading-tight min-w-0">
-                      <div className="text-[11px] sm:text-sm font-bold text-destructive truncate">
-                        限时额外 {formatPrice(EXTRA_OFF_MY, "MY")} off
-                      </div>
-                      <div className="text-[10px] text-muted-foreground truncate">
-                        Extra {formatPrice(EXTRA_OFF_MY, "MY")} off · ends soon
-                      </div>
-                    </div>
-
-                  </div>
-                  <div
-                    aria-live="polite"
-                    className="tabular-nums font-mono font-bold text-xs sm:text-base bg-destructive text-white rounded-lg px-2 py-0.5 sm:px-2.5 sm:py-1 shadow-sm shrink-0"
-                  >
-                    {mm}:{ss}
-                  </div>
-                </div>
-              ) : (
-                <div className="mb-3 sm:mb-4 rounded-xl border-2 border-primary/40 bg-primary/5 px-2.5 py-2 sm:px-3 sm:py-2.5 flex items-center gap-2">
-                  <Gift className="w-4 h-4 text-primary shrink-0" />
+              <div
+                className={`mb-3 sm:mb-4 rounded-xl border-2 px-3 py-3 sm:px-4 sm:py-4 flex items-center justify-between gap-2 ${
+                  isMY ? "border-destructive/40 bg-destructive/5" : "border-primary/40 bg-primary/5"
+                }`}
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  {isMY ? (
+                    <Timer className="w-5 h-5 text-destructive shrink-0 animate-pulse" />
+                  ) : (
+                    <Gift className="w-5 h-5 text-primary shrink-0 animate-pulse" />
+                  )}
                   <div className="leading-tight min-w-0">
-                    <div className="text-[11px] sm:text-sm font-bold text-primary truncate">
-                      新加坡下单额外赠送产品
-                    </div>
-                    <div className="text-[10px] text-muted-foreground truncate">
-                      Free bonus gift with every Singapore order
-                    </div>
+                    {isMY ? (
+                      <>
+                        <div className="text-xs sm:text-base font-bold text-destructive truncate">
+                          限时额外 {formatPrice(myExtraOff, "MY")} off
+                        </div>
+                        <div className="text-[10px] sm:text-xs text-muted-foreground truncate">
+                          Extra {formatPrice(myExtraOff, "MY")} off · ends soon
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="text-xs sm:text-base font-bold text-primary truncate">
+                          30分钟内下单，额外赠送产品
+                        </div>
+                        <div className="text-[10px] sm:text-xs text-muted-foreground truncate">
+                          Order within 30 min for a free bonus gift
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
-              )}
+                <div
+                  aria-live="polite"
+                  className={`tabular-nums font-mono font-extrabold text-lg sm:text-2xl text-white rounded-lg px-3 py-1 sm:px-4 sm:py-1.5 shadow-md shrink-0 ${
+                    isMY ? "bg-destructive" : "bg-primary"
+                  }`}
+                >
+                  {mm}:{ss}
+                </div>
+              </div>
 
               {/* Price */}
               <div className="mb-3 sm:mb-5 rounded-xl bg-muted/30 border border-border/60 p-3 sm:p-4">
@@ -342,7 +350,7 @@ const ProductsSection = () => {
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-3xl sm:text-5xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
+                  <span className="text-2xl sm:text-3xl font-extrabold text-destructive leading-none tracking-tight tabular-nums">
                     {formatPrice(total, country)}
                   </span>
                 </div>

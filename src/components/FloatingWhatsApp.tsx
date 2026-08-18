@@ -3,8 +3,6 @@ import { useState } from "react";
 
 const FloatingWhatsApp = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [introHovered, setIntroHovered] = useState(false);
-  const [packageHovered, setPackageHovered] = useState(false);
 
   const handleClick = () => {
     const message = encodeURIComponent("您好！我想了解更多关于魚鱗堂胶原蛋白冻的信息。\nHello! I would like to know more about YULIN TANG Collagen Jelly.");
@@ -22,48 +20,24 @@ const FloatingWhatsApp = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {/* 了解产品 Button */}
-      <div className="relative">
-        <div
-          className={`absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap transition-all duration-300 ${
-            introHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
-          }`}
-        >
-          <div className="bg-foreground text-background px-3 py-1.5 rounded-lg text-xs font-medium shadow-lg">
-            了解产品 Learn About Product
-          </div>
-        </div>
-        <button
-          onClick={scrollToIntro}
-          onMouseEnter={() => setIntroHovered(true)}
-          onMouseLeave={() => setIntroHovered(false)}
-          className="w-12 h-12 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-          aria-label="了解产品 Learn About Product"
-        >
-          <Info className="w-5 h-5 text-primary" />
-        </button>
-      </div>
+      <button
+        onClick={scrollToIntro}
+        className="flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
+        aria-label="了解产品 Learn About Product"
+      >
+        <Info className="w-4 h-4 text-primary shrink-0" />
+        <span className="text-xs font-bold text-primary whitespace-nowrap">了解产品</span>
+      </button>
 
       {/* 了解配套 Button */}
-      <div className="relative">
-        <div
-          className={`absolute right-full mr-3 top-1/2 -translate-y-1/2 whitespace-nowrap transition-all duration-300 ${
-            packageHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-2 pointer-events-none"
-          }`}
-        >
-          <div className="bg-foreground text-background px-3 py-1.5 rounded-lg text-xs font-medium shadow-lg">
-            了解配套 Learn About Packages
-          </div>
-        </div>
-        <button
-          onClick={scrollToProducts}
-          onMouseEnter={() => setPackageHovered(true)}
-          onMouseLeave={() => setPackageHovered(false)}
-          className="w-12 h-12 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl flex items-center justify-center transition-all duration-300 hover:scale-110"
-          aria-label="了解配套 Learn About Packages"
-        >
-          <Package className="w-5 h-5 text-primary" />
-        </button>
-      </div>
+      <button
+        onClick={scrollToProducts}
+        className="flex items-center gap-1.5 h-10 pl-3 pr-4 bg-white hover:bg-primary/10 border border-primary/30 rounded-full shadow-xl transition-all duration-300 hover:scale-105"
+        aria-label="了解配套 Learn About Packages"
+      >
+        <Package className="w-4 h-4 text-primary shrink-0" />
+        <span className="text-xs font-bold text-primary whitespace-nowrap">了解配套</span>
+      </button>
 
       {/* WhatsApp Button */}
       <div className="relative">

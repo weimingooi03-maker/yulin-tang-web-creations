@@ -9,6 +9,14 @@ const PackagePreviewSection = () => {
   return (
     <section className="py-6 md:py-8">
       <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-3">
+          <p className="text-lg sm:text-2xl font-serif font-bold text-foreground tracking-wide">
+            魚鱗堂 深海鱼鳞胶原蛋白冻
+          </p>
+          <p className="text-[11px] sm:text-sm text-primary font-semibold uppercase tracking-wider">
+            YULIN TANG Marine Collagen Jelly
+          </p>
+        </div>
         <div className="max-w-3xl mx-auto rounded-2xl border border-primary/20 bg-card/70 backdrop-blur-sm shadow-md p-4 sm:p-5">
           <div className="flex items-center justify-between gap-2 mb-4">
             <div>

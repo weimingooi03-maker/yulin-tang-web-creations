@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import heroImage from "@/assets/unique-formula.png";
-import floralImage from "@/assets/floral-series-coming-soon.png";
-import customers80kImg from "@/assets/hero-80k-customers.png";
+import heroImage from "@/assets/unique-formula.webp";
+import floralImage from "@/assets/floral-series-coming-soon.webp";
+import customers80kImg from "@/assets/hero-80k-customers.webp";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 const heroSlides = [

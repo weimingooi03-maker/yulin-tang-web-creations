@@ -8,7 +8,8 @@ import ProductsSection from "@/components/ProductsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
-import Footer from "@/components/Footer";import FloatingWhatsApp from "@/components/FloatingWhatsApp";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import SparkleBackground from "@/components/SparkleBackground";
 
 const Index = () => {

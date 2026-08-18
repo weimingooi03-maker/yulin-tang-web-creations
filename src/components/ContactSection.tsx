@@ -209,32 +209,32 @@ const ContactSection = () => {
                         <a href={labtestNutrition} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
                           <div className="bg-muted/40 p-3 md:p-4">
                             <img src={labtestNutrition} alt="Nutrition Lab Test Report" loading="lazy" decoding="async" width={1000} height={983} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
-                        </div>
-                        <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
-                          <FileText className="w-4 h-4 text-primary" />
-                          营养成分报告 Nutrition Report
-                        </p>
-                      </a>
-                      <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
-                        <div className="bg-muted/40 p-3 md:p-4">
-                          <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={1000} height={848} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
-                        </div>
-                        <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
-                          <FileText className="w-4 h-4 text-primary" />
-                          微生物检测报告 Microbiology Report
-                        </p>
-                      </a>
-                      <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
-                        <div className="bg-muted/40 p-3 md:p-4">
-                          <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={1000} height={983} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
+                          </div>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            营养成分报告 Nutrition Report
+                          </p>
+                        </a>
+                        <a href={labtestMicrobio} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
+                          <div className="bg-muted/40 p-3 md:p-4">
+                            <img src={labtestMicrobio} alt="Microbiology Lab Test Report" loading="lazy" decoding="async" width={1000} height={848} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
+                          </div>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            微生物检测报告 Microbiology Report
+                          </p>
+                        </a>
+                        <a href={labtestCollagen} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-border hover:border-primary transition-colors shadow-lg hover:shadow-2xl bg-background group">
+                          <div className="bg-muted/40 p-3 md:p-4">
+                            <img src={labtestCollagen} alt="Collagen Analysis Report" loading="lazy" decoding="async" width={1000} height={983} className="w-full h-auto max-h-[75vh] object-contain mx-auto group-hover:scale-[1.01] transition-transform" />
+                          </div>
+                          <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
+                            <FileText className="w-4 h-4 text-primary" />
+                            胶原蛋白检测报告 Collagen Report
+                          </p>
+                        </a>
                       </div>
-                      <p className="text-base md:text-lg font-semibold text-center py-4 text-foreground flex items-center justify-center gap-2">
-                          <FileText className="w-4 h-4 text-primary" />
-                          胶原蛋白检测报告 Collagen Report
-                        </p>
-                      </a>
-                    </div>
-                  </DialogContent>
+                    </DialogContent>
                   </Dialog>
                 </div>
               </div>

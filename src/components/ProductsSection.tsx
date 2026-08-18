@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import setaPhoto from "@/assets/seta-photo.png";
-import productSetB from "@/assets/setb-photo.png";
-import productSetC from "@/assets/setc-photo.png";
-import giftBoxAsset from "@/assets/gift-box-packaging-v2.png";
+import setaPhoto from "@/assets/seta-photo.webp";
+import productSetB from "@/assets/setb-photo.webp";
+import productSetC from "@/assets/setc-photo.webp";
+import giftBoxAsset from "@/assets/gift-box-packaging-v2.webp";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Truck, Package, Flame, Check, Minus, Plus, Sparkles, Timer, Gift } from "lucide-react";

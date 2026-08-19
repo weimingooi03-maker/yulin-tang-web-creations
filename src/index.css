@@ -183,3 +183,10 @@
   50% { box-shadow: 0 0 0 14px hsl(var(--destructive) / 0); }
 }
 .animate-voucher-pulse { animation: voucher-pulse 2.2s ease-in-out infinite; }
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.animate-marquee { animation: marquee-scroll 12s linear infinite; }
+.animate-marquee-slow { animation: marquee-scroll 20s linear infinite; }

@@ -30,7 +30,12 @@ const VoucherBanner = () => {
   }, []);
 
   const handleClaim = () => {
-    navigate("/checkout#region-select");
+    const el = document.getElementById("products");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      navigate("/#products");
+    }
   };
 
   const handleDismiss = (e: React.MouseEvent) => {
@@ -53,22 +58,26 @@ const VoucherBanner = () => {
       onKeyDown={(e) => e.key === "Enter" && handleClaim()}
       className="relative mx-auto max-w-3xl mt-4 mb-2 px-4 sm:px-0 cursor-pointer group"
     >
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary via-[hsl(var(--gold))] to-accent shadow-lg px-5 py-3 flex items-center justify-between gap-3 hover:shadow-xl transition-shadow">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-destructive via-orange-500 to-destructive shadow-xl shadow-destructive/30 px-5 py-4 sm:px-7 sm:py-5 flex items-center justify-between gap-3 animate-voucher-pulse hover:scale-[1.02] transition-transform">
         <div className="flex items-center gap-3 min-w-0">
-          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-            <Gift className="w-5 h-5 text-white" />
+          <div className="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/20 flex items-center justify-center">
+            <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-300 opacity-90" />
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-yellow-300" />
+            </span>
+            <Gift className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
           </div>
           <div className="min-w-0">
-            <p className="text-sm sm:text-base font-bold text-white truncate">
-              恭喜您获得超值优惠券！点击这里领取
+            <p className="text-base sm:text-xl font-extrabold text-white truncate">
+              🎉 恭喜您获得超值优惠券！点击这里领取
             </p>
-            <p className="text-[11px] sm:text-xs text-white/90 truncate">
+            <p className="text-xs sm:text-sm text-white/90 truncate">
               Congratulations! You have won a special discount voucher — Click here to claim
             </p>
           </div>
         </div>
         <div className="flex items-center gap-2 flex-shrink-0">
-          <span className="text-white font-mono font-bold text-sm sm:text-lg bg-white/20 rounded-lg px-2 py-1">
+          <span className="text-white font-mono font-extrabold text-xl sm:text-3xl bg-black/20 rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 tabular-nums">
             {timeStr}
           </span>
           <button

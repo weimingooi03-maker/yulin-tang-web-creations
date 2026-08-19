@@ -221,10 +221,10 @@ const ProductsSection = () => {
                   <button
                     key={p.id}
                     onClick={() => selectSet(p.id)}
-                    className={`relative rounded-2xl border-2 p-3 sm:p-4 text-center transition-all ${
+                    className={`relative rounded-2xl border-2 p-3 sm:p-4 text-center transition-all duration-300 ease-out ${
                       active
-                        ? "border-primary bg-primary/5 shadow-md shadow-primary/10"
-                        : "border-border bg-background hover:border-primary/40 hover:bg-muted/30"
+                        ? "border-primary bg-primary/5 shadow-xl shadow-primary/20 scale-110 z-10"
+                        : "border-border bg-background hover:border-primary/40 hover:bg-muted/30 scale-90 opacity-70"
                     }`}
                   >
                     {p.isBestValue && (

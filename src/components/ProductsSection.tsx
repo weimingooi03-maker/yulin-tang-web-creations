@@ -310,8 +310,10 @@ const ProductsSection = () => {
                   <div className="leading-tight min-w-0">
                     {isMY ? (
                       <>
-                        <div className="text-xs sm:text-base font-bold text-destructive truncate">
-                          限时额外 {formatPrice(myExtraOff, "MY")} off
+                        <div className="text-xs sm:text-sm font-bold text-destructive truncate flex items-baseline flex-wrap gap-1">
+                          <span>限时额外</span>
+                          <span className="text-lg sm:text-2xl font-extrabold">{formatPrice(myExtraOff, "MY")}</span>
+                          <span>off</span>
                         </div>
                         <div className="text-[10px] sm:text-xs text-muted-foreground truncate">
                           Extra {formatPrice(myExtraOff, "MY")} off · ends soon

@@ -46,7 +46,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 relative">
         <div className="flex items-center justify-between h-28 md:h-32">
-          {/* Desktop nav (md and up) */}
+          {/* Nav (desktop) + Menu button (mobile, top-left) */}
+          <div className="flex items-center">
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <button
@@ -58,6 +59,18 @@ const Header = () => {
               </button>
             ))}
           </nav>
+            <button
+              className="p-2 md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              {isMenuOpen ? (
+                <X className="w-7 h-7 text-foreground" />
+              ) : (
+                <Menu className="w-7 h-7 text-foreground" />
+              )}
+            </button>
+          </div>
 
           {/* Centered Logo */}
           <a
@@ -78,15 +91,6 @@ const Header = () => {
 
           {/* Right-side actions */}
           <div className="flex items-center gap-1 md:gap-3">
-            <a
-              href="https://wa.me/601158727742"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="客服 Customer Service"
-              className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-muted transition-colors text-xl leading-none"
-            >
-              💬
-            </a>
             <Button
               size="sm"
               className="hidden md:inline-flex bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
@@ -95,17 +99,6 @@ const Header = () => {
               立即订购 Order Now
             </Button>
             <CartButton />
-            <button
-              className="p-2 md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Menu"
-            >
-              {isMenuOpen ? (
-                <X className="w-7 h-7 text-foreground" />
-              ) : (
-                <Menu className="w-7 h-7 text-foreground" />
-              )}
-            </button>
           </div>
         </div>
 

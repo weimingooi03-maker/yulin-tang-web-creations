@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Gift, X } from "lucide-react";
 
-const COUNTDOWN_SECONDS = 30 * 60;
+const COUNTDOWN_SECONDS = 3 * 60;
 const STORAGE_KEY = "voucherBannerExpiry";
 const DISMISS_KEY = "voucherBannerDismissed";
 
@@ -58,7 +58,18 @@ const VoucherBanner = () => {
       onKeyDown={(e) => e.key === "Enter" && handleClaim()}
       className="relative mx-auto max-w-3xl mt-4 mb-2 px-4 sm:px-0 cursor-pointer group"
     >
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-destructive via-orange-500 to-destructive shadow-xl shadow-destructive/30 px-5 py-4 sm:px-7 sm:py-5 flex items-center justify-between gap-3 animate-voucher-pulse hover:scale-[1.02] transition-transform">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-destructive via-orange-500 to-destructive shadow-xl shadow-destructive/30 animate-voucher-pulse hover:scale-[1.02] transition-transform">
+        <div className="overflow-hidden border-b border-white/20 py-1.5 bg-black/10">
+          <div className="inline-block whitespace-nowrap animate-marquee text-white font-extrabold text-lg sm:text-2xl">
+            🎉 恭喜您获得超值优惠券！点击这里领取　　🎉 恭喜您获得超值优惠券！点击这里领取　　🎉 恭喜您获得超值优惠券！点击这里领取
+          </div>
+        </div>
+        <div className="overflow-hidden py-1 bg-black/5">
+          <div className="inline-block whitespace-nowrap animate-marquee-slow text-white/90 text-xs sm:text-sm font-medium">
+            免运费送到马来西亚🇲🇾新加坡🇸🇬，超过年销1,000,000瓶，顾客好评高达80,000，有腥味100%退款　　免运费送到马来西亚🇲🇾新加坡🇸🇬，超过年销1,000,000瓶，顾客好评高达80,000，有腥味100%退款
+          </div>
+        </div>
+        <div className="px-5 py-4 sm:px-7 sm:py-5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/20 flex items-center justify-center">
             <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
@@ -87,6 +98,7 @@ const VoucherBanner = () => {
           >
             <X className="w-4 h-4" />
           </button>
+        </div>
         </div>
       </div>
     </div>

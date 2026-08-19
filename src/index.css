@@ -177,3 +177,9 @@
   70% { box-shadow: 0 0 0 12px hsl(var(--primary) / 0); }
 }
 .animate-cta-pulse { animation: cta-pulse 2.2s ease-out infinite; }
+
+@keyframes voucher-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(var(--destructive) / 0.55); }
+  50% { box-shadow: 0 0 0 14px hsl(var(--destructive) / 0); }
+}
+.animate-voucher-pulse { animation: voucher-pulse 2.2s ease-in-out infinite; }

@@ -13,6 +13,7 @@ const VoucherBanner = () => {
     return sessionStorage.getItem(DISMISS_KEY) === "1";
   });
   const [secondsLeft, setSecondsLeft] = useState(COUNTDOWN_SECONDS);
+    const [isBouncing, setIsBouncing] = useState(false);
 
   useEffect(() => {
     let expiry = Number(sessionStorage.getItem(STORAGE_KEY));
@@ -30,6 +31,7 @@ const VoucherBanner = () => {
   }, []);
 
   const handleClaim = () => {
+    setIsBouncing(true);
     const el = document.getElementById("products");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -56,7 +58,8 @@ const VoucherBanner = () => {
       role="button"
       tabIndex={0}
       onKeyDown={(e) => e.key === "Enter" && handleClaim()}
-      className="relative mx-auto max-w-3xl mt-4 mb-2 px-4 sm:px-0 cursor-pointer group animate-voucher-drop"
+      onAnimationEnd={() => setIsBouncing(false)}
+      className={`relative mx-auto max-w-3xl mt-4 mb-2 px-4 sm:px-0 cursor-pointer group ${isBouncing ? "animate-voucher-drop" : ""}`}
     >
       <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-destructive via-orange-500 to-destructive shadow-xl shadow-destructive/30 animate-voucher-pulse hover:scale-[1.02] transition-transform">
         <div className="overflow-hidden border-b border-white/20 py-1.5 bg-black/10">
@@ -64,7 +67,12 @@ const VoucherBanner = () => {
             🎉 恭喜您获得超值优惠券！点击这里领取　　🎉 恭喜您获得超值优惠券！点击这里领取　　🎉 恭喜您获得超值优惠券！点击这里领取
           </div>
         </div>
-        <div className="px-5 pt-5 pb-4 sm:px-7 sm:pt-6 sm:pb-5 flex items-center justify-between gap-3">
+        <div className="overflow-hidden py-1 bg-black/5">
+          <div className="inline-block whitespace-nowrap animate-marquee-slow text-white/90 text-xs sm:text-sm font-medium">
+            免运费送到马来西亚🇲🇾新加坡🇸🇬　　超过年销1,000,000瓶　　顾客好评高达80,000　　有腥味100%退款　　免运费送到马来西亚🇲🇾新加坡🇸🇬　　超过年销1,000,000瓶　　顾客好评高达80,000　　有腥味100%退款
+          </div>
+        </div>
+        <div className="px-5 py-4 sm:px-7 sm:py-5 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/20 flex items-center justify-center">
             <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">

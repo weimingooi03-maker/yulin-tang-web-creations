@@ -184,6 +184,13 @@
 }
 .animate-voucher-pulse { animation: voucher-pulse 2.2s ease-in-out infinite; }
 
+@keyframes voucher-drop {
+   0% { transform: translateY(-120%) scale(0.92); opacity: 0; }
+   55% { transform: translateY(10px) scale(1.02); opacity: 1; }
+   75% { transform: translateY(-5px) scale(0.99); }
+   100% { transform: translateY(0) scale(1); }
+}
+.animate-voucher-drop { animation: voucher-drop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 @keyframes marquee-scroll {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }

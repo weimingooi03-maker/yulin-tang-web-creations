@@ -69,7 +69,7 @@ export const products = [
   },
 ];
 
-const COUNTDOWN_SECONDS = 30 * 60;
+const COUNTDOWN_SECONDS = 3 * 60;
 
 const ProductsSection = () => {
   const { addItem } = useCart();
@@ -322,10 +322,10 @@ const ProductsSection = () => {
                     ) : (
                       <>
                         <div className="text-xs sm:text-base font-bold text-primary truncate">
-                          30分钟内下单，额外赠送产品
+                          3分钟内下单，额外赠送产品
                         </div>
                         <div className="text-[10px] sm:text-xs text-muted-foreground truncate">
-                          Order within 30 min for a free bonus gift
+                          Order within 3 min for a free bonus gift
                         </div>
                       </>
                     )}

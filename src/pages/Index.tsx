@@ -19,8 +19,8 @@ const Index = () => {
       <SparkleBackground />
       <Header />
       <main className="relative z-10 pt-24 md:pt-28">
-        <HeroSection />
         <VoucherBanner />
+        <HeroSection />
         <IntroSection />
         <BenefitsSection />
         <SafetySection />
